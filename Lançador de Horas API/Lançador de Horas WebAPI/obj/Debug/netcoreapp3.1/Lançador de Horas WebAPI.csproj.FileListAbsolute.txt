@@ -168,3 +168,8 @@ C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas We
 C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\obj\Debug\netcoreapp3.1\Lançador de Horas WebAPI.genruntimeconfig.cache
 C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\obj\Debug\netcoreapp3.1\Razor\Pages\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\obj\Debug\netcoreapp3.1\Lançador de Horas WebAPI.csprojAssemblyReference.cache
+C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\obj\Debug\netcoreapp3.1\Razor\Views\RegistroDeHoras\Create.cshtml.g.cs
+C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\obj\Debug\netcoreapp3.1\Razor\Views\RegistroDeHoras\Delete.cshtml.g.cs
+C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\obj\Debug\netcoreapp3.1\Razor\Views\RegistroDeHoras\Details.cshtml.g.cs
+C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\obj\Debug\netcoreapp3.1\Razor\Views\RegistroDeHoras\Edit.cshtml.g.cs
+C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\obj\Debug\netcoreapp3.1\Razor\Views\RegistroDeHoras\Index.cshtml.g.cs
