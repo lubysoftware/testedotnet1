@@ -47,7 +47,7 @@ namespace Lançador_de_Horas_WebAPI.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutProjeto(int id, Projeto projeto)
         {
-            if (id != projeto.ID)
+            if (id != projeto.Id)
             {
                 return BadRequest();
             }
@@ -82,7 +82,7 @@ namespace Lançador_de_Horas_WebAPI.Controllers
             _context.Projetos.Add(projeto);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetProjeto", new { id = projeto.ID }, projeto);
+            return CreatedAtAction("GetProjeto", new { id = projeto.Id }, projeto);
         }
 
         // DELETE: api/Projetos/5
@@ -103,7 +103,7 @@ namespace Lançador_de_Horas_WebAPI.Controllers
 
         private bool ProjetoExists(int id)
         {
-            return _context.Projetos.Any(e => e.ID == id);
+            return _context.Projetos.Any(e => e.Id == id);
         }
     }
 }

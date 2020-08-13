@@ -47,7 +47,7 @@ namespace Lançador_de_Horas_WebAPI.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutDesenvolvedor(int id, Desenvolvedor desenvolvedor)
         {
-            if (id != desenvolvedor.ID)
+            if (id != desenvolvedor.Id)
             {
                 return BadRequest();
             }
@@ -82,7 +82,7 @@ namespace Lançador_de_Horas_WebAPI.Controllers
             _context.Desenvolvedores.Add(desenvolvedor);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetDesenvolvedor", new { id = desenvolvedor.ID }, desenvolvedor);
+            return CreatedAtAction("GetDesenvolvedor", new { id = desenvolvedor.Id }, desenvolvedor);
         }
 
         // DELETE: api/Desenvolvedores/5
@@ -103,7 +103,7 @@ namespace Lançador_de_Horas_WebAPI.Controllers
 
         private bool DesenvolvedorExists(int id)
         {
-            return _context.Desenvolvedores.Any(e => e.ID == id);
+            return _context.Desenvolvedores.Any(e => e.Id == id);
         }
     }
 }

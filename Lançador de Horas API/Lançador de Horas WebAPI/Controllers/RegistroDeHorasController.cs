@@ -21,7 +21,15 @@ namespace Lançador_de_Horas_WebAPI.Controllers
         // GET: RegistroDeHoras
         public async Task<IActionResult> Index()
         {
-            return View(await _context.RegistrosDeHoras.ToListAsync());
+            var registroDeHoras = await _context.RegistrosDeHoras.ToListAsync();
+
+            foreach (var item in registroDeHoras)
+            {
+                item.Projeto = await _context.Projetos.Where(x => x.Id == item.ProjetoId).FirstOrDefaultAsync();
+                item.Desenvolvedor = await _context.Desenvolvedores.Where(x => x.Id == item.DesenvolvedorId).FirstOrDefaultAsync();
+            }
+
+            return View(registroDeHoras);
         }
 
         // GET: RegistroDeHoras/Details/5
@@ -34,6 +42,8 @@ namespace Lançador_de_Horas_WebAPI.Controllers
 
             var registroDeHoras = await _context.RegistrosDeHoras
                 .FirstOrDefaultAsync(m => m.ID == id);
+            registroDeHoras.Projeto = await _context.Projetos.Where(x => x.Id == registroDeHoras.ProjetoId).FirstOrDefaultAsync();
+            registroDeHoras.Desenvolvedor = await _context.Desenvolvedores.Where(x => x.Id == registroDeHoras.DesenvolvedorId).FirstOrDefaultAsync();
             if (registroDeHoras == null)
             {
                 return NotFound();
@@ -45,8 +55,8 @@ namespace Lançador_de_Horas_WebAPI.Controllers
         // GET: RegistroDeHoras/Create
         public IActionResult Create()
         {
-            ViewBag.Desenvolvedor = _context.Desenvolvedores.Select(c => new SelectListItem() { Text = c.Nome.ToUpper(), Value = c.Nome }).ToList();
-            ViewBag.Projetos = _context.Projetos.Select(c => new SelectListItem() { Text = c.NomeDoProjeto.ToUpper(), Value = c.NomeDoProjeto }).ToList();
+            ViewData["DesenvolvedorId"] = new SelectList(_context.Desenvolvedores, "Id", "Nome");
+            ViewData["ProjetoId"] = new SelectList(_context.Projetos, "Id", "NomeDoProjeto");
             return View();
         }
 
@@ -55,16 +65,17 @@ namespace Lançador_de_Horas_WebAPI.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,DataInicio,DataFim,TotalPausa,TotalHoras")] RegistroDeHoras registroDeHoras)
+        public async Task<IActionResult> Create([Bind("ID,DataInicio,DataFim,TotalHoras,DesenvolvedorId,ProjetoId")] RegistroDeHoras registroDeHoras)
         {
             if (ModelState.IsValid)
             {
-                registroDeHoras.CalculaTotalHoras();
-
                 _context.Add(registroDeHoras);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["DesenvolvedorId"] = new SelectList(_context.Desenvolvedores, "Id", "Nome", registroDeHoras.DesenvolvedorId);
+            ViewData["ProjetoId"] = new SelectList(_context.Projetos, "Id", "NomeDoProjeto", registroDeHoras.ProjetoId);
+
             return View(registroDeHoras);
         }
 
@@ -89,7 +100,7 @@ namespace Lançador_de_Horas_WebAPI.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,DataInicio,DataFim,HoraInicio,TotalPausa,HoraFim,TotalHoras")] RegistroDeHoras registroDeHoras)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,DataInicio,DataFim,TotalHoras,DesenvolvedorId,ProjetoId")] RegistroDeHoras registroDeHoras)
         {
             if (id != registroDeHoras.ID)
             {

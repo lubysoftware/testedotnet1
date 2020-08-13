@@ -23,19 +23,21 @@
                 <span asp-validation-for="DataFim" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="TotalPausa" class="control-label"></label>
-                <input asp-for="TotalPausa" class="form-control" />
-                <span asp-validation-for="TotalPausa" class="text-danger"></span>
+                <label asp-for="TotalHoras" class="control-label"></label>
+                <input asp-for="TotalHoras" class="form-control" />
+                <span asp-validation-for="TotalHoras" class="text-danger"></span>
             </div>
             <div>
-                <label asp-for="Desenvolvedor" class="control-label"></label>
+                <label asp-for="DesenvolvedorId" class="control-label"></label>
                 <br />
-                <select asp-for="Desenvolvedor" asp-items="@ViewBag.Desenvolvedor"></select>
+                <select asp-for="DesenvolvedorId" asp-items="@ViewBag.DesenvolvedorId"></select>
+                <span asp-validation-for="DesenvolvedorId" class="text-danger"></span>
             </div>
             <div>
-                <label asp-for="Projeto" class="control-label"></label>
+                <label asp-for="ProjetoId" class="control-label"></label>
                 <br />
-                <select asp-for="Projeto" asp-items="@ViewBag.Projetos"></select>
+                <select asp-for="ProjetoId" asp-items="@ViewBag.ProjetoId"></select>
+                <span asp-validation-for="ProjetoId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
