@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\josim\\Desktop\\Teste de software para emprego\\Lançador de Horas API\\Lançador de Horas API\\Lançador de Horas API.csproj": {}
+    "C:\\Users\\josim\\Desktop\\testedotnet1\\Lançador de Horas API\\Lançador de Horas API\\Lançador de Horas API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\josim\\Desktop\\Teste de software para emprego\\Lançador de Horas API\\Lançador de Horas API\\Lançador de Horas API.csproj": {
+    "C:\\Users\\josim\\Desktop\\testedotnet1\\Lançador de Horas API\\Lançador de Horas API\\Lançador de Horas API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\josim\\Desktop\\Teste de software para emprego\\Lançador de Horas API\\Lançador de Horas API\\Lançador de Horas API.csproj",
+        "projectUniqueName": "C:\\Users\\josim\\Desktop\\testedotnet1\\Lançador de Horas API\\Lançador de Horas API\\Lançador de Horas API.csproj",
         "projectName": "Lançador de Horas API",
-        "projectPath": "C:\\Users\\josim\\Desktop\\Teste de software para emprego\\Lançador de Horas API\\Lançador de Horas API\\Lançador de Horas API.csproj",
+        "projectPath": "C:\\Users\\josim\\Desktop\\testedotnet1\\Lançador de Horas API\\Lançador de Horas API\\Lançador de Horas API.csproj",
         "packagesPath": "C:\\Users\\josim\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\josim\\Desktop\\Teste de software para emprego\\Lançador de Horas API\\Lançador de Horas API\\obj\\",
+        "outputPath": "C:\\Users\\josim\\Desktop\\testedotnet1\\Lançador de Horas API\\Lançador de Horas API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -42,6 +42,16 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql.Design": {
+              "target": "Package",
+              "version": "[1.1.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
