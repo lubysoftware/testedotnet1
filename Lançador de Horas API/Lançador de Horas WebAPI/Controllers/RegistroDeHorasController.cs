@@ -55,10 +55,12 @@ namespace Lançador_de_Horas_WebAPI.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,DataInicio,DataFim,HoraInicio,TotalPausa,HoraFim,TotalHoras")] RegistroDeHoras registroDeHoras)
+        public async Task<IActionResult> Create([Bind("ID,DataInicio,DataFim,TotalPausa,TotalHoras")] RegistroDeHoras registroDeHoras)
         {
             if (ModelState.IsValid)
             {
+                registroDeHoras.CalculaTotalHoras();
+
                 _context.Add(registroDeHoras);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

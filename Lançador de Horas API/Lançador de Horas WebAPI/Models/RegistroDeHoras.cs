@@ -11,9 +11,7 @@ namespace Lançador_de_Horas_WebAPI.Models
         public int ID { get; set; }
         public DateTime DataInicio { get; set; }
         public DateTime DataFim { get; set; }
-        public TimeSpan HoraInicio { get; set; }
         public TimeSpan TotalPausa { get; private set; }
-        public TimeSpan HoraFim { get; set; }
         public TimeSpan TotalHoras { get; private set; }
         public Desenvolvedor Desenvolvedor { get; set; }
         public Projeto Projeto { get; set; }
