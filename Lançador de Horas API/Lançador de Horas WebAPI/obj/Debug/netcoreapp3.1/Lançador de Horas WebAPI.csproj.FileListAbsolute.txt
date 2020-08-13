@@ -166,3 +166,5 @@ C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas We
 C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\obj\Debug\netcoreapp3.1\Lançador de Horas WebAPI.dll
 C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\obj\Debug\netcoreapp3.1\Lançador de Horas WebAPI.pdb
 C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\obj\Debug\netcoreapp3.1\Lançador de Horas WebAPI.genruntimeconfig.cache
+C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\obj\Debug\netcoreapp3.1\Razor\Pages\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\obj\Debug\netcoreapp3.1\Lançador de Horas WebAPI.csprojAssemblyReference.cache
