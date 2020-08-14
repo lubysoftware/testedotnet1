@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Lançador_de_Horas_WebAPI.Models;
+using Lançador_de_Horas_WebAPI.Context;
 
 namespace Lançador_de_Horas_WebAPI.Controllers
 {

@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Lançador_de_Horas_WebAPI.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
@@ -7,9 +9,9 @@ using System.Linq;
 using System.Security.Policy;
 using System.Threading.Tasks;
 
-namespace Lançador_de_Horas_WebAPI.Models
+namespace Lançador_de_Horas_WebAPI.Context
 {
-    public class LancadorContext : DbContext
+    public class LancadorContext : IdentityDbContext
     {
         public LancadorContext(DbContextOptions<LancadorContext> options) : base(options)
         {
