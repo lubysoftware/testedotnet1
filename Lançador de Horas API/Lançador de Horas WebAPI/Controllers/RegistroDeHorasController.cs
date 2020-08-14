@@ -11,6 +11,8 @@ namespace Lançador_de_Horas_WebAPI.Controllers
 {
     public class RegistroDeHorasController : Controller
     {
+        #region Controle da View
+
         private readonly LancadorContext _context;
 
         public RegistroDeHorasController(LancadorContext context)
@@ -158,6 +160,98 @@ namespace Lançador_de_Horas_WebAPI.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+
+        #endregion Controle da View
+
+        #region Controle da API com Json
+
+        // GET: api/RegistrosDeHoras
+        [HttpGet]
+        [Route("api/[controller]")]
+        public async Task<ActionResult<IEnumerable<RegistroDeHoras>>> GetRegistrosDeHoras()
+        {
+            return await _context.RegistrosDeHoras.ToListAsync();
+        }
+
+        // GET: api/RegistrosDeHoras/5
+        [Route("api/[controller]/{id}")]
+        [HttpGet("{id}")]
+        public async Task<ActionResult<RegistroDeHoras>> GetRegistroDeHoras(int id)
+        {
+            var registroDeHoras = await _context.RegistrosDeHoras.FindAsync(id);
+
+            if (registroDeHoras == null)
+            {
+                return NotFound();
+            }
+
+            return registroDeHoras;
+        }
+
+        // PUT: api/RegistrosDeHoras/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for
+        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+        [Route("api/[controller]/{id}")]
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutRegistroDeHoras(int id, RegistroDeHoras registroDeHoras)
+        {
+            if (id != registroDeHoras.ID)
+            {
+                return BadRequest();
+            }
+
+            _context.Entry(registroDeHoras).State = EntityState.Modified;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!RegistroDeHorasExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
+        }
+
+        // POST: api/RegistrosDeHoras
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for
+        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+        [Route("api/[controller]")]
+        [HttpPost]
+        public async Task<ActionResult<RegistroDeHoras>> PostRegistroDeHoras(RegistroDeHoras registroDeHoras)
+        {
+            _context.RegistrosDeHoras.Add(registroDeHoras);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction("GetRegistroDeHoras", new { id = registroDeHoras.ID }, registroDeHoras);
+        }
+
+        // DELETE: api/RegistrosDeHoras/5
+        [Route("api/[controller]/{id}")]
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<RegistroDeHoras>> DeleteRegistroDeHoras(int id)
+        {
+            var registroDeHoras = await _context.RegistrosDeHoras.FindAsync(id);
+            if (registroDeHoras == null)
+            {
+                return NotFound();
+            }
+
+            _context.RegistrosDeHoras.Remove(registroDeHoras);
+            await _context.SaveChangesAsync();
+
+            return registroDeHoras;
+        }
+
+        #endregion Controle da API com Json
 
         private bool RegistroDeHorasExists(int id)
         {

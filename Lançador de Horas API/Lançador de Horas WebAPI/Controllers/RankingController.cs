@@ -8,26 +8,31 @@ using Microsoft.EntityFrameworkCore;
 using Lançador_de_Horas_WebAPI.Models;
 using System.Security.Cryptography.X509Certificates;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Lançador_de_Horas_WebAPI.Services;
 
 namespace Lançador_de_Horas_WebAPI.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class RankingController : ControllerBase
+    public class RankingController : Controller
     {
-        private readonly LancadorContext _context;
+        private readonly RankingService _ranking;
 
-        public RankingController(LancadorContext context)
+        public RankingController(RankingService rankingService)
         {
-            _context = context;
+            _ranking = rankingService;
+        }
+
+        // GET: Ranking
+        public async Task<IActionResult> Index()
+        {
+            return View(_ranking.GetRanking());
         }
 
         // GET: api/Ranking
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<RegistroDeHoras>>> GetRegistrosDeHoras()
+        [Route("api/[controller]")]
+        public async Task<ActionResult<IEnumerable<Ranking>>> GetRegistrosDeHoras()
         {
-            return await _context.RegistrosDeHoras.Where(x => DateTime.Now >= x.DataInicio.AddDays(-7))
-                 .OrderByDescending(x => x.TotalHoras / 7).SkipLast(5).ToListAsync();
+            return _ranking.GetRanking().ToList();
         }
     }
 }

@@ -173,3 +173,6 @@ C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas We
 C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\obj\Debug\netcoreapp3.1\Razor\Views\RegistroDeHoras\Details.cshtml.g.cs
 C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\obj\Debug\netcoreapp3.1\Razor\Views\RegistroDeHoras\Edit.cshtml.g.cs
 C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\obj\Debug\netcoreapp3.1\Razor\Views\RegistroDeHoras\Index.cshtml.g.cs
+C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\bin\Debug\netcoreapp3.1\Properties\serviceDependencies.json
+C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\bin\Debug\netcoreapp3.1\Properties\serviceDependencies.local.json
+C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\obj\Debug\netcoreapp3.1\Razor\Views\Ranking\index.cshtml.g.cs

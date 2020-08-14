@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Lançador_de_Horas_WebAPI.Models;
+using Lançador_de_Horas_WebAPI.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -26,6 +27,7 @@ namespace Lançador_de_Horas_WebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddTransient<RankingService>();
 
             services.AddDbContext<LancadorContext>(options =>
                     options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));

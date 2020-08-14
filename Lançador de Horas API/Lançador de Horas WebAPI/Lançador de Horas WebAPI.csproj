@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>Lançador_de_Horas_WebAPI</RootNamespace>
+    <UserSecretsId>9a5ffc2a-1471-4381-b790-b879242176e4</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
