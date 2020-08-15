@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace Lançador_de_Horas_WebAPI.Controllers
 {
+    [Produces("application/json")]
     [Route("api/[controller]")]
     [Authorize]
     [ApiController]
@@ -25,6 +26,11 @@ namespace Lançador_de_Horas_WebAPI.Controllers
         }
 
         // GET: api/Desenvolvedores
+        /// <summary>
+        /// Obtém todos os desenvolvedores registrados
+        /// </summary>
+        /// <returns>A lista de desenvolvedores</returns>
+        /// <response code="401">Token de acesso não autorizado</response>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Desenvolvedor>>> GetDesenvolvedores()
         {
@@ -32,6 +38,12 @@ namespace Lançador_de_Horas_WebAPI.Controllers
         }
 
         // GET: api/Desenvolvedores/5
+        /// <summary>
+        /// Obtém um desenvolvedor pelo Id
+        /// </summary>
+        /// <param name="id">Id do desenvolvedor</param>
+        /// <returns>O desenvolvedor</returns>
+        /// <response code="401">Token de acesso não autorizado</response>
         [HttpGet("{id}")]
         public async Task<ActionResult<Desenvolvedor>> GetDesenvolvedor(int id)
         {
@@ -46,8 +58,15 @@ namespace Lançador_de_Horas_WebAPI.Controllers
         }
 
         // PUT: api/Desenvolvedores/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+        /// <summary>
+        /// Atualiza um desenvolvedor
+        /// </summary>
+        /// <param name="id">Id do desenvolvedor a ser alterado</param>
+        /// <param name="desenvolvedor">Objeto com as alterações</param>
+        /// <returns>O desenvolvedor criado</returns>
+        /// /// <response code="201">Retorna o novo desenvolvedor atualizado</response>
+        /// <response code="400">Se o desenvolvedor for nulo</response>
+        /// <response code="401">Token de acesso não autorizado</response>
         [HttpPut("{id}")]
         public async Task<IActionResult> PutDesenvolvedor(int id, Desenvolvedor desenvolvedor)
         {
@@ -65,8 +84,26 @@ namespace Lançador_de_Horas_WebAPI.Controllers
         }
 
         // POST: api/Desenvolvedores
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+        /// <summary>
+        /// Insere um desenvolvedor
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     POST
+        ///     {
+        ///        "id": 1,
+        ///        "name": "João",
+        ///        "sobrenome": "da silva",
+        ///        "cpf": "123.456.789-00"
+        ///     }
+        ///
+        /// </remarks>
+        /// <param name="desenvolvedor">Objeto com as alterações</param>
+        /// <returns>O desenvolvedor criado</returns>
+        /// /// <response code="201">Retorna o novo desenvolvedor criado</response>
+        /// <response code="400">Se o desenvolvedor for nulo</response>
+        /// <response code="401">Token de acesso não autorizado</response>
         [HttpPost]
         public async Task<ActionResult<Desenvolvedor>> PostDesenvolvedor(Desenvolvedor desenvolvedor)
         {
@@ -76,6 +113,12 @@ namespace Lançador_de_Horas_WebAPI.Controllers
         }
 
         // DELETE: api/Desenvolvedores/5
+        /// <summary>
+        /// Deleta um desenvolvedor
+        /// </summary>
+        /// <param name="id">Id do desenvolvedor a ser alterado</param>
+        /// <returns>Retorna o desenvolvedor deletado</returns>
+        /// <response code="401">Token de acesso não autorizado</response>
         [HttpDelete("{id}")]
         public async Task<ActionResult<Desenvolvedor>> DeleteDesenvolvedor(int id)
         {

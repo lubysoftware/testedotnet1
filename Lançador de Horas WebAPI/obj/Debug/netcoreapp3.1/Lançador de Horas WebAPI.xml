@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Lançador de Horas WebAPI</name>
+    </assembly>
+    <members>
+        <member name="M:Lançador_de_Horas_WebAPI.Controllers.DesenvolvedoresController.GetDesenvolvedores">
+            <summary>
+            Obtém todos os desenvolvedores registrados
+            </summary>
+            <returns>A lista de desenvolvedores</returns>
+            <response code="401">Token de acesso não autorizado</response>
+        </member>
+        <member name="M:Lançador_de_Horas_WebAPI.Controllers.DesenvolvedoresController.GetDesenvolvedor(System.Int32)">
+            <summary>
+            Obtém um desenvolvedor pelo Id
+            </summary>
+            <param name="id">Id do desenvolvedor</param>
+            <returns>O desenvolvedor</returns>
+            <response code="401">Token de acesso não autorizado</response>
+        </member>
+        <member name="M:Lançador_de_Horas_WebAPI.Controllers.DesenvolvedoresController.PutDesenvolvedor(System.Int32,Lançador_de_Horas_WebAPI.Models.Desenvolvedor)">
+            <summary>
+            Atualiza um desenvolvedor
+            </summary>
+            <param name="id">Id do desenvolvedor a ser alterado</param>
+            <param name="desenvolvedor">Objeto com as alterações</param>
+            <returns>O desenvolvedor criado</returns>
+            /// <response code="201">Retorna o novo desenvolvedor atualizado</response>
+            <response code="400">Se o desenvolvedor for nulo</response>
+            <response code="401">Token de acesso não autorizado</response>
+        </member>
+        <member name="M:Lançador_de_Horas_WebAPI.Controllers.DesenvolvedoresController.PostDesenvolvedor(Lançador_de_Horas_WebAPI.Models.Desenvolvedor)">
+             <summary>
+             Insere um desenvolvedor
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 POST
+                 {
+                    "id": 1,
+                    "name": "João",
+                    "sobrenome": "da silva",
+                    "cpf": "123.456.789-00"
+                 }
+            
+             </remarks>
+             <param name="desenvolvedor">Objeto com as alterações</param>
+             <returns>O desenvolvedor criado</returns>
+             /// <response code="201">Retorna o novo desenvolvedor criado</response>
+             <response code="400">Se o desenvolvedor for nulo</response>
+             <response code="401">Token de acesso não autorizado</response>
+        </member>
+        <member name="M:Lançador_de_Horas_WebAPI.Controllers.DesenvolvedoresController.DeleteDesenvolvedor(System.Int32)">
+            <summary>
+            Deleta um desenvolvedor
+            </summary>
+            <param name="id">Id do desenvolvedor a ser alterado</param>
+            <returns>Retorna o desenvolvedor deletado</returns>
+            <response code="401">Token de acesso não autorizado</response>
+        </member>
+        <member name="M:Lançador_de_Horas_WebAPI.Controllers.HomeController.Index">
+            <summary>
+            Redireciona para a página do Swagger
+            </summary>
+            <returns>Retornar um acão de redirecionamento</returns>
+        </member>
+        <member name="M:Lançador_de_Horas_WebAPI.Models.RegistroDeHoras.#ctor">
+            <summary>
+            Construtor da Classe
+            </summary>
+        </member>
+    </members>
+</doc>

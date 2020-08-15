@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Lançador_de_Horas_WebAPI.Context;
@@ -46,19 +47,50 @@ namespace Lançador_de_Horas_WebAPI
             //Serviço do Swagger
             services.AddSwaggerGen(c =>
                {
-                   var securitySchema = new OpenApiSecurityScheme
+                   c.SwaggerDoc("v1", new OpenApiInfo
                    {
-                       Description = "JWT Authorization header using the Bearer scheme. Example: \"Authorization: Bearer {token}\"",
-                       Name = "Authorization",
-                       BearerFormat = "JWT",
-                       In = ParameterLocation.Header,
-                       Type = SecuritySchemeType.ApiKey
-                   };
-                   c.AddSecurityDefinition("Bearer", securitySchema);
+                       Version = "v1",
+                       Title = "Lançador de horas Luby",
+                       Description = "Aplicação para teste da Luby",
+                       Contact = new OpenApiContact
+                       {
+                           Name = "Josimar Vieira",
+                           Email = "josimarsv@outlook.com",
+                           Url = new Uri("https://linkedin.com/in/josimarsvieira"),
+                       },
+                       License = new OpenApiLicense
+                       {
+                           Name = "Versão para testes",
+                       }
+                   });
 
-                   var securityRequirement = new OpenApiSecurityRequirement();
-                   securityRequirement.Add(securitySchema, new[] { "Bearer" });
-                   c.AddSecurityRequirement(securityRequirement);
+                   c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                   {
+                       Description = "JWT Authorization header using the Bearer scheme (Example: 'Bearer 12345abcdef')",
+                       Name = "Authorization",
+                       In = ParameterLocation.Header,
+                       Type = SecuritySchemeType.ApiKey,
+                       Scheme = "Bearer"
+                   });
+
+                   c.AddSecurityRequirement(new OpenApiSecurityRequirement()
+               {
+                   {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "Bearer"
+                            }
+                        },
+                    Array.Empty<string>()
+                   }
+               });
+
+                   var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                   var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                   c.IncludeXmlComments(xmlPath);
                });
 
             //Serviço para autenticação do Identity
