@@ -35,5 +35,6 @@ Desenvolver um serviço que seja capaz de gerar um lançamento de horas.
 - Implementar autenticação JWT com expiração de 5 minutos
 
 #### Identificação:
-Nome: <br/>
-E-mail: 
+Nome: Josimar da silva vieira <br/>
+E-mail: josimarsv@outlook.com <br/>
+Live: https://lubyteste.azurewebsites.net/
