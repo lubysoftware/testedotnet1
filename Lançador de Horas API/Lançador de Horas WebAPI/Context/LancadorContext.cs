@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Lançador_de_Horas_WebAPI.Context
 {
-    public class LancadorContext : IdentityDbContext
+    public class LancadorContext : IdentityDbContext<ApplicationUser>
     {
         public LancadorContext(DbContextOptions<LancadorContext> options) : base(options)
         {

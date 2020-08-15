@@ -9,6 +9,7 @@ using Lançador_de_Horas_WebAPI.Models;
 using System.Security.Cryptography.X509Certificates;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Lançador_de_Horas_WebAPI.Services;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Lançador_de_Horas_WebAPI.Controllers
 {
@@ -30,6 +31,7 @@ namespace Lançador_de_Horas_WebAPI.Controllers
         // GET: api/Ranking
         [HttpGet]
         [Route("api/[controller]")]
+        [Authorize]
         public async Task<ActionResult<IEnumerable<Ranking>>> GetRegistrosDeHoras()
         {
             return _ranking.GetRanking().ToList();
