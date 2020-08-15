@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\josim\\Desktop\\testedotnet1\\Lançador de Horas API\\Lançador de Horas WebAPI\\Lançador de Horas WebAPI.csproj": {}
+    "C:\\Users\\josim\\Desktop\\testedotnet1\\Lançador de Horas WebAPI\\Lançador de Horas WebAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\josim\\Desktop\\testedotnet1\\Lançador de Horas API\\Lançador de Horas WebAPI\\Lançador de Horas WebAPI.csproj": {
+    "C:\\Users\\josim\\Desktop\\testedotnet1\\Lançador de Horas WebAPI\\Lançador de Horas WebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\josim\\Desktop\\testedotnet1\\Lançador de Horas API\\Lançador de Horas WebAPI\\Lançador de Horas WebAPI.csproj",
+        "projectUniqueName": "C:\\Users\\josim\\Desktop\\testedotnet1\\Lançador de Horas WebAPI\\Lançador de Horas WebAPI.csproj",
         "projectName": "Lançador de Horas WebAPI",
-        "projectPath": "C:\\Users\\josim\\Desktop\\testedotnet1\\Lançador de Horas API\\Lançador de Horas WebAPI\\Lançador de Horas WebAPI.csproj",
+        "projectPath": "C:\\Users\\josim\\Desktop\\testedotnet1\\Lançador de Horas WebAPI\\Lançador de Horas WebAPI.csproj",
         "packagesPath": "C:\\Users\\josim\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\josim\\Desktop\\testedotnet1\\Lançador de Horas API\\Lançador de Horas WebAPI\\obj\\",
+        "outputPath": "C:\\Users\\josim\\Desktop\\testedotnet1\\Lançador de Horas WebAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",

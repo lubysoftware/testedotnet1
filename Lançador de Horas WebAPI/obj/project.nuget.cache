@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "92zamP9xg0C9IBb5huMOtp7iuBAl/2iAfBWRXrqGX8JNHPV4AH5kvg9M5HyR+wCagVqnkjnfh+z33Gp4EK9yDQ==",
+  "dgSpecHash": "pz9yUtM1m74s9h/n+nhmtWtdm1+WgGE9lxT24oWmQVoThkC1TJPXX1CeMGBpih3oCP7FoChcCO8FGIg4kHjjYg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\josim\\Desktop\\testedotnet1\\Lançador de Horas API\\Lançador de Horas WebAPI\\Lançador de Horas WebAPI.csproj",
+  "projectFilePath": "C:\\Users\\josim\\Desktop\\testedotnet1\\Lançador de Horas WebAPI\\Lançador de Horas WebAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\josim\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.7\\microsoft.aspnetcore.authentication.jwtbearer.3.1.7.nupkg.sha512",
     "C:\\Users\\josim\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.7\\microsoft.aspnetcore.cryptography.internal.3.1.7.nupkg.sha512",
