@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 
 namespace Lançador_de_Horas_WebAPI
 {
@@ -42,7 +44,22 @@ namespace Lançador_de_Horas_WebAPI
                     options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
 
             //Serviço do Swagger
-            services.AddSwaggerGen();
+            services.AddSwaggerGen(c =>
+               {
+                   var securitySchema = new OpenApiSecurityScheme
+                   {
+                       Description = "JWT Authorization header using the Bearer scheme. Example: \"Authorization: Bearer {token}\"",
+                       Name = "Authorization",
+                       BearerFormat = "JWT",
+                       In = ParameterLocation.Header,
+                       Type = SecuritySchemeType.ApiKey
+                   };
+                   c.AddSecurityDefinition("Bearer", securitySchema);
+
+                   var securityRequirement = new OpenApiSecurityRequirement();
+                   securityRequirement.Add(securitySchema, new[] { "Bearer" });
+                   c.AddSecurityRequirement(securityRequirement);
+               });
 
             //Serviço para autenticação do Identity
             services.AddIdentity<ApplicationUser, IdentityRole>()

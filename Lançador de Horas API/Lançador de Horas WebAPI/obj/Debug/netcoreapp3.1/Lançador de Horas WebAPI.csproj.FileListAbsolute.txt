@@ -12,7 +12,6 @@ C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas We
 C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\bin\Debug\netcoreapp3.1\Lançador de Horas WebAPI.dll
 C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\bin\Debug\netcoreapp3.1\Lançador de Horas WebAPI.pdb
 C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\bin\Debug\netcoreapp3.1\Lançador de Horas WebAPI.Views.dll
-C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\bin\Debug\netcoreapp3.1\Lançador de Horas WebAPI.Views.pdb
 C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
