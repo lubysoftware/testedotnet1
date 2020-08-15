@@ -7,32 +7,35 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Lançador_de_Horas_WebAPI.Models;
 using Lançador_de_Horas_WebAPI.Context;
+using Lançador_de_Horas_WebAPI.Services;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Lançador_de_Horas_WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class ProjetosController : ControllerBase
     {
-        private readonly LancadorContext _context;
+        private readonly ProjetoService _projetoService;
 
-        public ProjetosController(LancadorContext context)
+        public ProjetosController(ProjetoService projetoService)
         {
-            _context = context;
+            _projetoService = projetoService;
         }
 
         // GET: api/Projetos
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Projeto>>> GetProjetos()
         {
-            return await _context.Projetos.ToListAsync();
+            return await _projetoService.Get();
         }
 
         // GET: api/Projetos/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Projeto>> GetProjeto(int id)
         {
-            var projeto = await _context.Projetos.FindAsync(id);
+            var projeto = await _projetoService.GetById(id);
 
             if (projeto == null)
             {
@@ -53,22 +56,9 @@ namespace Lançador_de_Horas_WebAPI.Controllers
                 return BadRequest();
             }
 
-            _context.Entry(projeto).State = EntityState.Modified;
-
-            try
+            if (await _projetoService.Update(id, projeto) == null)
             {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!ProjetoExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+                return NotFound();
             }
 
             return NoContent();
@@ -80,31 +70,25 @@ namespace Lançador_de_Horas_WebAPI.Controllers
         [HttpPost]
         public async Task<ActionResult<Projeto>> PostProjeto(Projeto projeto)
         {
-            _context.Projetos.Add(projeto);
-            await _context.SaveChangesAsync();
+            await _projetoService.Create(projeto);
 
-            return CreatedAtAction("GetProjeto", new { id = projeto.Id }, projeto);
+            return CreatedAtAction("GetDesenvolvedor", new { id = projeto.Id }, projeto);
         }
 
         // DELETE: api/Projetos/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<Projeto>> DeleteProjeto(int id)
         {
-            var projeto = await _context.Projetos.FindAsync(id);
+            var projeto = await _projetoService.GetById(id);
+
             if (projeto == null)
             {
                 return NotFound();
             }
 
-            _context.Projetos.Remove(projeto);
-            await _context.SaveChangesAsync();
+            await _projetoService.Delete(projeto);
 
             return projeto;
-        }
-
-        private bool ProjetoExists(int id)
-        {
-            return _context.Projetos.Any(e => e.Id == id);
         }
     }
 }

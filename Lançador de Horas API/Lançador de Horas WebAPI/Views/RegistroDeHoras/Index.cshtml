@@ -4,10 +4,10 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Registro de Horas</h1>
+<h1>Index</h1>
 
 <p>
-    <a asp-action="Create">Lançar horas</a>
+    <a asp-action="Create">Create New</a>
 </p>
 <table class="table">
     <thead>
@@ -31,31 +31,29 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DataInicio)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DataFim)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TotalHoras)
-                </td>
-
-                <td>
-                    @Html.DisplayFor(modelItem => item.Desenvolvedor.Nome)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Projeto.NomeDoProjeto)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.ID">Editar</a> |
-                    <a asp-action="Details" asp-route-id="@item.ID">Detalhes</a> |
-                    <a asp-action="Delete" asp-route-id="@item.ID">Deletar</a>
-                </td>
-            </tr>
-        }
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataInicio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataFim)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalHoras)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Desenvolvedor.CPF)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Projeto.NomeDoProjeto)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
     </tbody>
 </table>

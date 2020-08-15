@@ -3,6 +3,7 @@ using Lançador_de_Horas_WebAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
+using Microsoft.VisualBasic;
 using SQLitePCL;
 using System;
 using System.Collections.Generic;
@@ -21,7 +22,7 @@ namespace Lançador_de_Horas_WebAPI.Services
             _context = context;
         }
 
-        public IEnumerable<Ranking> GetRanking()
+        public async Task<List<Ranking>> GetRanking()
         {
             var registros = _context.RegistrosDeHoras.Where(x => DateTime.Now >= x.DataInicio.AddDays(-7))
                  .AsEnumerable()
@@ -40,11 +41,12 @@ namespace Lançador_de_Horas_WebAPI.Services
 
                 ranking.Add(new Ranking()
                 {
-                    Nome = _context.Desenvolvedores.Where(dv => dv.Id == reg.Key).FirstOrDefault().Nome.ToUpper(),
+                    Nome = (await _context.Desenvolvedores.Where(dv => dv.Id == reg.Key).FirstOrDefaultAsync()).Nome.ToUpper(),
                     MediaHoras = total / 7
                 });
             }
-            return ranking.OrderByDescending(x => x.MediaHoras);
+
+            return ranking;
         }
     }
 }

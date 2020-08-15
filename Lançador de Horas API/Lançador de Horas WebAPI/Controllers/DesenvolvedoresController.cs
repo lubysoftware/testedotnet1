@@ -7,32 +7,35 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Lançador_de_Horas_WebAPI.Models;
 using Lançador_de_Horas_WebAPI.Context;
+using Lançador_de_Horas_WebAPI.Services;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Lançador_de_Horas_WebAPI.Controllers
 {
     [Route("api/[controller]")]
+    [Authorize]
     [ApiController]
     public class DesenvolvedoresController : ControllerBase
     {
-        private readonly LancadorContext _context;
+        private readonly DesenvolvedorService _desenvolvedor;
 
-        public DesenvolvedoresController(LancadorContext context)
+        public DesenvolvedoresController(DesenvolvedorService desenvolvedor)
         {
-            _context = context;
+            _desenvolvedor = desenvolvedor;
         }
 
         // GET: api/Desenvolvedores
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Desenvolvedor>>> GetDesenvolvedores()
         {
-            return await _context.Desenvolvedores.ToListAsync();
+            return await _desenvolvedor.Get();
         }
 
         // GET: api/Desenvolvedores/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Desenvolvedor>> GetDesenvolvedor(int id)
         {
-            var desenvolvedor = await _context.Desenvolvedores.FindAsync(id);
+            var desenvolvedor = await _desenvolvedor.GetById(id);
 
             if (desenvolvedor == null)
             {
@@ -53,22 +56,9 @@ namespace Lançador_de_Horas_WebAPI.Controllers
                 return BadRequest();
             }
 
-            _context.Entry(desenvolvedor).State = EntityState.Modified;
-
-            try
+            if (await _desenvolvedor.Update(id, desenvolvedor) == null)
             {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!DesenvolvedorExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+                return NotFound();
             }
 
             return NoContent();
@@ -80,8 +70,7 @@ namespace Lançador_de_Horas_WebAPI.Controllers
         [HttpPost]
         public async Task<ActionResult<Desenvolvedor>> PostDesenvolvedor(Desenvolvedor desenvolvedor)
         {
-            _context.Desenvolvedores.Add(desenvolvedor);
-            await _context.SaveChangesAsync();
+            await _desenvolvedor.Create(desenvolvedor);
 
             return CreatedAtAction("GetDesenvolvedor", new { id = desenvolvedor.Id }, desenvolvedor);
         }
@@ -90,21 +79,16 @@ namespace Lançador_de_Horas_WebAPI.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult<Desenvolvedor>> DeleteDesenvolvedor(int id)
         {
-            var desenvolvedor = await _context.Desenvolvedores.FindAsync(id);
+            var desenvolvedor = await _desenvolvedor.GetById(id);
+
             if (desenvolvedor == null)
             {
                 return NotFound();
             }
 
-            _context.Desenvolvedores.Remove(desenvolvedor);
-            await _context.SaveChangesAsync();
+            await _desenvolvedor.Delete(desenvolvedor);
 
             return desenvolvedor;
-        }
-
-        private bool DesenvolvedorExists(int id)
-        {
-            return _context.Desenvolvedores.Any(e => e.Id == id);
         }
     }
 }

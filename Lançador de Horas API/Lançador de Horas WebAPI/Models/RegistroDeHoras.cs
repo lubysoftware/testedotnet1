@@ -15,7 +15,7 @@ namespace Lançador_de_Horas_WebAPI.Models
     public class RegistroDeHoras
     {
         [Key]
-        public int ID { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [DisplayName("Data início")]

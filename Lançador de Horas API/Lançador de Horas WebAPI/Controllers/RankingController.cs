@@ -13,6 +13,9 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace Lançador_de_Horas_WebAPI.Controllers
 {
+    [Route("api/[controller]")]
+    [Authorize]
+    [ApiController]
     public class RankingController : Controller
     {
         private readonly RankingService _ranking;
@@ -22,19 +25,11 @@ namespace Lançador_de_Horas_WebAPI.Controllers
             _ranking = rankingService;
         }
 
-        // GET: Ranking
-        public async Task<IActionResult> Index()
-        {
-            return View(_ranking.GetRanking());
-        }
-
         // GET: api/Ranking
         [HttpGet]
-        [Route("api/[controller]")]
-        [Authorize]
         public async Task<ActionResult<IEnumerable<Ranking>>> GetRegistrosDeHoras()
         {
-            return _ranking.GetRanking().ToList();
+            return await _ranking.GetRanking();
         }
     }
 }

@@ -27,17 +27,13 @@
                 <input asp-for="TotalHoras" class="form-control" />
                 <span asp-validation-for="TotalHoras" class="text-danger"></span>
             </div>
-            <div>
+            <div class="form-group">
                 <label asp-for="DesenvolvedorId" class="control-label"></label>
-                <br />
-                <select asp-for="DesenvolvedorId" asp-items="@ViewBag.DesenvolvedorId"></select>
-                <span asp-validation-for="DesenvolvedorId" class="text-danger"></span>
+                <select asp-for="DesenvolvedorId" class ="form-control" asp-items="ViewBag.DesenvolvedorId"></select>
             </div>
-            <div>
+            <div class="form-group">
                 <label asp-for="ProjetoId" class="control-label"></label>
-                <br />
-                <select asp-for="ProjetoId" asp-items="@ViewBag.ProjetoId"></select>
-                <span asp-validation-for="ProjetoId" class="text-danger"></span>
+                <select asp-for="ProjetoId" class ="form-control" asp-items="ViewBag.ProjetoId"></select>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

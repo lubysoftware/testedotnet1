@@ -7,29 +7,35 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Lançador_de_Horas_WebAPI.Models;
 using Lançador_de_Horas_WebAPI.Context;
+using Lançador_de_Horas_WebAPI.Services;
+using System.Security.Cryptography;
 
 namespace Lançador_de_Horas_WebAPI.Controllers
 {
     public class RegistroDeHorasController : Controller
     {
-        #region Controle da View
+        private readonly RegistroDeHorasService _registroDeHorasService;
+        private readonly ProjetoService _projetoService;
+        private readonly DesenvolvedorService _desenvolvedorService;
 
-        private readonly LancadorContext _context;
-
-        public RegistroDeHorasController(LancadorContext context)
+        public RegistroDeHorasController(RegistroDeHorasService registroDeHorasService, ProjetoService projetoService, DesenvolvedorService desenvolvedorService)
         {
-            _context = context;
+            _registroDeHorasService = registroDeHorasService;
+            _projetoService = projetoService;
+            _desenvolvedorService = desenvolvedorService;
         }
+
+        #region Controle da View
 
         // GET: RegistroDeHoras
         public async Task<IActionResult> Index()
         {
-            var registroDeHoras = await _context.RegistrosDeHoras.ToListAsync();
+            var registroDeHoras = await _registroDeHorasService.Get();
 
             foreach (var item in registroDeHoras)
             {
-                item.Projeto = await _context.Projetos.Where(x => x.Id == item.ProjetoId).FirstOrDefaultAsync();
-                item.Desenvolvedor = await _context.Desenvolvedores.Where(x => x.Id == item.DesenvolvedorId).FirstOrDefaultAsync();
+                item.Projeto = await _projetoService.GetById(item.ProjetoId);
+                item.Desenvolvedor = await _desenvolvedorService.GetById(item.DesenvolvedorId);
             }
 
             return View(registroDeHoras);
@@ -43,23 +49,26 @@ namespace Lançador_de_Horas_WebAPI.Controllers
                 return NotFound();
             }
 
-            var registroDeHoras = await _context.RegistrosDeHoras
-                .FirstOrDefaultAsync(m => m.ID == id);
-            registroDeHoras.Projeto = await _context.Projetos.Where(x => x.Id == registroDeHoras.ProjetoId).FirstOrDefaultAsync();
-            registroDeHoras.Desenvolvedor = await _context.Desenvolvedores.Where(x => x.Id == registroDeHoras.DesenvolvedorId).FirstOrDefaultAsync();
+            var registroDeHoras = await _registroDeHorasService.GetById(id);
+
             if (registroDeHoras == null)
             {
                 return NotFound();
+            }
+            else
+            {
+                registroDeHoras.Projeto = await _projetoService.GetById(registroDeHoras.ProjetoId);
+                registroDeHoras.Desenvolvedor = await _desenvolvedorService.GetById(registroDeHoras.DesenvolvedorId);
             }
 
             return View(registroDeHoras);
         }
 
         // GET: RegistroDeHoras/Create
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
-            ViewData["DesenvolvedorId"] = new SelectList(_context.Desenvolvedores, "Id", "Nome");
-            ViewData["ProjetoId"] = new SelectList(_context.Projetos, "Id", "NomeDoProjeto");
+            ViewData["DesenvolvedorId"] = new SelectList(await _desenvolvedorService.Get(), "Id", "Nome");
+            ViewData["ProjetoId"] = new SelectList(await _projetoService.Get(), "Id", "NomeDoProjeto");
             return View();
         }
 
@@ -72,12 +81,11 @@ namespace Lançador_de_Horas_WebAPI.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(registroDeHoras);
-                await _context.SaveChangesAsync();
+                await _registroDeHorasService.Create(registroDeHoras);
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["DesenvolvedorId"] = new SelectList(_context.Desenvolvedores, "Id", "Nome", registroDeHoras.DesenvolvedorId);
-            ViewData["ProjetoId"] = new SelectList(_context.Projetos, "Id", "NomeDoProjeto", registroDeHoras.ProjetoId);
+            ViewData["DesenvolvedorId"] = new SelectList(await _desenvolvedorService.Get(), "Id", "Nome", registroDeHoras.DesenvolvedorId);
+            ViewData["ProjetoId"] = new SelectList(await _projetoService.Get(), "Id", "NomeDoProjeto", registroDeHoras.ProjetoId);
 
             return View(registroDeHoras);
         }
@@ -90,7 +98,8 @@ namespace Lançador_de_Horas_WebAPI.Controllers
                 return NotFound();
             }
 
-            var registroDeHoras = await _context.RegistrosDeHoras.FindAsync(id);
+            var registroDeHoras = await _registroDeHorasService.GetById(id);
+
             if (registroDeHoras == null)
             {
                 return NotFound();
@@ -105,29 +114,18 @@ namespace Lançador_de_Horas_WebAPI.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("ID,DataInicio,DataFim,TotalHoras,DesenvolvedorId,ProjetoId")] RegistroDeHoras registroDeHoras)
         {
-            if (id != registroDeHoras.ID)
+            if (id != registroDeHoras.Id)
             {
                 return NotFound();
             }
 
             if (ModelState.IsValid)
             {
-                try
+                if (await _registroDeHorasService.Update(id, registroDeHoras) == null)
                 {
-                    _context.Update(registroDeHoras);
-                    await _context.SaveChangesAsync();
+                    return NotFound();
                 }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!RegistroDeHorasExists(registroDeHoras.ID))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
+
                 return RedirectToAction(nameof(Index));
             }
             return View(registroDeHoras);
@@ -141,8 +139,8 @@ namespace Lançador_de_Horas_WebAPI.Controllers
                 return NotFound();
             }
 
-            var registroDeHoras = await _context.RegistrosDeHoras
-                .FirstOrDefaultAsync(m => m.ID == id);
+            var registroDeHoras = await _registroDeHorasService.GetById(id);
+
             if (registroDeHoras == null)
             {
                 return NotFound();
@@ -156,9 +154,16 @@ namespace Lançador_de_Horas_WebAPI.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var registroDeHoras = await _context.RegistrosDeHoras.FindAsync(id);
-            _context.RegistrosDeHoras.Remove(registroDeHoras);
-            await _context.SaveChangesAsync();
+            var registroDeHoras = await _registroDeHorasService.GetById(id);
+
+            if (registroDeHoras == null)
+            {
+                return NotFound();
+            }
+
+            await _registroDeHorasService.Delete(registroDeHoras);
+
+            await _registroDeHorasService.Delete(registroDeHoras);
             return RedirectToAction(nameof(Index));
         }
 
@@ -171,7 +176,7 @@ namespace Lançador_de_Horas_WebAPI.Controllers
         [Route("api/[controller]")]
         public async Task<ActionResult<IEnumerable<RegistroDeHoras>>> GetRegistrosDeHoras()
         {
-            return await _context.RegistrosDeHoras.ToListAsync();
+            return await _registroDeHorasService.Get();
         }
 
         // GET: api/RegistrosDeHoras/5
@@ -179,7 +184,7 @@ namespace Lançador_de_Horas_WebAPI.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<RegistroDeHoras>> GetRegistroDeHoras(int id)
         {
-            var registroDeHoras = await _context.RegistrosDeHoras.FindAsync(id);
+            var registroDeHoras = await _registroDeHorasService.GetById(id);
 
             if (registroDeHoras == null)
             {
@@ -196,27 +201,14 @@ namespace Lançador_de_Horas_WebAPI.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutRegistroDeHoras(int id, RegistroDeHoras registroDeHoras)
         {
-            if (id != registroDeHoras.ID)
+            if (id != registroDeHoras.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(registroDeHoras).State = EntityState.Modified;
-
-            try
+            if (await _registroDeHorasService.Update(id, registroDeHoras) == null)
             {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!RegistroDeHorasExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+                return NotFound();
             }
 
             return NoContent();
@@ -229,10 +221,9 @@ namespace Lançador_de_Horas_WebAPI.Controllers
         [HttpPost]
         public async Task<ActionResult<RegistroDeHoras>> PostRegistroDeHoras(RegistroDeHoras registroDeHoras)
         {
-            _context.RegistrosDeHoras.Add(registroDeHoras);
-            await _context.SaveChangesAsync();
+            await _registroDeHorasService.Create(registroDeHoras);
 
-            return CreatedAtAction("GetRegistroDeHoras", new { id = registroDeHoras.ID }, registroDeHoras);
+            return CreatedAtAction("GetDesenvolvedor", new { id = registroDeHoras.Id }, registroDeHoras);
         }
 
         // DELETE: api/RegistrosDeHoras/5
@@ -240,23 +231,18 @@ namespace Lançador_de_Horas_WebAPI.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult<RegistroDeHoras>> DeleteRegistroDeHoras(int id)
         {
-            var registroDeHoras = await _context.RegistrosDeHoras.FindAsync(id);
+            var registroDeHoras = await _registroDeHorasService.GetById(id);
+
             if (registroDeHoras == null)
             {
                 return NotFound();
             }
 
-            _context.RegistrosDeHoras.Remove(registroDeHoras);
-            await _context.SaveChangesAsync();
+            await _registroDeHorasService.Delete(registroDeHoras);
 
             return registroDeHoras;
         }
 
         #endregion Controle da API com Json
-
-        private bool RegistroDeHorasExists(int id)
-        {
-            return _context.RegistrosDeHoras.Any(e => e.ID == id);
-        }
     }
 }

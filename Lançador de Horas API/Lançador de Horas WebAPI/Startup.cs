@@ -32,7 +32,10 @@ namespace Lançador_de_Horas_WebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddTransient<RankingService>();
+            services.AddTransient<RankingService>()
+                .AddTransient<DesenvolvedorService>()
+                .AddTransient<RegistroDeHorasService>()
+                .AddTransient<ProjetoService>();
 
             services.AddDbContext<LancadorContext>(options =>
                     options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
