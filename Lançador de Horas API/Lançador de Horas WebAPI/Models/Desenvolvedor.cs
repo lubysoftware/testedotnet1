@@ -24,9 +24,7 @@ namespace Lançador_de_Horas_WebAPI.Models
 
         [Required]
         [DisplayName("CPF")]
-        [RegularExpression(@"^[0-9].[0-9].[0-9]-[0-9]")]
-        [StringLength(14)]
-        public string CPF { get; private set; }
+        public string CPF { get; set; }
 
         public Desenvolvedor()
         {

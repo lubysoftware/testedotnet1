@@ -1,7 +1,5 @@
 C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\obj\Debug\netcoreapp3.1\Lançador de Horas WebAPI.AssemblyInfoInputs.cache
 C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\obj\Debug\netcoreapp3.1\Lançador de Horas WebAPI.AssemblyInfo.cs
-C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\obj\Debug\netcoreapp3.1\Lançador de Horas WebAPI.RazorAssemblyInfo.cache
-C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\obj\Debug\netcoreapp3.1\Lançador de Horas WebAPI.RazorAssemblyInfo.cs
 C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
@@ -152,26 +150,7 @@ C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas We
 C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\obj\Debug\netcoreapp3.1\Lançador de Horas WebAPI.TagHelpers.input.cache
-C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\obj\Debug\netcoreapp3.1\Lançador de Horas WebAPI.TagHelpers.output.cache
-C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\obj\Debug\netcoreapp3.1\Lançador de Horas WebAPI.RazorCoreGenerate.cache
-C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\obj\Debug\netcoreapp3.1\Razor\Pages\_ValidationScriptsPartial.cshtml.g.cs
-C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
-C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
-C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\obj\Debug\netcoreapp3.1\Razor\Views\Ranking\index.cshtml.g.cs
-C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\obj\Debug\netcoreapp3.1\Razor\Views\RegistroDeHoras\Create.cshtml.g.cs
-C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\obj\Debug\netcoreapp3.1\Razor\Views\RegistroDeHoras\Delete.cshtml.g.cs
-C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\obj\Debug\netcoreapp3.1\Razor\Views\RegistroDeHoras\Details.cshtml.g.cs
-C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\obj\Debug\netcoreapp3.1\Razor\Views\RegistroDeHoras\Edit.cshtml.g.cs
-C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\obj\Debug\netcoreapp3.1\Razor\Views\RegistroDeHoras\Index.cshtml.g.cs
-C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
-C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
-C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
-C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
-C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
 C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\obj\Debug\netcoreapp3.1\Lançador de Horas WebAPI.RazorTargetAssemblyInfo.cache
-C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\obj\Debug\netcoreapp3.1\Lançador de Horas WebAPI.RazorTargetAssemblyInfo.cs
-C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\obj\Debug\netcoreapp3.1\Lançador de Horas WebAPI.Views.pdb
 C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\obj\Debug\netcoreapp3.1\Lançador de Horas WebAPI.csproj.CopyComplete
 C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\obj\Debug\netcoreapp3.1\staticwebassets\Lançador de Horas WebAPI.StaticWebAssets.Manifest.cache
 C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\obj\Debug\netcoreapp3.1\staticwebassets\Lançador de Horas WebAPI.StaticWebAssets.xml
@@ -186,5 +165,10 @@ C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas We
 C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
 C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\obj\Debug\netcoreapp3.1\Lançador de Horas WebAPI.csproj.CoreCompileInputs.cache
+C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\obj\Debug\netcoreapp3.1\Lançador de Horas WebAPI.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\josim\Desktop\testedotnet1\Lançador de Horas API\Lançador de Horas WebAPI\obj\Debug\netcoreapp3.1\Lançador de Horas WebAPI.MvcApplicationPartsAssemblyInfo.cache

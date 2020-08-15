@@ -37,13 +37,19 @@ namespace Lançador_de_Horas_WebAPI
                 .AddTransient<RegistroDeHorasService>()
                 .AddTransient<ProjetoService>();
 
+            //Serviço para acessar o contexto do banco de dados
             services.AddDbContext<LancadorContext>(options =>
                     options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
 
+            //Serviço do Swagger
+            services.AddSwaggerGen();
+
+            //Serviço para autenticação do Identity
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<LancadorContext>()
                 .AddDefaultTokenProviders();
 
+            //Serviço para autenticação via JWT
             services.AddAuthentication(x =>
            {
                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -78,12 +84,27 @@ namespace Lançador_de_Horas_WebAPI
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+            //Habilita o middleware para o serviço gerar um Swagger como um Json endpoint.
+            app.UseSwagger();
+
+            //Habilita o middleware para o serviço Swagger-UI(HTML, JS, CSS, etc.),
+            //Especifica um Swagger Json endpont.
+            app.UseSwaggerUI(c =>
+                {
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Lançador de Horas");
+                }
+            );
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();
 
+            //Habilita o servidor a usar autenticação
             app.UseAuthentication();
+
+            //Habilita o servidor a usar autorização de acesso
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
