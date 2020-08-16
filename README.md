@@ -36,5 +36,4 @@ Desenvolver um serviço que seja capaz de gerar um lançamento de horas.
 
 #### Identificação:
 Nome: Josimar da silva vieira <br/>
-E-mail: josimarsv@outlook.com <br/>
-Live: https://lubyteste.azurewebsites.net/
+E-mail: josimarsv@outlook.com

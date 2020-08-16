@@ -31,5 +31,5 @@ jobs:
       with:
         app-name: 'lubyteste'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_a0805a394f50401780201463df8ab1cb }}
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_ee6d70f1738b4409b9ea16f56bf8649a }}
         package: ${{env.DOTNET_ROOT}}/myapp 
