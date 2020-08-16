@@ -1,17 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Lançador_de_Horas_WebAPI.Models;
-using Lançador_de_Horas_WebAPI.Context;
+﻿using Lançador_de_Horas_WebAPI.Models;
 using Lançador_de_Horas_WebAPI.Services;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Lançador_de_Horas_WebAPI.Controllers
 {
+    /// <summary>
+    /// API CRUD para desenvolvedor
+    /// </summary>
     [Produces("application/json")]
     [Route("api/[controller]")]
     [Authorize]
@@ -20,6 +18,10 @@ namespace Lançador_de_Horas_WebAPI.Controllers
     {
         private readonly DesenvolvedorService _desenvolvedor;
 
+        /// <summary>
+        /// Contrutor
+        /// </summary>
+        /// <param name="desenvolvedor">Serviço de CRUD ao banco</param>
         public DesenvolvedoresController(DesenvolvedorService desenvolvedor)
         {
             _desenvolvedor = desenvolvedor;
@@ -92,14 +94,13 @@ namespace Lançador_de_Horas_WebAPI.Controllers
         ///
         ///     POST
         ///     {
-        ///        "id": 1,
-        ///        "name": "João",
+        ///        "nome": "João",
         ///        "sobrenome": "da silva",
         ///        "cpf": "123.456.789-00"
         ///     }
         ///
         /// </remarks>
-        /// <param name="desenvolvedor">Objeto com as alterações</param>
+        /// <param name="desenvolvedor">Objeto desenvolvedor a ser inserido</param>
         /// <returns>O desenvolvedor criado</returns>
         /// /// <response code="201">Retorna o novo desenvolvedor criado</response>
         /// <response code="400">Se o desenvolvedor for nulo</response>

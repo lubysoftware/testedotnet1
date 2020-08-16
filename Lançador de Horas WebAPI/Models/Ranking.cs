@@ -1,23 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Lançador_de_Horas_WebAPI.Models
 {
+    /// <summary>
+    /// Ranking dos desenvolvedores
+    /// </summary>
     [NotMapped]
     public class Ranking
     {
+        /// Desenvolvedor
         [DisplayName("Nome do desenvolvedor")]
-        public string Nome { get; set; }
+        public Desenvolvedor Desenvolvedor { get; set; }
 
+        /// Total de horas da semana
         [DisplayName("Total de horas da semana")]
         [DataType(DataType.Time)]
         public TimeSpan MediaHoras { get; set; }
 
+        /// <summary>
+        /// Construtor
+        /// </summary>
         public Ranking()
         {
         }

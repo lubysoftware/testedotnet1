@@ -39,14 +39,13 @@
             
                  POST
                  {
-                    "id": 1,
-                    "name": "João",
+                    "nome": "João",
                     "sobrenome": "da silva",
                     "cpf": "123.456.789-00"
                  }
             
              </remarks>
-             <param name="desenvolvedor">Objeto com as alterações</param>
+             <param name="desenvolvedor">Objeto desenvolvedor a ser inserido</param>
              <returns>O desenvolvedor criado</returns>
              /// <response code="201">Retorna o novo desenvolvedor criado</response>
              <response code="400">Se o desenvolvedor for nulo</response>
@@ -65,6 +64,164 @@
             Redireciona para a página do Swagger
             </summary>
             <returns>Retornar um acão de redirecionamento</returns>
+        </member>
+        <member name="M:Lançador_de_Horas_WebAPI.Controllers.ProjetosController.GetProjetos">
+            <summary>
+            Obtém todos os projetos registrados
+            </summary>
+            <returns>A lista de projetos</returns>
+            <response code="401">Token de acesso não autorizado</response>
+        </member>
+        <member name="M:Lançador_de_Horas_WebAPI.Controllers.ProjetosController.GetProjeto(System.Int32)">
+            <summary>
+            Obtém um projeto pelo Id
+            </summary>
+            <param name="id">Id do projeto</param>
+            <returns>O projeto</returns>
+            <response code="401">Token de acesso não autorizado</response>
+        </member>
+        <member name="M:Lançador_de_Horas_WebAPI.Controllers.ProjetosController.PutProjeto(System.Int32,Lançador_de_Horas_WebAPI.Models.Projeto)">
+            <summary>
+            Atualiza um projeto
+            </summary>
+            <param name="id">Id do projeto a ser alterado</param>
+            <param name="projeto">Objeto com as alterações</param>
+            <returns>O projeto criado</returns>
+            /// <response code="201">Retorna o novo projeto atualizado</response>
+            <response code="400">Se o projeto for nulo</response>
+            <response code="401">Token de acesso não autorizado</response>
+        </member>
+        <member name="M:Lançador_de_Horas_WebAPI.Controllers.ProjetosController.PostProjeto(Lançador_de_Horas_WebAPI.Models.Projeto)">
+             <summary>
+             Insere um projeto
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 POST
+                 {
+                    "nome": "João",
+                    "custo": "23223.88",
+                 }
+            
+             </remarks>
+             <param name="projeto">Objeto projeto a ser inserido</param>
+             <returns>O projeto criado</returns>
+             /// <response code="201">Retorna o novo projeto criado</response>
+             <response code="400">Se o projeto for nulo</response>
+             <response code="401">Token de acesso não autorizado</response>
+        </member>
+        <member name="M:Lançador_de_Horas_WebAPI.Controllers.ProjetosController.DeleteProjeto(System.Int32)">
+            <summary>
+            Deleta um projeto
+            </summary>
+            <param name="id">Id do projeto a ser alterado</param>
+            <returns>Retorna o projeto deletado</returns>
+            <response code="401">Token de acesso não autorizado</response>
+        </member>
+        <member name="M:Lançador_de_Horas_WebAPI.Controllers.RankingController.GetRegistrosDeHoras">
+            <summary>
+            Obtém os 5 desenvolvedores da semana com maior média de horas trabalhadas.
+            </summary>
+            <returns>Retorna uma lista com os 5 desenvolvedores da semana com maior média de horas trabalhadas.</returns>
+            <response code="401">Token de acesso não autorizado</response>
+        </member>
+        <member name="M:Lançador_de_Horas_WebAPI.Controllers.RegistrosDeHorasController.GetRegistrosDeHoras">
+            <summary>
+            Obtém todos os registros de horas
+            </summary>
+            <returns>A lista de registros de horas</returns>
+            <response code="401">Token de acesso não autorizado</response>
+        </member>
+        <member name="M:Lançador_de_Horas_WebAPI.Controllers.RegistrosDeHorasController.GetRegistroDeHoras(System.Int32)">
+            <summary>
+            Obtém um registro de hora pelo Id
+            </summary>
+            <param name="id">Id do registro de hora</param>
+            <returns>O registro de hora</returns>
+            <response code="401">Token de acesso não autorizado</response>
+        </member>
+        <member name="M:Lançador_de_Horas_WebAPI.Controllers.RegistrosDeHorasController.PutRegistroDeHoras(System.Int32,Lançador_de_Horas_WebAPI.Models.RegistroDeHoras)">
+            <summary>
+            Atualiza um registro de hora
+            </summary>
+            <param name="id">Id do registro de hora a ser alterado</param>
+            <param name="registroDeHoras">Objeto com as alterações</param>
+            <returns>O registro de hora criado</returns>
+            /// <response code="201">Retorna o novo registro de hora atualizado</response>
+            <response code="400">Se o registro de hora for nulo</response>
+            <response code="401">Token de acesso não autorizado</response>
+        </member>
+        <member name="M:Lançador_de_Horas_WebAPI.Controllers.RegistrosDeHorasController.PostRegistroDeHoras(Lançador_de_Horas_WebAPI.Models.RegistroDeHoras)">
+             <summary>
+             Insere um registro de hora
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 POST
+                 {
+                    "dataInicio": "2020-08-15T22:58:00.147Z",
+                    "dataFim": "2020-08-15T22:58:00.147Z",
+                    "totalHoras": "0.08:20:00",
+                    "desenvolvedorId": 1,
+                    "projetoId": 1,
+                 }
+            
+             </remarks>
+             <param name="registroDeHoras">Objeto registro de horas a ser inserido</param>
+             <returns>O registro de hora criado</returns>
+             /// <response code="201">Retorna o novo registro de hora criado</response>
+             <response code="400">Se o registro de hora for nulo</response>
+             <response code="401">Token de acesso não autorizado</response>
+        </member>
+        <member name="M:Lançador_de_Horas_WebAPI.Controllers.RegistrosDeHorasController.DeleteRegistroDeHoras(System.Int32)">
+            <summary>
+            Deleta um registro de hora
+            </summary>
+            <param name="id">Id do registro de hora a ser alterado</param>
+            <returns>Retorna o registro de hora deletado</returns>
+            <response code="401">Token de acesso não autorizado</response>
+        </member>
+        <member name="M:Lançador_de_Horas_WebAPI.Controllers.UsuariosController.Get">
+            <summary>
+            Retorna um objeto do tipo Claim
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Lançador_de_Horas_WebAPI.Controllers.UsuariosController.CreateUser(Lançador_de_Horas_WebAPI.Models.UserInfo)">
+             <summary>
+             Insere um usuário
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 POST
+                 {
+                    "email": "exemplo@exemplo.com",
+                    "password": "123ABC-abc,
+                 }
+            
+             </remarks>
+             <param name="model">Objeto identity contido no body</param>
+             <returns>O usuário criado</returns>
+             /// <response code="201">Retorna o novo usuário criado</response>
+             <response code="400">Se o usuário for nulo</response>
+             <response code="401">Token de acesso não autorizado</response>
+        </member>
+        <member name="M:Lançador_de_Horas_WebAPI.Controllers.UsuariosController.Login(Lançador_de_Horas_WebAPI.Models.UserInfo)">
+            <summary>
+            Obtém um token para acesso a api
+            </summary>
+            <param name="userInfo">Objeto identity contido no body</param>
+            <returns>Retorna um token e uma tempo de expiração</returns>
+        </member>
+        <member name="M:Lançador_de_Horas_WebAPI.Controllers.UsuariosController.BuildToken(Lançador_de_Horas_WebAPI.Models.UserInfo)">
+            <summary>
+            Gera um novo token
+            </summary>
+            <param name="userInfo">Objeto identity</param>
+            <returns>Retorna um novo token com tempo de expiração</returns>
         </member>
         <member name="M:Lançador_de_Horas_WebAPI.Models.RegistroDeHoras.#ctor">
             <summary>

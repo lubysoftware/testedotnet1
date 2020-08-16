@@ -1,11 +1,10 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Lançador_de_Horas_WebAPI.Models
 {
+    /// <summary>
+    /// Atributos personalizados do usuário
+    /// </summary>
     public class ApplicationUser : IdentityUser
     {
     }

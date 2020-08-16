@@ -1,19 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
-using System.Security.Claims;
-using System.Text;
-using System.Threading.Tasks;
-using Lançador_de_Horas_WebAPI.Models;
-using Microsoft.AspNetCore.Http;
+﻿using Lançador_de_Horas_WebAPI.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using System;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Lançador_de_Horas_WebAPI.Controllers
 {
+    /// <summary>
+    /// API CRUD para Usuários
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class UsuariosController : ControllerBase
@@ -22,6 +22,12 @@ namespace Lançador_de_Horas_WebAPI.Controllers
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly IConfiguration _configuration;
 
+        /// <summary>
+        /// Contrutor
+        /// </summary>
+        /// <param name="userManager">Gerenciador de usuário</param>
+        /// <param name="signInManager">Gerenciador de Login</param>
+        /// <param name="configuration">Configuração do serviço</param>
         public UsuariosController(UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
             IConfiguration configuration)
@@ -31,12 +37,35 @@ namespace Lançador_de_Horas_WebAPI.Controllers
             _configuration = configuration;
         }
 
+        /// <summary>
+        /// Retorna um objeto do tipo Claim
+        /// </summary>
+        /// <returns></returns>
+        [ApiExplorerSettings(IgnoreApi = true)]
         [HttpGet]
         public ActionResult<string> Get()
         {
             return " << Controlador UsuariosController :: WebApiUsuarios >> ";
         }
 
+        /// <summary>
+        /// Insere um usuário
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     POST
+        ///     {
+        ///        "email": "exemplo@exemplo.com",
+        ///        "password": "123ABC-abc,
+        ///     }
+        ///
+        /// </remarks>
+        /// <param name="model">Objeto identity contido no body</param>
+        /// <returns>O usuário criado</returns>
+        /// /// <response code="201">Retorna o novo usuário criado</response>
+        /// <response code="400">Se o usuário for nulo</response>
+        /// <response code="401">Token de acesso não autorizado</response>
         [HttpPost("Criar")]
         public async Task<ActionResult<UserToken>> CreateUser([FromBody] UserInfo model)
         {
@@ -52,6 +81,11 @@ namespace Lançador_de_Horas_WebAPI.Controllers
             }
         }
 
+        /// <summary>
+        /// Obtém um token para acesso a api
+        /// </summary>
+        /// <param name="userInfo">Objeto identity contido no body</param>
+        /// <returns>Retorna um token e uma tempo de expiração</returns>
         [HttpPost("Login")]
         public async Task<ActionResult<UserToken>> Login([FromBody] UserInfo userInfo)
         {
@@ -69,6 +103,11 @@ namespace Lançador_de_Horas_WebAPI.Controllers
             }
         }
 
+        /// <summary>
+        /// Gera um novo token
+        /// </summary>
+        /// <param name="userInfo">Objeto identity</param>
+        /// <returns>Retorna um novo token com tempo de expiração</returns>
         private UserToken BuildToken(UserInfo userInfo)
         {
             var claims = new[]

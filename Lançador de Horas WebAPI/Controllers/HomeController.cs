@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Routing;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace Lançador_de_Horas_WebAPI.Controllers
 {
+    /// <summary>
+    /// Classe de redirecionamento para o Swagger
+    /// </summary>
     [Route("")]
     [ApiExplorerSettings(IgnoreApi = true)]
     public class HomeController : Controller

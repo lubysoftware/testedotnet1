@@ -6,12 +6,10 @@ namespace Lançador_de_Horas_WebAPI.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-
         }
     }
 }

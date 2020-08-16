@@ -1,6 +1,6 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Metadata;
+﻿using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
+using System;
 
 namespace Lançador_de_Horas_WebAPI.Migrations
 {

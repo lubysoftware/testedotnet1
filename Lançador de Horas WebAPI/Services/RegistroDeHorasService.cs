@@ -1,7 +1,6 @@
 ﻿using Lançador_de_Horas_WebAPI.Context;
 using Lançador_de_Horas_WebAPI.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
