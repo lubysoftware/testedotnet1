@@ -57,7 +57,7 @@ namespace Lançador_de_Horas_WebAPI.Controllers
         ///     POST
         ///     {
         ///        "email": "exemplo@exemplo.com",
-        ///        "password": "123ABC-abc,
+        ///        "password": "123ABC-abc",
         ///     }
         ///
         /// </remarks>

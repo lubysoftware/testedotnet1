@@ -3,14 +3,16 @@ using System;
 using Lançador_de_Horas_WebAPI.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Lançador_de_Horas_WebAPI.Migrations
 {
     [DbContext(typeof(LancadorContext))]
-    partial class LancadorContextModelSnapshot : ModelSnapshot
+    [Migration("20200816003742_Inclusão de datas de criação e se ativos nas classes")]
+    partial class Inclusãodedatasdecriaçãoeseativosnasclasses
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -90,12 +92,13 @@ namespace Lançador_de_Horas_WebAPI.Migrations
                     b.Property<bool>("Ativo")
                         .HasColumnType("tinyint(1)");
 
-                    b.Property<string>("Nome")
+                    b.Property<string>("CPF")
                         .IsRequired()
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.Property<int>("RG")
-                        .HasColumnType("int");
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("Sobrenome")
                         .IsRequired()

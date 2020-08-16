@@ -15,6 +15,7 @@ using System;
 using System.IO;
 using System.Reflection;
 using System.Text;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace Lançador_de_Horas_WebAPI
 {

@@ -68,6 +68,7 @@ namespace Lançador_de_Horas_WebAPI.Controllers
         /// <param name="projeto">Objeto com as alterações</param>
         /// <returns>O projeto criado</returns>
         /// /// <response code="201">Retorna o novo projeto atualizado</response>
+        /// <response code="204">Se a atualização for bem sucedida</response>
         /// <response code="400">Se o projeto for nulo</response>
         /// <response code="401">Token de acesso não autorizado</response>
         [HttpPut("{id}")]
@@ -96,7 +97,7 @@ namespace Lançador_de_Horas_WebAPI.Controllers
         ///     POST
         ///     {
         ///        "nome": "João",
-        ///        "custo": "23223.88",
+        ///        "custo": 23223.88,
         ///     }
         ///
         /// </remarks>

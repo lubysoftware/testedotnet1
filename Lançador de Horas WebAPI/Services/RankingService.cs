@@ -48,8 +48,14 @@ namespace Lançador_de_Horas_WebAPI.Services
                 ranking.Add(new Ranking()
                 {
                     Desenvolvedor = await _context.Desenvolvedores.Where(dv => dv.Id == reg.Key).FirstOrDefaultAsync(),
-                    MediaHoras = total / 7
+                    MediaHoras = (total / 7)
                 });
+            }
+
+            ranking = ranking.OrderByDescending(x => x.MediaHoras).ToList();
+            if (ranking.Count >= 5)
+            {
+                ranking.RemoveRange(0, 5);
             }
 
             return ranking;

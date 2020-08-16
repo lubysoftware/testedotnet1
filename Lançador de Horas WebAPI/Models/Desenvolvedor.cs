@@ -23,10 +23,10 @@ namespace Lançador_de_Horas_WebAPI.Models
         [DisplayName("Sobrenome")]
         public string Sobrenome { get; set; }
 
-        /// CPF do desenvolvedor
+        ///numero do RG
         [Required]
-        [DisplayName("CPF")]
-        public string CPF { get; set; }
+        [DisplayName("RG")]
+        public int RG { get; set; }
 
         /// Data de cadastro
         public readonly DateTime DataCriacao = DateTime.Now;

@@ -67,6 +67,7 @@ namespace Lançador_de_Horas_WebAPI.Controllers
         /// <param name="registroDeHoras">Objeto com as alterações</param>
         /// <returns>O registro de hora criado</returns>
         /// /// <response code="201">Retorna o novo registro de hora atualizado</response>
+        /// <response code="204">Se a atualização for bem sucedida</response>
         /// <response code="400">Se o registro de hora for nulo</response>
         /// <response code="401">Token de acesso não autorizado</response>
         [HttpPut("{id}")]

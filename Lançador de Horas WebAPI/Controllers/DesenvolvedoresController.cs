@@ -66,7 +66,8 @@ namespace Lançador_de_Horas_WebAPI.Controllers
         /// <param name="id">Id do desenvolvedor a ser alterado</param>
         /// <param name="desenvolvedor">Objeto com as alterações</param>
         /// <returns>O desenvolvedor criado</returns>
-        /// /// <response code="201">Retorna o novo desenvolvedor atualizado</response>
+        /// <response code="201">Retorna o novo desenvolvedor atualizado</response>
+        /// <response code="204">Se a atualização for bem sucedida</response>
         /// <response code="400">Se o desenvolvedor for nulo</response>
         /// <response code="401">Token de acesso não autorizado</response>
         [HttpPut("{id}")]
@@ -96,7 +97,7 @@ namespace Lançador_de_Horas_WebAPI.Controllers
         ///     {
         ///        "nome": "João",
         ///        "sobrenome": "da silva",
-        ///        "cpf": "123.456.789-00"
+        ///        "rg": 123456789
         ///     }
         ///
         /// </remarks>

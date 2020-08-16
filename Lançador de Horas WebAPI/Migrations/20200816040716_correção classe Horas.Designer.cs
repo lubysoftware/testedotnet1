@@ -3,14 +3,16 @@ using System;
 using Lançador_de_Horas_WebAPI.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Lançador_de_Horas_WebAPI.Migrations
 {
     [DbContext(typeof(LancadorContext))]
-    partial class LancadorContextModelSnapshot : ModelSnapshot
+    [Migration("20200816040716_correção classe Horas")]
+    partial class correçãoclasseHoras
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Globalization;
 
 namespace Lançador_de_Horas_WebAPI.Models
 {
@@ -17,8 +18,15 @@ namespace Lançador_de_Horas_WebAPI.Models
 
         /// Total de horas da semana
         [DisplayName("Total de horas da semana")]
-        [DataType(DataType.Time)]
+        [System.Text.Json.Serialization.JsonIgnore]
         public TimeSpan MediaHoras { get; set; }
+
+        /// Atributo para serializar JSON
+        public string MediaHorasString
+        {
+            get => MediaHoras.ToString();
+            set => MediaHoras = TimeSpan.Parse(value);
+        }
 
         /// <summary>
         /// Construtor
