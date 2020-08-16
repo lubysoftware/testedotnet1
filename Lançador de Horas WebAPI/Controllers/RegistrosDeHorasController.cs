@@ -99,8 +99,10 @@ namespace Lançador_de_Horas_WebAPI.Controllers
         ///        "dataFim": "2020-08-15T22:58:00.147Z",
         ///        "totalHoras": "0.08:20:00",
         ///        "desenvolvedorId": 1,
-        ///        "projetoId": 1,
+        ///        "projetoId": 1
         ///     }
+        ///
+        ///     Obs: Hora no formato {dias}.{horas}:{Minutos}:{segundos}
         ///
         /// </remarks>
         /// <param name="registroDeHoras">Objeto registro de horas a ser inserido</param>

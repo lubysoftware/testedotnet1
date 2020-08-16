@@ -57,7 +57,7 @@ namespace Lançador_de_Horas_WebAPI.Controllers
         ///     POST
         ///     {
         ///        "email": "exemplo@exemplo.com",
-        ///        "password": "123ABC-abc",
+        ///        "password": "123ABC-abc"
         ///     }
         ///
         /// </remarks>
@@ -118,7 +118,7 @@ namespace Lançador_de_Horas_WebAPI.Controllers
             };
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:key"]));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-            // tempo de expiração do token: 1 hora
+            // tempo de expiração do token: 5 minutos
             var expiration = DateTime.Now.AddMinutes(5);
             JwtSecurityToken token = new JwtSecurityToken(
                issuer: null,

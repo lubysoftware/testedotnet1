@@ -3,13 +3,14 @@ using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Lançador_de_Horas_WebAPI.Interfaces;
 
 namespace Lançador_de_Horas_WebAPI.Models
 {
     /// <summary>
     /// Registro de horas lançadas
     /// </summary>
-    public class RegistroDeHoras
+    public class RegistroDeHoras : IRegistroDeHoras
     {
         /// Identificador
         [Key]

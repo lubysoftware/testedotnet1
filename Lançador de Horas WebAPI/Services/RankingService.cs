@@ -53,9 +53,9 @@ namespace Lançador_de_Horas_WebAPI.Services
             }
 
             ranking = ranking.OrderByDescending(x => x.MediaHoras).ToList();
-            if (ranking.Count >= 5)
+            if (ranking.Count > 5)
             {
-                ranking.RemoveRange(0, 5);
+                ranking.RemoveAt(5);
             }
 
             return ranking;
