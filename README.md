@@ -35,5 +35,5 @@ Desenvolver um serviço que seja capaz de gerar um lançamento de horas.
 - Implementar autenticação JWT com expiração de 5 minutos
 
 #### Identificação:
-Nome: <br/>
-E-mail: 
+Nome: Gabriel Alves Tomé de Souza <br/>
+E-mail: gabriel_3404@hotmail.com
