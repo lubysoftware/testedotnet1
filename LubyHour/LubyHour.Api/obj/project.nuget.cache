@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "efCGix8iVgs1KfAgR0fI9cYaHpnM8jElmxJqjZo3t+W1x5AoKgIwbXpTt0BCeVuWkOQ1U2CgypT60ybeeivT+g==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\vitim\\source\\repos\\testedotnet1\\LubyHour\\LubyHour.Api\\LubyHour.Api.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\vitim\\.nuget\\packages\\flunt\\1.0.5\\flunt.1.0.5.nupkg.sha512"
+  ],
+  "logs": []
+}
