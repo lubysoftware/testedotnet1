@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LubyHour.Api</name>
+    </assembly>
+    <members>
+        <member name="M:LubyHour.Api.Controllers.ManagementController.GetAllManagement">
+            <summary>
+            Busca Todos os Lançamentos
+            </summary>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LubyHour.Api.Controllers.ManagementController.GetRank">
+            <summary>
+            Busca o rank dos 5 Desenvolvedores que mais trabalharam
+            </summary>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LubyHour.Api.Controllers.ManagementController.GetManagementById(LubyHour.Domain.Commands.Input.Management.GetManagementByIdCommand)">
+            <summary>
+            Busca um Lançamento pelo ID
+            </summary>
+            <param name="command">Dados da Categoria</param>
+            <returns></returns>
+        </member>
+        <member name="M:LubyHour.Api.Controllers.ManagementController.PostManagement(LubyHour.Domain.Commands.Input.Management.PostManagementCommand)">
+            <summary>
+            Adiciona um novo Lançamento
+            </summary>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LubyHour.Api.Controllers.ManagementController.UpdateManagement(LubyHour.Domain.Commands.Input.Management.UpdateManagementCommand)">
+            <summary>
+            Atualiza um Lançamento
+            </summary>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LubyHour.Api.Controllers.ManagementController.DeleteManagement(LubyHour.Domain.Commands.Input.Management.DeleteManagementCommand)">
+            <summary>
+            Remove um Lançamento
+            </summary>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

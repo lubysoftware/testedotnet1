@@ -81,3 +81,5 @@ D:\Trabalho\Pessoais\Projetos\testedotnet1\LubyHour\LubyHour.Api\bin\Debug\net5.
 D:\Trabalho\Pessoais\Projetos\testedotnet1\LubyHour\LubyHour.Api\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
 D:\Trabalho\Pessoais\Projetos\testedotnet1\LubyHour\LubyHour.Api\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\Trabalho\Pessoais\Projetos\testedotnet1\LubyHour\LubyHour.Api\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Trabalho\Pessoais\Projetos\testedotnet1\LubyHour\LubyHour.Api\bin\Debug\net5.0\LubyHour.Api.xml
+D:\Trabalho\Pessoais\Projetos\testedotnet1\LubyHour\LubyHour.Api\obj\Debug\net5.0\LubyHour.Api.xml
