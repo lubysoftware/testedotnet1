@@ -7,3 +7,12 @@ C:\Users\vitim\source\repos\testedotnet1\LubyHour\LubyHour.Domain\bin\Debug\net5
 C:\Users\vitim\source\repos\testedotnet1\LubyHour\LubyHour.Domain\bin\Debug\net5.0\LubyHour.Domain.pdb
 C:\Users\vitim\source\repos\testedotnet1\LubyHour\LubyHour.Domain\obj\Debug\net5.0\LubyHour.Domain.dll
 C:\Users\vitim\source\repos\testedotnet1\LubyHour\LubyHour.Domain\obj\Debug\net5.0\LubyHour.Domain.pdb
+D:\Trabalho\Pessoais\Projetos\testedotnet1\LubyHour\LubyHour.Domain\obj\Debug\net5.0\LubyHour.Domain.csprojAssemblyReference.cache
+D:\Trabalho\Pessoais\Projetos\testedotnet1\LubyHour\LubyHour.Domain\obj\Debug\net5.0\LubyHour.Domain.AssemblyInfoInputs.cache
+D:\Trabalho\Pessoais\Projetos\testedotnet1\LubyHour\LubyHour.Domain\obj\Debug\net5.0\LubyHour.Domain.AssemblyInfo.cs
+D:\Trabalho\Pessoais\Projetos\testedotnet1\LubyHour\LubyHour.Domain\obj\Debug\net5.0\LubyHour.Domain.csproj.CoreCompileInputs.cache
+D:\Trabalho\Pessoais\Projetos\testedotnet1\LubyHour\LubyHour.Domain\obj\Debug\net5.0\LubyHour.Domain.dll
+D:\Trabalho\Pessoais\Projetos\testedotnet1\LubyHour\LubyHour.Domain\obj\Debug\net5.0\LubyHour.Domain.pdb
+D:\Trabalho\Pessoais\Projetos\testedotnet1\LubyHour\LubyHour.Domain\bin\Debug\net5.0\LubyHour.Domain.deps.json
+D:\Trabalho\Pessoais\Projetos\testedotnet1\LubyHour\LubyHour.Domain\bin\Debug\net5.0\LubyHour.Domain.dll
+D:\Trabalho\Pessoais\Projetos\testedotnet1\LubyHour\LubyHour.Domain\bin\Debug\net5.0\LubyHour.Domain.pdb

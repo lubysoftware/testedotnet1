@@ -3,7 +3,9 @@
     "",
     "\\LubyHour",
     "\\LubyHour\\LubyHour.Domain",
-    "\\LubyHour\\LubyHour.Domain\\Interfaces"
+    "\\LubyHour\\LubyHour.Domain\\Interfaces",
+    "\\LubyHour\\LubyHour.Infra",
+    "\\LubyHour\\LubyHour.Infra\\Repositories"
   ],
   "SelectedNode": "\\LubyHour\\LubyHour.sln",
   "PreviewInSolutionExplorer": false

@@ -2,6 +2,7 @@
 using LubyHour.Domain.Commands.output;
 using LubyHour.Domain.Entities;
 using LubyHour.Domain.Interfaces;
+using LubyHour.Domain.Interfaces.IRepositories;
 using System;
 using System.Threading.Tasks;
 
@@ -13,8 +14,8 @@ namespace LubyHour.Domain.Handlers
         IHandler<UpdateManagementCommand>,
         IHandler<DeleteManagementCommand>
     {
-        private readonly IRepository _repository;
-        public ManagementHandler(IRepository repository)
+        private readonly IManagementRepository _repository;
+        public ManagementHandler(IManagementRepository repository)
         {
             _repository = repository;
         }

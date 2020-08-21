@@ -10,3 +10,15 @@ C:\Users\vitim\source\repos\testedotnet1\LubyHour\LubyHour.Infra\obj\Debug\net5.
 C:\Users\vitim\source\repos\testedotnet1\LubyHour\LubyHour.Infra\obj\Debug\net5.0\LubyHour.Infra.csproj.CopyComplete
 C:\Users\vitim\source\repos\testedotnet1\LubyHour\LubyHour.Infra\obj\Debug\net5.0\LubyHour.Infra.dll
 C:\Users\vitim\source\repos\testedotnet1\LubyHour\LubyHour.Infra\obj\Debug\net5.0\LubyHour.Infra.pdb
+D:\Trabalho\Pessoais\Projetos\testedotnet1\LubyHour\LubyHour.Infra\obj\Debug\net5.0\LubyHour.Infra.csprojAssemblyReference.cache
+D:\Trabalho\Pessoais\Projetos\testedotnet1\LubyHour\LubyHour.Infra\obj\Debug\net5.0\LubyHour.Infra.AssemblyInfoInputs.cache
+D:\Trabalho\Pessoais\Projetos\testedotnet1\LubyHour\LubyHour.Infra\obj\Debug\net5.0\LubyHour.Infra.AssemblyInfo.cs
+D:\Trabalho\Pessoais\Projetos\testedotnet1\LubyHour\LubyHour.Infra\obj\Debug\net5.0\LubyHour.Infra.csproj.CoreCompileInputs.cache
+D:\Trabalho\Pessoais\Projetos\testedotnet1\LubyHour\LubyHour.Infra\obj\Debug\net5.0\LubyHour.Infra.dll
+D:\Trabalho\Pessoais\Projetos\testedotnet1\LubyHour\LubyHour.Infra\obj\Debug\net5.0\LubyHour.Infra.pdb
+D:\Trabalho\Pessoais\Projetos\testedotnet1\LubyHour\LubyHour.Infra\bin\Debug\net5.0\LubyHour.Infra.deps.json
+D:\Trabalho\Pessoais\Projetos\testedotnet1\LubyHour\LubyHour.Infra\bin\Debug\net5.0\LubyHour.Infra.dll
+D:\Trabalho\Pessoais\Projetos\testedotnet1\LubyHour\LubyHour.Infra\bin\Debug\net5.0\LubyHour.Infra.pdb
+D:\Trabalho\Pessoais\Projetos\testedotnet1\LubyHour\LubyHour.Infra\bin\Debug\net5.0\LubyHour.Domain.dll
+D:\Trabalho\Pessoais\Projetos\testedotnet1\LubyHour\LubyHour.Infra\bin\Debug\net5.0\LubyHour.Domain.pdb
+D:\Trabalho\Pessoais\Projetos\testedotnet1\LubyHour\LubyHour.Infra\obj\Debug\net5.0\LubyHour.Infra.csproj.CopyComplete
