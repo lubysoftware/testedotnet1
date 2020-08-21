@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ahb2OK1Tb+qM+6QNAUwwtdQp2X68BdRvyL7Vij4+vD9PMldBqcjpBEL+SsrWJP37xgOnOWFLzEZ0OF8xhU9Oag==",
+  "dgSpecHash": "csk7X6hG2/qQYgOaZfCIb6Wue551FpPv0tE/MqYeZVyt/dp+UhNxB5OeGjbD+R705gQpfvMtzqzqpqatjsYLrA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\vitim\\source\\repos\\testedotnet1\\LubyHour\\LubyHour.Infra\\LubyHour.Infra.csproj",
+  "projectFilePath": "D:\\Trabalho\\Pessoais\\Projetos\\testedotnet1\\LubyHour\\LubyHour.Infra\\LubyHour.Infra.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vitim\\.nuget\\packages\\flunt\\1.0.5\\flunt.1.0.5.nupkg.sha512"
   ],

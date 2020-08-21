@@ -38,11 +38,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\vitim\\source\\repos\\testedotnet1\\LubyHour\\LubyHour.Domain\\LubyHour.Domain.csproj",
+      "projectUniqueName": "D:\\Trabalho\\Pessoais\\Projetos\\testedotnet1\\LubyHour\\LubyHour.Domain\\LubyHour.Domain.csproj",
       "projectName": "LubyHour.Domain",
-      "projectPath": "C:\\Users\\vitim\\source\\repos\\testedotnet1\\LubyHour\\LubyHour.Domain\\LubyHour.Domain.csproj",
+      "projectPath": "D:\\Trabalho\\Pessoais\\Projetos\\testedotnet1\\LubyHour\\LubyHour.Domain\\LubyHour.Domain.csproj",
       "packagesPath": "C:\\Users\\vitim\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\vitim\\source\\repos\\testedotnet1\\LubyHour\\LubyHour.Domain\\obj\\",
+      "outputPath": "D:\\Trabalho\\Pessoais\\Projetos\\testedotnet1\\LubyHour\\LubyHour.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\vitim\\AppData\\Roaming\\NuGet\\NuGet.Config",

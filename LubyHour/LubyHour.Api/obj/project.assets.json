@@ -75,11 +75,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\vitim\\source\\repos\\testedotnet1\\LubyHour\\LubyHour.Api\\LubyHour.Api.csproj",
+      "projectUniqueName": "D:\\Trabalho\\Pessoais\\Projetos\\testedotnet1\\LubyHour\\LubyHour.Api\\LubyHour.Api.csproj",
       "projectName": "LubyHour.Api",
-      "projectPath": "C:\\Users\\vitim\\source\\repos\\testedotnet1\\LubyHour\\LubyHour.Api\\LubyHour.Api.csproj",
+      "projectPath": "D:\\Trabalho\\Pessoais\\Projetos\\testedotnet1\\LubyHour\\LubyHour.Api\\LubyHour.Api.csproj",
       "packagesPath": "C:\\Users\\vitim\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\vitim\\source\\repos\\testedotnet1\\LubyHour\\LubyHour.Api\\obj\\",
+      "outputPath": "D:\\Trabalho\\Pessoais\\Projetos\\testedotnet1\\LubyHour\\LubyHour.Api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\vitim\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -95,11 +95,11 @@
       "frameworks": {
         "net5.0": {
           "projectReferences": {
-            "C:\\Users\\vitim\\source\\repos\\testedotnet1\\LubyHour\\LubyHour.Domain\\LubyHour.Domain.csproj": {
-              "projectPath": "C:\\Users\\vitim\\source\\repos\\testedotnet1\\LubyHour\\LubyHour.Domain\\LubyHour.Domain.csproj"
+            "D:\\Trabalho\\Pessoais\\Projetos\\testedotnet1\\LubyHour\\LubyHour.Domain\\LubyHour.Domain.csproj": {
+              "projectPath": "D:\\Trabalho\\Pessoais\\Projetos\\testedotnet1\\LubyHour\\LubyHour.Domain\\LubyHour.Domain.csproj"
             },
-            "C:\\Users\\vitim\\source\\repos\\testedotnet1\\LubyHour\\LubyHour.Infra\\LubyHour.Infra.csproj": {
-              "projectPath": "C:\\Users\\vitim\\source\\repos\\testedotnet1\\LubyHour\\LubyHour.Infra\\LubyHour.Infra.csproj"
+            "D:\\Trabalho\\Pessoais\\Projetos\\testedotnet1\\LubyHour\\LubyHour.Infra\\LubyHour.Infra.csproj": {
+              "projectPath": "D:\\Trabalho\\Pessoais\\Projetos\\testedotnet1\\LubyHour\\LubyHour.Infra\\LubyHour.Infra.csproj"
             }
           }
         }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+igeFDzZBhdwS351wcnlC7T97twoQL+m6YXoKv+zc+cu55cmXu4Imi7mxV2eo/Fltu2rv4yJZemw+SgBfTafMw==",
+  "dgSpecHash": "5HgTZaTkFD7ZKqFxXl0jMXdcUzl8mJ7ZwCrNc4/6bgtyHhzTq6hffVZM21fTn1wN2gjMxAaCm7efMDALajzEYA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\vitim\\source\\repos\\testedotnet1\\LubyHour\\LubyHour.Tests\\LubyHour.Tests.csproj",
+  "projectFilePath": "D:\\Trabalho\\Pessoais\\Projetos\\testedotnet1\\LubyHour\\LubyHour.Tests\\LubyHour.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vitim\\.nuget\\packages\\coverlet.collector\\1.3.0\\coverlet.collector.1.3.0.nupkg.sha512",
     "C:\\Users\\vitim\\.nuget\\packages\\flunt\\1.0.5\\flunt.1.0.5.nupkg.sha512",
