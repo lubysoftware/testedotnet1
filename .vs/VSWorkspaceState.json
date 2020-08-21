@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\LubyHour"
+    "\\LubyHour",
+    "\\LubyHour\\LubyHour.Domain",
+    "\\LubyHour\\LubyHour.Domain\\Interfaces"
   ],
   "SelectedNode": "\\LubyHour\\LubyHour.sln",
   "PreviewInSolutionExplorer": false

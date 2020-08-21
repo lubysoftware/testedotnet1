@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LubyHour.Infra.Repositories
 {
-    class ManagementRepository
+    public class ManagementRepository
     {
     }
 }
