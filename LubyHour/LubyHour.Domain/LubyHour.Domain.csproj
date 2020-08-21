@@ -1,15 +1,15 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Services\" />
+    <PackageReference Include="flunt" Version="1.0.5" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="flunt" Version="1.0.5" />
+    <Folder Include="Handlers\" />
   </ItemGroup>
 
 </Project>

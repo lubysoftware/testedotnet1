@@ -1,4 +1,4 @@
-﻿namespace LubyHour.Domain.Commands.Management
+﻿namespace LubyHour.Domain.Commands.Input.Management
 {
     public class DeleteManagementCommand
     {
