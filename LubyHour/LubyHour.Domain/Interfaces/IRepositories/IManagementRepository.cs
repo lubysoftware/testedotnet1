@@ -12,5 +12,6 @@ namespace LubyHour.Domain.Interfaces.IRepositories
         void Delete(Management management);
         Task<IEnumerable<Management>> GetAll();
         Task<Management> GetById(Guid id);
+        Task<IEnumerable<Management>> GetManagementsFromWeek();
     }
 }

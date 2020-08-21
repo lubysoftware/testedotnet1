@@ -76,3 +76,8 @@ D:\Trabalho\Pessoais\Projetos\testedotnet1\LubyHour\LubyHour.Api\obj\Debug\net5.
 D:\Trabalho\Pessoais\Projetos\testedotnet1\LubyHour\LubyHour.Api\obj\Debug\net5.0\staticwebassets\LubyHour.Api.StaticWebAssets.Manifest.cache
 D:\Trabalho\Pessoais\Projetos\testedotnet1\LubyHour\LubyHour.Api\obj\Debug\net5.0\staticwebassets\LubyHour.Api.StaticWebAssets.xml
 D:\Trabalho\Pessoais\Projetos\testedotnet1\LubyHour\LubyHour.Api\obj\Debug\net5.0\LubyHour.Api.genruntimeconfig.cache
+D:\Trabalho\Pessoais\Projetos\testedotnet1\LubyHour\LubyHour.Api\obj\Debug\net5.0\LubyHour.Api.MvcApplicationPartsAssemblyInfo.cs
+D:\Trabalho\Pessoais\Projetos\testedotnet1\LubyHour\LubyHour.Api\bin\Debug\net5.0\Microsoft.OpenApi.dll
+D:\Trabalho\Pessoais\Projetos\testedotnet1\LubyHour\LubyHour.Api\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\Trabalho\Pessoais\Projetos\testedotnet1\LubyHour\LubyHour.Api\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Trabalho\Pessoais\Projetos\testedotnet1\LubyHour\LubyHour.Api\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll

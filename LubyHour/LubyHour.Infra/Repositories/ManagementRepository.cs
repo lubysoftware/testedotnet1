@@ -22,16 +22,19 @@ namespace LubyHour.Infra.Repositories
         public void Create(Management management)
         {
             _context.Management.AddAsync(management);
+            _context.SaveChanges();
         }
 
         public void Update(Management management)
         {
-            _context.Management.Update(management);
+            _context.Entry(management).State = EntityState.Modified;
+            _context.SaveChanges();
         }
 
         public void Delete(Management management)
         {
             _context.Management.Remove(management);
+            _context.SaveChanges();
         }
 
         public async Task<IEnumerable<Management>> GetAll()
@@ -44,6 +47,10 @@ namespace LubyHour.Infra.Repositories
             return await _context.Management.AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
         }
 
-   
+        public async Task<IEnumerable<Management>> GetManagementsFromWeek()
+        {
+            return await _context.Management.AsNoTracking().Where(x => x.StartTime >= DateTime.Now.Date.AddDays(-7)).ToListAsync();
+        }
+
     }
 }

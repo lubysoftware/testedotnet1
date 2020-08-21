@@ -4,6 +4,8 @@ using LubyHour.Domain.Entities;
 using LubyHour.Domain.Interfaces;
 using LubyHour.Domain.Interfaces.IRepositories;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace LubyHour.Domain.Handlers
@@ -34,6 +36,24 @@ namespace LubyHour.Domain.Handlers
             catch 
             {
                 return new CommandResult(false,"Erro interno ao tentar buscar os lançamentos!", null);
+            }
+        }
+
+        public async Task<ICommandResult> GetRankDeveloper()
+        {
+            try
+            {
+                var managementList = await _repository.GetManagementsFromWeek();
+
+                foreach (var item in managementList)
+                {
+                    
+                }
+                return new CommandResult(false, "Erro interno ao tentar buscar os lançamentos!", null); 
+            }
+            catch 
+            {
+                return new CommandResult(false, "Erro interno ao tentar buscar os lançamentos!", null);
             }
         }
 
@@ -129,5 +149,10 @@ namespace LubyHour.Domain.Handlers
                 return new CommandResult(false, "Erro interno ao tentar remover o lançamento!", null);
             }
         }
+
+
+        #region Private Methods
+
+        #endregion
     }
 }
