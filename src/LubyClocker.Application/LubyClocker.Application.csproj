@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Folder Include="BoundedContexts\Projects" />
+      <Folder Include="BoundedContexts\Users" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="MediatR" Version="8.1.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\LubyClocker.CrossCuting.Shared\LubyClocker.CrossCuting.Shared.csproj" />
+      <ProjectReference Include="..\LubyClocker.Domain\LubyClocker.Domain.csproj" />
+      <ProjectReference Include="..\LubyClocker.Infra.Data\LubyClocker.Infra.Data.csproj" />
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <OutputType>Exe</OutputType>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.8" />
+        <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="3.1.8" />
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.8" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="5.5.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\LubyClocker.CrossCuting.IoC\LubyClocker.CrossCuting.IoC.csproj" />
+        <ProjectReference Include="..\LubyClocker.Domain\LubyClocker.Domain.csproj" />
+    </ItemGroup>
+
+</Project>

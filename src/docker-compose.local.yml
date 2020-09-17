@@ -1,0 +1,29 @@
+version: '3.4'
+
+services:
+  db.luby.dev:
+    image: mcr.microsoft.com/mssql/server:2017-latest
+    container_name: db.luby.dev
+    volumes:
+      - dbdata:/var/opt/mssql
+    ports:
+      - 1433:1433
+    environment:
+      SA_PASSWORD: 'P#_LUBy@_'
+      ACCEPT_EULA: 'Y'
+
+  api.luby.dev:
+    build:
+      context: .
+      dockerfile: LubyClocker.Api/Dockerfile
+    container_name: api.luby.dev
+    depends_on:
+      - db.luby.dev
+    environment:
+      ASPNETCORE_ENVIRONMENT: 'Development'
+      DB_CONNECTION_STRING: 'Server=db.luby.dev;Database=DB_LUBY;User Id=sa;Password=P#_LUBy@_'
+    ports:
+      - '8080:80'
+
+volumes:
+  dbdata:
