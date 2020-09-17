@@ -35,5 +35,5 @@ Desenvolver um serviço que seja capaz de gerar um lançamento de horas.
 - Implementar autenticação JWT com expiração de 5 minutos
 
 #### Identificação:
-Nome: <br/>
-E-mail: 
+Nome: Fabio Henrique Ferreira Siqueira<br/>
+E-mail: fabiohfs85@gmail.com
