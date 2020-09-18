@@ -12,7 +12,6 @@ namespace TimeManager.Application.Projects.Commands.Update
         {
             ProjectId = id;
             Name = name;
-
         }
     }
 }

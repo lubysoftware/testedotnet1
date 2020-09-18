@@ -27,7 +27,7 @@ namespace API.Projects
         /// </summary>
         [HttpGet]
         [ProducesResponseType(typeof(ProjectsViewModel), (int)HttpStatusCode.OK)]
-        public async Task<IActionResult> GetProjects()
+        public async Task<IActionResult> GetAll()
         {
             var result = await _mediator.Send(new GetProjectsQuery());
 
@@ -43,7 +43,7 @@ namespace API.Projects
         /// <param name="request">Name of the project</param>
         [HttpPost]
         [ProducesResponseType(typeof(ProjectDto), (int)HttpStatusCode.Created)]
-        public async Task<IActionResult> RegisterProject([FromBody] ProjectRequest request)
+        public async Task<IActionResult> Create([FromBody] ProjectRequest request)
         {
             await _mediator.Send(new CreateProjectCommand(request.Name));
 
@@ -57,7 +57,7 @@ namespace API.Projects
         /// <param name="request">Name of the project</param>
         [HttpPut("{projectId}")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
-        public async Task<IActionResult> UpdateProject([FromRoute] Guid projectId, [FromBody] ProjectRequest request)
+        public async Task<IActionResult> Update([FromRoute] Guid projectId, [FromBody] ProjectRequest request)
         {
             await _mediator.Send(new UpdateProjectCommand(projectId, request.Name));
 
@@ -70,7 +70,7 @@ namespace API.Projects
         /// <param name="projectId">Project ID</param>
         [HttpDelete("{projectId}")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
-        public async Task<IActionResult> DeleteProject([FromRoute] Guid projectId)
+        public async Task<IActionResult> Delete([FromRoute] Guid projectId)
         {
             await _mediator.Send(new DeleteProjectCommand(projectId));
 

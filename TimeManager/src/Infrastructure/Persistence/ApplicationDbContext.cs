@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using System.Reflection;
 using TimeManager.Domain.Projects;
+using TimeManager.Domain.Developers;
 
 namespace TimeManager.Infrastructure.Persistence
 {
@@ -16,6 +17,7 @@ namespace TimeManager.Infrastructure.Persistence
         }
 
         public DbSet<Project> Projects { get; set; }
+        public DbSet<Developer> Developers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

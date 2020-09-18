@@ -7,6 +7,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using TimeManager.Domain.Projects;
 using TimeManager.Infrastructure.Domain.Projects;
+using TimeManager.Domain.Developers;
+using TimeManager.Infrastructure.Domain.Developers;
 
 namespace TimeManager.Infrastructure
 {
@@ -28,6 +30,7 @@ namespace TimeManager.Infrastructure
             }
 
             services.AddScoped<IProjectRepository, ProjectRepository>();
+            services.AddScoped<IDeveloperRepository, DeveloperRepository>();
 
                 services.AddDefaultIdentity<ApplicationUser>()
                     .AddEntityFrameworkStores<ApplicationDbContext>();

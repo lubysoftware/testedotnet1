@@ -5,7 +5,7 @@ using TimeManager.Domain.Projects;
 
 namespace TimeManager.Application.Projects.Commands.Create
 {
-    public class CreateProjectCommandHandler : IRequestHandler<CreateProjectCommand, ProjectDto>
+    public class CreateProjectCommandHandler : IRequestHandler<CreateProjectCommand, Unit>
     {
         private readonly IProjectRepository _repository;
 
@@ -14,17 +14,13 @@ namespace TimeManager.Application.Projects.Commands.Create
             _repository = repository;
         }
 
-        public async Task<ProjectDto> Handle(CreateProjectCommand request, CancellationToken cancellationToken)
+        public async Task<Unit> Handle(CreateProjectCommand request, CancellationToken cancellationToken)
         {
             var project = new Project(request.Name);
 
             await _repository.AddAsync(project);
 
-            return new ProjectDto
-            {
-                Name = project.Name,
-                Id = project.Id
-            };
+            return Unit.Value;
         }
     }
 }
