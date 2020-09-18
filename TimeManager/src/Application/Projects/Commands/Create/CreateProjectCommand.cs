@@ -5,6 +5,11 @@ namespace TimeManager.Application.Projects.Commands.Create
 {
     public class CreateProjectCommand : IRequest<Guid>
     {
-        public string Name { get; set; }
+        public CreateProjectCommand(string name)
+        {
+            Name = name;
+        }
+
+        public string Name { get; }
     }
 }
