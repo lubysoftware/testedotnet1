@@ -105,7 +105,6 @@ namespace LubyClocker.Infra.Data.Migrations.MSSQL
                     Id = table.Column<Guid>(nullable: false),
                     CreatedAt = table.Column<DateTime>(nullable: false),
                     EntryDate = table.Column<DateTime>(nullable: false),
-                    HourlyValue = table.Column<decimal>(nullable: true),
                     DeveloperId = table.Column<Guid>(nullable: false),
                     ProjectId = table.Column<Guid>(nullable: false)
                 },

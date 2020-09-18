@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LubyClocker.Infra.Data.Migrations.MSSQL
 {
     [DbContext(typeof(LubyClockerContext))]
-    [Migration("20200917043040_Initial")]
+    [Migration("20200918041151_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -87,9 +87,6 @@ namespace LubyClocker.Infra.Data.Migrations.MSSQL
 
                     b.Property<DateTime>("EntryDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<decimal?>("HourlyValue")
-                        .HasColumnType("decimal(18,2)");
 
                     b.Property<Guid>("ProjectId")
                         .HasColumnType("uniqueidentifier");

@@ -1,4 +1,5 @@
 using LubyClocker.Api.Binders;
+using LubyClocker.Api.Middlewares;
 using LubyClocker.CrossCuting.IoC.Database;
 using LubyClocker.CrossCuting.IoC.Mediator;
 using LubyClocker.CrossCuting.IoC.Security;
@@ -26,24 +27,23 @@ namespace LubyClocker.Api
                     opt.SerializerSettings.Converters.Add(new StringEnumBinder());
                 });
             
-            // HttpContextAccessor
-            services.AddHttpContextAccessor();
-
-            services.AddJwtTokenSetup(Configuration);
             services.AddDatabaseConfiguration(Configuration);
             services.AddOpenApiConfiguration();
             services.AddIdentityConfiguration();
+            services.AddJwtTokenSetup(Configuration);
             services.AddMediatorConfiguration();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseExceptionHandlerMiddleware();
             app.UseCors(c =>
             {
                 c.AllowAnyHeader();
                 c.AllowAnyMethod();
                 c.AllowAnyOrigin();
             });
+            app.UseAuthentication();
             app.UseRouting();
             app.UseAuthorization();
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });

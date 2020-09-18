@@ -14,6 +14,16 @@ namespace LubyClocker.CrossCuting.IoC.Security
             services.AddIdentity<User, IdentityRole<Guid>>()
                 .AddEntityFrameworkStores<LubyClockerContext>()
                 .AddDefaultTokenProviders();
+            
+            services.Configure<IdentityOptions>(options =>
+            {
+                options.Password.RequireDigit = false;
+                options.Password.RequireLowercase = false;
+                options.Password.RequiredLength = 3;
+                options.Password.RequiredUniqueChars = 1;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireUppercase = false;
+            });
         }
     }
 }

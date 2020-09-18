@@ -86,9 +86,6 @@ namespace LubyClocker.Infra.Data.Migrations.MSSQL
                     b.Property<DateTime>("EntryDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<decimal?>("HourlyValue")
-                        .HasColumnType("decimal(18,2)");
-
                     b.Property<Guid>("ProjectId")
                         .HasColumnType("uniqueidentifier");
 

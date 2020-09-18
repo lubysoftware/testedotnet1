@@ -11,6 +11,18 @@ namespace LubyClocker.Domain.BoundedContexts.Projects
         public DateTime DeliveryDate { get; set; }
         public string Description { get; set; }
 
+        public Project()
+        {
+            
+        }
+        public Project(string name, DateTime startDate, DateTime deliveryDate, string description)
+        {
+            Name = name;
+            StartDate = startDate;
+            DeliveryDate = deliveryDate;
+            Description = description;
+        }
+
         public ICollection<ProjectMember> Members { get; set; }
     }
 }

@@ -20,7 +20,10 @@ namespace LubyClocker.CrossCuting.IoC.Security
             };
 
             services.AddSingleton<TokenConfigs>(tokenConfig);
-            
+ 
+            // HttpContextAccessor
+            services.AddHttpContextAccessor();
+
             services.AddAuthentication(x =>
             {
                 x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;

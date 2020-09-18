@@ -13,10 +13,12 @@
     </ItemGroup>
     
     <ItemGroup>
+      <ProjectReference Include="..\LubyClocker.CrossCuting.Shared\LubyClocker.CrossCuting.Shared.csproj" />
       <ProjectReference Include="..\LubyClocker.Domain\LubyClocker.Domain.csproj" />
     </ItemGroup>
     
     <ItemGroup>
       <Folder Include="Migrations" />
+      <Folder Include="Migrations\MSSQL" />
     </ItemGroup>
 </Project>

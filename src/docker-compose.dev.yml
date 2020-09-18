@@ -3,7 +3,6 @@ version: '3.4'
 services:
   db.luby.dev:
     image: mcr.microsoft.com/mssql/server:2017-latest
-    container_name: db.luby.dev
     volumes:
       - dbdata:/var/opt/mssql
     ports:

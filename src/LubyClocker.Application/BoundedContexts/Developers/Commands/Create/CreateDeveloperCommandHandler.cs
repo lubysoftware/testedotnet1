@@ -5,7 +5,7 @@ using LubyClocker.Domain.BoundedContexts.Developers;
 using LubyClocker.Infra.Data.Context;
 using MediatR;
 
-namespace LubyClocker.Application.BoundedContexts.Developers.Create
+namespace LubyClocker.Application.BoundedContexts.Developers.Commands.Create
 {
     public class CreateDeveloperCommandHandler : IRequestHandler<CreateDeveloperCommand, DeveloperViewModel>
     {
@@ -28,14 +28,7 @@ namespace LubyClocker.Application.BoundedContexts.Developers.Create
 
             await _context.SaveChangesAsync(cancellationToken);
 
-            return new DeveloperViewModel()
-            {
-                Id = entity.Id,
-                CreatedAt = entity.CreatedAt,
-                Commentary = entity.Commentary,
-                Qualification = entity.Qualification,
-                FullName = entity.FullName
-            };
+            return new DeveloperViewModel(entity);
         }
     }
 }

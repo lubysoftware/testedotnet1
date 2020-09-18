@@ -9,9 +9,6 @@ namespace LubyClocker.Infra.Data.Mappings
         {
             builder
                 .Property(c => c.EntryDate);
-            
-            builder
-                .Property(c => c.HourlyValue);
 
             builder
                 .HasOne(c => c.Developer)
