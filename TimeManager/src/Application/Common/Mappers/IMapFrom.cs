@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 
-namespace TimeManager.Application.Common.Mappings
+namespace TimeManager.Application.Common.Mappers
 {
     public interface IMapFrom<T>
     {   

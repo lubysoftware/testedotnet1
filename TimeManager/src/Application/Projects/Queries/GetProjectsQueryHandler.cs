@@ -1,33 +1,31 @@
-﻿using AutoMapper;
-using AutoMapper.QueryableExtensions;
-using MediatR;
-using Microsoft.EntityFrameworkCore;
+﻿using MediatR;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using TimeManager.Application.Common.Interfaces;
+using TimeManager.Domain.Projects;
 
 namespace TimeManager.Application.Projects.Queries
 {
     public class GetProjectsQueryHandler : IRequestHandler<GetProjectsQuery, ProjectsViewModel>
     {
-        private readonly IMapper _mapper;
-        private readonly IApplicationDbContext _context;
+        private readonly IProjectRepository _repository;
 
-        public GetProjectsQueryHandler(IMapper mapper, IApplicationDbContext context)
+        public GetProjectsQueryHandler(IProjectRepository repository)
         {
-            _mapper = mapper;
-            _context = context;
+            _repository = repository;
         }
 
         public async Task<ProjectsViewModel> Handle(GetProjectsQuery request, CancellationToken cancellationToken)
         {
+            var list = await _repository.GetAllAsync();
+
             return new ProjectsViewModel
             {
-                Projects = await _context.Projects
-                    .ProjectTo<ProjectDto>(_mapper.ConfigurationProvider)
-                    .OrderBy(p => p.Name)
-                    .ToListAsync()
+                Projects = list.Select(x => new ProjectDto
+                {
+                    Id = x.Id,
+                    Name = x.Name
+                })
             };
         }
     }

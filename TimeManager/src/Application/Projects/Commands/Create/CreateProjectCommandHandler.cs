@@ -1,29 +1,30 @@
 ﻿using MediatR;
-using System;
 using System.Threading;
 using System.Threading.Tasks;
-using TimeManager.Application.Common.Interfaces;
 using TimeManager.Domain.Projects;
 
 namespace TimeManager.Application.Projects.Commands.Create
 {
-    public class CreateProjectCommandHandler : IRequestHandler<CreateProjectCommand, Guid>
+    public class CreateProjectCommandHandler : IRequestHandler<CreateProjectCommand, ProjectDto>
     {
-        private readonly IApplicationDbContext _context;
+        private readonly IProjectRepository _repository;
 
-        public CreateProjectCommandHandler(IApplicationDbContext context)
+        public CreateProjectCommandHandler(IProjectRepository repository)
         {
-            _context = context;
+            _repository = repository;
         }
 
-        public async Task<Guid> Handle(CreateProjectCommand request, CancellationToken cancellationToken)
+        public async Task<ProjectDto> Handle(CreateProjectCommand request, CancellationToken cancellationToken)
         {
             var project = new Project(request.Name);
 
-            _context.Projects.Add(project);
-            await _context.SaveChangesAsync(cancellationToken);
+            await _repository.AddAsync(project);
 
-            return project.Id;
+            return new ProjectDto
+            {
+                Name = project.Name,
+                Id = project.Id
+            };
         }
     }
 }

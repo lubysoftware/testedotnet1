@@ -1,9 +1,8 @@
 ﻿using MediatR;
-using System;
 
 namespace TimeManager.Application.Projects.Commands.Create
 {
-    public class CreateProjectCommand : IRequest<Guid>
+    public class CreateProjectCommand : IRequest<ProjectDto>
     {
         public CreateProjectCommand(string name)
         {

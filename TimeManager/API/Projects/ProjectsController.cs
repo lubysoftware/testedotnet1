@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Net;
 using System.Threading.Tasks;
+using TimeManager.Application.Projects;
 using TimeManager.Application.Projects.Commands.Create;
 using TimeManager.Application.Projects.Commands.Delete;
 using TimeManager.Application.Projects.Commands.Update;

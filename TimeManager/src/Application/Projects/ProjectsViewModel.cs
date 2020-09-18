@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace TimeManager.Application.Projects.Queries
+namespace TimeManager.Application.Projects
 {
     public class ProjectsViewModel
     {

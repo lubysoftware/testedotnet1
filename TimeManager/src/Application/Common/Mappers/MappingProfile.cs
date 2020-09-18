@@ -3,7 +3,7 @@ using System;
 using System.Linq;
 using System.Reflection;
 
-namespace TimeManager.Application.Common.Mappings
+namespace TimeManager.Application.Common.Mappers
 {
     public class MappingProfile : Profile
     {

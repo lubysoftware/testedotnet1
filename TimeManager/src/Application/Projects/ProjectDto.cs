@@ -1,8 +1,8 @@
 ﻿using System;
-using TimeManager.Application.Common.Mappings;
+using TimeManager.Application.Common.Mappers;
 using TimeManager.Domain.Projects;
 
-namespace TimeManager.Application.Projects.Queries
+namespace TimeManager.Application.Projects
 {
     public class ProjectDto : IMapFrom<Project>
     {
