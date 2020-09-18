@@ -3,18 +3,18 @@ using System.Threading;
 using System.Threading.Tasks;
 using TimeManager.Domain.Developers;
 
-namespace TimeManager.Application.Developers.Commands.Update
+namespace TimeManager.Application.Developers.ChangeDeveloperDetails
 {
-    public class UpdateDeveloperCommandHandler : IRequestHandler<UpdateDeveloperCommand, Unit>
+    public class ChangeDeveloperDetailsCommandHandler : IRequestHandler<ChangeDeveloperDetailsCommand, Unit>
     {
         private readonly IDeveloperRepository _repository;
 
-        public UpdateDeveloperCommandHandler(IDeveloperRepository repository)
+        public ChangeDeveloperDetailsCommandHandler(IDeveloperRepository repository)
         {
             _repository = repository;
         }
 
-        public async Task<Unit> Handle(UpdateDeveloperCommand request, CancellationToken cancellationToken)
+        public async Task<Unit> Handle(ChangeDeveloperDetailsCommand request, CancellationToken cancellationToken)
         {
             var entity = await _repository.GetByIdsAsync(request.DeveloperId);
 

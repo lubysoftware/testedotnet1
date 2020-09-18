@@ -3,18 +3,18 @@ using System.Threading;
 using System.Threading.Tasks;
 using TimeManager.Domain.Projects;
 
-namespace TimeManager.Application.Projects.Commands.Create
+namespace TimeManager.Application.Projects.RegisterProject
 {
-    public class CreateProjectCommandHandler : IRequestHandler<CreateProjectCommand, Unit>
+    public class RegisterProjectCommandHandler : IRequestHandler<RegisterProjectCommand, Unit>
     {
         private readonly IProjectRepository _repository;
 
-        public CreateProjectCommandHandler(IProjectRepository repository)
+        public RegisterProjectCommandHandler(IProjectRepository repository)
         {
             _repository = repository;
         }
 
-        public async Task<Unit> Handle(CreateProjectCommand request, CancellationToken cancellationToken)
+        public async Task<Unit> Handle(RegisterProjectCommand request, CancellationToken cancellationToken)
         {
             var project = new Project(request.Name);
 

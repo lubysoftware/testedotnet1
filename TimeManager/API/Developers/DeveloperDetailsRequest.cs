@@ -1,6 +1,6 @@
 ﻿namespace API.Developers
 {
-    public class DeveloperRequest
+    public class DeveloperDetailsRequest
     {
         public string Name { get; set; }
     }

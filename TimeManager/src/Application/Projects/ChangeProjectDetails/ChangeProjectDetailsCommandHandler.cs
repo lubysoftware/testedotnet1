@@ -3,18 +3,18 @@ using System.Threading;
 using System.Threading.Tasks;
 using TimeManager.Domain.Projects;
 
-namespace TimeManager.Application.Projects.Commands.Update
+namespace TimeManager.Application.Projects.ChangeProjectDetails
 {
-    public class UpdateProjectCommandHandler : IRequestHandler<UpdateProjectCommand, Unit>
+    public class ChangeProjectDetailsCommandHandler : IRequestHandler<ChangeProjectDetailsCommand, Unit>
     {
         private readonly IProjectRepository _repository;
 
-        public UpdateProjectCommandHandler(IProjectRepository repository)
+        public ChangeProjectDetailsCommandHandler(IProjectRepository repository)
         {
             _repository = repository;
         }
 
-        public async Task<Unit> Handle(UpdateProjectCommand request, CancellationToken cancellationToken)
+        public async Task<Unit> Handle(ChangeProjectDetailsCommand request, CancellationToken cancellationToken)
         {
             var entity = await _repository.GetByIdsAsync(request.ProjectId);
 

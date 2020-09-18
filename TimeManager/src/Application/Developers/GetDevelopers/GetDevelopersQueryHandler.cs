@@ -1,11 +1,10 @@
 ﻿using MediatR;
-using System;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using TimeManager.Domain.Developers;
 
-namespace TimeManager.Application.Developers.Queries
+namespace TimeManager.Application.Developers.GetDevelopers
 {
     public class GetDevelopersQueryHandler : IRequestHandler<GetDevelopersQuery, DevelopersViewModel>
     {

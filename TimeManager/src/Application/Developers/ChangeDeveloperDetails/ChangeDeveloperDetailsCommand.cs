@@ -1,15 +1,15 @@
 ﻿using MediatR;
 using System;
 
-namespace TimeManager.Application.Developers.Commands.Update
+namespace TimeManager.Application.Developers.ChangeDeveloperDetails
 {
-    public class UpdateDeveloperCommand : IRequest<Unit>
+    public class ChangeDeveloperDetailsCommand : IRequest<Unit>
     {
         public Guid DeveloperId { get; }
 
         public string Name { get; }
 
-        public UpdateDeveloperCommand(Guid developerId, string name)
+        public ChangeDeveloperDetailsCommand(Guid developerId, string name)
         {
             DeveloperId = developerId;
             Name = name;

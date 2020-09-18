@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace TimeManager.Application.Projects.Queries
+namespace TimeManager.Application.Projects.GetProjects
 {
     public class GetProjectsQuery : IRequest<ProjectsViewModel>
     {

@@ -1,6 +1,6 @@
 ﻿namespace API.Projects
 {
-    public class ProjectRequest
+    public class ProjectDetailsRequest
     {
         public string Name { get; set; }
     }

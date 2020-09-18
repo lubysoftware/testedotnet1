@@ -1,13 +1,13 @@
-﻿using MediatR;
-using Microsoft.AspNetCore.Mvc;
-using System;
+﻿using System;
 using System.Net;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using MediatR;
 using TimeManager.Application.Projects;
-using TimeManager.Application.Projects.Commands.Create;
-using TimeManager.Application.Projects.Commands.Delete;
-using TimeManager.Application.Projects.Commands.Update;
-using TimeManager.Application.Projects.Queries;
+using TimeManager.Application.Projects.CancelProject;
+using TimeManager.Application.Projects.ChangeProjectDetails;
+using TimeManager.Application.Projects.GetProjects;
+using TimeManager.Application.Projects.RegisterProject;
 
 namespace API.Projects
 {
@@ -43,36 +43,36 @@ namespace API.Projects
         /// <param name="request">Name of the project</param>
         [HttpPost]
         [ProducesResponseType(typeof(ProjectDto), (int)HttpStatusCode.Created)]
-        public async Task<IActionResult> Create([FromBody] ProjectRequest request)
+        public async Task<IActionResult> RegisterProject([FromBody] ProjectDetailsRequest request)
         {
-            await _mediator.Send(new CreateProjectCommand(request.Name));
+            await _mediator.Send(new RegisterProjectCommand(request.Name));
 
             return Created(string.Empty, null);
         }
 
         /// <summary>
-        /// Update project.
+        /// Update project details.
         /// </summary>
         /// <param name="projectId">Project ID</param>
         /// <param name="request">Name of the project</param>
         [HttpPut("{projectId}")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
-        public async Task<IActionResult> Update([FromRoute] Guid projectId, [FromBody] ProjectRequest request)
+        public async Task<IActionResult> ChangeProjectDetails([FromRoute] Guid projectId, [FromBody] ProjectDetailsRequest request)
         {
-            await _mediator.Send(new UpdateProjectCommand(projectId, request.Name));
+            await _mediator.Send(new ChangeProjectDetailsCommand(projectId, request.Name));
 
             return Ok();
         }
 
         /// <summary>
-        /// Delete a project.
+        /// Cancel a project.
         /// </summary>
         /// <param name="projectId">Project ID</param>
         [HttpDelete("{projectId}")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
-        public async Task<IActionResult> Delete([FromRoute] Guid projectId)
+        public async Task<IActionResult> CancelProject([FromRoute] Guid projectId)
         {
-            await _mediator.Send(new DeleteProjectCommand(projectId));
+            await _mediator.Send(new CancelProjectCommand(projectId));
 
             return Ok();
         }

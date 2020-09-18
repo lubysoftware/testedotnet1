@@ -4,7 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using TimeManager.Domain.Projects;
 
-namespace TimeManager.Application.Projects.Queries
+namespace TimeManager.Application.Projects.GetProjects
 {
     public class GetProjectsQueryHandler : IRequestHandler<GetProjectsQuery, ProjectsViewModel>
     {

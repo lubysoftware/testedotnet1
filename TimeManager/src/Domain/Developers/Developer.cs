@@ -1,15 +1,13 @@
-﻿using System;
+﻿using TimeManager.Domain.SeedWork;
 
 namespace TimeManager.Domain.Developers
 {
-    public class Developer
+    public class Developer : Entity
     {
-        public Guid Id { get; }
         public string Name { get; private set; }
 
         public Developer(string name)
         {
-            Id = Guid.NewGuid();
             Name = name;
         }
 
