@@ -9,6 +9,8 @@ using TimeManager.Domain.Projects;
 using TimeManager.Infrastructure.Domain.Projects;
 using TimeManager.Domain.Developers;
 using TimeManager.Infrastructure.Domain.Developers;
+using TimeManager.Domain.Projects.ProjectMembers;
+using TimeManager.Infrastructure.Domain.Projects.ProjectMembers;
 
 namespace TimeManager.Infrastructure
 {
@@ -31,6 +33,7 @@ namespace TimeManager.Infrastructure
 
             services.AddScoped<IProjectRepository, ProjectRepository>();
             services.AddScoped<IDeveloperRepository, DeveloperRepository>();
+            services.AddScoped<IProjectMemberRepository, ProjectMemberRepository>();
 
                 services.AddDefaultIdentity<ApplicationUser>()
                     .AddEntityFrameworkStores<ApplicationDbContext>();

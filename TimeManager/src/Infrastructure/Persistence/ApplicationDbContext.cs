@@ -6,6 +6,7 @@ using Microsoft.Extensions.Options;
 using System.Reflection;
 using TimeManager.Domain.Projects;
 using TimeManager.Domain.Developers;
+using TimeManager.Domain.Projects.ProjectMembers;
 
 namespace TimeManager.Infrastructure.Persistence
 {
@@ -18,6 +19,7 @@ namespace TimeManager.Infrastructure.Persistence
 
         public DbSet<Project> Projects { get; set; }
         public DbSet<Developer> Developers { get; set; }
+        public DbSet<ProjectMember> ProjectMembers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
