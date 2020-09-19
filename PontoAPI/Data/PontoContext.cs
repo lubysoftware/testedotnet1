@@ -9,9 +9,11 @@ namespace PontoAPI.Data
     {
         private static IConfigurationRoot Configuration => new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
 
-        public DbSet<Desenvolvedor> DesenvolvedorSet { get;set; }
+        public DbSet<Desenvolvedor> DesenvolvedorSet { get; set; }
 
-        public PontoContext(DbContextOptions options) : base(options) 
+        public DbSet<Projeto> ProjetoSet { get; set; }
+
+        public PontoContext(DbContextOptions options) : base(options)
         {
         }
 
@@ -27,6 +29,7 @@ namespace PontoAPI.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new DesenvolvedorMapping());
+            modelBuilder.ApplyConfiguration(new ProjetoMapping());
         }
     }
 }
