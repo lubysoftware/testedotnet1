@@ -19,12 +19,12 @@ namespace TimeManager.Infrastructure.Domain.Developers
 
         public async Task<List<Developer>> GetAllAsync()
         {
-            return await _context.Developers.ToListAsync();
+            return await _context.Developers.Where(w => w.IsActive == true).ToListAsync();
         }
 
         public async Task<Developer> GetByIdsAsync(Guid id)
         {
-            return await _context.Developers.FirstOrDefaultAsync(x => x.Id == id);
+            return await _context.Developers.FirstOrDefaultAsync(x => x.Id == id && x.IsActive == true);
         }
 
         public async Task AddAsync(Developer developer)
@@ -42,7 +42,7 @@ namespace TimeManager.Infrastructure.Domain.Developers
         {
             var entity = await _context.Developers.Where(p => p.Id == id).SingleOrDefaultAsync();
 
-            _context.Developers.Remove(entity);
+            entity.SetInactive();
 
             await _context.SaveChangesAsync();
         }

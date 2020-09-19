@@ -6,9 +6,17 @@ namespace TimeManager.Domain.SeedWork
     {
         public Guid Id { get; }
 
+        public bool IsActive { get; private set; }
+
         public Entity()
         {
             this.Id = Guid.NewGuid();
+            this.IsActive = true;
+        }
+
+        public void SetInactive()
+        {
+            this.IsActive = false;
         }
     }
 }

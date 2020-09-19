@@ -19,12 +19,12 @@ namespace TimeManager.Infrastructure.Domain.Projects
 
         public async Task<List<Project>> GetAllAsync()
         {
-            return await _context.Projects.ToListAsync();
+            return await _context.Projects.Where(w => w.IsActive == true).ToListAsync();
         }
 
         public async Task<Project> GetByIdsAsync(Guid id)
         {
-            return await _context.Projects.FirstOrDefaultAsync(x => x.Id == id);
+            return await _context.Projects.FirstOrDefaultAsync(x => x.Id == id && x.IsActive == true);
         }
 
         public async Task AddAsync(Project project)
@@ -42,7 +42,7 @@ namespace TimeManager.Infrastructure.Domain.Projects
         {
             var entity = await _context.Projects.Where(p => p.Id == id).SingleOrDefaultAsync();
 
-            _context.Projects.Remove(entity);
+            entity.SetInactive();
 
             await _context.SaveChangesAsync();
         }
