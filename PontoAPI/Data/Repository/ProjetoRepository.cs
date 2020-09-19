@@ -20,7 +20,9 @@ namespace PontoAPI.Data.Repository
             try
             {
                 projeto.DataCadastro = DateTime.Now;
+                projeto.Ativo = true;
                 dbContext.ProjetoSet.Add(projeto);
+                dbContext.SaveChanges();
 
                 return true;
             }

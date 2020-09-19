@@ -28,6 +28,11 @@ namespace PontoAPI.Migrations
                         .HasAnnotation("SqlServer:IdentitySeed", 1)
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<bool>("Ativo")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(true);
+
                     b.Property<DateTime>("DataCadastro")
                         .HasColumnType("datetime2");
 
@@ -37,6 +42,31 @@ namespace PontoAPI.Migrations
                     b.HasKey("DesenvolvedorID");
 
                     b.ToTable("TabDesenvolvedor");
+                });
+
+            modelBuilder.Entity("PontoAPI.Domain.Models.Projeto", b =>
+                {
+                    b.Property<int>("ProjetoID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:IdentityIncrement", 1)
+                        .HasAnnotation("SqlServer:IdentitySeed", 1)
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool>("Ativo")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(true);
+
+                    b.Property<DateTime>("DataCadastro")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("NomeProjeto")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ProjetoID");
+
+                    b.ToTable("TabProjeto");
                 });
 #pragma warning restore 612, 618
         }

@@ -13,7 +13,7 @@ namespace PontoAPI.Data.Mappings
             builder.Property<int>(t => t.ProjetoID).UseIdentityColumn(1, 1);
             builder.Property<string>(t => t.NomeProjeto);
             builder.Property<DateTime>(t => t.DataCadastro);
-            builder.Property<bool>(t => t.Ativo).HasDefaultValue(true);
+            builder.Property<bool>(t => t.Ativo);
 
             builder.ToTable("TabProjeto");
         }

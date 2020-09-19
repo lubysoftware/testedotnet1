@@ -14,11 +14,27 @@ namespace PontoAPI.Migrations
                     DesenvolvedorID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Nome = table.Column<string>(nullable: true),
-                    DataCadastro = table.Column<DateTime>(nullable: false)
+                    DataCadastro = table.Column<DateTime>(nullable: false),
+                    Ativo = table.Column<bool>(nullable: false, defaultValue: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_TabDesenvolvedor", x => x.DesenvolvedorID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "TabProjeto",
+                columns: table => new
+                {
+                    ProjetoID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    NomeProjeto = table.Column<string>(nullable: true),
+                    DataCadastro = table.Column<DateTime>(nullable: false),
+                    Ativo = table.Column<bool>(nullable: false, defaultValue: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TabProjeto", x => x.ProjetoID);
                 });
         }
 
@@ -26,6 +42,9 @@ namespace PontoAPI.Migrations
         {
             migrationBuilder.DropTable(
                 name: "TabDesenvolvedor");
+
+            migrationBuilder.DropTable(
+                name: "TabProjeto");
         }
     }
 }

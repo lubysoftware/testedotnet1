@@ -11,6 +11,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using PontoAPI.Data;
+using PontoAPI.Domain.Interfaces;
+using PontoAPI.Data.Repository;
 
 namespace PontoAPI
 {
@@ -26,8 +28,10 @@ namespace PontoAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
             services.AddDbContext<PontoContext>();
+            services.AddTransient<IDesenvolvedorRepository, DesenvolvedorRepository>();
+            services.AddTransient<IProjetoRepository, ProjetoRepository>();
+            services.AddControllers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -37,8 +41,6 @@ namespace PontoAPI
             {
                 app.UseDeveloperExceptionPage();
             }
-
-            app.UseHttpsRedirection();
 
             app.UseRouting();
 

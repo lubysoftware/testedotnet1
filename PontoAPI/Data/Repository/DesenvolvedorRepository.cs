@@ -19,7 +19,9 @@ namespace PontoAPI.Data.Repository
             try
             {
                 desenvolvedor.DataCadastro = DateTime.Now;
+                desenvolvedor.Ativo = true;
                 dbContext.DesenvolvedorSet.Add(desenvolvedor);
+                dbContext.SaveChanges();
 
                 return true;
             }

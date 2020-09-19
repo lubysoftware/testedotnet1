@@ -2,9 +2,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace PontoAPI.Controllers
 {
-    [Route("controllers/[controller]")]
+    [Route("operacoes/[controller]")]
     [ApiController]
-    public class ProjetoController : Controller
+    public class ProjetoController : ControllerBase
     {
         
     }
