@@ -14,7 +14,7 @@ namespace API.Configuration
             {
                 options.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
                 {
-                    Title = "Sample CQRS API",
+                    Title = "TimeReport CQRS API",
                     Version = "v1"
                 });
 
@@ -33,7 +33,7 @@ namespace API.Configuration
 
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Sample CQRS API V1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "TimeReport CQRS API V1");
             });
 
             return app;

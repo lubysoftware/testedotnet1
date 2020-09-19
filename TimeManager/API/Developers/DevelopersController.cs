@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using API.Developers.TimeReports;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Net;
@@ -8,6 +9,7 @@ using TimeManager.Application.Developers.ChangeDeveloperDetails;
 using TimeManager.Application.Developers.GetDevelopers;
 using TimeManager.Application.Developers.RegisterDeveloper;
 using TimeManager.Application.Developers.RemoveDeveloper;
+using TimeManager.Application.Developers.SendTimeReport;
 
 namespace API.Developers
 {
@@ -73,6 +75,24 @@ namespace API.Developers
         public async Task<IActionResult> RemoveDeveloper([FromRoute] Guid developerId)
         {
             await _mediator.Send(new RemoveDeveloperCommand(developerId));
+
+            return Ok();
+        }
+
+        /// <summary>
+        /// Send time report to a project
+        /// </summary>
+        /// <param name="projectMemberId"></param>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        [HttpPost("{projectMemberId}/report")]
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        public async Task<IActionResult> SendTimeReport([FromRoute] Guid projectMemberId, [FromBody] SendTimeReportRequest request)
+        {
+            var r = new Random();
+            var now = DateTime.Now;
+            var tomorrow = now.AddHours(r.Next(1, 8));
+            await _mediator.Send(new SendTimeReportCommand(projectMemberId, now, tomorrow));
 
             return Ok();
         }

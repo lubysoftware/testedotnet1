@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using TimeManager.Domain.Developers;
+using TimeManager.Domain.Developers.TimeReports;
 using TimeManager.Domain.SeedWork;
 
 namespace TimeManager.Domain.Projects.ProjectMembers
@@ -12,6 +15,7 @@ namespace TimeManager.Domain.Projects.ProjectMembers
 
         public virtual Project Project { get; set; }
         public virtual Developer Developer { get; set; }
+        public virtual IEnumerable<TimeReport> TimeReports { get; set; }
 
         public ProjectMember(Guid developerId, Guid projectId)
         {
