@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using TimeManager.Domain.Projects.ProjectMembers;
+using TimeManager.Domain.Developers.TimeReports;
 using TimeManager.Domain.SeedWork;
 
 namespace TimeManager.Domain.Developers
@@ -8,8 +8,7 @@ namespace TimeManager.Domain.Developers
     {
         public string Name { get; private set; }
 
-        public virtual IEnumerable<ProjectMember> Projects { get; set; }
-
+        public virtual IEnumerable<TimeReport> TimeReports { get; set; }
         public Developer(string name)
         {
             Name = name;

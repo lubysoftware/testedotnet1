@@ -2,6 +2,7 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
 using TimeManager.Application.Developers;
@@ -9,7 +10,9 @@ using TimeManager.Application.Developers.ChangeDeveloperDetails;
 using TimeManager.Application.Developers.GetDevelopers;
 using TimeManager.Application.Developers.RegisterDeveloper;
 using TimeManager.Application.Developers.RemoveDeveloper;
-using TimeManager.Application.Developers.SendTimeReport;
+using TimeManager.Application.Developers.TimeReports.GetTimeReports;
+using TimeManager.Application.Developers.TimeReports.SendTimeReport;
+using TimeManager.Application.Projects.GetWeekRanking;
 
 namespace API.Developers
 {
@@ -80,21 +83,42 @@ namespace API.Developers
         }
 
         /// <summary>
-        /// Send time report to a project
+        /// Send time report to a project.
         /// </summary>
-        /// <param name="projectMemberId"></param>
-        /// <param name="request"></param>
-        /// <returns></returns>
-        [HttpPost("{projectMemberId}/report")]
+        /// <param name="developerId">Developer Id</param>
+        /// <param name="projectId">Project ID</param>
+        /// <param name="request">Start and End time</param>
+        [HttpPost("{developerId}/project/{projectId}/report")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
-        public async Task<IActionResult> SendTimeReport([FromRoute] Guid projectMemberId, [FromBody] SendTimeReportRequest request)
+        public async Task<IActionResult> SendTimeReport([FromRoute] Guid developerId, [FromRoute] Guid projectId, [FromBody] SendTimeReportRequest request)
         {
             var r = new Random();
-            var now = DateTime.Now;
-            var tomorrow = now.AddHours(r.Next(1, 8));
-            await _mediator.Send(new SendTimeReportCommand(projectMemberId, now, tomorrow));
+            request.StartedAt = DateTime.Now;
+            request.EndedAt = request.StartedAt.AddHours(r.Next(1, 8));
+            await _mediator.Send(new SendTimeReportCommand(projectId, developerId, request.StartedAt, request.EndedAt));
 
             return Ok();
+        }
+
+        /// <summary>
+        /// Get developer time reports.
+        /// </summary>
+        /// <param name="developerId">Developer ID</param>
+        [HttpGet("{developerId}/reports")]
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        public async Task<IActionResult> GetDeveloperTimeReports([FromRoute]Guid developerId)
+        {
+            return Ok(await _mediator.Send(new GetTimeReportsQuery(developerId)));
+        }
+
+        /// <summary>
+        /// Get top 5 developers with more average worked hours this week.
+        /// </summary>
+        [HttpGet("ranking")]
+        [ProducesResponseType(typeof(IEnumerable<RankingViewModel>), (int)HttpStatusCode.OK)]
+        public async Task<IActionResult> GetWeekRanking()
+        {
+            return Ok(await _mediator.Send(new GetWeekRankingQuery()));
         }
     }
 }

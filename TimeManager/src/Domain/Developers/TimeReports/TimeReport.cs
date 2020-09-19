@@ -1,28 +1,29 @@
 ﻿using System;
-using TimeManager.Domain.Projects.ProjectMembers;
+using TimeManager.Domain.Projects;
 using TimeManager.Domain.SeedWork;
 
 namespace TimeManager.Domain.Developers.TimeReports
 {
     public class TimeReport : Entity
     {
-        public Guid ProjectMemberId { get; }
+        public Guid DeveloperId { get; }
+        public Guid ProjectId { get; }
         public DateTime StartedAt { get; }
         public DateTime EndedAt { get; }
 
         public TimeSpan CalculatedTimeWorked { get; }
-        public int CalculatedWeekNumber { get; }
 
-        public virtual ProjectMember ProjectMember { get; set; }
+        public virtual Developer Developer { get; set; }
+        public virtual Project Project { get; set; }
 
-        public TimeReport(Guid projectMemberId, DateTime startedAt, DateTime endedAt)
+        public TimeReport(Guid developerId, Guid projectId, DateTime startedAt, DateTime endedAt)
         {
-            ProjectMemberId = projectMemberId;
+            DeveloperId = developerId;
+            ProjectId = projectId;
             StartedAt = startedAt;
             EndedAt = endedAt;
 
             this.CalculatedTimeWorked = EndedAt - StartedAt;
-            this.CalculatedWeekNumber = DateTime.Now.WeekNumberOfTheYear();
         }
     }
 }

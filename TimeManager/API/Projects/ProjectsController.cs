@@ -8,8 +8,6 @@ using TimeManager.Application.Projects.CancelProject;
 using TimeManager.Application.Projects.ChangeProjectDetails;
 using TimeManager.Application.Projects.GetProjects;
 using TimeManager.Application.Projects.RegisterProject;
-using API.Projects.ProjectMembers;
-using TimeManager.Application.Projects.RegisterMember;
 
 namespace API.Projects
 {
@@ -75,21 +73,6 @@ namespace API.Projects
         public async Task<IActionResult> CancelProject([FromRoute] Guid projectId)
         {
             await _mediator.Send(new CancelProjectCommand(projectId));
-
-            return Ok();
-        }
-
-        /// <summary>
-        /// Register a new member to a project.
-        /// </summary>
-        /// <param name="projectId">Project ID</param>
-        /// <param name="request">Developer Id</param>
-        /// <returns></returns>
-        [HttpPost("{projectId}/members")]
-        [ProducesResponseType((int)HttpStatusCode.OK)]
-        public async Task<IActionResult> RegisterProjectMember([FromRoute] Guid projectId, [FromBody] RegisterProjectMemberRequest request)
-        {
-            await _mediator.Send(new RegisterProjectMemberCommand(request.DeveloperId, projectId));
 
             return Ok();
         }

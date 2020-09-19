@@ -19,9 +19,14 @@ namespace TimeManager.Infrastructure.Persistence.Mapping
                 .IsRequired();
 
              builder
-                .HasOne(c => c.ProjectMember)
+                .HasOne(c => c.Developer)
                 .WithMany(c => c.TimeReports)
-                .HasForeignKey(c => c.ProjectMemberId);
+                .HasForeignKey(c => c.DeveloperId);
+
+            builder
+                .HasOne(d => d.Project)
+                .WithMany(m => m.TimeReports)
+                .HasForeignKey(k => k.ProjectId);
         }
     }
 }

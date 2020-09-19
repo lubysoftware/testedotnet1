@@ -1,17 +1,17 @@
-﻿using TimeManager.Infrastructure.Identity;
-using IdentityServer4.EntityFramework.Options;
+﻿using System.Reflection;
 using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
-using System.Reflection;
+using IdentityServer4.EntityFramework.Options;
 using TimeManager.Domain.Projects;
 using TimeManager.Domain.Developers;
-using TimeManager.Domain.Projects.ProjectMembers;
+using TimeManager.Infrastructure.Identity;
 using TimeManager.Domain.Developers.TimeReports;
+using TimeManager.Application.Common.Interfaces;
 
 namespace TimeManager.Infrastructure.Persistence
 {
-    public class ApplicationDbContext : ApiAuthorizationDbContext<ApplicationUser>
+    public class ApplicationDbContext : ApiAuthorizationDbContext<ApplicationUser>, IApplicationDbContext
     {
         public ApplicationDbContext(DbContextOptions options, IOptions<OperationalStoreOptions> operationalStoreOptions) 
             : base(options, operationalStoreOptions)
@@ -20,7 +20,6 @@ namespace TimeManager.Infrastructure.Persistence
 
         public DbSet<Project> Projects { get; set; }
         public DbSet<Developer> Developers { get; set; }
-        public DbSet<ProjectMember> ProjectMembers { get; set; }
         public DbSet<TimeReport> TimeReports { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)

@@ -9,8 +9,6 @@ using TimeManager.Domain.Projects;
 using TimeManager.Infrastructure.Domain.Projects;
 using TimeManager.Domain.Developers;
 using TimeManager.Infrastructure.Domain.Developers;
-using TimeManager.Domain.Projects.ProjectMembers;
-using TimeManager.Infrastructure.Domain.Projects.ProjectMembers;
 using TimeManager.Domain.Developers.TimeReports;
 using TimeManager.Infrastructure.Domain.Developers.TimeReports;
 
@@ -35,10 +33,11 @@ namespace TimeManager.Infrastructure
 
             services.AddScoped<IProjectRepository, ProjectRepository>();
             services.AddScoped<IDeveloperRepository, DeveloperRepository>();
-            services.AddScoped<IProjectMemberRepository, ProjectMemberRepository>();
             services.AddScoped<ITimeReportRepository, TimeReportRepository>();
 
-                services.AddDefaultIdentity<ApplicationUser>()
+            services.AddScoped<IApplicationDbContext>(provider => provider.GetService<ApplicationDbContext>());
+
+            services.AddDefaultIdentity<ApplicationUser>()
                     .AddEntityFrameworkStores<ApplicationDbContext>();
             
             services.AddIdentityServer()
