@@ -1,14 +1,13 @@
-using API.Configuration;
-using Hellang.Middleware.ProblemDetails;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using TimeManager.API.Configuration;
 using TimeManager.Application;
 using TimeManager.Infrastructure;
 
-namespace API
+namespace TimeManager.API
 {
     public class Startup
     {

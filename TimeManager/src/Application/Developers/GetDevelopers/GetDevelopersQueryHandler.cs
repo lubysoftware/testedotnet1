@@ -2,11 +2,12 @@
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using TimeManager.Application.Common.Models;
 using TimeManager.Domain.Developers;
 
 namespace TimeManager.Application.Developers.GetDevelopers
 {
-    public class GetDevelopersQueryHandler : IRequestHandler<GetDevelopersQuery, DevelopersViewModel>
+    public class GetDevelopersQueryHandler : IRequestHandler<GetDevelopersQuery, Response>
     {
         private readonly IDeveloperRepository _repository;
 
@@ -15,11 +16,11 @@ namespace TimeManager.Application.Developers.GetDevelopers
             _repository = repository;
         }
 
-        public async Task<DevelopersViewModel> Handle(GetDevelopersQuery request, CancellationToken cancellationToken)
+        public async Task<Response> Handle(GetDevelopersQuery request, CancellationToken cancellationToken)
         {
             var list = await _repository.GetAllAsync();
 
-            return new DevelopersViewModel
+            var developersViewModel = new DevelopersViewModel
             {
                 Developers = list.Select(x => new DeveloperDto
                 {
@@ -27,6 +28,8 @@ namespace TimeManager.Application.Developers.GetDevelopers
                     Name = x.Name
                 })
             };
+
+            return new Response(developersViewModel);
         }
     }
 }

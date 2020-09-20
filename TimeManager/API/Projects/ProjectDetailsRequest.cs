@@ -1,4 +1,4 @@
-﻿namespace API.Projects
+﻿namespace TimeManager.API.Projects
 {
     public class ProjectDetailsRequest
     {

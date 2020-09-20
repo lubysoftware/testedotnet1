@@ -1,4 +1,4 @@
-﻿namespace API.Developers
+﻿namespace TimeManager.API.Developers
 {
     public class DeveloperDetailsRequest
     {

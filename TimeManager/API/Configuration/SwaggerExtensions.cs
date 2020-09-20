@@ -4,7 +4,7 @@ using System;
 using System.IO;
 using System.Reflection;
 
-namespace API.Configuration
+namespace TimeManager.API.Configuration
 {
     internal static class SwaggerExtensions
     {

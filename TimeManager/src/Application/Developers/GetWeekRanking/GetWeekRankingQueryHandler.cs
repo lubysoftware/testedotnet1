@@ -1,16 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using TimeManager.Application.Common.Interfaces;
+using TimeManager.Application.Common.Models;
 using TimeManager.Domain;
 
 namespace TimeManager.Application.Developers.GetWeekRanking
 {
-    public class GetWeekRankingQueryHandler : IRequestHandler<GetWeekRankingQuery, IEnumerable<RankingViewModel>>
+    public class GetWeekRankingQueryHandler : IRequestHandler<GetWeekRankingQuery, Response>
     {
         private readonly IApplicationDbContext _context;
 
@@ -19,7 +19,7 @@ namespace TimeManager.Application.Developers.GetWeekRanking
             _context = context;
         }
 
-        public async Task<IEnumerable<RankingViewModel>> Handle(GetWeekRankingQuery request, CancellationToken cancellationToken)
+        public async Task<Response> Handle(GetWeekRankingQuery request, CancellationToken cancellationToken)
         {
             var thisWeek = DateTime.Now.WeekNumberOfTheYear();
 
@@ -41,7 +41,7 @@ namespace TimeManager.Application.Developers.GetWeekRanking
                 .Take(5)
                 .ToListAsync();
 
-            return queryResult;
+            return new Response(queryResult);
         }
     }
 }

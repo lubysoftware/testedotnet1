@@ -1,9 +1,9 @@
 ﻿using MediatR;
-using System.Collections.Generic;
+using TimeManager.Application.Common.Models;
 
 namespace TimeManager.Application.Developers.GetWeekRanking
 {
-    public class GetWeekRankingQuery : IRequest<IEnumerable<RankingViewModel>>
+    public class GetWeekRankingQuery : IRequest<Response>
     {
     }
 }

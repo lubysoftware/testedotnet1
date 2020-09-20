@@ -2,11 +2,12 @@
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using TimeManager.Application.Common.Models;
 using TimeManager.Domain.Projects;
 
 namespace TimeManager.Application.Projects.GetProjects
 {
-    public class GetProjectsQueryHandler : IRequestHandler<GetProjectsQuery, ProjectsViewModel>
+    public class GetProjectsQueryHandler : IRequestHandler<GetProjectsQuery, Response>
     {
         private readonly IProjectRepository _repository;
 
@@ -15,11 +16,11 @@ namespace TimeManager.Application.Projects.GetProjects
             _repository = repository;
         }
 
-        public async Task<ProjectsViewModel> Handle(GetProjectsQuery request, CancellationToken cancellationToken)
+        public async Task<Response> Handle(GetProjectsQuery request, CancellationToken cancellationToken)
         {
             var list = await _repository.GetAllAsync();
 
-            return new ProjectsViewModel
+            var result =  new ProjectsViewModel
             {
                 Projects = list.Select(x => new ProjectDto
                 {
@@ -27,6 +28,8 @@ namespace TimeManager.Application.Projects.GetProjects
                     Name = x.Name
                 })
             };
+
+            return new Response(result);
         }
     }
 }

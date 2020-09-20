@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace API.Developers.TimeReports
+namespace TimeManager.API.Developers.TimeReports
 {
     public class SendTimeReportRequest
     {

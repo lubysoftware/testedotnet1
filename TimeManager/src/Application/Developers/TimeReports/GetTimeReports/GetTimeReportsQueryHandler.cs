@@ -4,10 +4,11 @@ using System.Threading.Tasks;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using TimeManager.Application.Common.Interfaces;
+using TimeManager.Application.Common.Models;
 
 namespace TimeManager.Application.Developers.TimeReports.GetTimeReports
 {
-    public class GetTimeReportsQueryHandler : IRequestHandler<GetTimeReportsQuery, TimeReportsViewModel>
+    public class GetTimeReportsQueryHandler : IRequestHandler<GetTimeReportsQuery, Response>
     {
         private readonly IApplicationDbContext _context;
 
@@ -16,7 +17,7 @@ namespace TimeManager.Application.Developers.TimeReports.GetTimeReports
             _context = context;
         }
 
-        public async Task<TimeReportsViewModel> Handle(GetTimeReportsQuery request, CancellationToken cancellationToken)
+        public async Task<Response> Handle(GetTimeReportsQuery request, CancellationToken cancellationToken)
         {
             var result = await _context.TimeReports
                 .Where(w => w.DeveloperId == request.DeveloperId)
@@ -36,7 +37,7 @@ namespace TimeManager.Application.Developers.TimeReports.GetTimeReports
                 TimeReports = result
             };
 
-            return s;
+            return new Response(s);
         }
     }
 }

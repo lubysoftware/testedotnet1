@@ -9,7 +9,7 @@ using TimeManager.Application.Projects.ChangeProjectDetails;
 using TimeManager.Application.Projects.GetProjects;
 using TimeManager.Application.Projects.RegisterProject;
 
-namespace API.Projects
+namespace TimeManager.API.Projects
 {
     [Route("api/projects")]
     [ApiController]
@@ -31,7 +31,10 @@ namespace API.Projects
         {
             var result = await _mediator.Send(new GetProjectsQuery());
 
-            return Ok(result);
+            if (result.IsSuccess)
+                return Ok(result);
+
+            return BadRequest(result.Errors);
         }
 
         /// <summary>
@@ -45,10 +48,9 @@ namespace API.Projects
             var response = await _mediator.Send(new RegisterProjectCommand(request.Name));
 
             if (response.IsSuccess)
-                return BadRequest(response.Errors);
+                return Created(string.Empty, null);
 
-            return Created(string.Empty, null);
-            
+            return BadRequest(response.Errors);
         }
 
         /// <summary>
@@ -63,9 +65,9 @@ namespace API.Projects
             var response = await _mediator.Send(new ChangeProjectDetailsCommand(projectId, request.Name));
 
             if (response.IsSuccess)
-                return BadRequest(response.Errors);
+                return Ok();
 
-            return Ok();
+            return BadRequest(response.Errors);
         }
 
         /// <summary>
@@ -79,9 +81,9 @@ namespace API.Projects
             var response = await _mediator.Send(new CancelProjectCommand(projectId));
 
             if (response.IsSuccess)
-                return BadRequest(response.Errors);
+                return Ok();
 
-            return Ok();
+            return BadRequest(response.Errors);
         }
     }
 }

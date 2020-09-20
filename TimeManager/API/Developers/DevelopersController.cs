@@ -1,11 +1,10 @@
-﻿using API.Developers.TimeReports;
-using MediatR;
+﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
+using TimeManager.API.Developers.TimeReports;
 using TimeManager.Application.Developers;
 using TimeManager.Application.Developers.ChangeDeveloperDetails;
 using TimeManager.Application.Developers.GetDevelopers;
@@ -15,7 +14,7 @@ using TimeManager.Application.Developers.RemoveDeveloper;
 using TimeManager.Application.Developers.TimeReports.GetTimeReports;
 using TimeManager.Application.Developers.TimeReports.SendTimeReport;
 
-namespace API.Developers
+namespace TimeManager.API.Developers
 {
     [Route("api/developers")]
     [ApiController]
@@ -37,7 +36,10 @@ namespace API.Developers
         {
             var result = await _mediator.Send(new GetDevelopersQuery());
 
-            return Ok(result);
+            if (result.IsSuccess)
+                return Ok(result);
+
+            return BadRequest(result.Errors);
         }
 
         /// <summary>
@@ -51,9 +53,9 @@ namespace API.Developers
             var response = await _mediator.Send(new RegisterDeveloperCommand(request.Name));
 
             if (response.IsSuccess)
-                return BadRequest(response.Errors);
+                return Created(string.Empty, null);
 
-            return Created(string.Empty, null);
+            return BadRequest(response.Errors);
         }
 
         /// <summary>
@@ -68,9 +70,9 @@ namespace API.Developers
             var response = await _mediator.Send(new ChangeDeveloperDetailsCommand(developerId, request.Name));
 
             if (response.IsSuccess)
-                return BadRequest(response.Errors);
+                return Ok();
 
-            return Ok();
+            return BadRequest(response.Errors);
         }
 
         /// <summary>
@@ -84,9 +86,9 @@ namespace API.Developers
             var response = await _mediator.Send(new RemoveDeveloperCommand(developerId));
 
             if (response.IsSuccess)
-                return BadRequest(response.Errors);
+                return Ok();
 
-            return Ok();
+            return BadRequest(response.Errors);
         }
 
         /// <summary>
@@ -106,9 +108,9 @@ namespace API.Developers
             var response = await _mediator.Send(new SendTimeReportCommand(projectId, developerId, request.StartedAt, request.EndedAt));
 
             if (response.IsSuccess)
-                return BadRequest(response.Errors);
+                return Ok();
 
-            return Ok();
+            return BadRequest(response.Errors);
         }
 
         /// <summary>
@@ -117,9 +119,14 @@ namespace API.Developers
         /// <param name="developerId">Developer ID</param>
         [HttpGet("{developerId}/reports")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
-        public async Task<IActionResult> GetDeveloperTimeReports([FromRoute]Guid developerId)
+        public async Task<IActionResult> GetDeveloperTimeReports([FromRoute] Guid developerId)
         {
-            return Ok(await _mediator.Send(new GetTimeReportsQuery(developerId)));
+            var result = await _mediator.Send(new GetTimeReportsQuery(developerId));
+
+            if (result.IsSuccess)
+                return Ok(result);
+
+            return BadRequest(result.Errors);
         }
 
         /// <summary>
@@ -129,7 +136,12 @@ namespace API.Developers
         [ProducesResponseType(typeof(IEnumerable<RankingViewModel>), (int)HttpStatusCode.OK)]
         public async Task<IActionResult> GetWeekRanking()
         {
-            return Ok(await _mediator.Send(new GetWeekRankingQuery()));
+            var result = await _mediator.Send(new GetWeekRankingQuery());
+
+            if (result.IsSuccess)
+                return Ok(result);
+
+            return BadRequest(result.Errors);
         }
     }
 }

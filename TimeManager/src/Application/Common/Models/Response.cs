@@ -10,7 +10,7 @@ namespace TimeManager.Application.Common.Models
 
         public IEnumerable<string> Errors { get; }
         public object Result { get; }
-        public bool IsSuccess => this.Errors.Any();
+        public bool IsSuccess => !this.Errors.Any();
 
         public Response()
         {
