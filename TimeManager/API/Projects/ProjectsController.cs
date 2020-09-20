@@ -31,9 +31,6 @@ namespace API.Projects
         {
             var result = await _mediator.Send(new GetProjectsQuery());
 
-            if (result == null)
-                return BadRequest();
-
             return Ok(result);
         }
 
@@ -45,9 +42,13 @@ namespace API.Projects
         [ProducesResponseType(typeof(ProjectDto), (int)HttpStatusCode.Created)]
         public async Task<IActionResult> RegisterProject([FromBody] ProjectDetailsRequest request)
         {
-            await _mediator.Send(new RegisterProjectCommand(request.Name));
+            var response = await _mediator.Send(new RegisterProjectCommand(request.Name));
+
+            if (response.IsSuccess)
+                return BadRequest(response.Errors);
 
             return Created(string.Empty, null);
+            
         }
 
         /// <summary>
@@ -59,7 +60,10 @@ namespace API.Projects
         [ProducesResponseType((int)HttpStatusCode.OK)]
         public async Task<IActionResult> ChangeProjectDetails([FromRoute] Guid projectId, [FromBody] ProjectDetailsRequest request)
         {
-            await _mediator.Send(new ChangeProjectDetailsCommand(projectId, request.Name));
+            var response = await _mediator.Send(new ChangeProjectDetailsCommand(projectId, request.Name));
+
+            if (response.IsSuccess)
+                return BadRequest(response.Errors);
 
             return Ok();
         }
@@ -72,7 +76,10 @@ namespace API.Projects
         [ProducesResponseType((int)HttpStatusCode.OK)]
         public async Task<IActionResult> CancelProject([FromRoute] Guid projectId)
         {
-            await _mediator.Send(new CancelProjectCommand(projectId));
+            var response = await _mediator.Send(new CancelProjectCommand(projectId));
+
+            if (response.IsSuccess)
+                return BadRequest(response.Errors);
 
             return Ok();
         }

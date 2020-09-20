@@ -1,11 +1,12 @@
 ﻿using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
+using TimeManager.Application.Common.Models;
 using TimeManager.Domain.Developers;
 
 namespace TimeManager.Application.Developers.ChangeDeveloperDetails
 {
-    public class ChangeDeveloperDetailsCommandHandler : IRequestHandler<ChangeDeveloperDetailsCommand, Unit>
+    public class ChangeDeveloperDetailsCommandHandler : IRequestHandler<ChangeDeveloperDetailsCommand, Response>
     {
         private readonly IDeveloperRepository _repository;
 
@@ -14,17 +15,22 @@ namespace TimeManager.Application.Developers.ChangeDeveloperDetails
             _repository = repository;
         }
 
-        public async Task<Unit> Handle(ChangeDeveloperDetailsCommand request, CancellationToken cancellationToken)
+        public async Task<Response> Handle(ChangeDeveloperDetailsCommand request, CancellationToken cancellationToken)
         {
-            var entity = await _repository.GetByIdsAsync(request.DeveloperId);
+            var response = new Response();
 
-            // TODO verify if null
+            var entity = await _repository.GetByIdsAsync(request.DeveloperId);
+            if(entity == null)
+            {
+                response.AddError("Developer não encontrado");
+                return response;
+            }
 
             entity.ChangeName(request.Name);
 
             await _repository.UpdateAsync(entity);
 
-            return Unit.Value;
+            return new Response(Unit.Value);
         }
     }
 }

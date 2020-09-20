@@ -1,8 +1,9 @@
 ﻿using MediatR;
+using TimeManager.Application.Common.Models;
 
 namespace TimeManager.Application.Projects.RegisterProject
 {
-    public class RegisterProjectCommand : IRequest<Unit>
+    public class RegisterProjectCommand : IRequest<Response>
     {
         public string Name { get; }
 

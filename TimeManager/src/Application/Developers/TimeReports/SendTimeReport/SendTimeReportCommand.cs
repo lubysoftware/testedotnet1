@@ -1,9 +1,10 @@
 ﻿using MediatR;
 using System;
+using TimeManager.Application.Common.Models;
 
 namespace TimeManager.Application.Developers.TimeReports.SendTimeReport
 {
-    public class SendTimeReportCommand : IRequest<Unit>
+    public class SendTimeReportCommand : IRequest<Response>
     {
         public Guid ProjectId { get; }
         public Guid DeveloperId { get; }

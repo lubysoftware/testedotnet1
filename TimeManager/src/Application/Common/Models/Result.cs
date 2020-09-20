@@ -13,7 +13,7 @@ namespace TimeManager.Application.Common.Models
 
         public bool Succeeded { get; set; }
 
-        public string[] Errors { get; set; }
+        public IEnumerable<string> Errors { get; set; }
 
         public static Result Success()
         {

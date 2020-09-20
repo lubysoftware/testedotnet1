@@ -1,9 +1,10 @@
 ﻿using MediatR;
 using System;
+using TimeManager.Application.Common.Models;
 
 namespace TimeManager.Application.Developers.ChangeDeveloperDetails
 {
-    public class ChangeDeveloperDetailsCommand : IRequest<Unit>
+    public class ChangeDeveloperDetailsCommand : IRequest<Response>
     {
         public Guid DeveloperId { get; }
 

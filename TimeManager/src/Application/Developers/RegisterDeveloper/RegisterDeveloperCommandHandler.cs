@@ -1,11 +1,12 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
+using TimeManager.Application.Common.Models;
 using TimeManager.Domain.Developers;
 
 namespace TimeManager.Application.Developers.RegisterDeveloper
 {
-    class RegisterDeveloperCommandHandler : IRequestHandler<RegisterDeveloperCommand, Unit>
+    class RegisterDeveloperCommandHandler : IRequestHandler<RegisterDeveloperCommand, Response>
     {
         private readonly IDeveloperRepository _repository;
 
@@ -14,13 +15,13 @@ namespace TimeManager.Application.Developers.RegisterDeveloper
             _repository = repository;
         }
 
-        public async Task<Unit> Handle(RegisterDeveloperCommand request, CancellationToken cancellationToken)
+        public async Task<Response> Handle(RegisterDeveloperCommand request, CancellationToken cancellationToken)
         {
             var dev = new Developer(request.Name);
 
             await _repository.AddAsync(dev);
 
-            return Unit.Value;
+            return new Response(Unit.Value);
         }
     }
 }

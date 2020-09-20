@@ -3,6 +3,7 @@ using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using TimeManager.Application.Developers;
@@ -36,9 +37,6 @@ namespace API.Developers
         {
             var result = await _mediator.Send(new GetDevelopersQuery());
 
-            if (result == null)
-                return BadRequest();
-
             return Ok(result);
         }
 
@@ -50,7 +48,10 @@ namespace API.Developers
         [ProducesResponseType(typeof(DeveloperDto), (int)HttpStatusCode.Created)]
         public async Task<IActionResult> RegisterDeveloper([FromBody] DeveloperDetailsRequest request)
         {
-            await _mediator.Send(new RegisterDeveloperCommand(request.Name));
+            var response = await _mediator.Send(new RegisterDeveloperCommand(request.Name));
+
+            if (response.IsSuccess)
+                return BadRequest(response.Errors);
 
             return Created(string.Empty, null);
         }
@@ -64,7 +65,10 @@ namespace API.Developers
         [ProducesResponseType((int)HttpStatusCode.OK)]
         public async Task<IActionResult> ChangeDeveloperDetails([FromRoute] Guid developerId, [FromBody] DeveloperDetailsRequest request)
         {
-            await _mediator.Send(new ChangeDeveloperDetailsCommand(developerId, request.Name));
+            var response = await _mediator.Send(new ChangeDeveloperDetailsCommand(developerId, request.Name));
+
+            if (response.IsSuccess)
+                return BadRequest(response.Errors);
 
             return Ok();
         }
@@ -77,7 +81,10 @@ namespace API.Developers
         [ProducesResponseType((int)HttpStatusCode.OK)]
         public async Task<IActionResult> RemoveDeveloper([FromRoute] Guid developerId)
         {
-            await _mediator.Send(new RemoveDeveloperCommand(developerId));
+            var response = await _mediator.Send(new RemoveDeveloperCommand(developerId));
+
+            if (response.IsSuccess)
+                return BadRequest(response.Errors);
 
             return Ok();
         }
@@ -95,13 +102,17 @@ namespace API.Developers
             var r = new Random();
             request.StartedAt = DateTime.Now;
             request.EndedAt = request.StartedAt.AddHours(r.Next(1, 8));
-            await _mediator.Send(new SendTimeReportCommand(projectId, developerId, request.StartedAt, request.EndedAt));
+
+            var response = await _mediator.Send(new SendTimeReportCommand(projectId, developerId, request.StartedAt, request.EndedAt));
+
+            if (response.IsSuccess)
+                return BadRequest(response.Errors);
 
             return Ok();
         }
 
         /// <summary>
-        /// Get developer time reports.
+        /// Get developer time reports. //APENAS TESTE
         /// </summary>
         /// <param name="developerId">Developer ID</param>
         [HttpGet("{developerId}/reports")]
