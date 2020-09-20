@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 using TimeManager.Application.Developers;
 using TimeManager.Application.Developers.ChangeDeveloperDetails;
 using TimeManager.Application.Developers.GetDevelopers;
+using TimeManager.Application.Developers.GetWeekRanking;
 using TimeManager.Application.Developers.RegisterDeveloper;
 using TimeManager.Application.Developers.RemoveDeveloper;
 using TimeManager.Application.Developers.TimeReports.GetTimeReports;
 using TimeManager.Application.Developers.TimeReports.SendTimeReport;
-using TimeManager.Application.Projects.GetWeekRanking;
 
 namespace API.Developers
 {

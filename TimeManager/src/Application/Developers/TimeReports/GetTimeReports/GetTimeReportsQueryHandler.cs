@@ -27,7 +27,8 @@ namespace TimeManager.Application.Developers.TimeReports.GetTimeReports
                     ProjectId = s.ProjectId,
                     EndedAt = s.EndedAt,
                     StartedAt = s.StartedAt,
-                    CalculatedTimeWorked = s.CalculatedTimeWorked
+                    CalculatedTimeWorked = s.CalculatedTimeWorked,
+                    CalculatedWeekOfTheYear = s.CalculatedWeekOfTheYear
                 }).ToListAsync();
 
             var s = new TimeReportsViewModel

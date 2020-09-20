@@ -1,11 +1,11 @@
 ﻿using System;
-using TimeManager.Application.Developers;
 
-namespace TimeManager.Application.Projects.GetWeekRanking
+namespace TimeManager.Application.Developers.GetWeekRanking
 {
     public class RankingViewModel
     {
         public DeveloperDto Developer { get; set; }
         public TimeSpan WorkedTimeSum { get; set; }
+        public TimeSpan WorkedTimeAverage { get; set; }
     }
 }

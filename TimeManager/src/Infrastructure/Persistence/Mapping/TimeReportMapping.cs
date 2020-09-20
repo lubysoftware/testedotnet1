@@ -18,6 +18,14 @@ namespace TimeManager.Infrastructure.Persistence.Mapping
                 .Property(c => c.EndedAt)
                 .IsRequired();
 
+            builder
+                .Property(c => c.CalculatedTimeWorked)
+                .IsRequired();
+
+            builder
+                .Property(c => c.CalculatedWeekOfTheYear)
+                .IsRequired();
+
              builder
                 .HasOne(c => c.Developer)
                 .WithMany(c => c.TimeReports)

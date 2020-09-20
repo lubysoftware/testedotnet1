@@ -10,6 +10,6 @@ namespace TimeManager.Application.Developers.TimeReports
         public DateTime StartedAt { get; set; }
         public DateTime EndedAt { get; set; }
         public TimeSpan CalculatedTimeWorked { get; set; }
-        public int CalculatedWeekNumber { get; set;  }
+        public int CalculatedWeekOfTheYear { get; set; }
     }
 }
