@@ -37,7 +37,7 @@ namespace TimeManager.API.Developers
             var result = await _mediator.Send(new GetDevelopersQuery());
 
             if (result.IsSuccess)
-                return Ok(result);
+                return Ok(result.Result);
 
             return BadRequest(result.Errors);
         }
@@ -124,7 +124,7 @@ namespace TimeManager.API.Developers
             var result = await _mediator.Send(new GetTimeReportsQuery(developerId));
 
             if (result.IsSuccess)
-                return Ok(result);
+                return Ok(result.Result);
 
             return BadRequest(result.Errors);
         }
@@ -139,7 +139,7 @@ namespace TimeManager.API.Developers
             var result = await _mediator.Send(new GetWeekRankingQuery());
 
             if (result.IsSuccess)
-                return Ok(result);
+                return Ok(result.Result);
 
             return BadRequest(result.Errors);
         }

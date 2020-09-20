@@ -32,7 +32,7 @@ namespace TimeManager.API.Projects
             var result = await _mediator.Send(new GetProjectsQuery());
 
             if (result.IsSuccess)
-                return Ok(result);
+                return Ok(result.Result);
 
             return BadRequest(result.Errors);
         }
