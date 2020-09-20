@@ -1,7 +1,5 @@
 ﻿using TimeManager.Application.Common.Interfaces;
-using TimeManager.Infrastructure.Identity;
 using TimeManager.Infrastructure.Persistence;
-using Microsoft.AspNetCore.Authentication;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -36,17 +34,6 @@ namespace TimeManager.Infrastructure
             services.AddScoped<ITimeReportRepository, TimeReportRepository>();
 
             services.AddScoped<IApplicationDbContext>(provider => provider.GetService<ApplicationDbContext>());
-
-            services.AddDefaultIdentity<ApplicationUser>()
-                    .AddEntityFrameworkStores<ApplicationDbContext>();
-            
-            services.AddIdentityServer()
-                .AddApiAuthorization<ApplicationUser, ApplicationDbContext>();
-
-            services.AddTransient<IIdentityService, IdentityService>();
-
-            services.AddAuthentication()
-                .AddIdentityServerJwt();
 
             return services;
         }

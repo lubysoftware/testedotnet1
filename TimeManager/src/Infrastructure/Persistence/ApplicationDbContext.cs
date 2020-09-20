@@ -1,21 +1,17 @@
 ﻿using System.Reflection;
-using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
-using IdentityServer4.EntityFramework.Options;
 using TimeManager.Domain.Projects;
 using TimeManager.Domain.Developers;
-using TimeManager.Infrastructure.Identity;
 using TimeManager.Domain.Developers.TimeReports;
 using TimeManager.Application.Common.Interfaces;
 
 namespace TimeManager.Infrastructure.Persistence
 {
-    public class ApplicationDbContext : ApiAuthorizationDbContext<ApplicationUser>, IApplicationDbContext
+    public class ApplicationDbContext : DbContext, IApplicationDbContext
     {
-        public ApplicationDbContext(DbContextOptions options, IOptions<OperationalStoreOptions> operationalStoreOptions) 
-            : base(options, operationalStoreOptions)
+        public ApplicationDbContext(DbContextOptions options) : base(options)
         {
+
         }
 
         public DbSet<Project> Projects { get; set; }
