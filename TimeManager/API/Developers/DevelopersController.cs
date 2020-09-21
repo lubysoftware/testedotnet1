@@ -91,7 +91,8 @@ namespace TimeManager.API.Developers
         }
 
         /// <summary>
-        /// Send time report to a project.
+        /// Send time report to a project. 
+        /// Deixei valores randomicos sendo inseridos, se quiserem tirar está no controller.
         /// </summary>
         /// <param name="developerId">Developer Id</param>
         /// <param name="projectId">Project ID</param>
