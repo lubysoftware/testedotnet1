@@ -101,8 +101,9 @@ namespace TimeManager.API.Developers
         [ProducesResponseType((int)HttpStatusCode.OK)]
         public async Task<IActionResult> SendTimeReport([FromRoute] Guid developerId, [FromRoute] Guid projectId, [FromBody] SendTimeReportRequest request)
         {
+            // Gerando Dia e Horas randomicas
             var r = new Random();
-            request.StartedAt = DateTime.Now;
+            request.StartedAt = DateTime.Now.AddDays(r.Next(0, 4));
             request.EndedAt = request.StartedAt.AddHours(r.Next(1, 8));
 
             var response = await _mediator.Send(new SendTimeReportCommand(projectId, developerId, request.StartedAt, request.EndedAt));

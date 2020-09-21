@@ -12,6 +12,7 @@ namespace TimeManager.Domain.Developers.TimeReports
         public DateTime EndedAt { get; }
         public double CalculatedHoursWorked { get; }
         public int CalculatedWeekOfTheYear { get; }
+        public int WeekDay { get; }
 
         public virtual Developer Developer { get; set; }
         public virtual Project Project { get; set; }
@@ -25,6 +26,7 @@ namespace TimeManager.Domain.Developers.TimeReports
 
             this.CalculatedHoursWorked = (endedAt - startedAt).TotalHours;
             this.CalculatedWeekOfTheYear = DateTime.Now.WeekNumberOfTheYear();
+            this.WeekDay = (int)StartedAt.DayOfWeek;
         }
     }
 }

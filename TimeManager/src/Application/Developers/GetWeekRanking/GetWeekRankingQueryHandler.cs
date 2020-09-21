@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Dapper;
@@ -25,26 +24,29 @@ namespace TimeManager.Application.Developers.GetWeekRanking
             var thisWeek = DateTime.Now.WeekNumberOfTheYear();
 
             var data = await connection.QueryAsync<dynamic>(@"
-	            SELECT 
-		            SUM(TR.CalculatedHoursWorked) as SumWorkedWeekHOurs,
-		            MIN(TR.StartedAt) as FirstDayWorked,
-		            MAX(TR.EndedAt) as LastDayWorked,
-		            D.Id as 'Developer_Id',
-		            D.Name as 'Developer_Name'
-	            FROM TimeReports TR
-	            JOIN Developers D ON D.Id = TR.DeveloperId
-	            WHERE TR.CalculatedWeekOfTheYear = @Week
-	            GROUP BY 
-		            TR.CalculatedWeekOfTheYear, D.Id, D.Name
+                SELECT *
+                INTO #Temp
+                FROM (     
+                    SELECT 
+	                    SUM(TR.CalculatedHoursWorked) as SumWorkedDayHours,
+	                    1 as DayCount,
+	                    D.Id as 'Developer_Id',
+	                    D.Name as 'Developer_Name'
+                    FROM TimeReports TR
+                    JOIN Developers D ON D.Id = TR.DeveloperId
+                    WHERE TR.CalculatedWeekOfTheYear = @Week
+                    GROUP BY TR.CalculatedWeekOfTheYear, D.Id, D.Name, TR.WeekDay ) t
+
+                SELECT TOP 5
+	                SUM(SumWorkedDayHours) / SUM(DayCount) AverageWorkedDayHours,
+	                Developer_Id,
+	                Developer_Name
+                FROM #Temp
+                GROUP BY Developer_Id, Developer_Name
+                ORDER BY AverageWorkedDayHours DESC
             ", new { Week = thisWeek });
 
-            // @TODO
-            // Considerar que há dias que não foram trabalhados no meio da semana
             var realData = Slapper.AutoMapper.MapDynamic<RankingViewModel>(data);
-
-            // @TODO
-            // Ordenação e TOP 5 na propria query
-            realData.OrderByDescending(o => o.AverageHoursWorked);
 
             return new Response(realData);
         }

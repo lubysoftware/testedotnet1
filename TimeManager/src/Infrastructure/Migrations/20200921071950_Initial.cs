@@ -44,7 +44,8 @@ namespace TimeManager.Infrastructure.Migrations
                     StartedAt = table.Column<DateTime>(nullable: false),
                     EndedAt = table.Column<DateTime>(nullable: false),
                     CalculatedHoursWorked = table.Column<double>(nullable: false),
-                    CalculatedWeekOfTheYear = table.Column<int>(nullable: false)
+                    CalculatedWeekOfTheYear = table.Column<int>(nullable: false),
+                    WeekDay = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {

@@ -26,6 +26,10 @@ namespace TimeManager.Infrastructure.Persistence.Mapping
                 .Property(c => c.CalculatedWeekOfTheYear)
                 .IsRequired();
 
+            builder
+                .Property(c => c.WeekDay)
+                .IsRequired();
+
              builder
                 .HasOne(c => c.Developer)
                 .WithMany(c => c.TimeReports)
