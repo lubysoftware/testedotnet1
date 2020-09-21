@@ -10,7 +10,7 @@ using TimeManager.Infrastructure.Persistence;
 namespace TimeManager.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200920210655_Initial")]
+    [Migration("20200921004721_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -45,8 +45,8 @@ namespace TimeManager.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<TimeSpan>("CalculatedTimeWorked")
-                        .HasColumnType("time");
+                    b.Property<double>("CalculatedHoursWorked")
+                        .HasColumnType("float");
 
                     b.Property<int>("CalculatedWeekOfTheYear")
                         .HasColumnType("int");

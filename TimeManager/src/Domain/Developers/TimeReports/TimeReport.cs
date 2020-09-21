@@ -10,7 +10,7 @@ namespace TimeManager.Domain.Developers.TimeReports
         public Guid ProjectId { get; }
         public DateTime StartedAt { get; }
         public DateTime EndedAt { get; }
-        public TimeSpan CalculatedTimeWorked { get; }
+        public double CalculatedHoursWorked { get; }
         public int CalculatedWeekOfTheYear { get; }
 
         public virtual Developer Developer { get; set; }
@@ -23,7 +23,7 @@ namespace TimeManager.Domain.Developers.TimeReports
             StartedAt = startedAt;
             EndedAt = endedAt;
 
-            this.CalculatedTimeWorked = endedAt - startedAt;
+            this.CalculatedHoursWorked = (endedAt - startedAt).TotalHours;
             this.CalculatedWeekOfTheYear = DateTime.Now.WeekNumberOfTheYear();
         }
     }

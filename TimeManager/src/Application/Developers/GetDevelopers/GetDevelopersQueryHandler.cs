@@ -1,35 +1,34 @@
-﻿using MediatR;
-using System.Linq;
+﻿using Dapper;
+using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
+using TimeManager.Application.Common.Interfaces;
 using TimeManager.Application.Common.Models;
-using TimeManager.Domain.Developers;
 
 namespace TimeManager.Application.Developers.GetDevelopers
 {
     public class GetDevelopersQueryHandler : IRequestHandler<GetDevelopersQuery, Response>
     {
-        private readonly IDeveloperRepository _repository;
+        private readonly ISqlConnectionFactory _sqlConnectionFactory;
 
-        public GetDevelopersQueryHandler(IDeveloperRepository repository)
+        public GetDevelopersQueryHandler(ISqlConnectionFactory sqlConnectionFactory)
         {
-            _repository = repository;
+            _sqlConnectionFactory = sqlConnectionFactory;
         }
 
         public async Task<Response> Handle(GetDevelopersQuery request, CancellationToken cancellationToken)
         {
-            var list = await _repository.GetAllAsync();
+            var connection = _sqlConnectionFactory.GetOpenConnection();
 
-            var developersViewModel = new DevelopersViewModel
-            {
-                Developers = list.Select(x => new DeveloperDto
-                {
-                    Id = x.Id,
-                    Name = x.Name
-                })
-            };
+            const string query = @"
+                SELECT
+	                Id,
+	                Name
+                FROM Developers";
 
-            return new Response(developersViewModel);
+            var data = await connection.QueryAsync<DeveloperDto>(query);
+
+            return new Response(data);
         }
     }
 }

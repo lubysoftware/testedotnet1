@@ -11,7 +11,6 @@ using TimeManager.Application.Developers.GetDevelopers;
 using TimeManager.Application.Developers.GetWeekRanking;
 using TimeManager.Application.Developers.RegisterDeveloper;
 using TimeManager.Application.Developers.RemoveDeveloper;
-using TimeManager.Application.Developers.TimeReports.GetTimeReports;
 using TimeManager.Application.Developers.TimeReports.SendTimeReport;
 
 namespace TimeManager.API.Developers
@@ -31,7 +30,7 @@ namespace TimeManager.API.Developers
         /// Get all developers.
         /// </summary>
         [HttpGet]
-        [ProducesResponseType(typeof(DevelopersViewModel), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(IEnumerable<DeveloperDto>), (int)HttpStatusCode.OK)]
         public async Task<IActionResult> GetAll()
         {
             var result = await _mediator.Send(new GetDevelopersQuery());
@@ -111,22 +110,6 @@ namespace TimeManager.API.Developers
                 return Ok();
 
             return BadRequest(response.Errors);
-        }
-
-        /// <summary>
-        /// Get developer time reports. //APENAS TESTE
-        /// </summary>
-        /// <param name="developerId">Developer ID</param>
-        [HttpGet("{developerId}/reports")]
-        [ProducesResponseType((int)HttpStatusCode.OK)]
-        public async Task<IActionResult> GetDeveloperTimeReports([FromRoute] Guid developerId)
-        {
-            var result = await _mediator.Send(new GetTimeReportsQuery(developerId));
-
-            if (result.IsSuccess)
-                return Ok(result.Result);
-
-            return BadRequest(result.Errors);
         }
 
         /// <summary>

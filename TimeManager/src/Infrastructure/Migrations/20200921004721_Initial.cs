@@ -43,7 +43,7 @@ namespace TimeManager.Infrastructure.Migrations
                     ProjectId = table.Column<Guid>(nullable: false),
                     StartedAt = table.Column<DateTime>(nullable: false),
                     EndedAt = table.Column<DateTime>(nullable: false),
-                    CalculatedTimeWorked = table.Column<TimeSpan>(nullable: false),
+                    CalculatedHoursWorked = table.Column<double>(nullable: false),
                     CalculatedWeekOfTheYear = table.Column<int>(nullable: false)
                 },
                 constraints: table =>

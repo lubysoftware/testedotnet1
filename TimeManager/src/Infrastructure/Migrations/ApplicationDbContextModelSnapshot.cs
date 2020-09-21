@@ -43,8 +43,8 @@ namespace TimeManager.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<TimeSpan>("CalculatedTimeWorked")
-                        .HasColumnType("time");
+                    b.Property<double>("CalculatedHoursWorked")
+                        .HasColumnType("float");
 
                     b.Property<int>("CalculatedWeekOfTheYear")
                         .HasColumnType("int");

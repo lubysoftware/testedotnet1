@@ -1,35 +1,34 @@
-﻿using MediatR;
-using System.Linq;
+﻿using Dapper;
+using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
+using TimeManager.Application.Common.Interfaces;
 using TimeManager.Application.Common.Models;
-using TimeManager.Domain.Projects;
 
 namespace TimeManager.Application.Projects.GetProjects
 {
     public class GetProjectsQueryHandler : IRequestHandler<GetProjectsQuery, Response>
     {
-        private readonly IProjectRepository _repository;
+        private readonly ISqlConnectionFactory _sqlConnectionFactory;
 
-        public GetProjectsQueryHandler(IProjectRepository repository)
+        public GetProjectsQueryHandler(ISqlConnectionFactory sqlConnectionFactory)
         {
-            _repository = repository;
+            _sqlConnectionFactory = sqlConnectionFactory;
         }
 
         public async Task<Response> Handle(GetProjectsQuery request, CancellationToken cancellationToken)
         {
-            var list = await _repository.GetAllAsync();
+            var connection = _sqlConnectionFactory.GetOpenConnection();
 
-            var result =  new ProjectsViewModel
-            {
-                Projects = list.Select(x => new ProjectDto
-                {
-                    Id = x.Id,
-                    Name = x.Name
-                })
-            };
+            const string query = @"
+                SELECT
+	                Id,
+	                Name
+                FROM Projects";
 
-            return new Response(result);
+            var data = await connection.QueryAsync<ProjectDto>(query);
+
+            return new Response(data);
         }
     }
 }

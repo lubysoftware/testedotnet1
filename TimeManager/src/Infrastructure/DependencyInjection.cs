@@ -27,6 +27,8 @@ namespace TimeManager.Infrastructure
                     options.UseSqlServer(
                         configuration.GetConnectionString("DefaultConnection"),
                         b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
+
+                services.AddSingleton<ISqlConnectionFactory>(x => ActivatorUtilities.CreateInstance<SqlConnectionFactory>(x, configuration.GetConnectionString("DefaultConnection")));
             }
 
             services.AddScoped<IProjectRepository, ProjectRepository>();

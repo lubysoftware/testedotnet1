@@ -8,6 +8,7 @@ using TimeManager.Application.Projects.CancelProject;
 using TimeManager.Application.Projects.ChangeProjectDetails;
 using TimeManager.Application.Projects.GetProjects;
 using TimeManager.Application.Projects.RegisterProject;
+using System.Collections.Generic;
 
 namespace TimeManager.API.Projects
 {
@@ -26,7 +27,7 @@ namespace TimeManager.API.Projects
         /// Get all projects.
         /// </summary>
         [HttpGet]
-        [ProducesResponseType(typeof(ProjectsViewModel), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(IEnumerable<ProjectDto>), (int)HttpStatusCode.OK)]
         public async Task<IActionResult> GetAll()
         {
             var result = await _mediator.Send(new GetProjectsQuery());

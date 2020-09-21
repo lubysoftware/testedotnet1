@@ -19,7 +19,7 @@ namespace TimeManager.Infrastructure.Persistence.Mapping
                 .IsRequired();
 
             builder
-                .Property(c => c.CalculatedTimeWorked)
+                .Property(c => c.CalculatedHoursWorked)
                 .IsRequired();
 
             builder

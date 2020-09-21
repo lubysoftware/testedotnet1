@@ -9,7 +9,7 @@ namespace TimeManager.Application.Developers.TimeReports
         public Guid ProjectId { get; set; }
         public DateTime StartedAt { get; set; }
         public DateTime EndedAt { get; set; }
-        public TimeSpan CalculatedTimeWorked { get; set; }
+        public double CalculatedSecondsWorked { get; set; }
         public int CalculatedWeekOfTheYear { get; set; }
     }
 }

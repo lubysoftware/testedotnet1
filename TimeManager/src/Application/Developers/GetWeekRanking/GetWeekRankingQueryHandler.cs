@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using Dapper;
 using MediatR;
-using Microsoft.EntityFrameworkCore;
 using TimeManager.Application.Common.Interfaces;
 using TimeManager.Application.Common.Models;
 using TimeManager.Domain;
@@ -12,36 +11,37 @@ namespace TimeManager.Application.Developers.GetWeekRanking
 {
     public class GetWeekRankingQueryHandler : IRequestHandler<GetWeekRankingQuery, Response>
     {
-        private readonly IApplicationDbContext _context;
+        private readonly ISqlConnectionFactory _sqlConnectionFactory;
 
-        public GetWeekRankingQueryHandler(IApplicationDbContext context)
+        public GetWeekRankingQueryHandler(ISqlConnectionFactory sqlConnectionFactory)
         {
-            _context = context;
+            _sqlConnectionFactory = sqlConnectionFactory;
         }
 
         public async Task<Response> Handle(GetWeekRankingQuery request, CancellationToken cancellationToken)
         {
+            var connection = _sqlConnectionFactory.GetOpenConnection();
             var thisWeek = DateTime.Now.WeekNumberOfTheYear();
 
-            var queryResult = await _context.TimeReports
-                .Include(l => l.Developer)
-                .GroupBy(d => new { d.Developer.Name, d.DeveloperId, d.CalculatedWeekOfTheYear })
-                .Where(w => w.Key.CalculatedWeekOfTheYear == thisWeek)
-                .Select(s => new RankingViewModel
-                {
-                    Developer = new DeveloperDto
-                    {
-                        Id = s.Key.DeveloperId,
-                        Name = s.Key.Name,
-                    },
-                    WorkedTimeSum = TimeSpan.FromSeconds(s.Sum(p => p.CalculatedTimeWorked.TotalSeconds)),
-                    WorkedTimeAverage = TimeSpan.FromSeconds(s.Average(a => a.CalculatedTimeWorked.TotalSeconds))
-                })
-                .OrderByDescending(o => o.WorkedTimeSum)
-                .Take(5)
-                .ToListAsync();
+            const string query = @"
+                SELECT TOP 5
+	                AVG(CalculatedHoursWorked) as AverageHoursWorked,
+	                D.Id as Developer_Id,
+	                D.Name as Developer_Name
+                FROM TimeReports TR
+                JOIN Developers D ON d.Id = TR.DeveloperId
+                GROUP BY 
+	                D.Id, D.Name, Tr.CalculatedWeekOfTheYear
+                HAVING
+	                CalculatedWeekOfTheYear = @Week
+                ORDER BY
+	                AverageHoursWorked DESC";
 
-            return new Response(queryResult);
+            var data = await connection.QueryAsync<dynamic>(query, new { Week = thisWeek });
+
+            var realData = Slapper.AutoMapper.MapDynamic<RankingViewModel>(data);
+
+            return new Response(realData);
         }
     }
 }
