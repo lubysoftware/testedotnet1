@@ -25,6 +25,12 @@ namespace TimeManager.Application.Developers.TimeReports.SendTimeReport
         {
             var response = new Response();
 
+            if (request.EndedAt.CompareTo(request.StartedAt) < 0)
+            {
+                response.AddError("Data final deve ser maior que data inicial.");
+                return response;
+            }
+
             // busca dev
             var dev = await _developerRepository.GetByIdsAsync(request.DeveloperId);
             if (dev == null)
