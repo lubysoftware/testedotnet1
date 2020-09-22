@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		ToDoList.txt = ToDoList.txt
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "src\API\API.csproj", "{6A3E0899-9AA2-461F-9475-9ED8CE057B4A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +28,10 @@ Global
 		{09D9C87A-9A2E-48DD-BC61-3FDC693069A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09D9C87A-9A2E-48DD-BC61-3FDC693069A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{09D9C87A-9A2E-48DD-BC61-3FDC693069A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A3E0899-9AA2-461F-9475-9ED8CE057B4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A3E0899-9AA2-461F-9475-9ED8CE057B4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A3E0899-9AA2-461F-9475-9ED8CE057B4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A3E0899-9AA2-461F-9475-9ED8CE057B4A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
