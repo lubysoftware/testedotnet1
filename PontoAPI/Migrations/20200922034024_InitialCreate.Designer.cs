@@ -10,7 +10,7 @@ using PontoAPI.Data;
 namespace PontoAPI.Migrations
 {
     [DbContext(typeof(PontoContext))]
-    [Migration("20200919025959_InitialCreate")]
+    [Migration("20200922034024_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -31,9 +31,7 @@ namespace PontoAPI.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<bool>("Ativo")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValue(true);
+                        .HasColumnType("bit");
 
                     b.Property<DateTime>("DataCadastro")
                         .HasColumnType("datetime2");
@@ -46,6 +44,36 @@ namespace PontoAPI.Migrations
                     b.ToTable("TabDesenvolvedor");
                 });
 
+            modelBuilder.Entity("PontoAPI.Domain.Models.Lancamento", b =>
+                {
+                    b.Property<int>("LancamentoID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:IdentityIncrement", 1)
+                        .HasAnnotation("SqlServer:IdentitySeed", 1)
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("DesenvolvedorID")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("HoraFim")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("HoraInicio")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("ProjetoID")
+                        .HasColumnType("int");
+
+                    b.HasKey("LancamentoID");
+
+                    b.HasIndex("DesenvolvedorID");
+
+                    b.HasIndex("ProjetoID");
+
+                    b.ToTable("TabLancamento");
+                });
+
             modelBuilder.Entity("PontoAPI.Domain.Models.Projeto", b =>
                 {
                     b.Property<int>("ProjetoID")
@@ -56,9 +84,7 @@ namespace PontoAPI.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<bool>("Ativo")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValue(true);
+                        .HasColumnType("bit");
 
                     b.Property<DateTime>("DataCadastro")
                         .HasColumnType("datetime2");
@@ -69,6 +95,17 @@ namespace PontoAPI.Migrations
                     b.HasKey("ProjetoID");
 
                     b.ToTable("TabProjeto");
+                });
+
+            modelBuilder.Entity("PontoAPI.Domain.Models.Lancamento", b =>
+                {
+                    b.HasOne("PontoAPI.Domain.Models.Desenvolvedor", "Desenvolvedor")
+                        .WithMany()
+                        .HasForeignKey("DesenvolvedorID");
+
+                    b.HasOne("PontoAPI.Domain.Models.Projeto", "Projeto")
+                        .WithMany()
+                        .HasForeignKey("ProjetoID");
                 });
 #pragma warning restore 612, 618
         }

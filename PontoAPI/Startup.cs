@@ -31,7 +31,9 @@ namespace PontoAPI
             services.AddDbContext<PontoContext>();
             services.AddTransient<IDesenvolvedorRepository, DesenvolvedorRepository>();
             services.AddTransient<IProjetoRepository, ProjetoRepository>();
+            services.AddTransient<ILancamentoRepository, LancamentoRepository>();
             services.AddControllers();
+            services.AddSwaggerGen();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,6 +43,10 @@ namespace PontoAPI
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseSwagger();
+
+            app.UseSwaggerUI(t => { t.SwaggerEndpoint("/swagger/v1/swagger.json", "PontoAPI");  t.RoutePrefix = string.Empty; });
 
             app.UseRouting();
 

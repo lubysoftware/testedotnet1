@@ -13,6 +13,8 @@ namespace PontoAPI.Data
 
         public DbSet<Projeto> ProjetoSet { get; set; }
 
+        public DbSet<Lancamento> LancamentoSet { get; set; }
+
         public PontoContext(DbContextOptions options) : base(options)
         {
         }
@@ -30,6 +32,7 @@ namespace PontoAPI.Data
         {
             modelBuilder.ApplyConfiguration(new DesenvolvedorMapping());
             modelBuilder.ApplyConfiguration(new ProjetoMapping());
+            modelBuilder.ApplyConfiguration(new LancamentoMapping());
         }
     }
 }
