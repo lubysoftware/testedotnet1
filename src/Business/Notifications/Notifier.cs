@@ -17,6 +17,12 @@ namespace Business.Notifications
         private List<Notification> _notifications;
         #endregion Attributes
 
+
+        public Notifier()
+        {
+            _notifications = new List<Notification>();
+        }
+
         #region Methods
         public List<Notification> GetNotifications()
         {

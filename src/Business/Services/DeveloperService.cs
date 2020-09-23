@@ -52,7 +52,7 @@ namespace Business.Services
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            _developerRepository?.Dispose();
         }
         #endregion Methods
     }

@@ -1,4 +1,6 @@
-﻿namespace Business.Models
+﻿using System.Collections.Generic;
+
+namespace Business.Models
 {
     /// <summary>
     /// Classe de modelo do desenvolvedor
@@ -15,5 +17,7 @@
         public string State { get; set; }
         public string Uf { get; set; }
         #endregion Properties
+
+        public IEnumerable<LaunchTime> LaunchTimes { get; set; }
     }
 }

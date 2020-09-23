@@ -1,6 +1,9 @@
 ﻿using Business.Interfaces.Repository;
 using Business.Models;
 using Data.Context;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Threading.Tasks;
 
 namespace Data.Repository
 {
@@ -13,8 +16,11 @@ namespace Data.Repository
     /// </remarks>
     public class DeveloperRepository : Repository<Developer>, IDeveloperRepository
     {
-        public DeveloperRepository(MyDbContext myDb) : base(myDb)
+        public DeveloperRepository(MyDbContext myDb) : base(myDb) { }
+
+        public async Task<Developer> GetByIdToRemove(Guid id)
         {
+            return await Db.Developers.AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
         }
     }
 }

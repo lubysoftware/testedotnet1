@@ -1,4 +1,6 @@
 ﻿using Business.Models;
+using System;
+using System.Threading.Tasks;
 
 namespace Business.Interfaces.Repository
 {
@@ -11,5 +13,8 @@ namespace Business.Interfaces.Repository
     /// </remarks>
     public interface IProjectRepository: IRepository<Project>
     {
+        Task<Project> GetProjectLaunchTime(Guid id);
+
+        Task<Project> GetProjectByIdToRemove(Guid id);
     }
 }

@@ -15,7 +15,7 @@ namespace Business.Interfaces.Services
     {
         #region Methods
         Task<bool> Add(Project project);
-        Task<bool> Updtae(Project project);
+        Task<bool> Update(Project project);
         Task<bool> Remove(Guid id);
         #endregion Methods
     }

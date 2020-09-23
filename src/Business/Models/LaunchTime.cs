@@ -9,12 +9,25 @@ namespace Business.Models
     {
         #region Properties
         public DateTime RegisterDate { get; set; }
-        public int HoraAmount { get; set; }
+        public DateTime Initial { get; set; }
+        public DateTime End { get; set; }
+        public Guid IdProject { get; set; }
+        public Guid IdDeveloper { get; set; }
         #endregion Properties
 
         #region Relation Entity Framework Core
-        public Developer Developer { get; set; }
         public Project Project { get; set; }
+        public Developer Developer { get; set; }
         #endregion Relation Entity Framework Core
+
+        public double ProxyHoras
+        {
+            get
+            {
+                TimeSpan timeSpan = End - Initial;
+
+                return timeSpan.TotalHours;
+            }
+        }
     }
 }

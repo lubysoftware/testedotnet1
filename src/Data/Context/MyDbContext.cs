@@ -22,6 +22,8 @@ namespace Data.Context
 
         #region Properties
         public DbSet<Developer> Developers { get; set; }
+        public DbSet<Project> Projects { get; set; }
+        public DbSet<LaunchTime> LaunchTimes { get; set; }
         #endregion Properties
 
         #region Methods Overrides

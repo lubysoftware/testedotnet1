@@ -14,7 +14,7 @@ namespace Business.Models
     {
         #region Properties
         public string Name { get; set; }
-        public bool Concluded { get; set; }
+        public bool? Concluded { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime? EndDate { get; set; }
         #endregion Properties
