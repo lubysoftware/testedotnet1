@@ -18,7 +18,7 @@ namespace API.Controllers
         private readonly IMapper _mapper;
         private readonly IProjectService _projectService;
 
-        public ProjectController(IProjectRepository developerRepository, IMapper mapper, IProjectService developerService, INotifier notifier) : base(notifier)
+        public ProjectController(IProjectRepository developerRepository, IMapper mapper, IProjectService developerService, INotifier notifier, IUser user) : base(notifier, user)
         {
             _projectRepository = developerRepository;
             _mapper = mapper;

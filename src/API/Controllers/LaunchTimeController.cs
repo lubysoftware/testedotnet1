@@ -19,7 +19,7 @@ namespace API.Controllers
         private readonly IMapper _mapper;
         private readonly ILaunchTimeService _launchTimeService;
 
-        public LaunchTimeController(ILaunchTimeRepository launchTimeRepository, IMapper mapper, ILaunchTimeService launchTimeService, INotifier notifier) : base(notifier)
+        public LaunchTimeController(ILaunchTimeRepository launchTimeRepository, IMapper mapper, ILaunchTimeService launchTimeService, INotifier notifier, IUser user) : base(notifier, user)
         {
             _launchTimeRepository = launchTimeRepository;
             _mapper = mapper;

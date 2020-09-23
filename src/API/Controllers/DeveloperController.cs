@@ -18,7 +18,7 @@ namespace API.Controllers
         private readonly IMapper _mapper;
         private readonly IDeveloperService _developerService;
 
-        public DeveloperController(IDeveloperRepository developerRepository, IMapper mapper, IDeveloperService developerService, INotifier notifier) : base(notifier)
+        public DeveloperController(IDeveloperRepository developerRepository, IMapper mapper, IDeveloperService developerService, INotifier notifier, IUser user) : base(notifier, user)
         {
             _developerRepository = developerRepository;
             _mapper = mapper;
