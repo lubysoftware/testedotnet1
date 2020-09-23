@@ -35,5 +35,5 @@ Desenvolver um serviço que seja capaz de gerar um lançamento de horas.
 - Implementar autenticação JWT com expiração de 5 minutos
 
 #### Identificação:
-Nome: <br/>
-E-mail: 
+Nome: Luiz Fernando Rodrigues Pereira<br/>
+E-mail: luizfernando_rodrigues12@hotmail.com
