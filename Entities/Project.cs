@@ -4,20 +4,16 @@ using System.Text.Json.Serialization;
 
 namespace testedotnet1.Entities
 {
-    public class User
+    public class Project
     {
         [JsonIgnore]
-        public int IdUser { get; set; }
+        public int IdProject { get; set; }
 
         [Required]
-        public string UserName { get; set; }
+        public string ProjectName { get; set; }
 
         [Required]
-        [JsonIgnore]
-        public string Password { get; set; }
-
-        [Required]
-        public string Role { get; set; }
+        public long HoursProject { get; set; }
         public ICollection<HoursAtWork> HoursWork { get; set; }
     }
 }
