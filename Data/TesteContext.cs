@@ -7,9 +7,9 @@ namespace testedotnet1.Data
     {
         public TesteContext(DbContextOptions<TesteContext> options) : base(options) { }
 
-        public DbSet<User> UserDbContext { get; set; }
-        public DbSet<Project> ProjectDbContext { get; set; }
-        public DbSet<HoursAtWork> HoursDbContext { get; set; }
+        public DbSet<User> UserItems { get; set; }
+        public DbSet<Project> ProjectItems { get; set; }
+        public DbSet<HoursAtWork> HoursItems { get; set; }
 
     }
 }
