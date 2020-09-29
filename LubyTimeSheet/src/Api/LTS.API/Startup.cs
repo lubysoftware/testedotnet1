@@ -1,3 +1,4 @@
+using LTS.API.Configuration.AutoMapper;
 using LTS.API.Configuration.Swagger;
 using LTS.Infra.Context;
 using Microsoft.AspNetCore.Builder;
@@ -43,11 +44,12 @@ namespace LTS.API
                 .AddCustomEntityFrameworkStores<LubyContext>()
                 .AddDefaultTokenProviders();
 
-            services.AddSwaggerConfiguration();
+
+            services.AddSetupAutoMapper();
 
             services.AddJwtConfiguration(Configuration, "AppSettings");
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+            services.AddSwaggerConfiguration();
 
             services.RegisterServices();
         }
@@ -60,11 +62,12 @@ namespace LTS.API
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection();
+            app.UseSwaggerConfiguration();
+
 
             app.UseRouting();
 
-            app.UseAuthorization();
+           
 
             app.UseCors(c =>
             {
@@ -73,12 +76,14 @@ namespace LTS.API
                 c.AllowAnyOrigin();
             });
 
+            app.UseAuthConfiguration();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
 
-            app.UseSwaggerConfiguration();
+            
         }
     }
 }

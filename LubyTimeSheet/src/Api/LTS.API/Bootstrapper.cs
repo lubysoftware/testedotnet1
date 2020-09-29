@@ -1,4 +1,8 @@
 ﻿using LTS.API.Authorizations;
+using LTS.Domain.Handlers;
+using LTS.Domain.Interfaces;
+using LTS.Domain.Services;
+using LTS.Infra.Repositories;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace LTS.API
@@ -16,17 +20,17 @@ namespace LTS.API
 
         private static void RegisterHandlers(IServiceCollection services)
         {
-            
+            services.AddScoped<DeveloperHandler>();
         }
 
         private static void RegisterRepositories(IServiceCollection services)
         {
-            
+            services.AddScoped<IDeveloperRepository, DeveloperRepository>();
         }
 
         private static void RegisterDomainServices(IServiceCollection services)
         {
-            
+            services.AddScoped<IDeveloperService, DeveloperService>();
         }
     }
 }

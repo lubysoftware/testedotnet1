@@ -7,7 +7,7 @@ namespace LTS.API.Controllers
 {
     [ApiController]
     [AllowAnonymous]
-    [Route("api/[controller]")]
+    [Route("api/auth")]
 
     public class AuthController : ControllerBase
     {
