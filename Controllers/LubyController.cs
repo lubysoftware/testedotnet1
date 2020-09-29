@@ -1,4 +1,4 @@
-
+using Microsoft.AspNetCore.Authorization;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using testedotnet1.Data;
 using testedotnet1.Entities;
+using testedotnet1.Services;
 
 namespace testedotnet1.Controllers
 {
@@ -14,11 +15,15 @@ namespace testedotnet1.Controllers
     {
         #region Injection dependency BD
         private readonly TesteContext _testeContext;
+        private readonly IUserService _userService;
 
-        public LubyController(TesteContext testeContext)
+        public LubyController(TesteContext testeContext, IUserService userService)
         {
             _testeContext = testeContext;
+             _userService = userService;
         }
+
+
         #endregion
 
         ///<summary>
@@ -38,6 +43,7 @@ namespace testedotnet1.Controllers
         ///</summary>
         [Route("users")]
         [HttpGet]
+        [Authorize(Roles = "ceo, manager, developer")]
         public async Task<ActionResult<IEnumerable<User>>> GetUsers()
         {
             return await _testeContext.UserItems
@@ -50,6 +56,7 @@ namespace testedotnet1.Controllers
         ///</summary>
         [Route("users/{id}")]
         [HttpGet]
+        [Authorize(Roles = "ceo, manager, developer")]
         public async Task<ActionResult<User>> GetUser(long id)
         {
             var userItem = await _testeContext.UserItems.FindAsync(id);
@@ -67,6 +74,7 @@ namespace testedotnet1.Controllers
         ///</summary>
         [Route("users")]
         [HttpPost]
+        [Authorize(Roles = "ceo, manager")]
         public async Task<ActionResult<User>> AddUser([FromBody] User userItem)
         {
             var itemUser = new User
@@ -88,6 +96,7 @@ namespace testedotnet1.Controllers
         ///</summary>
         [Route("users/{id}")]
         [HttpPut]
+        [Authorize(Roles = "ceo, manager")]
         public async Task<IActionResult> UpdateUser(long id, [FromBody] User userItem)
         {
             //if (id != userItem.UserId)
@@ -123,6 +132,7 @@ namespace testedotnet1.Controllers
         ///</summary>
         [Route("users/{id}")]
         [HttpDelete]
+        [Authorize(Roles = "ceo")]
         public async Task<ActionResult<User>> DeleteUser(long id)
         {
             var userItem = await _testeContext.UserItems.FindAsync(id);

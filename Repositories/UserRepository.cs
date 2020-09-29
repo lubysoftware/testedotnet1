@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using testedotnet1.Entities;
 
+
 namespace testedotnet1.Repositories
 {
     public static class UserRepository

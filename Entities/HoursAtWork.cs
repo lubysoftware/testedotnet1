@@ -6,7 +6,8 @@ namespace testedotnet1.Entities
     public class HoursAtWork
     {
         [JsonIgnore]
-        public int IdHours { get; set; }
+        [Key]
+        public int Id { get; set; }
 
         [Required]
         public long Hours { get; set; }

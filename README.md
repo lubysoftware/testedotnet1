@@ -38,3 +38,11 @@ Desenvolver um serviço que seja capaz de gerar um lançamento de horas.
 #### Identificação:
 Nome: Paulo Eduardo Fagundes dos Santos <br/>
 E-mail: paulo.esantos@gmail.com
+
+Considerações:
+Acho o teste justo e completo, mas infelizmente não consegui completa-lo.
+A recrutadora até conseguiu a extensão no prazo. mas não consegui. :(
+As principais razões são: que meu computador está com problemas no hd, e tive compromissos pessoais.
+Acho que podem avaliar até onde consegui resolver
+
+Agradeço a Luby pela oportunidade.
