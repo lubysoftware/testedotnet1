@@ -8,10 +8,5 @@
 		<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.0.1" />
 		<PackageReference Include="Flunt" Version="1.0.5" />
 	</ItemGroup>
-	
-  <ItemGroup>
-    <Folder Include="Commands\TImeSheet\" />
-    <Folder Include="Commands\Project\" />
-  </ItemGroup>
 
 </Project>

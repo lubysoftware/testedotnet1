@@ -22,18 +22,21 @@ namespace LTS.API
         {
             services.AddScoped<DeveloperHandler>();
             services.AddScoped<ProjectHandler>();
+            services.AddScoped<TimeSheetHandler>();
         }
 
         private static void RegisterRepositories(IServiceCollection services)
         {
             services.AddScoped<IDeveloperRepository, DeveloperRepository>();
             services.AddScoped<IProjectRepository, ProjectRepository>();
+            services.AddScoped<ITimeSheetRepository, TimeSheetRepository>();
         }
 
         private static void RegisterDomainServices(IServiceCollection services)
         {
             services.AddScoped<IDeveloperService, DeveloperService>();
             services.AddScoped<IProjectService, ProjectService>();
+            services.AddScoped<ITimeSheetService, TimeSheetService>();
         }
     }
 }

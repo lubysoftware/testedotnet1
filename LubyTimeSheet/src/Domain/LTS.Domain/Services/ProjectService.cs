@@ -2,6 +2,7 @@
 using LTS.Domain.Commands;
 using LTS.Domain.Interfaces;
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace LTS.Domain.Services
