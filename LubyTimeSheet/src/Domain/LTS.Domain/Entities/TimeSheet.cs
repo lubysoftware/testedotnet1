@@ -30,3 +30,4 @@ namespace LTS.Domain.Entities
             TotalHours = totalHours;
         }
     }
+}

@@ -1,4 +1,6 @@
-﻿namespace LTS.Domain.Entities
+﻿using System;
+
+namespace LTS.Domain.Entities
 {
     public class DeveloperProject
     {
