@@ -1,11 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using LTS.API.Authorizations;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
+using NetDevPack.Identity.Jwt;
 
 namespace LTS.API
 {
@@ -13,7 +12,20 @@ namespace LTS.API
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            var webHost = CreateHostBuilder(args).Build();
+
+            using (var scope = webHost.Services.CreateScope())
+            {
+                var userManager = scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>();
+                var signInManager = scope.ServiceProvider.GetRequiredService<SignInManager<IdentityUser>>();
+                var options = scope.ServiceProvider.GetRequiredService<IOptions<AppJwtSettings>>();
+
+                var authUser = new AuthUser(userManager, signInManager, options);
+                authUser.CreateDefaultUserAdmin("admin@admin.com", "admin").Wait();
+            }
+
+            webHost.Run();
+
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
