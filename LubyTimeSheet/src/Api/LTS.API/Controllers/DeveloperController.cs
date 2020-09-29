@@ -11,8 +11,8 @@ using System.Threading.Tasks;
 namespace LTS.API.Controllers
 {
     [ApiController]
-    [Route("api/developer")]
     [Authorize]
+    [Route("api/developer")]
     public class DeveloperController : ControllerBase
     {
         private readonly IDeveloperService _developerService;

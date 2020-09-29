@@ -21,16 +21,19 @@ namespace LTS.API
         private static void RegisterHandlers(IServiceCollection services)
         {
             services.AddScoped<DeveloperHandler>();
+            services.AddScoped<ProjectHandler>();
         }
 
         private static void RegisterRepositories(IServiceCollection services)
         {
             services.AddScoped<IDeveloperRepository, DeveloperRepository>();
+            services.AddScoped<IProjectRepository, ProjectRepository>();
         }
 
         private static void RegisterDomainServices(IServiceCollection services)
         {
             services.AddScoped<IDeveloperService, DeveloperService>();
+            services.AddScoped<IProjectService, ProjectService>();
         }
     }
 }
