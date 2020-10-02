@@ -109,6 +109,24 @@
             <param name="jwtSettings">dados para geração do token JWT</param>
             <returns>string contendo o token</returns>
         </member>
+        <member name="T:TesteLuby.MainStartup.Controllers.BusinessHourController">
+            <summary>
+            Controller de horas trabalhadas
+            </summary>
+        </member>
+        <member name="M:TesteLuby.MainStartup.Controllers.BusinessHourController.#ctor(TesteLuby.Domain.Handlers.BusinessHourHandler,TesteLuby.Domain.Contracts.IAppSettings)">
+            <summary>
+            Construtor controller hora trabalhada
+            </summary>
+            <param name="handler">Servico de acesso aos Dados</param>
+            <param name="settings">Configurações Gerais do sistema</param>
+        </member>
+        <member name="M:TesteLuby.MainStartup.Controllers.BusinessHourController.GetRankingBusinessHourByDeveloper">
+            <summary>
+            Seleciona ranking de horas trabalhadas por desenvolvedor
+            </summary>
+            <returns>Lista o ranking horas trabalhadas</returns>
+        </member>
         <member name="M:TesteLuby.MainStartup.Controllers.ProjectController.#ctor(TesteLuby.Domain.Handlers.ProjectHandler,TesteLuby.Domain.Contracts.IAppSettings)">
             <summary>
             Construtor controller Projetos
