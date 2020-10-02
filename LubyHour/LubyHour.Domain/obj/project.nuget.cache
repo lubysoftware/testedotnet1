@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "xGAWSn3scH9pHtq15HsRgG2dT8SXmr03C8haNmwWX3xwH6b8eGalNItnBgaj5t9PvODn/CO6m2OkhfnxgLyVRw==",
+  "success": true,
+  "projectFilePath": "D:\\Trabalho\\Pessoais\\Projetos\\testedotnet1\\LubyHour\\LubyHour.Domain\\LubyHour.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\vitim\\.nuget\\packages\\flunt\\1.0.5\\flunt.1.0.5.nupkg.sha512"
+  ],
+  "logs": []
+}
