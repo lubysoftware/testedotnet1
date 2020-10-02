@@ -22,12 +22,7 @@ namespace TesteLuby.Domain.Handlers
         {
             try
             {
-                string sql = $"select top(3) DATEDIFF(hour, developer.openfriday, customers.closefriday) as DiferencaDias from customers order by  DiferencaDias desc Select sum() from developers order by";
-                var retorno = await Repository.GetOneBySql(sql);
-                ICommandResult resultadoServico = retorno == null
-                   ? new CommandResult((int)EStatus.NotFound, false, "Desenvolvedores não encontrados!", null)
-                   : new CommandResult((int)EStatus.Ok, true, "Desenvolvedores encontrado!", retorno);
-                return resultadoServico;
+                return null;
             }
             catch (Exception ex)
             {

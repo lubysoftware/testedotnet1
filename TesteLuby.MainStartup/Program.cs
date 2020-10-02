@@ -58,6 +58,5 @@ namespace TesteLuby.MainStartUp
 
             });
         }
-        
     }
 }
