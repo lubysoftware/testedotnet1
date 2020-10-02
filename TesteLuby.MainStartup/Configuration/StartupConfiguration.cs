@@ -20,6 +20,40 @@ namespace TesteLuby.MainStartUp.Configuration
 {
     public static class StartupConfiguration
     {
+        /// <summary>
+        /// Metodo extensão IServiceCollection Adiciona configuração Swagger
+        /// </summary>
+        /// <param name="services">IServiceCollection da Aplicação</param>
+        public static void AddSwaggerTeste(this IServiceCollection services)
+        {
+            services.AddSwaggerGen(
+                conf =>
+                {
+                    conf.SwaggerDoc("v1",
+                        new OpenApiInfo
+                        {
+                            Title = "Teste Luby",
+                            Version = "V1",
+                            Description = "API .net Core 3.1, criada com a finalidade de prover dados aos sistemas de teste para processo seletivo para a empresa Luby.",
+                            Contact = new OpenApiContact
+                            {
+                                Name = "Gustavo Amorim",
+                                Email = "gustavoamorim05@hotmail.com",
+                                Url = new Uri("https://www.instagram.com/gustavo.amorimq/?hl=pt-br")
+                            },
+                            License = new OpenApiLicense
+                            {
+                                Name = "Licença de uso",
+                                Url = new Uri("https://www.instagram.com/gustavo.amorimq/?hl=pt-br")
+                            }
+                        });
+
+                    // Cria um arquivo XML contendo os comentários na documentação do Swagger
+                    string xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                    string xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                    conf.IncludeXmlComments(xmlPath);
+                });
+        }
 
         /// <summary>
         /// Metodo extensão de IServiceCollection com a finalidade de definir os parametros para configuração JWT
@@ -28,30 +62,7 @@ namespace TesteLuby.MainStartUp.Configuration
         /// <param name="conf">IConfiguration</param>
         public static void AddJwtTeste(this IServiceCollection services, IConfiguration conf)
         {
-            var jwtSectionsConfig = conf.GetSection("JwtSettings");
-            services.Configure<JwtSetting>(jwtSectionsConfig);
-            var jwtSettings = jwtSectionsConfig.Get<JwtSetting>();
-            var key = Encoding.ASCII.GetBytes(jwtSettings.Secret);
-            var conn = conf.GetSection("ConnectionsBd");
-            services.AddAuthentication(x =>
-            {
-                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            })
-                .AddJwtBearer(x =>
-            {
-                x.RequireHttpsMetadata = true;
-                x.SaveToken = true;
-                x.TokenValidationParameters = new TokenValidationParameters
-                {
-                    ValidateIssuerSigningKey = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(key),
-                    ValidateIssuer = true,
-                    ValidateAudience = true,
-                    ValidAudience = jwtSettings.ValidoEm,
-                    ValidIssuer = jwtSettings.Emissor
-                };
-            });           
+            
         }
 
         public static void AddGlobalVariables(this IServiceCollection services, IConfiguration conf)
@@ -103,41 +114,6 @@ namespace TesteLuby.MainStartUp.Configuration
                         throw new ArgumentOutOfRangeException(nameof(lifetime), lifetime, null);
                 }
             }
-        }
-
-        /// <summary>
-        /// Metodo extensão IServiceCollection Adiciona configuração Swagger
-        /// </summary>
-        /// <param name="services">IServiceCollection da Aplicação</param>
-        public static void AddSwaggerTeste(this IServiceCollection services)
-        {
-            services.AddSwaggerGen(
-                conf =>
-                {
-                    conf.SwaggerDoc("v1",
-                        new OpenApiInfo
-                        {
-                            Title = "Teste Luby",
-                            Version = "V1",
-                            Description = "API .net Core 3.1, criada com a finalidade de prover dados aos sistemas de teste da luby.",
-                            Contact = new OpenApiContact
-                            {
-                                Name = "Gustavo Amorim",
-                                Email = "",
-                                Url = new Uri("")
-                            },
-                            License = new OpenApiLicense
-                            {
-                                Name = "Licença de uso",
-                                Url = new Uri("")
-                            }
-                        });
-
-                    // Cria um arquivo XML contendo os comentários na documentação do Swagger
-                    string xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-                    string xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-                    conf.IncludeXmlComments(xmlPath);
-                });
         }
 
         /// <summary>

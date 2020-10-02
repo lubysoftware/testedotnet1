@@ -263,6 +263,8 @@ E:\Gustavo\Programas, documentos , Pdf's\Documentos Importantes e trabalhos\Proc
 E:\Gustavo\Programas, documentos , Pdf's\Documentos Importantes e trabalhos\Processo Luby\teste_dot_net\TesteLuby.MainStartup\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 E:\Gustavo\Programas, documentos , Pdf's\Documentos Importantes e trabalhos\Processo Luby\teste_dot_net\TesteLuby.MainStartup\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 E:\Gustavo\Programas, documentos , Pdf's\Documentos Importantes e trabalhos\Processo Luby\teste_dot_net\TesteLuby.MainStartup\bin\Debug\netcoreapp3.1\TesteLuby.Domain.dll
+E:\Gustavo\Programas, documentos , Pdf's\Documentos Importantes e trabalhos\Processo Luby\teste_dot_net\TesteLuby.MainStartup\bin\Debug\netcoreapp3.1\Testeluby.ResourcesDB.dll
+E:\Gustavo\Programas, documentos , Pdf's\Documentos Importantes e trabalhos\Processo Luby\teste_dot_net\TesteLuby.MainStartup\bin\Debug\netcoreapp3.1\Testeluby.ResourcesDB.pdb
 E:\Gustavo\Programas, documentos , Pdf's\Documentos Importantes e trabalhos\Processo Luby\teste_dot_net\TesteLuby.MainStartup\bin\Debug\netcoreapp3.1\TesteLuby.Domain.pdb
 E:\Gustavo\Programas, documentos , Pdf's\Documentos Importantes e trabalhos\Processo Luby\teste_dot_net\TesteLuby.MainStartup\obj\Debug\netcoreapp3.1\TesteLuby.MainStartup.csprojAssemblyReference.cache
 E:\Gustavo\Programas, documentos , Pdf's\Documentos Importantes e trabalhos\Processo Luby\teste_dot_net\TesteLuby.MainStartup\obj\Debug\netcoreapp3.1\TesteLuby.MainStartup.AssemblyInfoInputs.cache
@@ -278,5 +280,3 @@ E:\Gustavo\Programas, documentos , Pdf's\Documentos Importantes e trabalhos\Proc
 E:\Gustavo\Programas, documentos , Pdf's\Documentos Importantes e trabalhos\Processo Luby\teste_dot_net\TesteLuby.MainStartup\obj\Debug\netcoreapp3.1\TesteLuby.MainStartup.xml
 E:\Gustavo\Programas, documentos , Pdf's\Documentos Importantes e trabalhos\Processo Luby\teste_dot_net\TesteLuby.MainStartup\obj\Debug\netcoreapp3.1\TesteLuby.MainStartup.pdb
 E:\Gustavo\Programas, documentos , Pdf's\Documentos Importantes e trabalhos\Processo Luby\teste_dot_net\TesteLuby.MainStartup\obj\Debug\netcoreapp3.1\TesteLuby.MainStartup.genruntimeconfig.cache
-E:\Gustavo\Programas, documentos , Pdf's\Documentos Importantes e trabalhos\Processo Luby\teste_dot_net\TesteLuby.MainStartup\bin\Debug\netcoreapp3.1\Testeluby.ResourcesDB.dll
-E:\Gustavo\Programas, documentos , Pdf's\Documentos Importantes e trabalhos\Processo Luby\teste_dot_net\TesteLuby.MainStartup\bin\Debug\netcoreapp3.1\Testeluby.ResourcesDB.pdb

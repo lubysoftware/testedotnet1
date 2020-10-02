@@ -23,7 +23,7 @@ namespace TesteLuby.MainStartUp
             services.AddControllers();
             services.AddJwtTeste(Configuration);
             services.AddGlobalVariables(Configuration);
-            //services.AddSwaggerTeste();
+            services.AddSwaggerTeste();
 
         }
 
@@ -49,7 +49,7 @@ namespace TesteLuby.MainStartUp
             {
                 endpoints.MapControllers();
             });
-            //app.RegisterMiddlewareSwagger();
+            app.RegisterMiddlewareSwagger();
         }
     }
 }

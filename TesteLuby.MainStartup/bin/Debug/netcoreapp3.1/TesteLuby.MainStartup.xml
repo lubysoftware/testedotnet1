@@ -74,6 +74,11 @@
             <param name="update"></param>
             <returns>Altera informações do usuário</returns>
         </member>
+        <member name="M:TesteLuby.MainStartUp.Controllers.DeveloperController.Delete(TesteLuby.Domain.CommandsParameters.DeleteDeveloperCommand)">
+            <summary>
+            Remove um developer
+            </summary>
+        </member>
         <member name="M:TesteLuby.MainStartUp.Program.CreateHostBuilder(System.String[])">
             <summary>
             Cria o ambiente para se trabalhar
