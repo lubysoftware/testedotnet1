@@ -36,5 +36,5 @@ Desenvolver um serviço que seja capaz de gerar um lançamento de horas.
 - Criar um client WEB para consumir essa API 
 
 #### Identificação:
-Nome: <br/>
-E-mail: 
+Nome: Luiz Fernando Rodrigues Pereira<br/>
+E-mail: luizfernando_rodrigues12@hotmail.com
