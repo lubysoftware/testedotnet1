@@ -36,5 +36,5 @@ Desenvolver um serviço que seja capaz de gerar um lançamento de horas.
 - Criar um client WEB para consumir essa API 
 
 #### Identificação:
-Nome: <br/>
-E-mail: 
+Nome: GUSTAVO AMORIM QUEIROZ<br/>
+E-mail: gustavoamorim05@hotmail.com

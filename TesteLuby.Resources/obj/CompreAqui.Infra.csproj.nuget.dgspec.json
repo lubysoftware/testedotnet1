@@ -1,0 +1,182 @@
+{
+  "format": 1,
+  "restore": {
+    "E:\\Gustavo\\Programas, documentos , Pdf's\\Documentos Importantes e trabalhos\\Processo Luby\\teste_dot_net\\CompreAqui.Infra\\CompreAqui.Infra.csproj": {}
+  },
+  "projects": {
+    "E:\\Gustavo\\Programas, documentos , Pdf's\\Documentos Importantes e trabalhos\\Processo Luby\\teste_dot_net\\CompreAqui.Domain\\CompreAqui.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\Gustavo\\Programas, documentos , Pdf's\\Documentos Importantes e trabalhos\\Processo Luby\\teste_dot_net\\CompreAqui.Domain\\CompreAqui.Domain.csproj",
+        "projectName": "CompreAqui.Domain",
+        "projectPath": "E:\\Gustavo\\Programas, documentos , Pdf's\\Documentos Importantes e trabalhos\\Processo Luby\\teste_dot_net\\CompreAqui.Domain\\CompreAqui.Domain.csproj",
+        "packagesPath": "C:\\Users\\Gustavo\\.nuget\\packages\\",
+        "outputPath": "E:\\Gustavo\\Programas, documentos , Pdf's\\Documentos Importantes e trabalhos\\Processo Luby\\teste_dot_net\\CompreAqui.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Gustavo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://51.81.20.234:61438/nuget": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "MailKit": {
+              "target": "Package",
+              "version": "[2.6.0, )"
+            },
+            "Microsoft.AspNetCore.Http.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.Extensions.Options": {
+              "target": "Package",
+              "version": "[3.1.3, )"
+            },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[6.5.0, )"
+            },
+            "MimeKit": {
+              "target": "Package",
+              "version": "[2.6.0, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\Gustavo\\Programas, documentos , Pdf's\\Documentos Importantes e trabalhos\\Processo Luby\\teste_dot_net\\CompreAqui.Infra\\CompreAqui.Infra.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\Gustavo\\Programas, documentos , Pdf's\\Documentos Importantes e trabalhos\\Processo Luby\\teste_dot_net\\CompreAqui.Infra\\CompreAqui.Infra.csproj",
+        "projectName": "CompreAqui.Infra",
+        "projectPath": "E:\\Gustavo\\Programas, documentos , Pdf's\\Documentos Importantes e trabalhos\\Processo Luby\\teste_dot_net\\CompreAqui.Infra\\CompreAqui.Infra.csproj",
+        "packagesPath": "C:\\Users\\Gustavo\\.nuget\\packages\\",
+        "outputPath": "E:\\Gustavo\\Programas, documentos , Pdf's\\Documentos Importantes e trabalhos\\Processo Luby\\teste_dot_net\\CompreAqui.Infra\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Gustavo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://51.81.20.234:61438/nuget": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {
+              "E:\\Gustavo\\Programas, documentos , Pdf's\\Documentos Importantes e trabalhos\\Processo Luby\\teste_dot_net\\CompreAqui.Domain\\CompreAqui.Domain.csproj": {
+                "projectPath": "E:\\Gustavo\\Programas, documentos , Pdf's\\Documentos Importantes e trabalhos\\Processo Luby\\teste_dot_net\\CompreAqui.Domain\\CompreAqui.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.0.30, )"
+            },
+            "Dapper.FluentMap": {
+              "target": "Package",
+              "version": "[1.8.0, )"
+            },
+            "Dapper.FluentMap.Dommel": {
+              "target": "Package",
+              "version": "[1.7.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.3, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "Npgsql": {
+              "target": "Package",
+              "version": "[4.1.4, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[3.1.3, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+E:\Gustavo\Programas, documentos , Pdf's\Documentos Importantes e trabalhos\Processo Luby\teste_dot_net\TesteLuby.Resources\bin\Debug\netstandard2.0\Testeluby.ResourcesDB.deps.json
+E:\Gustavo\Programas, documentos , Pdf's\Documentos Importantes e trabalhos\Processo Luby\teste_dot_net\TesteLuby.Resources\bin\Debug\netstandard2.0\Testeluby.ResourcesDB.dll
+E:\Gustavo\Programas, documentos , Pdf's\Documentos Importantes e trabalhos\Processo Luby\teste_dot_net\TesteLuby.Resources\bin\Debug\netstandard2.0\Testeluby.ResourcesDB.pdb
+E:\Gustavo\Programas, documentos , Pdf's\Documentos Importantes e trabalhos\Processo Luby\teste_dot_net\TesteLuby.Resources\bin\Debug\netstandard2.0\TesteLuby.Domain.dll
+E:\Gustavo\Programas, documentos , Pdf's\Documentos Importantes e trabalhos\Processo Luby\teste_dot_net\TesteLuby.Resources\bin\Debug\netstandard2.0\TesteLuby.Domain.pdb
+E:\Gustavo\Programas, documentos , Pdf's\Documentos Importantes e trabalhos\Processo Luby\teste_dot_net\TesteLuby.Resources\obj\Debug\netstandard2.0\Testeluby.ResourcesDB.csprojAssemblyReference.cache
+E:\Gustavo\Programas, documentos , Pdf's\Documentos Importantes e trabalhos\Processo Luby\teste_dot_net\TesteLuby.Resources\obj\Debug\netstandard2.0\Testeluby.ResourcesDB.AssemblyInfoInputs.cache
+E:\Gustavo\Programas, documentos , Pdf's\Documentos Importantes e trabalhos\Processo Luby\teste_dot_net\TesteLuby.Resources\obj\Debug\netstandard2.0\Testeluby.ResourcesDB.AssemblyInfo.cs
+E:\Gustavo\Programas, documentos , Pdf's\Documentos Importantes e trabalhos\Processo Luby\teste_dot_net\TesteLuby.Resources\obj\Debug\netstandard2.0\Testeluby.ResourcesDB.csproj.CoreCompileInputs.cache
+E:\Gustavo\Programas, documentos , Pdf's\Documentos Importantes e trabalhos\Processo Luby\teste_dot_net\TesteLuby.Resources\obj\Debug\netstandard2.0\Testeluby.ResourcesDB.csproj.CopyComplete
+E:\Gustavo\Programas, documentos , Pdf's\Documentos Importantes e trabalhos\Processo Luby\teste_dot_net\TesteLuby.Resources\obj\Debug\netstandard2.0\Testeluby.ResourcesDB.dll
+E:\Gustavo\Programas, documentos , Pdf's\Documentos Importantes e trabalhos\Processo Luby\teste_dot_net\TesteLuby.Resources\obj\Debug\netstandard2.0\Testeluby.ResourcesDB.pdb

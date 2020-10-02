@@ -1,0 +1,9 @@
+C:\Users\Gustavo\Desktop\FlutterTemp\GitCompreAqui\CompreAqui.Domain\bin\Debug\netstandard2.0\CompreAqui.Domain.deps.json
+C:\Users\Gustavo\Desktop\FlutterTemp\GitCompreAqui\CompreAqui.Domain\bin\Debug\netstandard2.0\CompreAqui.Domain.dll
+C:\Users\Gustavo\Desktop\FlutterTemp\GitCompreAqui\CompreAqui.Domain\bin\Debug\netstandard2.0\CompreAqui.Domain.pdb
+C:\Users\Gustavo\Desktop\FlutterTemp\GitCompreAqui\CompreAqui.Domain\obj\Debug\netstandard2.0\CompreAqui.Domain.csprojAssemblyReference.cache
+C:\Users\Gustavo\Desktop\FlutterTemp\GitCompreAqui\CompreAqui.Domain\obj\Debug\netstandard2.0\CompreAqui.Domain.AssemblyInfoInputs.cache
+C:\Users\Gustavo\Desktop\FlutterTemp\GitCompreAqui\CompreAqui.Domain\obj\Debug\netstandard2.0\CompreAqui.Domain.AssemblyInfo.cs
+C:\Users\Gustavo\Desktop\FlutterTemp\GitCompreAqui\CompreAqui.Domain\obj\Debug\netstandard2.0\CompreAqui.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Gustavo\Desktop\FlutterTemp\GitCompreAqui\CompreAqui.Domain\obj\Debug\netstandard2.0\CompreAqui.Domain.dll
+C:\Users\Gustavo\Desktop\FlutterTemp\GitCompreAqui\CompreAqui.Domain\obj\Debug\netstandard2.0\CompreAqui.Domain.pdb
