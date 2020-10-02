@@ -22,7 +22,21 @@ namespace TesteLuby.Domain.Handlers
         {
             try
             {
-                return null;
+                string sql = $"select " +
+                    "top(5) " +
+                    "sum(DATEDIFF(hour, developer.datetimestart, developer.datetimeend)) as businessweek, " +
+                    "developer.username as developer" +
+                    "from businesshour " +
+                    "inner join developer on developer.id = businesshour.developerid " +
+                    "where businesshour.datetimestart >= dateadd(day, -7, getdate()) and businesshour.datetimestart <= getdate() " +
+                    "group by developerid " +
+                    "order by businessweek desc";
+
+                var retorno = await Repository.GetListBySql<Ranking>(sql);
+                ICommandResult resultadoServico = retorno == null
+                   ? new CommandResult((int)EStatus.NotFound, false, "Desenvolvedores não encontrados!", null)
+                   : new CommandResult((int)EStatus.Ok, true, "Desenvolvedores encontrado!", retorno);
+                return resultadoServico;
             }
             catch (Exception ex)
             {

@@ -25,7 +25,7 @@ namespace TesteLuby.Domain.Handlers
         {
             try
             {
-                string sql = $"Select * from users where users.email = '{user.Email}'";
+                string sql = $"Select * from developer where developer.email = '{user.Email}'";
                 var retorno = await Repository.GetOneBySql(sql);
                 ICommandResult resultadoServico = retorno == null
                    ? new CommandResult((int)EStatus.NotFound, false, "Usuário não encontrado !", null)
@@ -44,42 +44,42 @@ namespace TesteLuby.Domain.Handlers
         {
             try
             {
-                var sqlExisteEmail = $"select * from users where email = '{user.Email}'";
+                var sqlExisteEmail = $"select * from developer where email = '{user.Email}'";
                 var retornoExistenciaEmail = await Repository.GetOneBySql(sqlExisteEmail);
-                var sqlExisteUsuario = $"select * from users where username = '{user.UserName}'";
+                var sqlExisteUsuario = $"select * from developer where username = '{user.UserName}'";
                 var retornoExistenciaUsuario = await Repository.GetOneBySql(sqlExisteUsuario);
                 if (retornoExistenciaEmail == null && retornoExistenciaUsuario == null)
                 {
-                    string sql = $"INSERT INTO users " +
-                        $"(username, email, password,phonenumber, lastacess) " +
+                    string sql = $"INSERT INTO developer " +
+                        $"(username, email, password) " +
                         $"VALUES " +
-                        $"('{user.UserName}', '{user.Email}', '{user.Password}', '{user.PhoneNumber}', {DateTime.Now.Day}) ";
+                        $"('{user.UserName}', '{user.Email}', '{user.Password}') ";
                     var retorno = await Repository.InsertBySql(sql);
                     ICommandResult resultadoServico = retorno == false
-                        ? new CommandResult((int)EStatus.InternalServerError, false, "Não foi possível adicionar um novo usuário !", null)
-                        : new CommandResult((int)EStatus.Created, true, "O usuário foi adicionado com sucesso !", retorno);
+                        ? new CommandResult((int)EStatus.InternalServerError, false, "Não foi possível adicionar um novo desenvolvedor!", null)
+                        : new CommandResult((int)EStatus.Created, true, "O desenvolvedor foi adicionado com sucesso!", retorno);
                     return resultadoServico;
                 }
                 else
                 {
-                    return new CommandResult((int)EStatus.Forbidden, true, "Usuário ou email já cadastrado !", null);
+                    return new CommandResult((int)EStatus.Forbidden, true, "Desenvolvedor já cadastrado !", null);
                 }
             }
             catch (Exception ex)
             {
                 if (ex.Message.StartsWith("23505"))
                 {
-                    return new CommandResult((int)EStatus.Forbidden, true, "Usuário já cadastrado !", null);
+                    return new CommandResult((int)EStatus.Forbidden, true, "Desenvolvedor já cadastrado !", null);
                 }
                 else
                 {
-                    return new CommandResult((int)EStatus.InternalServerError, false, "Erro Interno ao tentar adicionar um usuário. !", null);
+                    return new CommandResult((int)EStatus.InternalServerError, false, "Erro Interno ao tentar adicionar um desenvolvedor!", null);
                 }
             }
         }
 
 
-        public async Task<ICommandResult> CreateBusinessHour(CreateBusinessHourCommand businessHour)
+        public async Task<ICommandResult> CreateBusinessHourDeveloper(CreateBusinessHourCommand businessHour)
         {
             try
             {
@@ -111,7 +111,7 @@ namespace TesteLuby.Domain.Handlers
             catch
             {
                 return new CommandResult((int)EStatus.InternalServerError, false,
-                   $"Erro ao tentar atualizar o usuário.", null);
+                   $"Erro ao tentar atualizar o desenvolvedor.", null);
             }
         }
 
@@ -119,38 +119,67 @@ namespace TesteLuby.Domain.Handlers
         {
             try
             {
-                string findUser = $"Select * from users where guid = '{update.Guid}' ";
+                string findUser = $"Select * from developer where guid = '{update.Guid}' ";
                 var user = await Repository.GetOneBySql(findUser);
-                var sqlExisteEmail = $"select * from users where email = '{update.Email}' and users.guid != '{update.Guid}'";
+                var sqlExisteEmail = $"select * from developer where email = '{update.Email}' '";
                 var retornoExistenciaEmail = await Repository.GetOneBySql(sqlExisteEmail);
-                var sqlExisteUsuario = $"select * from users where username = '{update.UserName}' and users.guid != '{update.Guid}'";
-                var retornoExistenciaUsuario = await Repository.GetOneBySql(sqlExisteUsuario);
 
                 if (retornoExistenciaEmail == null)
                 {
                     string sql =
-                        $"Update users set email = '{update.Email}', " +
-                        $"username = '{update.UserName}', firstname = '{update.FirstName}', " +
-                        $"lastname = '{update.LastName}', phonenumber = '{update.PhoneNumber}', rating = {update.Rating}  " +
+                        $"Update developer set email = '{update.Email}', " +
+                        $"username = '{update.UserName}' " +
                         $"where guid = '{update.Guid}' ";
                     var retorno = await Repository.UpdateBySql(sql);
                     ICommandResult resultadoServico = retorno == false
-                       ? new CommandResult((int)EStatus.BadRequest, false, "Não foi possível atualizar o usuário! Usuário não encontrado.", null)
-                       : new CommandResult((int)EStatus.Ok, true, "Usuário atualizado com sucesso!", retorno);
+                       ? new CommandResult((int)EStatus.BadRequest, false, "Não foi possível atualizar o desenvolvedor! Desenvolvedor não encontrado.", null)
+                       : new CommandResult((int)EStatus.Ok, true, "Desenvolvedor atualizado com sucesso!", retorno);
                     return resultadoServico;
                 }
                 else
                 {
-                    return new CommandResult((int)EStatus.BadRequest, false, "usuário ou email existentes.", null);
+                    return new CommandResult((int)EStatus.BadRequest, false, "desenvolvedor ou email existentes.", null);
                 }
             }
             catch
             {
                 return new CommandResult((int)EStatus.InternalServerError, false,
-                    $"Erro ao tentar atualizar o usuário.", null);
+                    $"Erro ao tentar atualizar o desenvolvedor.", null);
             }
         }
         #endregion
 
+        #region delete method
+
+        public async Task<ICommandResult> DeleteDeveloper(DeleteDeveloperCommand developer)
+        {
+            try
+            {
+                return await Delete(developer);
+            }
+            catch
+            {
+                return new CommandResult((int)EStatus.InternalServerError, false, "Erro ao tentar deletar um desenvolvedor!", null);
+            }
+        }
+
+        internal async Task<ICommandResult> Delete(DeleteDeveloperCommand developer)
+        {
+            try
+            {
+                string sql = $"DELETE from developer where guid = '{developer.Guid}' ";
+                var retorno = await Repository.DeleteBySql(sql);
+                ICommandResult resultadoServico = retorno == false
+                    ? new CommandResult((int)EStatus.BadRequest, false, "Não foi possível deletar um desenvolvedor!", null)
+                    : new CommandResult((int)EStatus.Ok, true, "Desenvolvedor deletado com sucesso!", retorno);
+                return resultadoServico;
+            }
+            catch
+            {
+                return new CommandResult((int)EStatus.InternalServerError, false,
+                    "Erro ao tentar deletar desenvolvedor!", null);
+            }
+        }
+        #endregion
     }
 }

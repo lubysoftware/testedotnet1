@@ -58,7 +58,7 @@ namespace TesteLuby.MainStartUp.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> PostBusinessHour(CreateBusinessHourCommand command)
         {
-            var users= await _handler.CreateBusinessHour(command);
+            var users= await _handler.CreateBusinessHourDeveloper(command);
             if (users.Success)
             {
                 return Ok(users);
@@ -138,5 +138,31 @@ namespace TesteLuby.MainStartUp.Controllers
             }
         }
 
+        /// <summary>
+        /// Remove um developer
+        /// </summary>
+        [HttpPost("delete")]
+        public async Task<IActionResult> Delete([FromBody] DeleteDeveloperCommand developer)
+        {
+            var delete = await _handler.DeleteDeveloper(developer);
+            if (delete.Success)
+            {
+                return Ok(delete);
+            }
+            else
+            {
+                switch (delete.Status)
+                {
+                    case 400:
+                        return BadRequest(delete);
+                    case 404:
+                        return NotFound(delete);
+                    case 500:
+                        return StatusCode(500, delete);
+                    default:
+                        return BadRequest(delete);
+                }
+            }
+        }
     }
 }
