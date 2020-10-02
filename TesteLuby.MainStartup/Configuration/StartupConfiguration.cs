@@ -62,7 +62,31 @@ namespace TesteLuby.MainStartUp.Configuration
         /// <param name="conf">IConfiguration</param>
         public static void AddJwtTeste(this IServiceCollection services, IConfiguration conf)
         {
-            
+            var jwtSectionsConfig = conf.GetSection("JwtSettings");
+            services.Configure<JwtSetting>(jwtSectionsConfig);
+            var jwtSettings = jwtSectionsConfig.Get<JwtSetting>();
+            var key = Encoding.ASCII.GetBytes(jwtSettings.Secret);
+            var conn = conf.GetSection("ConnectionsBd");
+            services.AddAuthentication(x =>
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+                .AddJwtBearer(x =>
+                {
+                    x.RequireHttpsMetadata = true;
+                    x.SaveToken = true;
+                    x.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        RequireExpirationTime = true,
+                        ValidateIssuerSigningKey = true,
+                        IssuerSigningKey = new SymmetricSecurityKey(key),
+                        ValidateIssuer = true,
+                        ValidateAudience = true,
+                        ValidAudience = jwtSettings.ValidoEm,
+                        ValidIssuer = jwtSettings.Emissor
+                    };
+                });
         }
 
         public static void AddGlobalVariables(this IServiceCollection services, IConfiguration conf)

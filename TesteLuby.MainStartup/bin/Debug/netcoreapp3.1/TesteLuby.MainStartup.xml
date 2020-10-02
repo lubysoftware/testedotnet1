@@ -4,6 +4,12 @@
         <name>TesteLuby.MainStartup</name>
     </assembly>
     <members>
+        <member name="M:TesteLuby.MainStartUp.Configuration.StartupConfiguration.AddSwaggerTeste(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Metodo extensão IServiceCollection Adiciona configuração Swagger
+            </summary>
+            <param name="services">IServiceCollection da Aplicação</param>
+        </member>
         <member name="M:TesteLuby.MainStartUp.Configuration.StartupConfiguration.AddJwtTeste(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
             <summary>
             Metodo extensão de IServiceCollection com a finalidade de definir os parametros para configuração JWT
@@ -26,12 +32,6 @@
             <param name="services">Extensão de IServiceCollection</param>
             <param name="assemblies">instancia da interface para conseguir pegar o executável/dll que contenham todas as classes</param>
             <param name="lifetime">tempo de vida - Scoped, Singleton ou Transient</param>
-        </member>
-        <member name="M:TesteLuby.MainStartUp.Configuration.StartupConfiguration.AddSwaggerTeste(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
-            <summary>
-            Metodo extensão IServiceCollection Adiciona configuração Swagger
-            </summary>
-            <param name="services">IServiceCollection da Aplicação</param>
         </member>
         <member name="M:TesteLuby.MainStartUp.Configuration.StartupConfiguration.RegisterMiddlewareSwagger(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
             <summary>

@@ -14,3 +14,4 @@ E:\Gustavo\Programas, documentos , Pdf's\Documentos Importantes e trabalhos\Proc
 E:\Gustavo\Programas, documentos , Pdf's\Documentos Importantes e trabalhos\Processo Luby\teste_dot_net\TesteLuby.Domain\obj\Debug\netstandard2.0\TesteLuby.Domain.csproj.CoreCompileInputs.cache
 E:\Gustavo\Programas, documentos , Pdf's\Documentos Importantes e trabalhos\Processo Luby\teste_dot_net\TesteLuby.Domain\obj\Debug\netstandard2.0\TesteLuby.Domain.dll
 E:\Gustavo\Programas, documentos , Pdf's\Documentos Importantes e trabalhos\Processo Luby\teste_dot_net\TesteLuby.Domain\obj\Debug\netstandard2.0\TesteLuby.Domain.pdb
+E:\Gustavo\Programas, documentos , Pdf's\Documentos Importantes e trabalhos\Processo Luby\teste_dot_net\TesteLuby.Domain\obj\Debug\netstandard2.0\TesteLuby.Domain.csprojAssemblyReference.cache

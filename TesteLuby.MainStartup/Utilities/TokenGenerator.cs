@@ -28,7 +28,7 @@ namespace TesteLuby.MainStartUp.Utilities
 
                 Issuer = jwtSettings.Emissor,
                 Audience = jwtSettings.ValidoEm,
-                Expires = DateTime.UtcNow.AddHours(jwtSettings.ExpiracaoHoras),
+                Expires = DateTime.UtcNow.AddMinutes(jwtSettings.ExpiracaoMinutos),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
             return tokenHandler.WriteToken(tokenHandler.CreateToken(tokenDescriptor));
@@ -50,7 +50,7 @@ namespace TesteLuby.MainStartUp.Utilities
 
                 Issuer = jwtSettings.Emissor,
                 Audience = jwtSettings.ValidoEm,
-                Expires = DateTime.UtcNow.AddHours(jwtSettings.ExpiracaoHoras),
+                Expires = DateTime.UtcNow.AddMinutes(jwtSettings.ExpiracaoMinutos),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
             return tokenHandler.WriteToken(tokenHandler.CreateToken(tokenDescriptor));
