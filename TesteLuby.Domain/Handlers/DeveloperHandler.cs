@@ -39,7 +39,7 @@ namespace TesteLuby.Domain.Handlers
         }
         #endregion
 
-        #region Posts Methods
+        #region Post Methods
         public async Task<ICommandResult> CreateUser(CreateDeveloperCommand user)
         {
             try

@@ -26,6 +26,7 @@ Future<void> ConsumirDadosFlutter() async {
 
         List listaTemporaria = new List();
 
+        //parametro do endpoint
         var parametro = {
               "email": "gustavoamorim05@hotmail.com"
             };

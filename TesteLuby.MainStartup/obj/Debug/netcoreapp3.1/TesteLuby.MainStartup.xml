@@ -145,6 +145,23 @@
             </summary>
             <returns>Lista de projetos (JSON)</returns>
         </member>
+        <member name="M:TesteLuby.MainStartup.Controllers.ProjectController.PostUser(TesteLuby.Domain.CommandsParameters.CreateProjectCommand)">
+            <summary>
+            Adiciona um novo projeto
+            </summary>
+        </member>
+        <member name="M:TesteLuby.MainStartup.Controllers.ProjectController.UpdateProject(TesteLuby.Domain.CommandsParameters.UpdateProjectCommand)">
+            <summary>
+            Altera informações do projeto
+            </summary>
+            <param name="update"></param>
+            <returns>Altera informações do projeto</returns>
+        </member>
+        <member name="M:TesteLuby.MainStartup.Controllers.ProjectController.Delete(TesteLuby.Domain.CommandsParameters.DeleteProjectCommand)">
+            <summary>
+            Remove um projeto
+            </summary>
+        </member>
         <member name="M:TesteLuby.MainStartup.Controllers.ProjectDeveloperController.#ctor(TesteLuby.Domain.Handlers.ProjectDeveloperHandler,TesteLuby.Domain.Contracts.IAppSettings)">
             <summary>
             Construtor controller ProjetoDeveloper
