@@ -1,0 +1,179 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TesteLuby.MainStartup</name>
+    </assembly>
+    <members>
+        <member name="M:TesteLuby.MainStartUp.Configuration.StartupConfiguration.AddSwaggerTeste(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Metodo extensão IServiceCollection Adiciona configuração Swagger
+            </summary>
+            <param name="services">IServiceCollection da Aplicação</param>
+        </member>
+        <member name="M:TesteLuby.MainStartUp.Configuration.StartupConfiguration.AddJwtTeste(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Metodo extensão de IServiceCollection com a finalidade de definir os parametros para configuração JWT
+            </summary>
+            <param name="services">IServiceCollection</param>
+            <param name="conf">IConfiguration</param>
+        </member>
+        <member name="M:TesteLuby.MainStartUp.Configuration.StartupConfiguration.AddDependencies(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Metodo extensão IServiceCollection Adiciona as dependencias necessárias
+            </summary>
+            <param name="services">IServiceCollection da Aplicação</param>
+            <param name="conf">IConfiguration</param>
+        </member>
+        <member name="M:TesteLuby.MainStartUp.Configuration.StartupConfiguration.RegisterAllTypes``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Reflection.Assembly[],Microsoft.Extensions.DependencyInjection.ServiceLifetime)">
+            <summary>
+            Metodo extensão IServiceCollection Registra todos dependências do tipo T
+            </summary>
+            <typeparam name="T">Tipo a ser instanciado</typeparam>
+            <param name="services">Extensão de IServiceCollection</param>
+            <param name="assemblies">instancia da interface para conseguir pegar o executável/dll que contenham todas as classes</param>
+            <param name="lifetime">tempo de vida - Scoped, Singleton ou Transient</param>
+        </member>
+        <member name="M:TesteLuby.MainStartUp.Configuration.StartupConfiguration.RegisterMiddlewareSwagger(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Metodo extensão IApplicationBuilder Registra o Swagger no app
+            </summary>
+            <param name="app">App em execução</param>
+        </member>
+        <member name="T:TesteLuby.MainStartUp.Controllers.DeveloperController">
+            <summary>
+            Controller desenvolvedor
+            </summary>
+        </member>
+        <member name="M:TesteLuby.MainStartUp.Controllers.DeveloperController.#ctor(TesteLuby.Domain.Handlers.DeveloperHandler,TesteLuby.Domain.Contracts.IAppSettings)">
+            <summary>
+            Construtor controller desenvolvedor
+            </summary>
+            <param name="handler">Servico de acesso aos Dados</param>
+            <param name="settings">Configurações Gerais do sistema</param>
+        </member>
+        <member name="M:TesteLuby.MainStartUp.Controllers.DeveloperController.GetUserByEmail(TesteLuby.Domain.Commands.GetDeveloperByEmailCommand)">
+            <summary>
+            Busca desenvolvedor pelo e-mail
+            </summary>
+            <returns>Lista desenvolvedor pelo e-mail (JSON)</returns>
+        </member>
+        <member name="M:TesteLuby.MainStartUp.Controllers.DeveloperController.PostBusinessHour(TesteLuby.Domain.CommandsParameters.CreateBusinessHourCommand)">
+            <summary>
+            Lançamento de hora
+            </summary>
+        </member>
+        <member name="M:TesteLuby.MainStartUp.Controllers.DeveloperController.PostUser(TesteLuby.Domain.Commands.CreateDeveloperCommand)">
+            <summary>
+            Adiciona um novo desenvolvedor
+            </summary>
+        </member>
+        <member name="M:TesteLuby.MainStartUp.Controllers.DeveloperController.UpdateUser(TesteLuby.Domain.Commands.UpdateDeveloperCommand)">
+            <summary>
+            Altera informações do desenvolvedor
+            </summary>
+            <param name="update"></param>
+            <returns>Altera informações do usuário</returns>
+        </member>
+        <member name="M:TesteLuby.MainStartUp.Controllers.DeveloperController.Delete(TesteLuby.Domain.CommandsParameters.DeleteDeveloperCommand)">
+            <summary>
+            Remove um developer
+            </summary>
+        </member>
+        <member name="M:TesteLuby.MainStartUp.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            Cria o ambiente para se trabalhar
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TesteLuby.MainStartUp.Utilities.Encrypting.Criptografa(System.String)">
+            <summary>
+            Funcao Para Criptografar ou retornar o conteudo descriptografado
+            </summary>
+            <param name="conteudo">String a Ser Criptograda</param>
+            <returns>String Criptografada</returns>
+        </member>
+        <member name="M:TesteLuby.MainStartUp.Utilities.Encrypting.Descriptografa(System.String)">
+            <summary>
+            Funcao Para Descriptografar string Criptografada
+            </summary>
+            <param name="conteudo">String a Ser DesCriptograda</param>
+            <returns>String DesCriptografada</returns>
+        </member>
+        <member name="M:TesteLuby.MainStartUp.Utilities.Encrypting.TiraAcentos(System.String)">
+            <summary>
+            Remove acentos de uma string
+            </summary>
+            <param name="texto">String de origem a ser removido os acentos</param>
+            <returns>String com os acentos removidos</returns>
+        </member>
+        <member name="M:TesteLuby.MainStartUp.Utilities.TokenGenerator.Gerar(TesteLuby.Domain.Models.Settings.JwtSetting)">
+            <summary>
+            Gera o token JWT com os dados passados pelo parametro
+            </summary>
+            <param name="jwtSettings">dados para geração do token JWT</param>
+            <returns>string contendo o token</returns>
+        </member>
+        <member name="T:TesteLuby.MainStartup.Controllers.BusinessHourController">
+            <summary>
+            Controller de horas trabalhadas
+            </summary>
+        </member>
+        <member name="M:TesteLuby.MainStartup.Controllers.BusinessHourController.#ctor(TesteLuby.Domain.Handlers.BusinessHourHandler,TesteLuby.Domain.Contracts.IAppSettings)">
+            <summary>
+            Construtor controller hora trabalhada
+            </summary>
+            <param name="handler">Servico de acesso aos Dados</param>
+            <param name="settings">Configurações Gerais do sistema</param>
+        </member>
+        <member name="M:TesteLuby.MainStartup.Controllers.BusinessHourController.GetRankingBusinessHourByDeveloper">
+            <summary>
+            Seleciona ranking de horas trabalhadas por desenvolvedor
+            </summary>
+            <returns>Lista o ranking horas trabalhadas</returns>
+        </member>
+        <member name="M:TesteLuby.MainStartup.Controllers.ProjectController.#ctor(TesteLuby.Domain.Handlers.ProjectHandler,TesteLuby.Domain.Contracts.IAppSettings)">
+            <summary>
+            Construtor controller Projetos
+            </summary>
+            <param name="handler">Servico de acesso aos Dados</param>
+            <param name="settings">Configurações Gerais do sistema</param>
+        </member>
+        <member name="M:TesteLuby.MainStartup.Controllers.ProjectController.GetAll">
+            <summary>
+            Busca todos os projetos
+            </summary>
+            <returns>Lista de projetos (JSON)</returns>
+        </member>
+        <member name="M:TesteLuby.MainStartup.Controllers.ProjectController.PostUser(TesteLuby.Domain.CommandsParameters.CreateProjectCommand)">
+            <summary>
+            Adiciona um novo projeto
+            </summary>
+        </member>
+        <member name="M:TesteLuby.MainStartup.Controllers.ProjectController.UpdateProject(TesteLuby.Domain.CommandsParameters.UpdateProjectCommand)">
+            <summary>
+            Altera informações do projeto
+            </summary>
+            <param name="update"></param>
+            <returns>Altera informações do projeto</returns>
+        </member>
+        <member name="M:TesteLuby.MainStartup.Controllers.ProjectController.Delete(TesteLuby.Domain.CommandsParameters.DeleteProjectCommand)">
+            <summary>
+            Remove um projeto
+            </summary>
+        </member>
+        <member name="M:TesteLuby.MainStartup.Controllers.ProjectDeveloperController.#ctor(TesteLuby.Domain.Handlers.ProjectDeveloperHandler,TesteLuby.Domain.Contracts.IAppSettings)">
+            <summary>
+            Construtor controller ProjetoDeveloper
+            </summary>
+            <param name="handler">Servico de acesso aos Dados</param>
+            <param name="settings">Configurações Gerais do sistema</param>
+        </member>
+        <member name="M:TesteLuby.MainStartup.Controllers.ProjectDeveloperController.GetAll">
+            <summary>
+            Busca todos os projetodeveloper
+            </summary>
+            <returns>Lista de projetodeveloper (JSON)</returns>
+        </member>
+    </members>
+</doc>
