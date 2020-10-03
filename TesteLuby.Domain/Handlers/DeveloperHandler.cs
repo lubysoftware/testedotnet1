@@ -40,7 +40,7 @@ namespace TesteLuby.Domain.Handlers
         #endregion
 
         #region Post Methods
-        public async Task<ICommandResult> CreateUser(CreateDeveloperCommand user)
+        public async Task<ICommandResult> CreateDeveloper(CreateDeveloperCommand user)
         {
             try
             {
@@ -95,7 +95,7 @@ namespace TesteLuby.Domain.Handlers
             }
             catch (Exception ex)
             {
-                return new CommandResult((int)EStatus.InternalServerError, false, "Erro Interno ao tentar lançar hora!", null);
+                return new CommandResult((int)EStatus.InternalServerError, false, "Erro Interno ao tentar lançar hora!"+ex.Message, null);
             }
         }
 
@@ -108,10 +108,10 @@ namespace TesteLuby.Domain.Handlers
             {
                 return await UpdateDeveloperResource(update);
             }
-            catch
+            catch(Exception ex)
             {
                 return new CommandResult((int)EStatus.InternalServerError, false,
-                   $"Erro ao tentar atualizar o desenvolvedor.", null);
+                   $"Erro ao tentar atualizar o desenvolvedor."+ex.Message, null);
             }
         }
 

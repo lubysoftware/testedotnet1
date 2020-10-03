@@ -33,14 +33,14 @@ namespace TesteLuby.Domain.Handlers
                     "order by businessweek desc";
 
                 var retorno = await Repository.GetListBySql<Ranking>(sql);  
-                ICommandResult resultadoServico = retorno == null
-                   ? new CommandResult((int)EStatus.NotFound, false, "Desenvolvedores não encontrados!", null)
+                ICommandResult resultadoServico = retorno == null 
+                   ? new CommandResult((int)EStatus.NotFound, false, "Desenvolvedores não encontrados!", null) 
                    : new CommandResult((int)EStatus.Ok, true, "Desenvolvedores encontrado!", retorno);
                 return resultadoServico;
             }
             catch (Exception ex)
             {
-                throw new ArgumentException("Erro ao tentar buscar um usuário pelo e-mail. Erro: ", ex.Message);
+                throw new ArgumentException("Erro ao tentar consultar ranking. Erro: ", ex.Message);
             }
         }
     }

@@ -37,7 +37,7 @@ namespace TesteLuby.MainStartUp.Controllers
         /// Busca desenvolvedor pelo e-mail
         /// </summary>
         /// <returns>Lista desenvolvedor pelo e-mail (JSON)</returns>
-        [HttpPost("email")]
+        [HttpGet("email")]
         public async Task<IActionResult> GetUserByEmail([FromBody]GetDeveloperByEmailCommand user)
         {
             var users = await _handler.GetByEmail(user);
@@ -87,7 +87,7 @@ namespace TesteLuby.MainStartUp.Controllers
         public async Task<IActionResult> PostUser(CreateDeveloperCommand user)
         {
             user.Password = user.Password.Criptografa();
-            var users = await _handler.CreateUser(user);
+            var users = await _handler.CreateDeveloper(user);
             if (users.Success)
             {
                 return Ok(users);
@@ -141,7 +141,7 @@ namespace TesteLuby.MainStartUp.Controllers
         /// <summary>
         /// Remove um developer
         /// </summary>
-        [HttpPost("delete")]
+        [HttpDelete("delete")]
         public async Task<IActionResult> Delete([FromBody] DeleteDeveloperCommand developer)
         {
             var delete = await _handler.DeleteDeveloper(developer);

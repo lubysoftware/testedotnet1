@@ -33,7 +33,7 @@ namespace TesteLuby.MainStartup.Controllers
         /// Busca todos os projetos
         /// </summary>
         /// <returns>Lista de projetos (JSON)</returns>
-        [HttpPost("all")]
+        [HttpGet("all")]
         public async Task<IActionResult> GetAll()
         {
             var users = await _handler.Get();
@@ -109,7 +109,7 @@ namespace TesteLuby.MainStartup.Controllers
         /// <summary>
         /// Remove um projeto
         /// </summary>
-        [HttpPost("delete")]
+        [HttpDelete("delete")]
         public async Task<IActionResult> Delete([FromBody] DeleteProjectCommand projeto)
         {
             var delete = await _handler.DeleteProject(projeto);

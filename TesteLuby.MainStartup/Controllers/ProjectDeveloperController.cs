@@ -32,17 +32,17 @@ namespace TesteLuby.MainStartup.Controllers
         /// Busca todos os projetodeveloper
         /// </summary>
         /// <returns>Lista de projetodeveloper (JSON)</returns>
-        [HttpPost("all")]
+        [HttpGet("all")]
         public async Task<IActionResult> GetAll()
         {
-            var users = await _handler.Get();
-            if (users.Success)
+            var projectdeveloper = await _handler.Get();
+            if (projectdeveloper.Success)
             {
-                return Ok(users);
+                return Ok(projectdeveloper);
             }
             else
             {
-                return StatusCode(500, users);
+                return StatusCode(500, projectdeveloper);
             }
         }
     }

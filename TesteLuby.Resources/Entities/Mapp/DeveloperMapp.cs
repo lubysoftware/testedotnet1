@@ -11,7 +11,6 @@ namespace TesteLuby.Resources.Entities.Mapp
             Map(x => x.Id).ToColumn("id").IsKey();
             Map(x => x.UserName).ToColumn("username");
             Map(x => x.Email).ToColumn("email");
-            Map(x => x.Password).ToColumn("password");
         }
     }
 }

@@ -4,15 +4,15 @@ using TesteLuby.Resources.Entities;
 
 namespace Testeluby.ResourcesDB.Entities.Mapp
 {
-    public class BusinessHourMapp: DommelEntityMap<Developer>, IMapper
+    public class BusinessHourMapp: DommelEntityMap<BusinessHour>, IMapper
     {
         public BusinessHourMapp()
         {
             ToTable("businesshour");
             Map(x => x.Id).ToColumn("id").IsKey();
-            Map(x => x.UserName).ToColumn("username");
-            Map(x => x.Email).ToColumn("email");
-            Map(x => x.Password).ToColumn("password");
+            Map(x => x.DateTimeEnd).ToColumn("datetimeend");
+            Map(x => x.DateTimeStart).ToColumn("datetimestart");
+            Map(x => x.DeveloperId).ToColumn("developerid");
         }
     }
 }
