@@ -9,7 +9,7 @@ namespace lancamentoHoras.Database
 {
     public static class DBConnection
     {
-        private static readonly string connString = "server=localhost;user id=root;password=tiagocpenguin123;port=3310;database=lubydatabase;";
+        private static readonly string connString = "server=localhost;user id=root;password=password123;port=3310;database=lubydatabase;";
 
         public static MySqlConnection GetConnection()
         {
