@@ -6,8 +6,7 @@ using System.Text;
 
 namespace Application.Interfaces
 {
-    public interface IPontoApplication : IApplicationBase<Ponto, PontoDTO>
+    public interface IProjetoApplication : IApplicationBase<Projeto, ProjetoDTO>
     {
-        List<RankingMediaPontoDTO> GetMediaPonto();
     }
 }

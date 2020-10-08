@@ -20,14 +20,20 @@ namespace Infra.IoC
             //Aplicação
             svcCollection.AddScoped(typeof(IApplicationBase<,>), typeof(ApplicationBase<,>));
             svcCollection.AddScoped<IPontoApplication, PontoApplication>();
+            svcCollection.AddScoped<IProjetoApplication, ProjetoApplication>();
+            svcCollection.AddScoped<IPessoaApplication, PessoaApplication>();
 
             //Domínio
             svcCollection.AddScoped(typeof(IServiceBase<>), typeof(ServiceBase<>));
             svcCollection.AddScoped<IPontoService, PontoService>();
+            svcCollection.AddScoped<IProjetoService, ProjetoService>();
+            svcCollection.AddScoped<IPessoaService, PessoaService>();
 
             //Repositorio
             svcCollection.AddScoped(typeof(IRepositoryBase<>), typeof(RepositoryBase<>));
             svcCollection.AddScoped<IPontoRepository, PontoRepository>();
+            svcCollection.AddScoped<IProjetoRepository, ProjetoRepository>();
+            svcCollection.AddScoped<IPessoaRepository, PessoaRepository>();
         }
     }
 }

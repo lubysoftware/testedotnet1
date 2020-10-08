@@ -14,10 +14,10 @@ namespace Data.EntityMappings
             base.Configure(builder);
             builder.ToTable("ponto");
             builder.Property(c => c.DataInicio).IsRequired().HasColumnName("DataInicio");
-            builder.Property(c => c.DataFim).HasColumnName("DataInicio");
+            builder.Property(c => c.DataFim).HasColumnName("DataFim");
             builder.Property(c => c.IdPessoa).HasColumnName("IdPessoa");
 
-            builder.HasOne(c => c.Pessoa).WithMany(c => c.Pontos).HasForeignKey("ÌdPessoa");
+            builder.HasOne(c => c.Pessoa).WithMany(c => c.Pontos).HasForeignKey(x => x.IdPessoa);
         }
     }
 }

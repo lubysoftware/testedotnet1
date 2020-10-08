@@ -4,8 +4,8 @@ using System.Text;
 
 namespace Application.DTO
 {
-    public class BaseDTO
+    public class ProjetoDTO : BaseDTO
     {
-        public int Id { get; set; }
+        public string Nome { get; set; }
     }
 }

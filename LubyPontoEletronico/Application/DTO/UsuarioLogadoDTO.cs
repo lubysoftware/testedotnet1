@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Domain.Entities
+namespace Application.DTO
 {
-    public class Projeto : Base
+    public class UsuarioLogadoDTO
     {
         public string Nome { get; set; }
-        public virtual List<Pessoa> Pessoas { get; set; }
+        public string Token { get; set; }
     }
 }

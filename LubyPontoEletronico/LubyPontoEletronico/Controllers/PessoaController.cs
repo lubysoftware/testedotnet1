@@ -6,9 +6,8 @@ using Application.DTO;
 using Application.Interfaces;
 using Domain.Entities;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace LubyPontoEletronico.Controllers
 {
@@ -16,32 +15,33 @@ namespace LubyPontoEletronico.Controllers
     /// 
     /// </summary>
     [Authorize]
-    public class PontoController : ControllerBase<Ponto, PontoDTO>
+    public class PessoaController : ControllerBase<Pessoa, PessoaDTO>
     {
         /// <summary>
         /// 
         /// </summary>
-        protected readonly IPontoApplication pontoApplication;
+        protected readonly IPessoaApplication pessoaApplication;
         /// <summary>
         /// 
         /// </summary>
         /// <param name="app"></param>
-        public PontoController(IPontoApplication app)
-          : base(app)
+        public PessoaController(IPessoaApplication app) : base(app)
         {
-            pontoApplication = app;
+            pessoaApplication = app;
         }
 
         /// <summary>
-        /// Retorna ranking dos 5 desenvolvedores da semana com maior média de horas trabalhadas.
+        /// Autenticação do usuário
         /// </summary>
+        /// <param name="data"></param>
         /// <returns></returns>
-        [HttpGet("MaiorMediaSemana")]
-        public IActionResult GetMaiorMedia()
+        [HttpPost("login")]
+        [AllowAnonymous]
+        public IActionResult Login([FromBody] LoginDTO data)
         {
             try
             {
-                return Ok(pontoApplication.GetMediaPonto());
+                return Ok(pessoaApplication.Login(data));
             }
             catch (Exception ex)
             {

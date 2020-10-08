@@ -16,7 +16,7 @@ namespace Application.Services
         public ApplicationBase(IMapper map, IServiceBase<TEntity> service)
         {
             _service = service;
-            map = _map;
+            _map = map;
         }
 
         public void Create(TEntityDTO entity)

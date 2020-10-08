@@ -12,6 +12,8 @@ namespace Application
         public MappingEntities()
         {
             CreateMap<Ponto, PontoDTO>().ReverseMap();
+            CreateMap<Projeto, ProjetoDTO>().ReverseMap();
+            CreateMap<Pessoa, PessoaDTO>().ReverseMap();
         }
     }
 }

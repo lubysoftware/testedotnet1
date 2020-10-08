@@ -5,8 +5,7 @@ using System.Text;
 
 namespace Domain.Interfaces.Repositories
 {
-    public interface IPontoRepository : IRepositoryBase<Ponto>
+    public interface IProjetoRepository : IRepositoryBase<Projeto>
     {
-        List<Pessoa> GetMediaPonto(List<DateTime> dataSemana);
     }
 }

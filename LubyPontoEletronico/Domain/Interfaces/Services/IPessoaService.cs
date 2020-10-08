@@ -5,8 +5,8 @@ using System.Text;
 
 namespace Domain.Interfaces.Services
 {
-    public interface IPontoService : IServiceBase<Ponto>
+    public interface IPessoaService : IServiceBase<Pessoa>
     {
-        List<Pessoa> GetMediaPonto();
+        Pessoa GetByEmailSenha(string email, string senha);
     }
 }

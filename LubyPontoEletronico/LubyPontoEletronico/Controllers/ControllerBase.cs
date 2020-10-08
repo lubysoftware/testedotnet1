@@ -8,26 +8,43 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace LubyPontoEletronico.Controllers
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <typeparam name="TEntity"></typeparam>
+    /// <typeparam name="TEntityDTO"></typeparam>
     [Produces("application/json")]
     [Route("api/[controller]")]
     public class ControllerBase<TEntity, TEntityDTO> : Controller
         where TEntity : class
         where TEntityDTO : class
     {
+        /// <summary>
+        /// 
+        /// </summary>
         readonly protected IApplicationBase<TEntity, TEntityDTO> _app;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="app"></param>
         public ControllerBase(IApplicationBase<TEntity, TEntityDTO> app)
         {
             _app = app;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [Route("")]
-        public IActionResult Listar()
+        public IActionResult GetAll()
         {
             try
             {
-                var restaurantes = _app.GetAll();
-                return new OkObjectResult(restaurantes);
+                var result = _app.GetAll();
+                return Ok(result);
             }
             catch (Exception ex)
             {
@@ -35,14 +52,19 @@ namespace LubyPontoEletronico.Controllers
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet]
         [Route("{id}")]
-        public IActionResult SelecionarPorId(int id)
+        public IActionResult GetById(int id)
         {
             try
             {
-                var restaurantes = _app.GetById(id);
-                return new OkObjectResult(restaurantes);
+                var result = _app.GetById(id);
+                return Ok(result);
             }
             catch (Exception ex)
             {
@@ -50,13 +72,23 @@ namespace LubyPontoEletronico.Controllers
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
         [HttpPost]
-        public IActionResult Incluir([FromBody] TEntityDTO dado)
+        public IActionResult Create([FromBody] TEntityDTO data)
         {
             try
             {
-                _app.Create(dado);
-                return new OkObjectResult(true);
+                if (data == null)
+                {
+                    throw new Exception("Dados de entradas incorretos.");
+                }
+
+                _app.Create(data);
+                return Ok(true);
             }
             catch (Exception ex)
             {
@@ -64,13 +96,23 @@ namespace LubyPontoEletronico.Controllers
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
         [HttpPut]
-        public IActionResult Alterar([FromBody] TEntityDTO dado)
+        public IActionResult Update([FromBody] TEntityDTO data)
         {
             try
             {
-                _app.Update(dado);
-                return new OkObjectResult(true);
+                if (data == null)
+                {
+                    throw new Exception("Dados de entradas incorretos.");
+                }
+
+                _app.Update(data);
+                return Ok(true);
             }
             catch (Exception ex)
             {
@@ -78,14 +120,19 @@ namespace LubyPontoEletronico.Controllers
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete]
         [Route("{id}")]
-        public IActionResult Excluir(int id)
+        public IActionResult Remove(int id)
         {
             try
             {
                 _app.Remove(id);
-                return new OkObjectResult(true);
+                return Ok(true);
             }
             catch (Exception ex)
             {

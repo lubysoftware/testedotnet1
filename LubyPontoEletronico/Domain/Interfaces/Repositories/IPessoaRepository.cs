@@ -5,8 +5,8 @@ using System.Text;
 
 namespace Domain.Interfaces.Repositories
 {
-    public interface IPontoRepository : IRepositoryBase<Ponto>
+    public interface IPessoaRepository : IRepositoryBase<Pessoa>
     {
-        List<Pessoa> GetMediaPonto(List<DateTime> dataSemana);
+        Pessoa GetByEmailSenha(string email, string senha);
     }
 }

@@ -4,10 +4,10 @@ using System.Text;
 
 namespace Application.DTO
 {
-    public class PontoDTO : BaseDTO
+    public class RankingMediaPontoDTO
     {
-        public DateTime DataInicio { get; set; }
-        public DateTime? DataFim { get; set; }
         public int IdPessoa { get; set; }
+        public string Nome { get; set; }
+        public double Media { get; set; }
     }
 }

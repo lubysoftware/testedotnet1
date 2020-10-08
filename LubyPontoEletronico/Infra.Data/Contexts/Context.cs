@@ -1,6 +1,8 @@
-﻿using Domain.Entities;
+﻿using Data.EntityMappings;
+using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,22 +12,29 @@ namespace Infra.Data.Contexts
 {
     public class Context : DbContext
     {
+
         public IDbContextTransaction Transaction { get; private set; }
 
         public DbSet<Ponto> Ponto { get; set; }
         public DbSet<Pessoa> Pessoa { get; set; }
         public DbSet<Projeto> Projeto { get; set; }
 
+        public Context()
+        {
+
+        }
+
         public Context(DbContextOptions<Context> options)
             : base(options)
         {
             if (Database.GetPendingMigrations().Count() > 0)
                 Database.Migrate();
+
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-
+            optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=PontoEletronico;User=; Password=;");
         }
 
         public IDbContextTransaction InitTransacao()
@@ -77,7 +86,9 @@ namespace Infra.Data.Contexts
         {
             base.OnModelCreating(modelBuilder);
 
-            //modelBuilder.ApplyConfiguration(new PontoMap());
+            modelBuilder.ApplyConfiguration(new PontoMap());
+            modelBuilder.ApplyConfiguration(new ProjetoMap());
+            modelBuilder.ApplyConfiguration(new PessoaMap());
         }
     }
 }

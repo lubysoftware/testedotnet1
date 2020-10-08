@@ -5,8 +5,7 @@ using System.Text;
 
 namespace Domain.Interfaces.Services
 {
-    public interface IPontoService : IServiceBase<Ponto>
+    public interface IProjetoService : IServiceBase<Projeto>
     {
-        List<Pessoa> GetMediaPonto();
     }
 }
