@@ -18,6 +18,24 @@ namespace Luby.Core.Services
             _desenvolvedorRepository = desenvolvedorRepository;    
         }
 
+        public async Task<Desenvolvedor> Add(Desenvolvedor entity)
+        {
+            if(!ExecuteValidation(new DesenvolvedorValidation(), entity)) return null;
+
+            await _desenvolvedorRepository.Add(entity);
+
+            return entity;
+        }
+
+        public async Task<Desenvolvedor> Update(Desenvolvedor entity)
+        {
+            if(!ExecuteValidation(new DesenvolvedorValidation(), entity)) return null;
+
+            await _desenvolvedorRepository.Update(entity);
+
+            return entity;
+        }
+
         public async Task Delete(int id)
         {
             await _desenvolvedorRepository.Delete(id);
@@ -28,13 +46,9 @@ namespace Luby.Core.Services
             _desenvolvedorRepository?.Dispose();
         }
 
-        public async Task<Desenvolvedor> Save(Desenvolvedor entity)
+        public Task<Desenvolvedor> Save(Desenvolvedor entity)
         {
-            if(!ExecuteValidation(new DesenvolvedorValidation(), entity)) return null;
-
-            await _desenvolvedorRepository.Save(entity);
-
-            return entity;
+            throw new System.NotImplementedException();
         }
     }
 }

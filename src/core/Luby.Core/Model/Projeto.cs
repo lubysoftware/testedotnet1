@@ -1,13 +1,14 @@
 namespace Luby.Core.Model
 {
     using System;
+    using System.Collections.Generic;
 
     /// <summary>
     /// Entidade de Projeto
     /// </summary>
     public class Projeto : Entity
     {
-        public DateTime DtInicio { get; set; }
-        public DateTime DtFim { get; set; }
+        public string Descricao { get; set; }
+        public IList<ProjetoDesenvolvedores> ProjetoDesenvolvedor { get; set; }
     }
 }

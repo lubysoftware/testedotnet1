@@ -7,7 +7,7 @@ namespace Luby.Core.Model.Validations
         {
             RuleFor(p => p.Nome)
                 .NotNullNotEmpy()
-                .Length(3, 255).WithMessage("O campo {PropertyName} deve ter entre {MinLength} e {MaxLength}");
+                .LengthMinMax(3, 255);
         }
     }
 }

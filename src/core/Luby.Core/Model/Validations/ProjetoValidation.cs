@@ -5,11 +5,9 @@ namespace Luby.Core.Model.Validations
     {
         public ProjetoValidation()
         {
-            RuleFor(p => p.DtFim)
-                .NotNullNotEmpy();
-            
-            RuleFor(p => p.DtInicio)
-                .NotNullNotEmpy();
+            RuleFor(p => p.Descricao)
+                .NotNullNotEmpy()
+                .LengthMinMax(3, 255);
         }
     }
 }

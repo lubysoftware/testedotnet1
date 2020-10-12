@@ -18,6 +18,15 @@ namespace Luby.Core.Services
             _projetoRepository = projetoRepository;
         }
 
+        public async Task<Projeto> Add(Projeto entity)
+        {
+            if(!ExecuteValidation(new ProjetoValidation(), entity)) return null;
+
+            await _projetoRepository.Add(entity);
+
+            return entity;
+        }
+
         public async Task Delete(int id)
         {
             await _projetoRepository.Delete(id);
@@ -28,11 +37,11 @@ namespace Luby.Core.Services
             _projetoRepository?.Dispose();
         }
 
-        public async Task<Projeto> Save(Projeto entity)
+        public async Task<Projeto> Update(Projeto entity)
         {
             if(!ExecuteValidation(new ProjetoValidation(), entity)) return null;
 
-            await _projetoRepository.Save(entity);
+            await _projetoRepository.Update(entity);
 
             return entity;
         }

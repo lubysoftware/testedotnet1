@@ -7,11 +7,8 @@ namespace Luby.Core.Model
     /// </summary>
     public class Desenvolvedor : Entity
     {
-        public Desenvolvedor()
-        {
-            Projetos = new List<Projeto>();
-        }
         public string Nome { get; set; }
-        public ICollection<Projeto> Projetos { get; set; }
+        
+        public IList<ProjetoDesenvolvedores> ProjetoDesenvolvedor { get; set; }
     }
 }

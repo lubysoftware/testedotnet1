@@ -6,7 +6,8 @@ namespace Luby.Core.Interfaces.Services
     public interface IBaseService<T> : IDisposable
         where T : Entity
     {
-        Task<T> Save(T entity);
+        Task<T> Add(T entity);
+        Task<T> Update(T entity);
         Task Delete(int id);
     }
 }

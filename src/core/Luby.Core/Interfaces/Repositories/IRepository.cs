@@ -22,11 +22,18 @@ namespace Luby.Core.Interfaces.Repositories
         Task<T> GetbyId(int id);
 
         /// <summary>
-        /// Adiciona ou Atualiza caso a entidade já existir no banco
+        /// Adiciona um registro no banco
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
-        Task<T> Save(T entity);
+        Task<T> Add(T entity);
+
+        /// <summary>
+        /// Atualiza um registro no banco
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        Task<T> Update(T entity);
 
         /// <summary>
         /// Deleta um registro do banco de dados
