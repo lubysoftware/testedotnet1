@@ -1,0 +1,9 @@
+C:\src\dev\csharp\Luby\testedotnet1\src\core\Luby.Core\bin\Debug\netstandard2.0\Luby.Core.deps.json
+C:\src\dev\csharp\Luby\testedotnet1\src\core\Luby.Core\bin\Debug\netstandard2.0\Luby.Core.dll
+C:\src\dev\csharp\Luby\testedotnet1\src\core\Luby.Core\bin\Debug\netstandard2.0\Luby.Core.pdb
+C:\src\dev\csharp\Luby\testedotnet1\src\core\Luby.Core\obj\Debug\netstandard2.0\Luby.Core.csprojAssemblyReference.cache
+C:\src\dev\csharp\Luby\testedotnet1\src\core\Luby.Core\obj\Debug\netstandard2.0\Luby.Core.AssemblyInfoInputs.cache
+C:\src\dev\csharp\Luby\testedotnet1\src\core\Luby.Core\obj\Debug\netstandard2.0\Luby.Core.AssemblyInfo.cs
+C:\src\dev\csharp\Luby\testedotnet1\src\core\Luby.Core\obj\Debug\netstandard2.0\Luby.Core.csproj.CoreCompileInputs.cache
+C:\src\dev\csharp\Luby\testedotnet1\src\core\Luby.Core\obj\Debug\netstandard2.0\Luby.Core.dll
+C:\src\dev\csharp\Luby\testedotnet1\src\core\Luby.Core\obj\Debug\netstandard2.0\Luby.Core.pdb

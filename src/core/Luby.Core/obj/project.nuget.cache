@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "VmSLAz8GERpDNI+MkyUyfh/0jPTZEuuaCxmzcRas+k8fzvnF91sp4hsYbjUP2lqZJTV+/CNeJKlPVjqu47j9WA==",
+  "success": true,
+  "projectFilePath": "C:\\src\\dev\\csharp\\Luby\\testedotnet1\\src\\core\\Luby.Core\\Luby.Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\otsu\\.nuget\\packages\\fluentvalidation\\9.2.2\\fluentvalidation.9.2.2.nupkg.sha512",
+    "C:\\Users\\otsu\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\otsu\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
