@@ -21,7 +21,9 @@ namespace Luby.API.Extensions
             services.AddScoped<IDesenvolvedorRepository, DesenvolvedorRepository>();
             services.AddScoped<IDesenvolvedorService, DesenvolvedorService>();
             services.AddScoped<INotificador, Notificador>();
-
+            services.AddScoped<IProjetoRepository, ProjetoRepository>();
+            services.AddScoped<IProjetoService, ProjetoService>();
+            
             return services;
         }
     }

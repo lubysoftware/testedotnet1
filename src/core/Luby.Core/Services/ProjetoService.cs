@@ -41,6 +41,15 @@ namespace Luby.Core.Services
         {
             if(!ExecuteValidation(new ProjetoValidation(), entity)) return null;
 
+            var projeto = await _projetoRepository.GetbyId(entity.Id);
+
+            if(projeto == null)
+            {
+                Notify("Não foi encontrado Projeto com o Id informado!");
+
+                return null;
+            }
+
             await _projetoRepository.Update(entity);
 
             return entity;

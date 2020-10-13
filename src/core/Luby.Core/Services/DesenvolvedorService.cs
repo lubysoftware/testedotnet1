@@ -31,6 +31,13 @@ namespace Luby.Core.Services
         {
             if(!ExecuteValidation(new DesenvolvedorValidation(), entity)) return null;
 
+            var dev = await _desenvolvedorRepository.GetbyId(entity.Id);
+
+            if(dev == null) {
+                Notify("Não existe desenvolvedor cadastrado com o Id informado!");
+                return null;
+            }
+
             await _desenvolvedorRepository.Update(entity);
 
             return entity;
@@ -38,6 +45,14 @@ namespace Luby.Core.Services
 
         public async Task Delete(int id)
         {
+            var dev = await _desenvolvedorRepository.GetbyId(id);
+
+            if(dev == null) 
+            {
+                Notify("Não existe o registro com o Id informado!");
+                return;
+            }
+
             await _desenvolvedorRepository.Delete(id);
         }
 
