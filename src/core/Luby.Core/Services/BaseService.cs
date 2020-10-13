@@ -29,8 +29,7 @@ namespace Luby.Core.Services
         }
 
         protected bool ExecuteValidation<TV, TE>(TV validation, TE entity) 
-            where TV : AbstractValidator<TE> 
-            where TE : Entity
+            where TV : AbstractValidator<TE>
         {
             var validator = validation.Validate(entity);
 

@@ -88,5 +88,16 @@ namespace Luby.API.Controllers
             return CustomResponse(projeto);
         }
 
+        [HttpPost("lancar")]
+        public async Task<ActionResult> Lancar(LancarHorasViewModel lancarHorasViewModel)
+        {
+            if(!ModelState.IsValid)
+                return CustomResponse(ModelState);
+
+            await _prjService.Lancar(_mapper.Map<ProjetoDesenvolvedores>(lancarHorasViewModel));
+
+            return CustomResponse();
+        }
+
     }
 }

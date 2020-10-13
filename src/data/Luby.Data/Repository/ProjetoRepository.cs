@@ -16,6 +16,12 @@ namespace Luby.Data.Repository
                      where pd.ProjetoId == id
                      select dev)
                      .ToListAsync();
-    
+
+        public async Task LancarHoras(ProjetoDesenvolvedores entity)
+        {
+            _context.ProjetoDesenvolvedores.Add(entity);
+
+            await SaveChange();
+        }
     }
 }

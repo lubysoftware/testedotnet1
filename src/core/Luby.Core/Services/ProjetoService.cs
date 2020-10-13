@@ -10,12 +10,15 @@ namespace Luby.Core.Services
     public class ProjetoService : BaseService, IProjetoService
     {
         private readonly IProjetoRepository _projetoRepository;
+        private readonly IDesenvolvedorRepository _desenvolvedorRepository;
         public ProjetoService(
+            IDesenvolvedorRepository desenvolvedorRepository,
             IProjetoRepository projetoRepository,
             INotificador notificador
         ) : base (notificador)
         {
             _projetoRepository = projetoRepository;
+            _desenvolvedorRepository = desenvolvedorRepository;
         }
 
         public async Task<Projeto> Add(Projeto entity)
@@ -35,6 +38,31 @@ namespace Luby.Core.Services
         public void Dispose()
         {
             _projetoRepository?.Dispose();
+        }
+
+        public async Task Lancar(ProjetoDesenvolvedores projetoDesenvolvedores)
+        {
+            if(!ExecuteValidation(new ProjetoDesenvolvedoresValidation(), projetoDesenvolvedores)) return;
+
+            var projeto = await _projetoRepository.GetbyId(projetoDesenvolvedores.ProjetoId);
+
+            if(projeto == null) 
+            {
+                Notify("Não foi encontrado Projeto com o Id informado!");
+
+                return;
+            }
+
+            var dev = await _desenvolvedorRepository.GetbyId(projetoDesenvolvedores.DesenvolvedorId);
+
+            if(dev == null)
+            {
+                Notify("Não foi encontrado Desenvolvedor com o Id informado!");
+
+                return;
+            }
+
+            await _projetoRepository.LancarHoras(projetoDesenvolvedores);
         }
 
         public async Task<Projeto> Update(Projeto entity)

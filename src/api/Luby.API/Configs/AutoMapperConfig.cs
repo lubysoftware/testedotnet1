@@ -9,6 +9,7 @@ namespace Luby.API.Configs
         {
             CreateMap<Desenvolvedor, DesenvolvedorViewModel>().ReverseMap();
             CreateMap<Projeto, ProjetoViewModel>().ReverseMap();
+            CreateMap<ProjetoDesenvolvedores, LancarHorasViewModel>().ReverseMap();
         }
     }
 }
