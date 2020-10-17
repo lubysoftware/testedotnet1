@@ -36,6 +36,11 @@ namespace Infra.Dados.Base
             return _dbContexto.Set<TEntidade>().Find(id);
         }
 
+        public virtual Task<TEntidade> GetByIdAsync(int id)
+        {
+            return _dbContexto.Set<TEntidade>().FindAsync(id).AsTask();
+        }
+
         public virtual IEnumerable<TEntidade> GetAll()
         {
            return _dbContexto.Set<TEntidade>().ToList();

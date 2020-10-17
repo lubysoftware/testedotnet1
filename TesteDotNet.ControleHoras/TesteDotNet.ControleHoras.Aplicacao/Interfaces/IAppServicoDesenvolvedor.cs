@@ -8,12 +8,12 @@ namespace TesteDotNet.ControleHoras.Aplicacao.Interfaces
 {
     public interface IAppServicoDesenvolvedor
     {
-        void Add(DesenvolvedorDTO dto);
-
+        DesenvolvedorDTO Add(DesenvolvedorDTO dto);
+        
         DesenvolvedorDTO GetById(int id);
+        Task<DesenvolvedorDTO> GetByIdAsync(int id);
 
         IEnumerable<DesenvolvedorDTO> GetAll();
-
         Task<List<DesenvolvedorDTO>> GetAllAsync();
 
         void Update(DesenvolvedorDTO dto);

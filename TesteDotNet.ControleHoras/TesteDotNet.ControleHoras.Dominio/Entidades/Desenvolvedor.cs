@@ -8,8 +8,7 @@ namespace TesteDotNet.ControleHoras.Dominio.Entidades
     {
         public string Nome { get; set; }
         public DateTime DataNascimento { get; set; }
-
-        public int ProjetoId { get; set; }
+        public int? ProjetoId { get; set; }
         public virtual Projeto Projeto { get; set; }
     }
 }

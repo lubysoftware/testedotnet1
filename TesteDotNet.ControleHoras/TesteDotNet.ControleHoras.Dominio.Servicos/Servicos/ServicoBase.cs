@@ -36,6 +36,11 @@ namespace TesteDotNet.ControleHoras.Dominio.Servicos
             return _repositorio.GetById(id);
         }
 
+        public Task<TEntidade> GetByIdAsync(int id)
+        {
+            return _repositorio.GetByIdAsync(id);
+        }
+
         public void Remove(TEntidade obj)
         {
             _repositorio.Remove(obj);

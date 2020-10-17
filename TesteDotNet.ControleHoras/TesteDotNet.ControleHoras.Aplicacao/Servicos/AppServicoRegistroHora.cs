@@ -20,10 +20,11 @@ namespace TesteDotNet.ControleHoras.Aplicacao.Servicos
             _mapper = mapper;
         }
 
-        public void Add(RegistroHoraDTO dto)
+        public RegistroHoraDTO Add(RegistroHoraDTO dto)
         {
             var obj = _mapper.Map<RegistroHora>(dto);
             _servico.Add(obj);
+            return _mapper.Map<RegistroHoraDTO>(obj);
         }
 
         public void Dispose()

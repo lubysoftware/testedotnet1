@@ -14,5 +14,13 @@ namespace Infra.Dados.Base.Repositorios
         {
             _dbContexto = dbContexto;
         }
+
+        public override void Add(Desenvolvedor obj)
+        {
+            if (obj.ProjetoId == 0)
+                obj.ProjetoId = null;
+
+            base.Add(obj);
+        }
     }
 }

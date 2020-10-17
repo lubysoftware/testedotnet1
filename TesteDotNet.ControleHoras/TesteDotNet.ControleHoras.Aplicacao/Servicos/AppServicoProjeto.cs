@@ -20,10 +20,11 @@ namespace TesteDotNet.ControleHoras.Aplicacao.Servicos
             _mapper = mapper;
         }
 
-        public void Add(ProjetoDTO dto)
+        public ProjetoDTO Add(ProjetoDTO dto)
         {
             var obj = _mapper.Map<Projeto>(dto);
             _servico.Add(obj);
+            return _mapper.Map<ProjetoDTO>(obj);
         }
 
         public void Dispose()

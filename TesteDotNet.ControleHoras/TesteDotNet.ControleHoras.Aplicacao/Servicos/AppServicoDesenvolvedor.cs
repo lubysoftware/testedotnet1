@@ -22,10 +22,11 @@ namespace TesteDotNet.ControleHoras.Aplicacao.Servicos
             _mapper = mapper;
         }
 
-        public void Add(DesenvolvedorDTO dto)
-        {
+        public DesenvolvedorDTO Add(DesenvolvedorDTO dto)
+        {            
             var objDesenvolvedor = _mapper.Map<Desenvolvedor>(dto);
             _servico.Add(objDesenvolvedor);
+            return _mapper.Map<DesenvolvedorDTO>(objDesenvolvedor);
         }
 
         public void Dispose()
@@ -49,6 +50,12 @@ namespace TesteDotNet.ControleHoras.Aplicacao.Servicos
         {
             var objDev = _servico.GetById(id);
             return _mapper.Map<DesenvolvedorDTO>(objDev);
+        }
+
+        public Task<DesenvolvedorDTO> GetByIdAsync(int id)
+        {
+            var objDev = _servico.GetByIdAsync(id);
+            return _mapper.Map<Task<DesenvolvedorDTO>>(objDev);
         }
 
         public void Remove(DesenvolvedorDTO obj)

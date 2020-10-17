@@ -17,6 +17,7 @@ using TesteDotNet.ControleHoras.Aplicacao.Servicos;
 using TesteDotNet.ControleHoras.Dominio.Core.Interfaces.Repositorios;
 using TesteDotNet.ControleHoras.Dominio.Core.Interfaces.Servicos;
 using TesteDotNet.ControleHoras.Dominio.Servicos.Servicos;
+using TesteDotNet.ControleHoras.DTO.Mapeamento.Map;
 
 namespace Api
 {
@@ -43,8 +44,18 @@ namespace Api
             services.AddScoped<IAppServicoDesenvolvedor, AppServicoDesenvolvedor>();
             //services.AddScoped<IAppServicoProjeto, AppServicoProjeto>();
             //services.AddScoped<IAppServicoRegistroHoras, AppServicoRegistroHora>();
-            
-            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+            var mapperConfig = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new MapperDesenvolvedor());
+                mc.AddProfile(new MapperProjeto());
+                mc.AddProfile(new MapperRegistroHora());
+            });
+
+            IMapper mapper = mapperConfig.CreateMapper(); //services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());            
+            services.AddSingleton(mapper);
+
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

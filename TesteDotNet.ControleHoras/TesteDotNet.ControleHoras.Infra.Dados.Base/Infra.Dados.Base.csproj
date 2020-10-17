@@ -17,4 +17,8 @@
     <ProjectReference Include="..\TesteDotNet.ControleHoras.Dominio\Dominio.Principal.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="BancoDados\" />
+  </ItemGroup>
+
 </Project>

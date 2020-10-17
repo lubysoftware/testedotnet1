@@ -9,6 +9,7 @@ namespace TesteDotNet.ControleHoras.Dominio.Core.Interfaces.Servicos
     {
         void Add(TEntidade obj);
         TEntidade GetById(int id);
+        Task<TEntidade> GetByIdAsync(int id);
         IEnumerable<TEntidade> GetAll();
         Task<List<TEntidade>> GetAllAsync();
         void Update(TEntidade obj);

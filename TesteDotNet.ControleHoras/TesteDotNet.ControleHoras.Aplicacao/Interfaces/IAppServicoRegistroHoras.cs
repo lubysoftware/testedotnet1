@@ -7,7 +7,7 @@ namespace TesteDotNet.ControleHoras.Aplicacao.Interfaces
 {
     public interface IAppServicoRegistroHoras
     {
-        void Add(RegistroHoraDTO obj);
+        RegistroHoraDTO Add(RegistroHoraDTO obj);
 
         RegistroHoraDTO GetById(int id);
 
