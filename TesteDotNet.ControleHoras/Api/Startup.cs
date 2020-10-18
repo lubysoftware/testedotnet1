@@ -14,10 +14,12 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using TesteDotNet.ControleHoras.Aplicacao.Interfaces;
 using TesteDotNet.ControleHoras.Aplicacao.Servicos;
-using TesteDotNet.ControleHoras.Dominio.Core.Interfaces.Repositorios;
-using TesteDotNet.ControleHoras.Dominio.Core.Interfaces.Servicos;
+using TesteDotNet.ControleHoras.Dominio.Interfaces.Repositorios;
 using TesteDotNet.ControleHoras.Dominio.Servicos.Servicos;
 using TesteDotNet.ControleHoras.DTO.Mapeamento.Map;
+using TesteDotNet.ControleHoras.Dominio.Interfaces.Servicos;
+using Dominio.Core.Interfaces.Notificacao;
+using Dominio.Principal.Notificacao;
 
 namespace Api
 {
@@ -39,12 +41,12 @@ namespace Api
             services.AddControllers()
                     .AddNewtonsoftJson();
 
+            services.AddScoped<INotificacaoDominio, NotificacaoDominio>();
+
             services.AddScoped<IRepositorioDesenvolvedor, RepositorioDesenvolvedor>();
             services.AddScoped<IServicoDesenvolvedor, ServicoDesenvolvedor>();
             services.AddScoped<IAppServicoDesenvolvedor, AppServicoDesenvolvedor>();
-            //services.AddScoped<IAppServicoProjeto, AppServicoProjeto>();
-            //services.AddScoped<IAppServicoRegistroHoras, AppServicoRegistroHora>();
-
+            
             var mapperConfig = new MapperConfiguration(mc =>
             {
                 mc.AddProfile(new MapperDesenvolvedor());

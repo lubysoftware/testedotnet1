@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Aplicacao.Principal;
+using Microsoft.AspNetCore.JsonPatch;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,18 +10,18 @@ namespace TesteDotNet.ControleHoras.Aplicacao.Interfaces
 {
     public interface IAppServicoDesenvolvedor
     {
-        DesenvolvedorDTO Add(DesenvolvedorDTO dto);
-        
+        ICadastroSalvarResultado Inserir(DesenvolvedorDTO dto);
+        ICadastroSalvarResultado Update(DesenvolvedorDTO dto);
+        ICadastroSalvarResultado UpdatePatch(int id, JsonPatchDocument<DesenvolvedorDTO> dtoPatch);
+        ICadastroSalvarResultado Delete(int id);
+
         DesenvolvedorDTO GetById(int id);
         Task<DesenvolvedorDTO> GetByIdAsync(int id);
 
         IEnumerable<DesenvolvedorDTO> GetAll();
         Task<List<DesenvolvedorDTO>> GetAllAsync();
 
-        void Update(DesenvolvedorDTO dto);
-
-        void Remove(DesenvolvedorDTO dto);
-
+        bool Exists(int id);        
         void Dispose();
     }
 }

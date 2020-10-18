@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using TesteDotNet.ControleHoras.Dominio.Core.Interfaces.Repositorios;
-using TesteDotNet.ControleHoras.Dominio.Core.Interfaces.Servicos;
+using TesteDotNet.ControleHoras.Dominio.Interfaces.Repositorios;
+using TesteDotNet.ControleHoras.Dominio.Interfaces.Servicos;
 using TesteDotNet.ControleHoras.Dominio.Entidades;
 
 namespace TesteDotNet.ControleHoras.Dominio.Servicos.Servicos

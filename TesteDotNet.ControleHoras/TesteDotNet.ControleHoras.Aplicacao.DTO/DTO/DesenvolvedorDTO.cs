@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Aplicacao.DTO;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace TesteDotNet.ControleHoras.Aplicacao.DTO.DTO
 {
-    public class DesenvolvedorDTO
+    public class DesenvolvedorDTO : IEntidadeDTO
     {
         public int Id { get; set; }
         public string Nome { get; set; }

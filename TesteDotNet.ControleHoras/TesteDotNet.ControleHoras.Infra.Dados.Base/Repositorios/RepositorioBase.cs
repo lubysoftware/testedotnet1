@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using TesteDotNet.ControleHoras.Dominio.Core.Interfaces.Repositorios;
+using TesteDotNet.ControleHoras.Dominio.Interfaces.Repositorios;
 
 namespace Infra.Dados.Base
 {
@@ -26,11 +26,10 @@ namespace Infra.Dados.Base
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
         }
-
+                
         public virtual TEntidade GetById(int id)
         {
             return _dbContexto.Set<TEntidade>().Find(id);
@@ -55,7 +54,16 @@ namespace Infra.Dados.Base
         {
             try
             {
-                _dbContexto.Entry(obj).State = EntityState.Modified;
+                if (_dbContexto.Entry(obj).State == EntityState.Detached)
+                {
+                    _dbContexto.Attach(obj);
+                    _dbContexto.Entry(obj).State = EntityState.Modified;
+                }
+                else
+                {
+                    _dbContexto.Update(obj);
+                }
+                    
                 _dbContexto.SaveChanges();
             }
             catch (Exception ex)
@@ -82,5 +90,7 @@ namespace Infra.Dados.Base
         {
             _dbContexto.Dispose();
         }
+
+        public abstract bool Exists(int id);        
     }
 }

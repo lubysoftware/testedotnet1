@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
-using TesteDotNet.ControleHoras.Dominio.Core.Interfaces.Repositorios;
-using TesteDotNet.ControleHoras.Dominio.Core.Interfaces.Servicos;
+using TesteDotNet.ControleHoras.Dominio.Entidades;
+using TesteDotNet.ControleHoras.Dominio.Interfaces.Repositorios;
+using TesteDotNet.ControleHoras.Dominio.Interfaces.Servicos;
 
 namespace TesteDotNet.ControleHoras.Dominio.Servicos
 {
@@ -17,7 +18,7 @@ namespace TesteDotNet.ControleHoras.Dominio.Servicos
         }
 
         public void Add(TEntidade obj)
-        {
+        {            
             _repositorio.Add(obj);
         }
 
@@ -54,6 +55,11 @@ namespace TesteDotNet.ControleHoras.Dominio.Servicos
         public void Dispose()
         {
             _repositorio.Dispose();
+        }
+
+        public bool Exists(int id)
+        {
+            return _repositorio.Exists(id);
         }
     }
 }

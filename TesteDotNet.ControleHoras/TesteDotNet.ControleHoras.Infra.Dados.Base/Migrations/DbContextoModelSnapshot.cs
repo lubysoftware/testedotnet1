@@ -32,12 +32,7 @@ namespace Infra.Dados.Base.Migrations
                     b.Property<string>("Nome")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("ProjetoId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("ProjetoId");
 
                     b.ToTable("Desenvolvedores");
                 });
@@ -84,13 +79,6 @@ namespace Infra.Dados.Base.Migrations
                     b.HasIndex("DesenvolvedorId");
 
                     b.ToTable("RegistroHoras");
-                });
-
-            modelBuilder.Entity("TesteDotNet.ControleHoras.Dominio.Entidades.Desenvolvedor", b =>
-                {
-                    b.HasOne("TesteDotNet.ControleHoras.Dominio.Entidades.Projeto", "Projeto")
-                        .WithMany("Desenvoledores")
-                        .HasForeignKey("ProjetoId");
                 });
 
             modelBuilder.Entity("TesteDotNet.ControleHoras.Dominio.Entidades.RegistroHora", b =>

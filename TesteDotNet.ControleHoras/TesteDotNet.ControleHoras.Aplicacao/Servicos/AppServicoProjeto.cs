@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using TesteDotNet.ControleHoras.Aplicacao.DTO.DTO;
 using TesteDotNet.ControleHoras.Aplicacao.Interfaces;
-using TesteDotNet.ControleHoras.Dominio.Core.Interfaces.Servicos;
+using TesteDotNet.ControleHoras.Dominio.Interfaces.Servicos;
 using TesteDotNet.ControleHoras.Dominio.Entidades;
 
 namespace TesteDotNet.ControleHoras.Aplicacao.Servicos

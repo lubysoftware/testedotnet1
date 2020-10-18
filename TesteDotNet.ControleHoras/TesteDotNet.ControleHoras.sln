@@ -13,25 +13,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - API", "4 - API", "{87C0
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Apresentacao", "5 - Apresentacao", "{5695FB97-FE14-4525-8219-1E2472AF659F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominio.Principal", "TesteDotNet.ControleHoras.Dominio\Dominio.Principal.csproj", "{B84AF2FC-D31F-4836-B166-17131E667645}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dominio.Principal", "TesteDotNet.ControleHoras.Dominio\Dominio.Principal.csproj", "{B84AF2FC-D31F-4836-B166-17131E667645}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominio.Core", "TesteDotNet.ControleHoras.Dominio.Core\Dominio.Core.csproj", "{48373106-CCD4-49B8-95A6-2666FEAA8547}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dominio.Servicos", "TesteDotNet.ControleHoras.Dominio.Servicos\Dominio.Servicos.csproj", "{524AF4F0-0545-4658-8C1F-B913AFB07CAB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominio.Servicos", "TesteDotNet.ControleHoras.Dominio.Servicos\Dominio.Servicos.csproj", "{524AF4F0-0545-4658-8C1F-B913AFB07CAB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aplicacao.Principal", "TesteDotNet.ControleHoras.Aplicacao\Aplicacao.Principal.csproj", "{172D1110-3EE6-48A1-B208-51E2882A3547}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aplicacao.Principal", "TesteDotNet.ControleHoras.Aplicacao\Aplicacao.Principal.csproj", "{172D1110-3EE6-48A1-B208-51E2882A3547}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aplicacao.DTO", "TesteDotNet.ControleHoras.Aplicacao.DTO\Aplicacao.DTO.csproj", "{C47136F6-BA40-420B-B33A-3F1AAD73493D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aplicacao.DTO", "TesteDotNet.ControleHoras.Aplicacao.DTO\Aplicacao.DTO.csproj", "{C47136F6-BA40-420B-B33A-3F1AAD73493D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.2 - DTO.Mapeamento", "2.2 - DTO.Mapeamento", "{201AC3F5-A98C-4302-8FFC-CBB903CBE737}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infra.DTO.Mapeamento", "TesteDotNet.ControleHoras.DTO.Mapeamento\Infra.DTO.Mapeamento.csproj", "{F111BD95-A822-48E6-91B0-E1AB435C9B88}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infra.DTO.Mapeamento", "TesteDotNet.ControleHoras.DTO.Mapeamento\Infra.DTO.Mapeamento.csproj", "{F111BD95-A822-48E6-91B0-E1AB435C9B88}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.1 - Dados", "2.1 - Dados", "{082C9E4E-2D34-4153-9E54-16C3E6187141}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infra.Dados.Base", "TesteDotNet.ControleHoras.Infra.Dados.Base\Infra.Dados.Base.csproj", "{21C1ADAE-7899-4B46-83E1-279CEB46902E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infra.Dados.Base", "TesteDotNet.ControleHoras.Infra.Dados.Base\Infra.Dados.Base.csproj", "{21C1ADAE-7899-4B46-83E1-279CEB46902E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "Api\Api.csproj", "{587D0EFB-387B-4B90-8788-4AA6190DE752}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api", "Api\Api.csproj", "{587D0EFB-387B-4B90-8788-4AA6190DE752}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,10 +41,6 @@ Global
 		{B84AF2FC-D31F-4836-B166-17131E667645}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B84AF2FC-D31F-4836-B166-17131E667645}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B84AF2FC-D31F-4836-B166-17131E667645}.Release|Any CPU.Build.0 = Release|Any CPU
-		{48373106-CCD4-49B8-95A6-2666FEAA8547}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{48373106-CCD4-49B8-95A6-2666FEAA8547}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{48373106-CCD4-49B8-95A6-2666FEAA8547}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{48373106-CCD4-49B8-95A6-2666FEAA8547}.Release|Any CPU.Build.0 = Release|Any CPU
 		{524AF4F0-0545-4658-8C1F-B913AFB07CAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{524AF4F0-0545-4658-8C1F-B913AFB07CAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{524AF4F0-0545-4658-8C1F-B913AFB07CAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -77,7 +71,6 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{B84AF2FC-D31F-4836-B166-17131E667645} = {8C649085-A5C4-42BD-91DC-95353CF5C0DE}
-		{48373106-CCD4-49B8-95A6-2666FEAA8547} = {8C649085-A5C4-42BD-91DC-95353CF5C0DE}
 		{524AF4F0-0545-4658-8C1F-B913AFB07CAB} = {8C649085-A5C4-42BD-91DC-95353CF5C0DE}
 		{172D1110-3EE6-48A1-B208-51E2882A3547} = {BCE13FDA-5976-4101-9588-65227324536A}
 		{C47136F6-BA40-420B-B33A-3F1AAD73493D} = {BCE13FDA-5976-4101-9588-65227324536A}

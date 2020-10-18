@@ -5,9 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using TesteDotNet.ControleHoras.Aplicacao.DTO.DTO;
 using TesteDotNet.ControleHoras.Aplicacao.Interfaces;
-using TesteDotNet.ControleHoras.Dominio.Core.Interfaces.Servicos;
+using TesteDotNet.ControleHoras.Dominio.Interfaces.Servicos;
 using TesteDotNet.ControleHoras.Dominio.Entidades;
 using TesteDotNet.ControleHoras.DTO.Mapeamento.Map;
+using Aplicacao.Principal;
+using Microsoft.AspNetCore.JsonPatch;
 
 namespace TesteDotNet.ControleHoras.Aplicacao.Servicos
 {
@@ -22,11 +24,72 @@ namespace TesteDotNet.ControleHoras.Aplicacao.Servicos
             _mapper = mapper;
         }
 
-        public DesenvolvedorDTO Add(DesenvolvedorDTO dto)
+        public ICadastroSalvarResultado Inserir(DesenvolvedorDTO dto)
         {            
             var objDesenvolvedor = _mapper.Map<Desenvolvedor>(dto);
+
+            if(!objDesenvolvedor.Validar(false))            
+                return new CadastroSalvarResultado(dto, objDesenvolvedor.Avisos, objDesenvolvedor.Erros);
+
             _servico.Add(objDesenvolvedor);
-            return _mapper.Map<DesenvolvedorDTO>(objDesenvolvedor);
+
+            var dtoRetorno = _mapper.Map<DesenvolvedorDTO>(objDesenvolvedor);
+
+            return new CadastroSalvarResultado(dtoRetorno, objDesenvolvedor.Avisos, objDesenvolvedor.Erros);
+        }
+
+        public ICadastroSalvarResultado Update(DesenvolvedorDTO dto)
+        {            
+            var objDesenvolvedor = _mapper.Map<Desenvolvedor>(dto);
+
+            if (!objDesenvolvedor.Validar(false))
+                return new CadastroSalvarResultado(dto, objDesenvolvedor.Avisos, objDesenvolvedor.Erros);
+
+            _servico.Update(objDesenvolvedor);
+
+            var dtoRetorno = _mapper.Map<DesenvolvedorDTO>(objDesenvolvedor);
+
+            return new CadastroSalvarResultado(dtoRetorno, objDesenvolvedor.Avisos, objDesenvolvedor.Erros);
+        }
+
+        public ICadastroSalvarResultado UpdatePatch(int id, JsonPatchDocument<DesenvolvedorDTO> dtoPatch)
+        {
+            //Objeto atual da base de dados.
+            var devObj = _servico.GetById(id);
+            //Converte para um DTO com os dados atuais.
+            var devDto = _mapper.Map<DesenvolvedorDTO>(devObj);            
+            //Aplica as alterações do dtoPatch no dto atual.
+            dtoPatch.ApplyTo(devDto);
+            //Faz um map da alterações do dto no objeto retornado pelo entity framework. Aqui não é gerada nova instância.
+            devObj = _mapper.Map(devDto, devObj);
+            //Valida antes do salvamento na base.
+            if (!devObj.Validar(false))
+                return new CadastroSalvarResultado(devDto, devObj.Avisos, devObj.Erros);
+            //Efetiva o salvamento.
+            _servico.Update(devObj);
+            //Obtem um dto com os dados do retorno.
+            var dtoRetorno = _mapper.Map<DesenvolvedorDTO>(devObj);
+            //Retorna o sucesso ou falha da operação para ser tratado no controller.
+            return new CadastroSalvarResultado(dtoRetorno, devObj.Avisos, devObj.Erros);
+        }
+
+        public ICadastroSalvarResultado Delete(int id)
+        {
+            var devObj = _servico.GetById(id);            
+            var devDto = _mapper.Map<DesenvolvedorDTO>(devObj);
+            
+            if (!devObj.Validar(true))
+                return new CadastroSalvarResultado(devDto, devObj.Avisos, devObj.Erros);
+
+            _servico.Remove(devObj);
+
+            var dtoRetorno = _mapper.Map<DesenvolvedorDTO>(devObj);
+            return new CadastroSalvarResultado(dtoRetorno, devObj.Avisos, devObj.Erros);
+        }
+
+        public bool Exists(int id)
+        {
+            return _servico.Exists(id);
         }
 
         public void Dispose()
@@ -56,18 +119,6 @@ namespace TesteDotNet.ControleHoras.Aplicacao.Servicos
         {
             var objDev = _servico.GetByIdAsync(id);
             return _mapper.Map<Task<DesenvolvedorDTO>>(objDev);
-        }
-
-        public void Remove(DesenvolvedorDTO obj)
-        {
-            var objDev = _mapper.Map<Desenvolvedor>(obj);
-            _servico.Remove(objDev);
-        }
-
-        public void Update(DesenvolvedorDTO obj)
-        {
-            var objDev = _mapper.Map<Desenvolvedor>(obj);
-            _servico.Update(objDev);
-        }
+        }                
     }
 }
