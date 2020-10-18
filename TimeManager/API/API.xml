@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>API</name>
+    </assembly>
+    <members>
+        <member name="M:API.Projects.ProjectsController.GetProjects">
+            <summary>
+            Get all projects
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:API.Projects.ProjectsController.RegisterProject(TimeManager.Application.Projects.Commands.Create.CreateProjectCommand)">
+            <summary>
+            Register a new project
+            </summary>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
