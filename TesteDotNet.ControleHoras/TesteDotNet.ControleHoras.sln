@@ -29,7 +29,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.1 - Dados", "2.1 - Dados"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infra.Dados.Base", "TesteDotNet.ControleHoras.Infra.Dados.Base\Infra.Dados.Base.csproj", "{21C1ADAE-7899-4B46-83E1-279CEB46902E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api", "Api\Api.csproj", "{587D0EFB-387B-4B90-8788-4AA6190DE752}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api", "TesteDotNet.ControleHoras.Api\Api.csproj", "{587D0EFB-387B-4B90-8788-4AA6190DE752}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
