@@ -1,6 +1,6 @@
-using TimeSheetManager.Domain.Commands.Contracts;
+using TimeSheetManager.App.Commands.Contracts;
 
-namespace TimeSheetManager.Domain.Commands.Developer {
+namespace TimeSheetManager.App.Commands.Developer {
     public class CreateDeveloperCommand : ICommand {
         public string Name { get; set; }
 

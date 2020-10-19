@@ -1,8 +1,8 @@
 using System.Threading.Tasks;
 using TimeSheetManager.App.Handlers.Contracts;
-using TimeSheetManager.Domain.Commands;
-using TimeSheetManager.Domain.Commands.Contracts;
-using TimeSheetManager.Domain.Commands.Project;
+using TimeSheetManager.App.Commands;
+using TimeSheetManager.App.Commands.Contracts;
+using TimeSheetManager.App.Commands.Project;
 using TimeSheetManager.Domain.Entities.Developer;
 using TimeSheetManager.Domain.Repositories;
 

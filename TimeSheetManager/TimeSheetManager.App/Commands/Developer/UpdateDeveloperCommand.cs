@@ -1,7 +1,7 @@
 using System;
-using TimeSheetManager.Domain.Commands.Contracts;
+using TimeSheetManager.App.Commands.Contracts;
 
-namespace TimeSheetManager.Domain.Commands.Developer {
+namespace TimeSheetManager.App.Commands.Developer {
         public class UpdateDeveloperCommand : ICommand {
 
         public UpdateDeveloperCommand(Guid Id, string Name) {

@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using TimeSheetManager.App.Handlers.ProjectNS;
-using TimeSheetManager.Domain.Commands;
-using TimeSheetManager.Domain.Commands.Project;
+using TimeSheetManager.App.Commands;
+using TimeSheetManager.App.Commands.Project;
 using TimeSheetManager.Domain.Entities.Project;
 using TimeSheetManager.Domain.Repositories;
 
