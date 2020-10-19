@@ -51,6 +51,7 @@ namespace TesteDotNet.ControleHoras.ClienteWeb
                 app.UseExceptionHandler("/Error");
             }
 
+            app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();

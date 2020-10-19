@@ -29,6 +29,16 @@ namespace TesteDotNet.ControleHoras.ClienteWeb.Data.Servicos.Entidades
                 HttpClient.BaseAddress = new Uri(AppSettings.ControleHorasApiAddress);
         }
 
+        public async Task InserirAsync(DesenvolvedorModel desenvolvedorModel)
+        {
+            await HttpClient.PostAsJsonAsync(HttpClient.BaseAddress + "desenvolvedores", desenvolvedorModel);            
+        }
+
+        public async Task EditarAsync(DesenvolvedorModel desenvolvedorModel)
+        {
+            await HttpClient.PutAsJsonAsync(HttpClient.BaseAddress + "desenvolvedores", desenvolvedorModel);
+        }
+
         public async Task<IList<DesenvolvedorModel>> CarregarDesenvolvedoresAsync()
         {
             var reqMessage = new HttpRequestMessage(HttpMethod.Get, HttpClient.BaseAddress + "desenvolvedores");
@@ -39,6 +49,17 @@ namespace TesteDotNet.ControleHoras.ClienteWeb.Data.Servicos.Entidades
 
             desenvolvedoresRetorno.ToList();
 
+            return await Task.FromResult(desenvolvedoresRetorno);
+        }
+
+        public async Task<DesenvolvedorModel> GetById(int id)
+        {
+            var reqMessage = new HttpRequestMessage(HttpMethod.Get, HttpClient.BaseAddress + "desenvolvedores/" + id);
+            var res = await HttpClient.SendAsync(reqMessage);
+
+            var resBody = await res.Content.ReadAsStringAsync();
+            var desenvolvedoresRetorno = JsonConvert.DeserializeObject<DesenvolvedorModel>(resBody);
+                        
             return await Task.FromResult(desenvolvedoresRetorno);
         }
     }    

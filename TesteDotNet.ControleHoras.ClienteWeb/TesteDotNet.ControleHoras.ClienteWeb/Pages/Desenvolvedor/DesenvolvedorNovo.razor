@@ -1,0 +1,55 @@
+﻿@page "/desenvolvedor/novo"
+@inject NavigationManager navigation
+@inject IDesenvolvedorServico desenvolvedorService
+
+<h2>Novo Desenvolvedor</h2>
+
+<EditForm Model="@Desenvolvedor" OnValidSubmit="@CriarDesenvolvedor">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="form-group">
+        <label form="id">ID: </label>
+        <div>
+            <input type="text" @bind="@GetId" readonly="readonly" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label form="nome">Nome: </label>
+        <div>
+            <InputText @bind-Value="@Desenvolvedor.Nome" class="form-control" />
+            <ValidationMessage For="@(()=> Desenvolvedor.Nome)" />
+        </div>
+    </div>
+    <br />
+
+    <button type="submit" class="btn btn-success"> @ButtonTextSubmit </button>
+    <button class="btn btn-danger" @onclick="@Cancelar">@ButtonTextCancelar</button>
+</EditForm>
+
+@code{    
+    public DesenvolvedorModel Desenvolvedor = new DesenvolvedorModel();
+    public string ButtonTextSubmit { get; set; } = "Salvar";
+    public string ButtonTextCancelar { get; set; } = "Cancelar";
+    public EventCallback OnValidSubmit { get; set; }
+
+    private string GetId
+    {
+        get
+        {
+            return Desenvolvedor.Id > 0 ? Desenvolvedor.Id.ToString() : "";
+        }
+        set { }
+    }
+
+    private async Task CriarDesenvolvedor()
+    {
+        await desenvolvedorService.InserirAsync(Desenvolvedor);
+        navigation.NavigateTo("desenvolvedor");
+    }
+
+    private void Cancelar()
+    {
+        navigation.NavigateTo("desenvolvedor");
+    }
+}

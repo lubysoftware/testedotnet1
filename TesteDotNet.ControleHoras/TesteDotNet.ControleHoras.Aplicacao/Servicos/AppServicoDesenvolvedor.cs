@@ -37,7 +37,20 @@ namespace TesteDotNet.ControleHoras.Aplicacao.Servicos
 
             return new CadastroSalvarResultado(dtoRetorno, objDesenvolvedor.Avisos, objDesenvolvedor.Erros);
         }
+        public async Task<ICadastroSalvarResultado> InserirAsync(DesenvolvedorDTO dto)
+        {
+            var objDesenvolvedor = _mapper.Map<Desenvolvedor>(dto);
 
+            if (!objDesenvolvedor.Validar(false))
+                return new CadastroSalvarResultado(dto, objDesenvolvedor.Avisos, objDesenvolvedor.Erros);
+
+            await _servico.AddAsync(objDesenvolvedor);
+
+            var dtoRetorno = _mapper.Map<DesenvolvedorDTO>(objDesenvolvedor);
+
+            return new CadastroSalvarResultado(dtoRetorno, objDesenvolvedor.Avisos, objDesenvolvedor.Erros);
+        }
+        
         public ICadastroSalvarResultado Update(DesenvolvedorDTO dto)
         {            
             var objDesenvolvedor = _mapper.Map<Desenvolvedor>(dto);
@@ -46,6 +59,19 @@ namespace TesteDotNet.ControleHoras.Aplicacao.Servicos
                 return new CadastroSalvarResultado(dto, objDesenvolvedor.Avisos, objDesenvolvedor.Erros);
 
             _servico.Update(objDesenvolvedor);
+
+            var dtoRetorno = _mapper.Map<DesenvolvedorDTO>(objDesenvolvedor);
+
+            return new CadastroSalvarResultado(dtoRetorno, objDesenvolvedor.Avisos, objDesenvolvedor.Erros);
+        }
+        public async Task<ICadastroSalvarResultado> UpdateAsync(DesenvolvedorDTO dto)
+        {
+            var objDesenvolvedor = _mapper.Map<Desenvolvedor>(dto);
+
+            if (!objDesenvolvedor.Validar(false))
+                return new CadastroSalvarResultado(dto, objDesenvolvedor.Avisos, objDesenvolvedor.Erros);
+
+            await _servico.UpdateAsync(objDesenvolvedor);
 
             var dtoRetorno = _mapper.Map<DesenvolvedorDTO>(objDesenvolvedor);
 
@@ -72,6 +98,26 @@ namespace TesteDotNet.ControleHoras.Aplicacao.Servicos
             //Retorna o sucesso ou falha da operação para ser tratado no controller.
             return new CadastroSalvarResultado(dtoRetorno, devObj.Avisos, devObj.Erros);
         }
+        public async Task<ICadastroSalvarResultado> UpdatePatchAsync(int id, JsonPatchDocument<DesenvolvedorDTO> dtoPatch)
+        {
+            //Objeto atual da base de dados.
+            var devObj = await _servico.GetByIdAsync(id);
+            //Converte para um DTO com os dados atuais.
+            var devDto = _mapper.Map<DesenvolvedorDTO>(devObj);
+            //Aplica as alterações do dtoPatch no dto atual.
+            dtoPatch.ApplyTo(devDto);
+            //Faz um map da alterações do dto no objeto retornado pelo entity framework. Aqui não é gerada nova instância.
+            devObj = _mapper.Map(devDto, devObj);
+            //Valida antes do salvamento na base.
+            if (!devObj.Validar(false))
+                return new CadastroSalvarResultado(devDto, devObj.Avisos, devObj.Erros);
+            //Efetiva o salvamento.
+            await _servico.UpdateAsync(devObj);
+            //Obtem um dto com os dados do retorno.
+            var dtoRetorno = _mapper.Map<DesenvolvedorDTO>(devObj);
+            //Retorna o sucesso ou falha da operação para ser tratado no controller.
+            return new CadastroSalvarResultado(dtoRetorno, devObj.Avisos, devObj.Erros);
+        }
 
         public ICadastroSalvarResultado Delete(int id)
         {
@@ -86,15 +132,27 @@ namespace TesteDotNet.ControleHoras.Aplicacao.Servicos
             var dtoRetorno = _mapper.Map<DesenvolvedorDTO>(devObj);
             return new CadastroSalvarResultado(dtoRetorno, devObj.Avisos, devObj.Erros);
         }
+        public async Task<ICadastroSalvarResultado> DeleteAsync(int id)
+        {
+            var devObj = await _servico.GetByIdAsync(id);
+            var devDto = _mapper.Map<DesenvolvedorDTO>(devObj);
+
+            if (!devObj.Validar(true))
+                return new CadastroSalvarResultado(devDto, devObj.Avisos, devObj.Erros);
+
+            await _servico.RemoveAsync(devObj);
+
+            var dtoRetorno = _mapper.Map<DesenvolvedorDTO>(devObj);
+            return new CadastroSalvarResultado(dtoRetorno, devObj.Avisos, devObj.Erros);
+        }
 
         public bool Exists(int id)
         {
             return _servico.Exists(id);
         }
-
-        public void Dispose()
+        public async Task<bool> ExistsAsync(int id)
         {
-            _servico.Dispose();
+            return await _servico.ExistsAsync(id);
         }
 
         public IEnumerable<DesenvolvedorDTO> GetAll()
@@ -102,7 +160,6 @@ namespace TesteDotNet.ControleHoras.Aplicacao.Servicos
             var objDevs = _servico.GetAll();
             return _mapper.Map<IEnumerable<DesenvolvedorDTO>>(objDevs);
         }
-
         public async Task<List<DesenvolvedorDTO>> GetAllAsync()
         {
             var objDevs = await _servico.GetAllAsync();
@@ -114,11 +171,15 @@ namespace TesteDotNet.ControleHoras.Aplicacao.Servicos
             var objDev = _servico.GetById(id);
             return _mapper.Map<DesenvolvedorDTO>(objDev);
         }
-
         public Task<DesenvolvedorDTO> GetByIdAsync(int id)
         {
             var objDev = _servico.GetByIdAsync(id);
             return _mapper.Map<Task<DesenvolvedorDTO>>(objDev);
-        }                
+        }
+
+        public void Dispose()
+        {
+            _servico.Dispose();
+        }
     }
 }

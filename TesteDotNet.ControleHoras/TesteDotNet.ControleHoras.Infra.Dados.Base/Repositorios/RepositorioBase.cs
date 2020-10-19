@@ -29,12 +29,23 @@ namespace Infra.Dados.Base
                 throw ex;
             }
         }
-                
+        public virtual async Task AddAsync(TEntidade obj)
+        {
+            try
+            {
+                await _dbContexto.Set<TEntidade>().AddAsync(obj);
+                await _dbContexto.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public virtual TEntidade GetById(int id)
         {
             return _dbContexto.Set<TEntidade>().Find(id);
         }
-
         public virtual Task<TEntidade> GetByIdAsync(int id)
         {
             return _dbContexto.Set<TEntidade>().FindAsync(id).AsTask();
@@ -44,7 +55,6 @@ namespace Infra.Dados.Base
         {
            return _dbContexto.Set<TEntidade>().ToList();
         }
-
         public virtual async Task<List<TEntidade>> GetAllAsync()
         {
             return await _dbContexto.Set<TEntidade>().AsNoTracking().ToListAsync();
@@ -72,6 +82,28 @@ namespace Infra.Dados.Base
                 throw ex;
             }
         }
+        public virtual async Task UpdateAsync(TEntidade obj)
+        {
+            try
+            {
+                if (_dbContexto.Entry(obj).State == EntityState.Detached)
+                {
+                    _dbContexto.Attach(obj);
+                    _dbContexto.Entry(obj).State = EntityState.Modified;
+                }
+                else
+                {
+                    _dbContexto.Update(obj);
+                }
+
+                await _dbContexto.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
 
         public virtual void Remove(TEntidade obj)
         {
@@ -85,12 +117,25 @@ namespace Infra.Dados.Base
                 throw ex;
             }
         }
+        public virtual async Task RemoveAsync(TEntidade obj)
+        {
+            try
+            {
+                _dbContexto.Set<TEntidade>().Remove(obj);
+                await _dbContexto.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
         public virtual void Dispose()
         {
             _dbContexto.Dispose();
         }
 
-        public abstract bool Exists(int id);        
+        public abstract bool Exists(int id);
+        public abstract Task<bool> ExistsAsync(int id);
     }
 }

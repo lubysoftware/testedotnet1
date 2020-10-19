@@ -21,12 +21,15 @@ namespace TesteDotNet.ControleHoras.Dominio.Servicos
         {            
             _repositorio.Add(obj);
         }
+        public async Task AddAsync(TEntidade obj)
+        {
+            await _repositorio.AddAsync(obj);
+        }
 
         public IEnumerable<TEntidade> GetAll()
         {
             return _repositorio.GetAll();
         }
-
         public async Task<List<TEntidade>> GetAllAsync()
         {
             return await _repositorio.GetAllAsync();
@@ -36,7 +39,6 @@ namespace TesteDotNet.ControleHoras.Dominio.Servicos
         {
             return _repositorio.GetById(id);
         }
-
         public Task<TEntidade> GetByIdAsync(int id)
         {
             return _repositorio.GetByIdAsync(id);
@@ -46,10 +48,18 @@ namespace TesteDotNet.ControleHoras.Dominio.Servicos
         {
             _repositorio.Remove(obj);
         }
+        public async Task RemoveAsync(TEntidade obj)
+        {
+            await _repositorio.RemoveAsync(obj);
+        }
 
         public void Update(TEntidade obj)
         {
             _repositorio.Update(obj);
+        }
+        public async Task UpdateAsync(TEntidade obj)
+        {
+            await _repositorio.UpdateAsync(obj);
         }
 
         public void Dispose()
@@ -60,6 +70,10 @@ namespace TesteDotNet.ControleHoras.Dominio.Servicos
         public bool Exists(int id)
         {
             return _repositorio.Exists(id);
+        }
+        public async Task<bool> ExistsAsync(int id)
+        {
+            return await _repositorio.ExistsAsync(id);
         }
     }
 }

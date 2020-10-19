@@ -1,4 +1,4 @@
-﻿@page "/desenvolvedor"
+﻿@page "/projeto"
 @inject HttpClient  http
 @inject IDesenvolvedorServico desenvolvedorService
 
@@ -23,7 +23,7 @@ else
             <tr>
                 <th>ID</th>
                 <th>Nome</th>
-                <th>Editar</th>                
+                <th>Editar</th>
             </tr>
         </thead>
         <tbody>
@@ -31,11 +31,11 @@ else
             {
                 <tr>
                     <td>@dev.Id</td>
-                    <td>@dev.Nome</td>                    
+                    <td>@dev.Nome</td>
                     <td>
                         <a class="btn btn-primary"
                            href="desenvolvedor/editar/@dev.Id">Editar</a>
-                    </td>                   
+                    </td>
                 </tr>
             }
         </tbody>
@@ -44,7 +44,7 @@ else
 
 @code {
     private IList<DesenvolvedorModel> _desenvolvedores { get; set; }
-    
+
     protected override async Task OnInitializedAsync()
     {
         await CarregaDesenvolvedores();
@@ -52,6 +52,6 @@ else
 
     private async Task CarregaDesenvolvedores()
     {
-        _desenvolvedores = await desenvolvedorService.CarregarDesenvolvedoresAsync();        
+        _desenvolvedores = await desenvolvedorService.CarregarDesenvolvedoresAsync();
     }
 }
