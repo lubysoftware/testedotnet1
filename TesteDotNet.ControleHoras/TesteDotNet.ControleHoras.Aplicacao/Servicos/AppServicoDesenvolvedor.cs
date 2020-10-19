@@ -103,10 +103,10 @@ namespace TesteDotNet.ControleHoras.Aplicacao.Servicos
             return _mapper.Map<IEnumerable<DesenvolvedorDTO>>(objDevs);
         }
 
-        public Task<List<DesenvolvedorDTO>> GetAllAsync()
+        public async Task<List<DesenvolvedorDTO>> GetAllAsync()
         {
-            var objDevs = _servico.GetAllAsync();
-            return _mapper.Map<Task<List<DesenvolvedorDTO>>>(objDevs);
+            var objDevs = await _servico.GetAllAsync();
+            return _mapper.Map<List<DesenvolvedorDTO>>(objDevs);
         }
 
         public DesenvolvedorDTO GetById(int id)

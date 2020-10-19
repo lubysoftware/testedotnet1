@@ -45,9 +45,9 @@ namespace Infra.Dados.Base
            return _dbContexto.Set<TEntidade>().ToList();
         }
 
-        public virtual Task<List<TEntidade>> GetAllAsync()
+        public virtual async Task<List<TEntidade>> GetAllAsync()
         {
-            return _dbContexto.Set<TEntidade>().AsNoTracking().ToListAsync();
+            return await _dbContexto.Set<TEntidade>().AsNoTracking().ToListAsync();
         }
 
         public virtual void Update(TEntidade obj)

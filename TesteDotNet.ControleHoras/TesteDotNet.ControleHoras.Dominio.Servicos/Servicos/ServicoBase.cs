@@ -27,9 +27,9 @@ namespace TesteDotNet.ControleHoras.Dominio.Servicos
             return _repositorio.GetAll();
         }
 
-        public Task<List<TEntidade>> GetAllAsync()
+        public async Task<List<TEntidade>> GetAllAsync()
         {
-            return _repositorio.GetAllAsync();
+            return await _repositorio.GetAllAsync();
         }
 
         public TEntidade GetById(int id)

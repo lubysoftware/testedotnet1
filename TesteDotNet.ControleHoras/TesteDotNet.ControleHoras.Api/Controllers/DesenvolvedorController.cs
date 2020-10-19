@@ -22,11 +22,11 @@ namespace Api.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<DesenvolvedorDTO>> GetTodos()
+        public async Task<ActionResult<List<DesenvolvedorDTO>>> GetTodos()
         {
             try
             {
-                return Ok(_appServicoDesenvolvedor.GetAll());
+                return await _appServicoDesenvolvedor.GetAllAsync();
             }
             catch (Exception)
             {
