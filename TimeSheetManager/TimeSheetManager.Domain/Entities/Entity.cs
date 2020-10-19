@@ -6,5 +6,6 @@ namespace TimeSheetManager.Domain.Entities {
             Id = Guid.NewGuid();
         }
         public Guid Id {get; set;}
+
     }
 }
