@@ -1,5 +1,4 @@
 using System.Threading.Tasks;
-using AutoMapper;
 using TimeSheetManager.App.Handlers.Contracts;
 using TimeSheetManager.Domain.Commands;
 using TimeSheetManager.Domain.Commands.Contracts;
