@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using TimeSheetManager.App.Handlers.Contracts;
 using TimeSheetManager.Infra;
 using TimeSheetManager.Infra.Context;
 
@@ -26,6 +27,7 @@ namespace TimeSheetManager.Api {
         public void ConfigureServices(IServiceCollection services) {
             services.AddControllers();
             services.AddDbContext<DataContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddSingleton<ISqlConnection>(x => ActivatorUtilities.CreateInstance<SqlConnectionFactory>(x, Configuration.GetConnectionString("DefaultConnection")));
             services.AddInfrastructure();
         }
 
