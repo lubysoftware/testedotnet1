@@ -9,15 +9,19 @@ using TimeSheetManager.App.Commands.TimeSheet;
 using TimeSheetManager.Domain.Entities.TimeSheetNS;
 using TimeSheetManager.Domain.Repositories;
 
-namespace TimeSheetManager.App.Handlers.TimeSheetNS {
-    public class CreateTimeSheetHandler : IHandler<CreateTimeSheetCommand> {
+namespace TimeSheetManager.App.Handlers.TimeSheetNS
+{
+    public class CreateTimeSheetHandler : IHandler<CreateTimeSheetCommand>
+    {
         private readonly ITimeSheetRepository _repository;
 
-        public CreateTimeSheetHandler(ITimeSheetRepository repository) {
+        public CreateTimeSheetHandler(ITimeSheetRepository repository)
+        {
             _repository = repository;
         }
 
-        public async Task<ICommandResult> Handle(CreateTimeSheetCommand command) {
+        public async Task<ICommandResult> Handle(CreateTimeSheetCommand command)
+        {
             var timesheet = new TimeSheet(command.DevId, command.Entry, command.Exit);
             await _repository.Create(timesheet);
             return new GenericCommandResult(true, "Sucess", timesheet);

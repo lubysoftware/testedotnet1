@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using System.Text;
 using TimeSheetManager.Domain.Entities.DeveloperNS;
 
-namespace TimeSheetManager.Domain.Entities.TimeSheetNS {
-    public class TimeSheet {
-        public TimeSheet(Guid devId, DateTime entryTime, DateTime exitTime) {
+namespace TimeSheetManager.Domain.Entities.TimeSheetNS
+{
+    public class TimeSheet
+    {
+        public TimeSheet(Guid devId, DateTime entryTime, DateTime exitTime)
+        {
             DevId = devId;
             EntryTime = entryTime;
             ExitTime = exitTime;

@@ -5,8 +5,10 @@ using System.Threading.Tasks;
 using TimeSheetManager.Domain.Entities.TimeSheetNS;
 using TimeSheetManager.Domain.TimeSheetNS;
 
-namespace TimeSheetManager.Domain.Repositories {
-    public interface ITimeSheetRepository {
+namespace TimeSheetManager.Domain.Repositories
+{
+    public interface ITimeSheetRepository
+    {
         Task Create(TimeSheet timeSheet);
     }
 }

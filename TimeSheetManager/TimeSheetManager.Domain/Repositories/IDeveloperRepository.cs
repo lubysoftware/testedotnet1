@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using TimeSheetManager.Domain.Entities.DeveloperNS;
 
-namespace TimeSheetManager.Domain.Repositories {
-    public interface IDeveloperRepository {
+namespace TimeSheetManager.Domain.Repositories
+{
+    public interface IDeveloperRepository
+    {
         Task Post(Developer developer);
         Task<Developer> Get(Guid id);
         Task<List<Developer>> GetAll();

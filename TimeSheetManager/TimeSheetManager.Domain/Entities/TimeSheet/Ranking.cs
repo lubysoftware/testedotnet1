@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using System.Text;
 using TimeSheetManager.Domain.Entities.DeveloperNS;
 
-namespace TimeSheetManager.Domain.TimeSheetNS {
-    public class Ranking {
-        public Ranking() {
+namespace TimeSheetManager.Domain.TimeSheetNS
+{
+    public class Ranking
+    {
+        public Ranking()
+        {
         }
 
-        public Ranking(Guid DevId, string Name, double WorkedTime) {
+        public Ranking(Guid DevId, string Name, double WorkedTime)
+        {
             this.DevId = DevId;
             this.Name = Name;
             this.WorkedTime = WorkedTime;
