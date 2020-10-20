@@ -11,19 +11,23 @@ using TimeSheetManager.Domain;
 using TimeSheetManager.Domain.Repositories;
 using TimeSheetManager.Domain.TimeSheetNS;
 
-namespace TimeSheetManager.App.Handlers.TimeSheetNS {
-    public class GetWeekRankingHandler {
+namespace TimeSheetManager.App.Handlers.TimeSheetNS
+{
+    public class GetWeekRankingHandler
+    {
         private readonly ISqlConnection sqlConnection;
 
-        public GetWeekRankingHandler(ISqlConnection sqlConnection) {
+        public GetWeekRankingHandler(ISqlConnection sqlConnection)
+        {
             this.sqlConnection = sqlConnection;
         }
 
-        public async Task<ICommandResult> Handle() {
+        public async Task<ICommandResult> Handle()
+        {
             var connection = sqlConnection.GetOpenConnection();
             var week = DateTime.Now.WeekNumberOfTheYear();
 
-            var data = await connection.QueryAsync<Ranking>("SELECT TOP (5) devID as Id, Name,  SUM(TotalHours) as WorkedTime FROM TimeSheet" +
+            var data = await connection.QueryAsync<Ranking>("SELECT TOP (5) DevID, Name,  SUM(TotalHours) as WorkedTime FROM TimeSheet" +
                 $" ts INNER JOIN Developers dv ON dv.Id = ts.DevId WHERE WeekId = {week} GROUP BY DevId, Name ORDER BY WorkedTime DESC");
 
             return new GenericCommandResult(true, "Sucess", data);

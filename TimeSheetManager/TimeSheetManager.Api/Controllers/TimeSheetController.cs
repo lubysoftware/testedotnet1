@@ -19,6 +19,7 @@ namespace TimeSheetManager.Api.Controllers {
             return (GenericCommandResult)await handler.Handle(timesheet);
         }
         [HttpGet]
+        [Route("/WeekRanking")]
         public async Task<GenericCommandResult> GetWeekRanking([FromServices] GetWeekRankingHandler handler) {
             return (GenericCommandResult)await handler.Handle();
         }
