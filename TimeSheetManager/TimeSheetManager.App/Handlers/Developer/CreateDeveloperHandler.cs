@@ -2,8 +2,8 @@ using System.Threading.Tasks;
 using TimeSheetManager.App.Handlers.Contracts;
 using TimeSheetManager.App.Commands;
 using TimeSheetManager.App.Commands.Contracts;
-using TimeSheetManager.App.Commands.Developer;
-using TimeSheetManager.Domain.Entities.Developer;
+using TimeSheetManager.App.Commands.DeveloperNS;
+using TimeSheetManager.Domain.Entities.DeveloperNS;
 using TimeSheetManager.Domain.Repositories;
 
 namespace TimeSheetManager.App.Handlers.DeveloperNS {

@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using TimeSheetManager.Domain.Entities.Developer;
+using TimeSheetManager.Domain.Entities.DeveloperNS;
 
 namespace TimeSheetManager.Domain.Repositories {
     public interface IDeveloperRepository {

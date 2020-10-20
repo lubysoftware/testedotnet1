@@ -4,8 +4,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using TimeSheetManager.App.Handlers.DeveloperNS;
 using TimeSheetManager.App.Commands;
-using TimeSheetManager.App.Commands.Developer;
-using TimeSheetManager.Domain.Entities.Developer;
+using TimeSheetManager.App.Commands.DeveloperNS;
+using TimeSheetManager.Domain.Entities.DeveloperNS;
 using TimeSheetManager.Domain.Repositories;
 
 namespace TimeSheetManager.Api.Controllers {

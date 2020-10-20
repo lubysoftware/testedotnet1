@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using TimeSheetManager.Domain.Entities.Developer;
+using TimeSheetManager.Domain.Entities.DeveloperNS;
 
 namespace TimeSheetManager.Infra.Mapping {
     public class DeveloperMapping : IEntityTypeConfiguration<Developer>{ 

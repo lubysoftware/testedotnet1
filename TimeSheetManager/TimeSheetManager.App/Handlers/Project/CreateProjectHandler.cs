@@ -3,7 +3,7 @@ using TimeSheetManager.App.Handlers.Contracts;
 using TimeSheetManager.App.Commands;
 using TimeSheetManager.App.Commands.Contracts;
 using TimeSheetManager.App.Commands.Project;
-using TimeSheetManager.Domain.Entities.Developer;
+using TimeSheetManager.Domain.Entities.DeveloperNS;
 using TimeSheetManager.Domain.Repositories;
 
 namespace TimeSheetManager.App.Handlers.ProjectNS {
