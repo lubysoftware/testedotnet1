@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.JsonPatch;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,7 @@ namespace Api.Controllers
             _appServicoProjeto = appServicoProjeto;
         }
 
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult<List<ProjetoDTO>>> GetTodos()
         {
@@ -33,6 +35,7 @@ namespace Api.Controllers
             }
         }
 
+        [Authorize]
         [HttpGet("{id}", Name="GetProjeto")]
         public async Task<ActionResult<ProjetoDTO>> Get(int id)
         {
@@ -46,6 +49,7 @@ namespace Api.Controllers
             }
         }
 
+        [Authorize]
         [HttpPost]
         public async Task<ActionResult> AdicionarProjeto([FromBody] ProjetoDTO projetoDTO)
         {
@@ -65,6 +69,7 @@ namespace Api.Controllers
             }
         }
 
+        [Authorize]
         [HttpPut]
         public async Task<ActionResult> AtualizarProjeto([FromBody] ProjetoDTO projetoDTO)
         {
@@ -80,12 +85,13 @@ namespace Api.Controllers
 
                 return Ok(resultado);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return StatusCode(500, "Ocorreu uma falha inesperada. Entre em contato com o suporte técnico.");
             }
         }
 
+        [Authorize]
         [HttpPatch("{id}")]
         public async Task<ActionResult> AtualizarProjetoParcialmente(int id, [FromBody] JsonPatchDocument<ProjetoDTO> dtoPatch)
         {
@@ -101,12 +107,13 @@ namespace Api.Controllers
 
                 return Ok(resultado);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return StatusCode(500, "Ocorreu uma falha inesperada. Entre em contato com o suporte técnico.");
             }
         }
 
+        [Authorize]
         [HttpDelete("{id}")]
         public async Task<ActionResult> RemoverProjeto(int id)
         {
@@ -122,7 +129,7 @@ namespace Api.Controllers
 
                 return Ok($"Desenvolvedor ID {id} removido com sucesso.");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return StatusCode(500, "Ocorreu uma falha inesperada. Entre em contato com o suporte técnico.");
             }

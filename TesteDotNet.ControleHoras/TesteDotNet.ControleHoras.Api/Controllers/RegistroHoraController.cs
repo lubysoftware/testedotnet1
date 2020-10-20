@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.JsonPatch;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -20,12 +21,13 @@ namespace Api.Controllers
             _appServicoRegistro = appServicoRegistro;
         }
 
+        [Authorize]
         [HttpGet]
-        public async Task<ActionResult<List<RegistroHoraDTO>>> GetRanking()
+        public async Task<ActionResult<List<RegistroHoraDTO>>> GetTodosAsync()
         {
             try
             {
-                return await _appServicoRegistro.GetRankingDesenvolvedoresSemanaComMaisHorasTrabalhadas(5);
+                return await _appServicoRegistro.GetAllAsync();
             }
             catch (Exception)
             {
@@ -33,6 +35,7 @@ namespace Api.Controllers
             }
         }
 
+        [Authorize]
         [HttpGet("{id}", Name = "GetRegistroHoras")]
         public async Task<ActionResult<RegistroHoraDTO>> Get(int id)
         {
@@ -46,16 +49,46 @@ namespace Api.Controllers
             }
         }
 
+        [Authorize]
+        [HttpPost("{desenvolvedorid}")]
+        public async Task<ActionResult> AdicionarRegistroVarios(int desenvolvedorid, [FromBody] List<RegistroHoraDTO> registrosHorasDTO)
+        {
+            try
+            {
+                var rotas = new List<CreatedAtRouteResult>();
+                foreach(var reg in registrosHorasDTO)
+                {
+                    reg.DesenvolvedorId = desenvolvedorid;
+
+                    var resultado = await _appServicoRegistro.InserirAsync(reg);
+
+                    if (resultado.ErroMensagem.Any())
+                        return StatusCode(400, resultado.MensagemErro400SalvandoCadastro());
+
+                    var registroHoraDtoResultado = (RegistroHoraDTO)resultado.EntidadeDTO;
+
+                    rotas.Add(CreatedAtRoute("GetRegistroHoras", new { id = registroHoraDtoResultado.Id }, registroHoraDtoResultado));
+                }
+
+                return Ok(rotas);
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, "Ocorreu uma falha inesperada. Entre em contato com o suporte técnico.");
+            }
+        }
+
+        [Authorize]
         [HttpPost]
         public async Task<ActionResult> AdicionarRegistro([FromBody] RegistroHoraDTO registroHorasDTO)
         {
             try
             {
                 var resultado = await _appServicoRegistro.InserirAsync(registroHorasDTO);
-
+            
                 if (resultado.ErroMensagem.Any())
                     return StatusCode(400, resultado.MensagemErro400SalvandoCadastro());
-
+            
                 var registroHoraDtoResultado = (RegistroHoraDTO)resultado.EntidadeDTO;
                 return CreatedAtRoute("GetRegistroHoras", new { id = registroHoraDtoResultado.Id }, registroHoraDtoResultado);
             }
@@ -65,27 +98,29 @@ namespace Api.Controllers
             }
         }
 
+        [Authorize]
         [HttpPut]
-        public async Task<ActionResult> AtualizarRegistro([FromBody] RegistroHoraDTO desenvolvedorDTO)
+        public async Task<ActionResult> AtualizarRegistro([FromBody] RegistroHoraDTO registroHoraDTO)
         {
             try
             {
-                if (!await _appServicoRegistro.ExistsAsync(desenvolvedorDTO.Id))
-                    return NotFound(StatusCode(400, $"Registro de Horas não encontrado para o ID {desenvolvedorDTO.Id}."));
+                if (!await _appServicoRegistro.ExistsAsync(registroHoraDTO.Id))
+                    return NotFound(StatusCode(400, $"Registro de Horas não encontrado para o ID {registroHoraDTO.Id}."));
 
-                var resultado = await _appServicoRegistro.UpdateAsync(desenvolvedorDTO);
+                var resultado = await _appServicoRegistro.UpdateAsync(registroHoraDTO);
 
                 if (resultado.ErroMensagem.Any())
                     return StatusCode(400, resultado.MensagemErro400SalvandoCadastro());
 
                 return Ok(resultado);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return StatusCode(500, "Ocorreu uma falha inesperada. Entre em contato com o suporte técnico.");
             }
         }
 
+        [Authorize]
         [HttpPatch("{id}")]
         public async Task<ActionResult> AtualizarRegistroParcialmente(int id, [FromBody] JsonPatchDocument<RegistroHoraDTO> dtoPatch)
         {
@@ -101,12 +136,13 @@ namespace Api.Controllers
 
                 return Ok(resultado);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return StatusCode(500, "Ocorreu uma falha inesperada. Entre em contato com o suporte técnico.");
             }
         }
 
+        [Authorize]
         [HttpDelete("{id}")]
         public async Task<ActionResult> RemoverRegistro(int id)
         {
@@ -122,7 +158,7 @@ namespace Api.Controllers
 
                 return Ok($"Registro de Horas ID {id} removido com sucesso.");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return StatusCode(500, "Ocorreu uma falha inesperada. Entre em contato com o suporte técnico.");
             }

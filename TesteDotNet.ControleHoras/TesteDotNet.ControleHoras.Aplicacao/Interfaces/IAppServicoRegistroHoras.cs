@@ -15,8 +15,7 @@ namespace TesteDotNet.ControleHoras.Aplicacao.Interfaces
         Task<ICadastroSalvarResultado> UpdatePatchAsync(int id, JsonPatchDocument<RegistroHoraDTO> dtoPatch);
         Task<ICadastroSalvarResultado> DeleteAsync(int id);
         Task<RegistroHoraDTO> GetByIdAsync(int id);
-        Task<List<RegistroHoraDTO>> GetAllAsync();
-        Task<List<RegistroHoraDTO>> GetRankingDesenvolvedoresSemanaComMaisHorasTrabalhadas(int numerDesenvolvedoresNoRanking);
+        Task<List<RegistroHoraDTO>> GetAllAsync();        
         Task<bool> ExistsAsync(int id);
 
         void Dispose();

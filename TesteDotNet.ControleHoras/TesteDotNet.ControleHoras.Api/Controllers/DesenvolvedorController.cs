@@ -21,6 +21,7 @@ namespace Api.Controllers
             _appServicoDesenvolvedor = appServicoDesenvolvedor;
         }
 
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult<List<DesenvolvedorDTO>>> GetTodos()
         {
@@ -34,6 +35,7 @@ namespace Api.Controllers
             }            
         }
 
+        [Authorize]
         [HttpGet("{id}", Name="GetDesenvolvedor")]
         public async Task<ActionResult<DesenvolvedorDTO>> Get(int id)
         {
@@ -47,6 +49,7 @@ namespace Api.Controllers
             }            
         }
 
+        [Authorize]
         [HttpPost]
         public async Task<ActionResult> AdicionarDesenvolvedor([FromBody] DesenvolvedorDTO desenvolvedorDTO)
         {
@@ -66,6 +69,7 @@ namespace Api.Controllers
             }            
         }
 
+        [Authorize]
         [HttpPut]
         public async Task<ActionResult> AtualizarDesenvolvedor([FromBody] DesenvolvedorDTO desenvolvedorDTO)
         {
@@ -81,12 +85,13 @@ namespace Api.Controllers
 
                 return Ok(resultado);
             }
-            catch (Exception ex)
+            catch (Exception)
             {                
                 return StatusCode(500, "Ocorreu uma falha inesperada. Entre em contato com o suporte técnico.");
             }
         }
 
+        [Authorize]
         [HttpPatch("{id}")]
         public async Task<ActionResult> AtualizarDesenvolvedorParcialmente(int id, [FromBody] JsonPatchDocument<DesenvolvedorDTO> dtoPatch)
         {
@@ -102,12 +107,13 @@ namespace Api.Controllers
 
                 return Ok(resultado);
             }
-            catch (Exception ex)
+            catch (Exception)
             {                
                 return StatusCode(500, "Ocorreu uma falha inesperada. Entre em contato com o suporte técnico.");
             }
         }
 
+        [Authorize]
         [HttpDelete("{id}")]
         public async Task<ActionResult> RemoverDesenvolvedor(int id)
         {
@@ -123,7 +129,7 @@ namespace Api.Controllers
 
                 return Ok($"Desenvolvedor ID {id} removido com sucesso.");
             }
-            catch (Exception ex)
+            catch (Exception)
             {                
                 return StatusCode(500, "Ocorreu uma falha inesperada. Entre em contato com o suporte técnico.");
             }

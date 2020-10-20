@@ -100,73 +100,10 @@ namespace TesteDotNet.ControleHoras.Aplicacao.Servicos
             var objDev = await _servico.GetByIdAsync(id);
             return _mapper.Map<RegistroHoraDTO>(objDev);
         }
-        public async Task<List<RegistroHoraDTO>> GetRankingDesenvolvedoresSemanaComMaisHorasTrabalhadas(int numerDesenvolvedoresNoRanking)
-        {
-            //Obtém todos os registros de hora.
-            var objDevs = await _servico.GetAllAsync();
-            
-            //Ordena por data de entrada.
-            objDevs = objDevs.OrderBy(x => x.DataEntrada).ToList();         
-            
-            //Obtém o dia da semana do primeiro registro.            
-            Ranking semanaInicio = new Ranking();
-            semanaInicio.dataInicial = objDevs[0].DataEntrada;
-            semanaInicio.dataFinal = semanaInicio.dataInicial.Value.AddDays(DayOfWeek.Saturday - semanaInicio.dataInicial.Value.DayOfWeek);
-            
-            //Inclui a semana inicial.
-            List<Ranking> ranking = new List<Ranking>();
-            ranking.Add(semanaInicio);
-
-            //Ultima data de saída.
-            objDevs = objDevs.OrderBy(x => x.DataSaida).ToList();
-            var ultimaDataFinal = objDevs[objDevs.Count - 1].DataSaida;
-
-            //Nùmero de semanas entre a primeira data inicial e a ultima data final.
-            int numSemanas = Convert.ToInt32((ultimaDataFinal - semanaInicio.dataInicial).Value.TotalDays / 7);
-            if ((ultimaDataFinal - semanaInicio.dataInicial).Value.TotalDays % 7 != 0)
-                numSemanas += 1;
-            
-            //Agrupa por semana.
-            DateTime dataFinalAnterior = semanaInicio.dataFinal.Value;
-            for(int i = 0; i < numSemanas; i++)
-            {
-                if (i == 0)                                    
-                    continue;
-                                    
-                Ranking semana = new Ranking();
-                semana.dataInicial = dataFinalAnterior.AddDays(1);
-                semana.dataFinal = semana.dataInicial.Value.AddDays(6);
-
-                dataFinalAnterior = semana.dataFinal.Value;
-            }
-
-            //Para cada registro de hora soma na semana correspondente com o código do desenvolvedor.
-            foreach (var reg in objDevs)
-            {
-                var r = ranking.First(x => x.dataInicial.Value.CompareTo(reg.DataEntrada) >= 0 &&
-                                           x.dataFinal.Value.CompareTo(reg.DataSaida) <= 0);
-                
-                var dev = r.rankingDevs.FirstOrDefault(x => x.desenvolvedorId == reg.DesenvolvedorId);
-            }
-
-            return _mapper.Map<List<RegistroHoraDTO>>(objDevs);
-        }
-
+        
         public void Dispose()
         {
             _servico.Dispose();
         }
-    }
-
-    class Ranking
-    {
-        public DateTime? dataInicial;
-        public DateTime? dataFinal;
-        public List<RankingDev> rankingDevs = new List<RankingDev>();
-    }
-    class RankingDev
-    {
-        public int desenvolvedorId;
-        public int numTotalHoras;
     }
 }

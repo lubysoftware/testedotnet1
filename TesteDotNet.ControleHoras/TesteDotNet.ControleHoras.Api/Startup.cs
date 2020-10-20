@@ -20,6 +20,17 @@ using TesteDotNet.ControleHoras.DTO.Mapeamento.Map;
 using TesteDotNet.ControleHoras.Dominio.Interfaces.Servicos;
 using Dominio.Core.Interfaces.Notificacao;
 using Dominio.Principal.Notificacao;
+using Aplicacao.Principal.Interfaces;
+using Aplicacao.Principal.Servicos;
+using Microsoft.OpenApi.Models;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using Dominio.Principal.Interfaces.Repositorios;
+using Dominio.Principal.Interfaces.Servicos;
+using Dominio.Servicos.Servicos;
+using Infra.DTO.Mapeamento.Map;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Api
 {
@@ -41,10 +52,21 @@ namespace Api
             services.AddControllers()
                     .AddNewtonsoftJson();
 
+            ConfigureAuthenticationJwt(services);
             ConfigureServicesEx(services);
             ConfigureMappers(services);
                         
             services.AddMvc();
+
+            //Registrando o swagger.
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { 
+                    Title = "WebApi-RegistroHoras",
+                    Version = "v1",
+                    Contact = new OpenApiContact { Name = "Vinícius Rafael Migliorança", Email = "vrmvinicius@gmail.com" }
+                });
+            });
         }
                 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -58,10 +80,17 @@ namespace Api
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseAuthentication();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebApi-RegistroHoras V1");
             });
         }
 
@@ -80,6 +109,12 @@ namespace Api
             services.AddScoped<IRepositorioRegistroHora, RepositorioRegistroHora>();
             services.AddScoped<IServicoRegistroHora, ServicoRegistroHora>();
             services.AddScoped<IAppServicoRegistroHoras, AppServicoRegistroHora>();
+
+            services.AddScoped<IAppServicoRegistroHorasRanking, AppServicoRegistroHoraRanking>();
+
+            services.AddScoped<IRepositorioUsuario, RepositorioUsuario>();
+            services.AddScoped<IServicoUsuario, ServicoUsuario>();
+            services.AddScoped<IAppServicoAutenticacao, AppServicoAutenticacao>();
         }
 
         private void ConfigureMappers(IServiceCollection services)
@@ -88,12 +123,43 @@ namespace Api
             {
                 mc.AddProfile(new MapperDesenvolvedor());
                 mc.AddProfile(new MapperProjeto());
-                mc.AddProfile(new MapperRegistroHora());                
+                mc.AddProfile(new MapperRegistroHora());
+                mc.AddProfile(new MapperUsuario());
             });
 
             IMapper mapper = mapperConfig.CreateMapper();
 
             services.AddSingleton(mapper);
+        }
+
+        private void ConfigureAuthenticationJwt(IServiceCollection services)
+        {
+            //Se não colocar o trecho abaixo somente retorna o erro de falha na validação do token '401'.
+            services.AddAuthorization(options =>
+            {
+                options.DefaultPolicy = new AuthorizationPolicyBuilder(JwtBearerDefaults.AuthenticationScheme)
+                    .RequireAuthenticatedUser()
+                    .Build();
+            });
+
+            var key = Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]);
+            services.AddAuthentication(x =>
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(x =>
+            {
+                x.RequireHttpsMetadata = false;
+                x.SaveToken = true;
+                x.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
+                    ValidateIssuer = false,
+                    ValidateAudience = false
+                };
+            });
         }
     }
 }
