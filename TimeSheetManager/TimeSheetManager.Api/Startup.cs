@@ -29,6 +29,8 @@ namespace TimeSheetManager.Api {
             services.AddDbContext<DataContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddSingleton<ISqlConnection>(x => ActivatorUtilities.CreateInstance<SqlConnectionFactory>(x, Configuration.GetConnectionString("DefaultConnection")));
             services.AddInfrastructure();
+            services.AddSwaggerGen();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -36,7 +38,11 @@ namespace TimeSheetManager.Api {
             if (env.IsDevelopment()) {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "API");
+            });
             app.UseHttpsRedirection();
 
             app.UseRouting();
