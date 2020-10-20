@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infra.Dados.Base.Migrations
 {
     [DbContext(typeof(DbContexto))]
-    [Migration("20201017230357_ExecucaoInicial")]
-    partial class ExecucaoInicial
+    [Migration("20201019235055_ConfiguracaoInicial")]
+    partial class ConfiguracaoInicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -67,14 +67,20 @@ namespace Infra.Dados.Base.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("DataHoraEntrada")
+                    b.Property<DateTime?>("DataEntrada")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("DataHoraSaida")
+                    b.Property<DateTime?>("DataSaida")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("DesenvolvedorId")
                         .HasColumnType("int");
+
+                    b.Property<TimeSpan?>("HoraEntrada")
+                        .HasColumnType("time");
+
+                    b.Property<TimeSpan?>("HoraSaida")
+                        .HasColumnType("time");
 
                     b.HasKey("Id");
 

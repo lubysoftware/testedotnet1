@@ -91,10 +91,10 @@ namespace TesteDotNet.ControleHoras.Aplicacao.Servicos
             var objDevs = await _servico.GetAllAsync();
             return _mapper.Map<List<ProjetoDTO>>(objDevs);
         }
-        public Task<ProjetoDTO> GetByIdAsync(int id)
+        public async Task<ProjetoDTO> GetByIdAsync(int id)
         {
-            var objDev = _servico.GetByIdAsync(id);
-            return _mapper.Map<Task<ProjetoDTO>>(objDev);
+            var objDev = await _servico.GetByIdAsync(id);
+            return _mapper.Map<ProjetoDTO>(objDev);
         }
 
         public void Dispose()

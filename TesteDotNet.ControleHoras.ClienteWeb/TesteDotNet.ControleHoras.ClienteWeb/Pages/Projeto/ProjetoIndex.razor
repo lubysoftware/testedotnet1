@@ -1,20 +1,20 @@
 ﻿@page "/projeto"
-@inject HttpClient  http
-@inject IDesenvolvedorServico desenvolvedorService
+@inject HttpClient http
+@inject IProjetoServico projetoService
 
 <div>
-    <a class="btn btn-success" href="desenvolvedor/novo">Novo</a>
+    <a class="btn btn-success" href="projeto/novo">Novo</a>
 </div>
 
 <br />
 
-@if (_desenvolvedores == null)
+@if (_projetos == null)
 {
     <p><em>Carregando...</em></p>
 }
-else if (_desenvolvedores.Count == 0)
+else if (_projetos.Count == 0)
 {
-    <p><em>Não há desenvolvedores cadastrados no sistema.</em></p>
+    <p><em>Não há projetos cadastrados no sistema.</em></p>
 }
 else
 {
@@ -27,14 +27,14 @@ else
             </tr>
         </thead>
         <tbody>
-            @foreach (var dev in _desenvolvedores)
+            @foreach (var prj in _projetos)
             {
                 <tr>
-                    <td>@dev.Id</td>
-                    <td>@dev.Nome</td>
+                    <td>@prj.Id</td>
+                    <td>@prj.Nome</td>
                     <td>
                         <a class="btn btn-primary"
-                           href="desenvolvedor/editar/@dev.Id">Editar</a>
+                           href="projeto/editar/@prj.Id">Editar</a>
                     </td>
                 </tr>
             }
@@ -43,15 +43,15 @@ else
 }
 
 @code {
-    private IList<DesenvolvedorModel> _desenvolvedores { get; set; }
+    private IList<ProjetoModel> _projetos { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
-        await CarregaDesenvolvedores();
+        await CarregarProjetos();
     }
 
-    private async Task CarregaDesenvolvedores()
+    private async Task CarregarProjetos()
     {
-        _desenvolvedores = await desenvolvedorService.CarregarDesenvolvedoresAsync();
+        _projetos = await projetoService.CarregarProjetosAsync();
     }
 }

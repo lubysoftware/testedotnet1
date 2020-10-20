@@ -34,7 +34,7 @@ namespace Api.Controllers
             }            
         }
 
-        [HttpGet("{id}", Name="Get")]
+        [HttpGet("{id}", Name="GetDesenvolvedor")]
         public async Task<ActionResult<DesenvolvedorDTO>> Get(int id)
         {
             try
@@ -58,7 +58,7 @@ namespace Api.Controllers
                     return StatusCode(400, resultado.MensagemErro400SalvandoCadastro());
 
                 var desenvolvedorDtoResultado = (DesenvolvedorDTO)resultado.EntidadeDTO;
-                return CreatedAtRoute("Get", new { id = desenvolvedorDtoResultado.Id }, desenvolvedorDtoResultado);
+                return CreatedAtRoute("GetDesenvolvedor", new { id = desenvolvedorDtoResultado.Id }, desenvolvedorDtoResultado);
             }
             catch (Exception)
             {

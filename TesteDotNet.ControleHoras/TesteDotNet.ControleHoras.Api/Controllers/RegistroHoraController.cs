@@ -10,22 +10,22 @@ using TesteDotNet.ControleHoras.Aplicacao.Interfaces;
 namespace Api.Controllers
 {
     [ApiController]
-    [Route("api/projetos")]
-    public class ProjetoController : ControllerBase
+    [Route("api/desenvolvedores/registrohoras")]
+    public class RegistroHoraController : ControllerBase
     {
-        private readonly IAppServicoProjeto _appServicoProjeto;
+        private readonly IAppServicoRegistroHoras _appServicoRegistro;
 
-        public ProjetoController(IAppServicoProjeto appServicoProjeto)
+        public RegistroHoraController(IAppServicoRegistroHoras appServicoRegistro)
         {
-            _appServicoProjeto = appServicoProjeto;
+            _appServicoRegistro = appServicoRegistro;
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<ProjetoDTO>>> GetTodos()
+        public async Task<ActionResult<List<RegistroHoraDTO>>> GetRanking()
         {
             try
             {
-                return await _appServicoProjeto.GetAllAsync();
+                return await _appServicoRegistro.GetRankingDesenvolvedoresSemanaComMaisHorasTrabalhadas(5);
             }
             catch (Exception)
             {
@@ -33,12 +33,12 @@ namespace Api.Controllers
             }
         }
 
-        [HttpGet("{id}", Name="GetProjeto")]
-        public async Task<ActionResult<ProjetoDTO>> Get(int id)
+        [HttpGet("{id}", Name = "GetRegistroHoras")]
+        public async Task<ActionResult<RegistroHoraDTO>> Get(int id)
         {
             try
             {
-                return await _appServicoProjeto.GetByIdAsync(id);
+                return await _appServicoRegistro.GetByIdAsync(id);
             }
             catch (Exception)
             {
@@ -47,17 +47,17 @@ namespace Api.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> AdicionarProjeto([FromBody] ProjetoDTO projetoDTO)
+        public async Task<ActionResult> AdicionarRegistro([FromBody] RegistroHoraDTO registroHorasDTO)
         {
             try
             {
-                var resultado = await _appServicoProjeto.InserirAsync(projetoDTO);
+                var resultado = await _appServicoRegistro.InserirAsync(registroHorasDTO);
 
                 if (resultado.ErroMensagem.Any())
                     return StatusCode(400, resultado.MensagemErro400SalvandoCadastro());
 
-                var dtoResultado = (ProjetoDTO)resultado.EntidadeDTO;
-                return CreatedAtRoute("GetProjeto", new { id = dtoResultado.Id }, dtoResultado);
+                var registroHoraDtoResultado = (RegistroHoraDTO)resultado.EntidadeDTO;
+                return CreatedAtRoute("GetRegistroHoras", new { id = registroHoraDtoResultado.Id }, registroHoraDtoResultado);
             }
             catch (Exception)
             {
@@ -66,14 +66,14 @@ namespace Api.Controllers
         }
 
         [HttpPut]
-        public async Task<ActionResult> AtualizarProjeto([FromBody] ProjetoDTO projetoDTO)
+        public async Task<ActionResult> AtualizarRegistro([FromBody] RegistroHoraDTO desenvolvedorDTO)
         {
             try
             {
-                if (!await _appServicoProjeto.ExistsAsync(projetoDTO.Id))
-                    return NotFound(StatusCode(400, $"Projeto não encontrado para o ID {projetoDTO.Id}."));
+                if (!await _appServicoRegistro.ExistsAsync(desenvolvedorDTO.Id))
+                    return NotFound(StatusCode(400, $"Registro de Horas não encontrado para o ID {desenvolvedorDTO.Id}."));
 
-                var resultado = await _appServicoProjeto.UpdateAsync(projetoDTO);
+                var resultado = await _appServicoRegistro.UpdateAsync(desenvolvedorDTO);
 
                 if (resultado.ErroMensagem.Any())
                     return StatusCode(400, resultado.MensagemErro400SalvandoCadastro());
@@ -87,14 +87,14 @@ namespace Api.Controllers
         }
 
         [HttpPatch("{id}")]
-        public async Task<ActionResult> AtualizarProjetoParcialmente(int id, [FromBody] JsonPatchDocument<ProjetoDTO> dtoPatch)
+        public async Task<ActionResult> AtualizarRegistroParcialmente(int id, [FromBody] JsonPatchDocument<RegistroHoraDTO> dtoPatch)
         {
             try
             {
-                if (!await _appServicoProjeto.ExistsAsync(id))
-                    return NotFound(StatusCode(400, $"Projeto não encontrado para o ID {id}."));
+                if (!await _appServicoRegistro.ExistsAsync(id))
+                    return NotFound(StatusCode(400, $"Registro de Horas não encontrado para o ID {id}."));
 
-                var resultado = await _appServicoProjeto.UpdatePatchAsync(id, dtoPatch);
+                var resultado = await _appServicoRegistro.UpdatePatchAsync(id, dtoPatch);
 
                 if (resultado.ErroMensagem.Any())
                     return StatusCode(400, resultado.MensagemErro400SalvandoCadastro());
@@ -108,19 +108,19 @@ namespace Api.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<ActionResult> RemoverProjeto(int id)
+        public async Task<ActionResult> RemoverRegistro(int id)
         {
             try
             {
-                if (!await _appServicoProjeto.ExistsAsync(id))
-                    return NotFound(StatusCode(400, $"Projeto não encontrado para o ID {id}."));
+                if (!await _appServicoRegistro.ExistsAsync(id))
+                    return NotFound(StatusCode(400, $"Registro de Horas não encontrado para o ID {id}."));
 
-                var resultado = await _appServicoProjeto.DeleteAsync(id);
+                var resultado = await _appServicoRegistro.DeleteAsync(id);
 
                 if (resultado.ErroMensagem.Any())
                     return StatusCode(400, resultado.MensagemErro400SalvandoCadastro());
 
-                return Ok($"Desenvolvedor ID {id} removido com sucesso.");
+                return Ok($"Registro de Horas ID {id} removido com sucesso.");
             }
             catch (Exception ex)
             {

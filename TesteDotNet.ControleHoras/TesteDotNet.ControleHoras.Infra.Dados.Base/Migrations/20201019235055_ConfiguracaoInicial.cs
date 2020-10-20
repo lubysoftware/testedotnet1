@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Infra.Dados.Base.Migrations
 {
-    public partial class ExecucaoInicial : Migration
+    public partial class ConfiguracaoInicial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -43,8 +43,10 @@ namespace Infra.Dados.Base.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     DesenvolvedorId = table.Column<int>(nullable: false),
-                    DataHoraEntrada = table.Column<DateTime>(nullable: false),
-                    DataHoraSaida = table.Column<DateTime>(nullable: false)
+                    DataEntrada = table.Column<DateTime>(nullable: true),
+                    HoraEntrada = table.Column<TimeSpan>(nullable: true),
+                    DataSaida = table.Column<DateTime>(nullable: true),
+                    HoraSaida = table.Column<TimeSpan>(nullable: true)
                 },
                 constraints: table =>
                 {

@@ -65,14 +65,20 @@ namespace Infra.Dados.Base.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("DataHoraEntrada")
+                    b.Property<DateTime?>("DataEntrada")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("DataHoraSaida")
+                    b.Property<DateTime?>("DataSaida")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("DesenvolvedorId")
                         .HasColumnType("int");
+
+                    b.Property<TimeSpan?>("HoraEntrada")
+                        .HasColumnType("time");
+
+                    b.Property<TimeSpan?>("HoraSaida")
+                        .HasColumnType("time");
 
                     b.HasKey("Id");
 

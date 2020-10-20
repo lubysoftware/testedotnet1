@@ -171,10 +171,10 @@ namespace TesteDotNet.ControleHoras.Aplicacao.Servicos
             var objDev = _servico.GetById(id);
             return _mapper.Map<DesenvolvedorDTO>(objDev);
         }
-        public Task<DesenvolvedorDTO> GetByIdAsync(int id)
+        public async Task<DesenvolvedorDTO> GetByIdAsync(int id)
         {
-            var objDev = _servico.GetByIdAsync(id);
-            return _mapper.Map<Task<DesenvolvedorDTO>>(objDev);
+            var objDev = await _servico.GetByIdAsync(id);
+            return _mapper.Map<DesenvolvedorDTO>(objDev);
         }
 
         public void Dispose()

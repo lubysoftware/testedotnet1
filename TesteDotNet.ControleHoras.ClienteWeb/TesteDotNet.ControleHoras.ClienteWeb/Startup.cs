@@ -32,11 +32,17 @@ namespace TesteDotNet.ControleHoras.ClienteWeb
             services.AddRazorPages();
             services.AddServerSideBlazor();
 
-            services.AddSingleton<HttpClient>();
-            services.AddScoped<IDesenvolvedorServico, DesenvolvedorServico>();
+            ConfigureServicesEx(services);
 
             var appSettingSection = Configuration.GetSection("AppSettings");
             services.Configure<AppSettings>(appSettingSection);
+        }
+
+        private void ConfigureServicesEx(IServiceCollection services)
+        {
+            services.AddSingleton<HttpClient>();
+            services.AddScoped<IDesenvolvedorServico, DesenvolvedorServico>();
+            services.AddScoped<IProjetoServico, ProjetoServico>();            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

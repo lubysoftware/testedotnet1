@@ -41,25 +41,12 @@ namespace Api
             services.AddControllers()
                     .AddNewtonsoftJson();
 
-            services.AddScoped<INotificacaoDominio, NotificacaoDominio>();
-
-            services.AddScoped<IRepositorioDesenvolvedor, RepositorioDesenvolvedor>();
-            services.AddScoped<IServicoDesenvolvedor, ServicoDesenvolvedor>();
-            services.AddScoped<IAppServicoDesenvolvedor, AppServicoDesenvolvedor>();
-            
-            var mapperConfig = new MapperConfiguration(mc =>
-            {
-                mc.AddProfile(new MapperDesenvolvedor());
-                mc.AddProfile(new MapperProjeto());
-                mc.AddProfile(new MapperRegistroHora());
-            });
-
-            IMapper mapper = mapperConfig.CreateMapper(); //services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());            
-            services.AddSingleton(mapper);
-
+            ConfigureServicesEx(services);
+            ConfigureMappers(services);
+                        
             services.AddMvc();
         }
-
+                
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
@@ -76,6 +63,37 @@ namespace Api
             {
                 endpoints.MapControllers();
             });
+        }
+
+        private void ConfigureServicesEx(IServiceCollection services)
+        {
+            services.AddScoped<INotificacaoDominio, NotificacaoDominio>();
+
+            services.AddScoped<IRepositorioDesenvolvedor, RepositorioDesenvolvedor>();
+            services.AddScoped<IServicoDesenvolvedor, ServicoDesenvolvedor>();
+            services.AddScoped<IAppServicoDesenvolvedor, AppServicoDesenvolvedor>();
+
+            services.AddScoped<IRepositorioProjeto, RepositorioProjeto>();
+            services.AddScoped<IServicoProjeto, ServicoProjeto>();
+            services.AddScoped<IAppServicoProjeto, AppServicoProjeto>();
+
+            services.AddScoped<IRepositorioRegistroHora, RepositorioRegistroHora>();
+            services.AddScoped<IServicoRegistroHora, ServicoRegistroHora>();
+            services.AddScoped<IAppServicoRegistroHoras, AppServicoRegistroHora>();
+        }
+
+        private void ConfigureMappers(IServiceCollection services)
+        {
+            var mapperConfig = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new MapperDesenvolvedor());
+                mc.AddProfile(new MapperProjeto());
+                mc.AddProfile(new MapperRegistroHora());                
+            });
+
+            IMapper mapper = mapperConfig.CreateMapper();
+
+            services.AddSingleton(mapper);
         }
     }
 }
