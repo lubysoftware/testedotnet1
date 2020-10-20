@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Globalization;
 
-namespace TimeSheetManager.Domain
+namespace TimeSheetManager.Domain.Extensions
 {
     public static class DateTimeExtensions
     {

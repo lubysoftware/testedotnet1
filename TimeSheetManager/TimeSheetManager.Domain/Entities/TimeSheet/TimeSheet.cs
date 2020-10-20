@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using TimeSheetManager.Domain.Entities.DeveloperNS;
+using TimeSheetManager.Domain.Extensions;
 
 namespace TimeSheetManager.Domain.Entities.TimeSheetNS
 {

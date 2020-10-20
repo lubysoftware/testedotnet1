@@ -8,6 +8,7 @@ using TimeSheetManager.App.Commands;
 using TimeSheetManager.App.Commands.Contracts;
 using TimeSheetManager.App.Handlers.Contracts;
 using TimeSheetManager.Domain;
+using TimeSheetManager.Domain.Extensions;
 using TimeSheetManager.Domain.Repositories;
 using TimeSheetManager.Domain.TimeSheetNS;
 
