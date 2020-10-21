@@ -1,0 +1,37 @@
+﻿@page "/desenvolvedor/novo"
+@inject NavigationManager navigation
+@inject IDesenvolvedorServico desenvolvedorService
+
+<h2>Novo Desenvolvedor</h2>
+
+<EditForm Model="@Desenvolvedor" OnValidSubmit="@CriarDesenvolvedor">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+        
+    <div class="form-group">
+        <label form="nome">Nome: </label>
+        <div>
+            <InputText @bind-Value="@Desenvolvedor.Nome" class="form-control" />
+            <ValidationMessage For="@(()=> Desenvolvedor.Nome)" />
+        </div>
+    </div>
+    <br />
+
+    <button type="submit" class="btn btn-success">Salvar</button>
+    <button class="btn btn-danger" @onclick="@Cancelar">Cancelar</button>
+</EditForm>
+
+@code{    
+    public DesenvolvedorModel Desenvolvedor = new DesenvolvedorModel();
+    
+    private async Task CriarDesenvolvedor()
+    {
+        await desenvolvedorService.InserirAsync(Desenvolvedor);
+        navigation.NavigateTo("desenvolvedor");
+    }
+
+    private void Cancelar()
+    {
+        navigation.NavigateTo("desenvolvedor");
+    }
+}

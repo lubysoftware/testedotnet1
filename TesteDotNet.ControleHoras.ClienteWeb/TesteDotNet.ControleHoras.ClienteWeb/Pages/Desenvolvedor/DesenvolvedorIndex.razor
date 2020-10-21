@@ -1,0 +1,57 @@
+﻿@page "/desenvolvedor"
+@inject HttpClient  http
+@inject IDesenvolvedorServico desenvolvedorService
+
+<div>
+    <a class="btn btn-success" href="desenvolvedor/novo">Novo</a>
+</div>
+
+<br />
+
+@if (_desenvolvedores == null)
+{
+    <p><em>Carregando...</em></p>
+}
+else if (_desenvolvedores.Count == 0)
+{
+    <p><em>Não há desenvolvedores cadastrados no sistema.</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Editar</th>                
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var dev in _desenvolvedores)
+            {
+                <tr>
+                    <td>@dev.Id</td>
+                    <td>@dev.Nome</td>                    
+                    <td>
+                        <a class="btn btn-primary"
+                           href="desenvolvedor/editar/@dev.Id">Editar</a>
+                    </td>                   
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private IList<DesenvolvedorModel> _desenvolvedores { get; set; }
+    
+    protected override async Task OnInitializedAsync()
+    {
+        await CarregaDesenvolvedores();
+    }
+
+    private async Task CarregaDesenvolvedores()
+    {
+        _desenvolvedores = await desenvolvedorService.CarregarDesenvolvedoresAsync();        
+    }
+}

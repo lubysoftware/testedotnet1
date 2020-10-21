@@ -1,0 +1,37 @@
+﻿@page "/projeto/novo"
+@inject NavigationManager navigation
+@inject IProjetoServico projetoService
+
+<h2>Novo Projeto</h2>
+
+<EditForm Model="@Projeto" OnValidSubmit="@CriarProjeto">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="form-group">
+        <label form="nome">Nome: </label>
+        <div>
+            <InputText @bind-Value="@Projeto.Nome" class="form-control" />
+            <ValidationMessage For="@(()=> Projeto.Nome)" />
+        </div>
+    </div>
+    <br />
+
+    <button type="submit" class="btn btn-success">Salvar</button>
+    <button class="btn btn-danger" @onclick="@Cancelar">Cancelar</button>
+</EditForm>
+
+@code{
+    public ProjetoModel Projeto = new ProjetoModel();    
+        
+    private async Task CriarProjeto()
+    {
+        await projetoService.InserirAsync(Projeto);
+        navigation.NavigateTo("projeto");
+    }
+
+    private void Cancelar()
+    {
+        navigation.NavigateTo("projeto");
+    }
+}

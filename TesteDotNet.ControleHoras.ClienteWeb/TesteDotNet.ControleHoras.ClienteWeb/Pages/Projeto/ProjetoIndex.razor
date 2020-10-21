@@ -1,0 +1,57 @@
+﻿@page "/projeto"
+@inject HttpClient http
+@inject IProjetoServico projetoService
+
+<div>
+    <a class="btn btn-success" href="projeto/novo">Novo</a>
+</div>
+
+<br />
+
+@if (_projetos == null)
+{
+    <p><em>Carregando...</em></p>
+}
+else if (_projetos.Count == 0)
+{
+    <p><em>Não há projetos cadastrados no sistema.</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Editar</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var prj in _projetos)
+            {
+                <tr>
+                    <td>@prj.Id</td>
+                    <td>@prj.Nome</td>
+                    <td>
+                        <a class="btn btn-primary"
+                           href="projeto/editar/@prj.Id">Editar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private IList<ProjetoModel> _projetos { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await CarregarProjetos();
+    }
+
+    private async Task CarregarProjetos()
+    {
+        _projetos = await projetoService.CarregarProjetosAsync();
+    }
+}
