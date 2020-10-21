@@ -5,14 +5,15 @@ using TimeSheetManager.App.Commands.Contracts;
 using TimeSheetManager.App.Commands.Project;
 using TimeSheetManager.Domain.Entities.DeveloperNS;
 using TimeSheetManager.Domain.Repositories;
+using TimeSheetManager.Domain.Entities.Project;
 
 namespace TimeSheetManager.App.Handlers.ProjectNS
 {
     public class CreateProjectHandler : IHandler<CreateProjectCommand>
     {
-        private readonly IDeveloperRepository _repository;
+        private readonly IProjectRepository _repository;
 
-        public CreateProjectHandler(IDeveloperRepository repository)
+        public CreateProjectHandler(IProjectRepository repository)
         {
             _repository = repository;
         }
@@ -20,11 +21,11 @@ namespace TimeSheetManager.App.Handlers.ProjectNS
         public async Task<ICommandResult> Handle(CreateProjectCommand command)
         {
 
-            var dev = new Developer(command.Name);
+            var project = new Project(command.Name);
 
-            await _repository.Post(dev);
+            await _repository.Post(project);
 
-            return new GenericCommandResult(true, "Sucess", dev);
+            return new GenericCommandResult(true, "Sucess", project);
 
         }
 

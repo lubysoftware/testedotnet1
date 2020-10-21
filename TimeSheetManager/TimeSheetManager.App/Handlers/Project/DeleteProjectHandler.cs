@@ -9,9 +9,9 @@ namespace TimeSheetManager.App.Handlers.ProjectNS
 {
     public class DeleteProjectHandler : IHandler<DeleteProjectCommand>
     {
-        private readonly IDeveloperRepository _repository;
+        private readonly IProjectRepository _repository;
 
-        public DeleteProjectHandler(IDeveloperRepository repository)
+        public DeleteProjectHandler(IProjectRepository repository)
         {
             _repository = repository;
         }
@@ -19,7 +19,7 @@ namespace TimeSheetManager.App.Handlers.ProjectNS
         {
             await _repository.Delete(command.Id);
 
-            return new GenericCommandResult(true, "Sucess", "");
+            return new GenericCommandResult(true, "Sucess", $"{command.Id} deleted.");
         }
     }
 }

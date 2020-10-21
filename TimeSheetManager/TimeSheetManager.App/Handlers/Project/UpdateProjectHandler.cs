@@ -9,9 +9,9 @@ namespace TimeSheetManager.App.Handlers.ProjectNS
 {
     public class UpdateProjectHandler : IHandler<UpdateProjectCommand>
     {
-        private readonly IDeveloperRepository _repository;
+        private readonly IProjectRepository _repository;
 
-        public UpdateProjectHandler(IDeveloperRepository repository)
+        public UpdateProjectHandler(IProjectRepository repository)
         {
             _repository = repository;
         }

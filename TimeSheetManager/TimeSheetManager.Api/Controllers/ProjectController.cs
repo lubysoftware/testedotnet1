@@ -31,8 +31,8 @@ namespace TimeSheetManager.Api.Controllers {
             return (GenericCommandResult)await handler.Handle(command);
         }
         [HttpDelete("{Id}")]
-        public async Task<GenericCommandResult> Delete([FromRoute] Guid id, [FromServices] DeleteProjectHandler handler){
-            return (GenericCommandResult)await handler.Handle(new DeleteProjectCommand(id));
+        public async Task<GenericCommandResult> Delete([FromRoute] Guid Id, [FromServices] DeleteProjectHandler handler){
+            return (GenericCommandResult)await handler.Handle(new DeleteProjectCommand(Id));
         }
     }
 }

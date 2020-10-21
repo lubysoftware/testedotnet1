@@ -21,7 +21,7 @@ namespace TimeSheetManager.App.Handlers.DeveloperNS
 
             await _repository.Delete(command.Id);
 
-            return new GenericCommandResult(true, "Sucess", "");
+            return new GenericCommandResult(true, "Sucess", $"{command.Id} removed.");
         }
     }
 }
