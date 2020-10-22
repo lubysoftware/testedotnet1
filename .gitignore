@@ -1,0 +1,17 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/LubySoftware/.vs/LubySoftware
+/LubySoftware/LubySoftware.Authentication/bin/Debug/netcoreapp3.1
+/LubySoftware/LubySoftware.Authentication/obj
+/LubySoftware/LubySoftware.Domain/bin/Debug/netcoreapp3.1
+/LubySoftware/LubySoftware.Domain/obj
+/LubySoftware/LubySoftware.Persistence/bin/Debug/netcoreapp3.1
+/LubySoftware/LubySoftware.Persistence/obj
+/LubySoftware/LubySoftware.Persistence.SqlServer/bin/Debug/netcoreapp3.1
+/LubySoftware/LubySoftware.Persistence.SqlServer/obj
+/LubySoftware/LubySoftware.RegisterHours/bin/Debug/netcoreapp3.1
+/LubySoftware/LubySoftware.RegisterHours/obj
+*.user
