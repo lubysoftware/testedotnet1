@@ -107,8 +107,9 @@ namespace LubySoftware.RegisterHours
                 c.RoutePrefix = string.Empty;
             });
 
-            app.UseHttpsRedirection();
             app.UseRouting();
+            app.UseHttpsRedirection();
+            app.UseAuthentication();
             app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {

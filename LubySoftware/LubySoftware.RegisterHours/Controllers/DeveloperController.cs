@@ -12,37 +12,37 @@ namespace LubySoftware.RegisterHours.Controllers
     [Authorize]
     [Route("api/[controller]")]
     [ApiController]
-    public class RegisterController : ControllerBase
+    public class DeveloperController : ControllerBase
     {
-        readonly RegisterService RegisterService;
+        readonly PersonService PersonService;
 
-        public RegisterController(IRegisterHoursRepository registerHoursRepository)
+        public DeveloperController(IPersonRepository personRepository)
         {
-            RegisterService = new RegisterService(registerHoursRepository);
+            PersonService = new PersonService(personRepository);
         }
 
         [HttpPost]
-        public async Task Post(RegisterHourModel registerHour)
+        public async Task Post(PersonModel person)
         {
-            await RegisterService.Save(registerHour);
+            await PersonService.Save(person);
         }
 
         [HttpGet("{id}")]
-        public async Task<RegisterHourModel> Get(long id)
+        public async Task<PersonModel> Get(long id)
         {
-            return await RegisterService.Find(id);
+            return await PersonService.Find(id);
         }
 
         [HttpDelete("{id}")]
         public async Task Delete(long id)
         {
-            await RegisterService.Delete(id);
+            await PersonService.Delete(id);
         }
 
         [HttpPut]
-        public async Task Put(RegisterHourModel registerHour)
+        public async Task Put(PersonModel person)
         {
-            await RegisterService.Update(registerHour);
+            await PersonService.Update(person);
         }
     }
 }

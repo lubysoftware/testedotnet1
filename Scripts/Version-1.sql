@@ -26,16 +26,3 @@ GO
 
 ALTER TABLE [dbo].[RegisterHour] CHECK CONSTRAINT [FK_RegisterHour_Person]
 GO
-
---Usuários de testes
-insert into Person (Name)
-values    ('Paulo Santos')
-		, ('Roberto Silva')
-		, ('Mariana Ribeiro')
-		, ('Jessica Melos')
-		, ('Alcione Dutra')		
-		, ('Beatris Lemos')		
-		, ('Gilberto Moreira')		
-		, ('Hudson Santos')		
-		, ('Paula Witzel')		
-		, ('Felipe Gueds')

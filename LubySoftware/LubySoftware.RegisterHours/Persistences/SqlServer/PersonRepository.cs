@@ -2,7 +2,6 @@
 using LubySoftware.Domain.Repositories;
 using LubySoftware.Persistence.SqlServer.Repositories;
 using Microsoft.Extensions.Configuration;
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -15,9 +14,11 @@ namespace LubySoftware.RegisterHours.Persistences.SqlServer
         {
         }
 
-        public Task Delete(long id)
+        public async Task Delete(long id)
         {
-            throw new NotImplementedException();
+            const string query = "DELETE Person WHERE id = @id";
+
+            await ExecuteAsync(query, new { id });
         }
 
         public async Task<PersonModel> Find(long id)
@@ -32,19 +33,34 @@ namespace LubySoftware.RegisterHours.Persistences.SqlServer
             return await FindFirstOrDefaultAsync<PersonModel>(query, new { id });
         }
 
-        public Task<IEnumerable<PersonModel>> FindAll()
+        public async Task<IEnumerable<PersonModel>> FindAll()
         {
-            throw new NotImplementedException();
+            const string query =
+                @"SELECT 
+                      Id
+                    , Name
+                FROM Person";
+
+            return await FindAsync<PersonModel>(query);
         }
 
-        public Task Save(PersonModel registerHour)
+        public async Task Save(PersonModel person)
         {
-            throw new NotImplementedException();
+            const string query =
+                @"INSERT INTO Person (Name)
+                VALUES (@name)";
+
+            await ExecuteAsync(query, person);
         }
 
-        public Task Update(PersonModel registerHour)
+        public async Task Update(PersonModel person)
         {
-            throw new NotImplementedException();
+            const string query =
+                @"UPDATE RegisterHour 
+                SET Name = @name
+                WHERE id = @id";
+
+            await ExecuteAsync(query, person);
         }
     }
 }

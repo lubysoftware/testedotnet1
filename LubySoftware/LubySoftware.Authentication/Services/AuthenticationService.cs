@@ -26,7 +26,7 @@ namespace LubySoftware.Authentication.Services
 
         private JwtTokenModel CreateToken(UserModel user, int expirationTime, string apiSecret)
         {
-            DateTime createDate = DateTime.UtcNow;
+            DateTime createDate = DateTime.Now;
             DateTime expirationDate = createDate.AddMinutes(expirationTime);
 
             byte[] key = Encoding.ASCII.GetBytes(apiSecret);
