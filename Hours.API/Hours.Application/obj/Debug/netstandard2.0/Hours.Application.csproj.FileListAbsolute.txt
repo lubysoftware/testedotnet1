@@ -1,0 +1,16 @@
+B:\Projetos\HoursLubyOficial\Hours.API\Hours.Application\bin\Debug\netstandard2.0\Hours.Application.deps.json
+B:\Projetos\HoursLubyOficial\Hours.API\Hours.Application\bin\Debug\netstandard2.0\Hours.Application.dll
+B:\Projetos\HoursLubyOficial\Hours.API\Hours.Application\bin\Debug\netstandard2.0\Hours.Application.pdb
+B:\Projetos\HoursLubyOficial\Hours.API\Hours.Application\obj\Debug\netstandard2.0\Hours.Application.AssemblyInfoInputs.cache
+B:\Projetos\HoursLubyOficial\Hours.API\Hours.Application\obj\Debug\netstandard2.0\Hours.Application.AssemblyInfo.cs
+B:\Projetos\HoursLubyOficial\Hours.API\Hours.Application\obj\Debug\netstandard2.0\Hours.Application.dll
+B:\Projetos\HoursLubyOficial\Hours.API\Hours.Application\obj\Debug\netstandard2.0\Hours.Application.pdb
+B:\Projetos\HoursLubyOficial\Hours.API\Hours.Application\obj\Debug\netstandard2.0\Hours.Application.csprojAssemblyReference.cache
+B:\Projetos\HoursLubyOficial\Hours.API\Hours.Application\bin\Debug\netstandard2.0\Hours.Domain.dll
+B:\Projetos\HoursLubyOficial\Hours.API\Hours.Application\bin\Debug\netstandard2.0\Hours.Domain.pdb
+B:\Projetos\HoursLubyOficial\Hours.API\Hours.Application\obj\Debug\netstandard2.0\Hours.Application.csproj.CopyComplete
+B:\Projetos\HoursLubyOficial\Hours.API\Hours.Application\obj\Debug\netstandard2.0\Hours.Application.csproj.CoreCompileInputs.cache
+B:\Projetos\HoursLubyOficial\Hours.API\Hours.Application\bin\Debug\netstandard2.0\Hours.Infra.dll
+B:\Projetos\HoursLubyOficial\Hours.API\Hours.Application\bin\Debug\netstandard2.0\Hours.Infra.pdb
+B:\Projetos\HoursLubyOficial\Hours.API\Hours.Application\bin\Debug\netstandard2.0\Hours.Domain.Shared.dll
+B:\Projetos\HoursLubyOficial\Hours.API\Hours.Application\bin\Debug\netstandard2.0\Hours.Domain.Shared.pdb
