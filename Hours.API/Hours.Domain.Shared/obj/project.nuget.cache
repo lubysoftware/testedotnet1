@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "gFbJvsBGjcwSHPZUpU70d9VK9NOsioXhDLyBT+kUnvDe543qHPwN9NN2Pk8UQ45v4XNX9V61aK820FU8cgEnpw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\ronal\\source\\repos\\testedotnet1\\Hours.API\\Hours.Domain.Shared\\Hours.Domain.Shared.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ronal\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\ronal\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,17 @@
+B:\Projetos\HoursLubyOficial\Hours.API\Hours.Domain.Shared\bin\Debug\netstandard2.0\Hours.Domain.Shared.deps.json
+B:\Projetos\HoursLubyOficial\Hours.API\Hours.Domain.Shared\bin\Debug\netstandard2.0\Hours.Domain.Shared.dll
+B:\Projetos\HoursLubyOficial\Hours.API\Hours.Domain.Shared\bin\Debug\netstandard2.0\Hours.Domain.Shared.pdb
+B:\Projetos\HoursLubyOficial\Hours.API\Hours.Domain.Shared\obj\Debug\netstandard2.0\Hours.Domain.Shared.AssemblyInfoInputs.cache
+B:\Projetos\HoursLubyOficial\Hours.API\Hours.Domain.Shared\obj\Debug\netstandard2.0\Hours.Domain.Shared.AssemblyInfo.cs
+B:\Projetos\HoursLubyOficial\Hours.API\Hours.Domain.Shared\obj\Debug\netstandard2.0\Hours.Domain.Shared.csproj.CoreCompileInputs.cache
+B:\Projetos\HoursLubyOficial\Hours.API\Hours.Domain.Shared\obj\Debug\netstandard2.0\Hours.Domain.Shared.dll
+B:\Projetos\HoursLubyOficial\Hours.API\Hours.Domain.Shared\obj\Debug\netstandard2.0\Hours.Domain.Shared.pdb
+C:\Users\ronal\source\repos\testedotnet1\Hours.API\Hours.Domain.Shared\bin\Debug\netstandard2.0\Hours.Domain.Shared.deps.json
+C:\Users\ronal\source\repos\testedotnet1\Hours.API\Hours.Domain.Shared\bin\Debug\netstandard2.0\Hours.Domain.Shared.dll
+C:\Users\ronal\source\repos\testedotnet1\Hours.API\Hours.Domain.Shared\bin\Debug\netstandard2.0\Hours.Domain.Shared.pdb
+C:\Users\ronal\source\repos\testedotnet1\Hours.API\Hours.Domain.Shared\obj\Debug\netstandard2.0\Hours.Domain.Shared.csprojAssemblyReference.cache
+C:\Users\ronal\source\repos\testedotnet1\Hours.API\Hours.Domain.Shared\obj\Debug\netstandard2.0\Hours.Domain.Shared.AssemblyInfoInputs.cache
+C:\Users\ronal\source\repos\testedotnet1\Hours.API\Hours.Domain.Shared\obj\Debug\netstandard2.0\Hours.Domain.Shared.AssemblyInfo.cs
+C:\Users\ronal\source\repos\testedotnet1\Hours.API\Hours.Domain.Shared\obj\Debug\netstandard2.0\Hours.Domain.Shared.csproj.CoreCompileInputs.cache
+C:\Users\ronal\source\repos\testedotnet1\Hours.API\Hours.Domain.Shared\obj\Debug\netstandard2.0\Hours.Domain.Shared.dll
+C:\Users\ronal\source\repos\testedotnet1\Hours.API\Hours.Domain.Shared\obj\Debug\netstandard2.0\Hours.Domain.Shared.pdb
