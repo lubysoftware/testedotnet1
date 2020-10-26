@@ -7261,11 +7261,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "B:\\Projetos\\HoursLubyOficial\\Hours.API\\Hours.Application\\Hours.Application.csproj",
+      "projectUniqueName": "C:\\Users\\ronal\\source\\repos\\testedotnet1\\Hours.API\\Hours.Application\\Hours.Application.csproj",
       "projectName": "Hours.Application",
-      "projectPath": "B:\\Projetos\\HoursLubyOficial\\Hours.API\\Hours.Application\\Hours.Application.csproj",
+      "projectPath": "C:\\Users\\ronal\\source\\repos\\testedotnet1\\Hours.API\\Hours.Application\\Hours.Application.csproj",
       "packagesPath": "C:\\Users\\ronal\\.nuget\\packages\\",
-      "outputPath": "B:\\Projetos\\HoursLubyOficial\\Hours.API\\Hours.Application\\obj\\",
+      "outputPath": "C:\\Users\\ronal\\source\\repos\\testedotnet1\\Hours.API\\Hours.Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ronal\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -7281,11 +7281,11 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "B:\\Projetos\\HoursLubyOficial\\Hours.API\\Hours.Domain\\Hours.Domain.csproj": {
-              "projectPath": "B:\\Projetos\\HoursLubyOficial\\Hours.API\\Hours.Domain\\Hours.Domain.csproj"
+            "C:\\Users\\ronal\\source\\repos\\testedotnet1\\Hours.API\\Hours.Domain\\Hours.Domain.csproj": {
+              "projectPath": "C:\\Users\\ronal\\source\\repos\\testedotnet1\\Hours.API\\Hours.Domain\\Hours.Domain.csproj"
             },
-            "B:\\Projetos\\HoursLubyOficial\\Hours.API\\Hours.Infra\\Hours.Infra.csproj": {
-              "projectPath": "B:\\Projetos\\HoursLubyOficial\\Hours.API\\Hours.Infra\\Hours.Infra.csproj"
+            "C:\\Users\\ronal\\source\\repos\\testedotnet1\\Hours.API\\Hours.Infra\\Hours.Infra.csproj": {
+              "projectPath": "C:\\Users\\ronal\\source\\repos\\testedotnet1\\Hours.API\\Hours.Infra\\Hours.Infra.csproj"
             }
           }
         }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "B:\\Projetos\\HoursLubyOficial\\Hours.API\\Hours.Infra\\Hours.Infra.csproj": {}
+    "C:\\Users\\ronal\\source\\repos\\testedotnet1\\Hours.API\\Hours.Infra\\Hours.Infra.csproj": {}
   },
   "projects": {
-    "B:\\Projetos\\HoursLubyOficial\\Hours.API\\Hours.Domain.Shared\\Hours.Domain.Shared.csproj": {
+    "C:\\Users\\ronal\\source\\repos\\testedotnet1\\Hours.API\\Hours.Domain.Shared\\Hours.Domain.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "B:\\Projetos\\HoursLubyOficial\\Hours.API\\Hours.Domain.Shared\\Hours.Domain.Shared.csproj",
+        "projectUniqueName": "C:\\Users\\ronal\\source\\repos\\testedotnet1\\Hours.API\\Hours.Domain.Shared\\Hours.Domain.Shared.csproj",
         "projectName": "Hours.Domain.Shared",
-        "projectPath": "B:\\Projetos\\HoursLubyOficial\\Hours.API\\Hours.Domain.Shared\\Hours.Domain.Shared.csproj",
+        "projectPath": "C:\\Users\\ronal\\source\\repos\\testedotnet1\\Hours.API\\Hours.Domain.Shared\\Hours.Domain.Shared.csproj",
         "packagesPath": "C:\\Users\\ronal\\.nuget\\packages\\",
-        "outputPath": "B:\\Projetos\\HoursLubyOficial\\Hours.API\\Hours.Domain.Shared\\obj\\",
+        "outputPath": "C:\\Users\\ronal\\source\\repos\\testedotnet1\\Hours.API\\Hours.Domain.Shared\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ronal\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -59,14 +59,14 @@
         }
       }
     },
-    "B:\\Projetos\\HoursLubyOficial\\Hours.API\\Hours.Domain\\Hours.Domain.csproj": {
+    "C:\\Users\\ronal\\source\\repos\\testedotnet1\\Hours.API\\Hours.Domain\\Hours.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "B:\\Projetos\\HoursLubyOficial\\Hours.API\\Hours.Domain\\Hours.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\ronal\\source\\repos\\testedotnet1\\Hours.API\\Hours.Domain\\Hours.Domain.csproj",
         "projectName": "Hours.Domain",
-        "projectPath": "B:\\Projetos\\HoursLubyOficial\\Hours.API\\Hours.Domain\\Hours.Domain.csproj",
+        "projectPath": "C:\\Users\\ronal\\source\\repos\\testedotnet1\\Hours.API\\Hours.Domain\\Hours.Domain.csproj",
         "packagesPath": "C:\\Users\\ronal\\.nuget\\packages\\",
-        "outputPath": "B:\\Projetos\\HoursLubyOficial\\Hours.API\\Hours.Domain\\obj\\",
+        "outputPath": "C:\\Users\\ronal\\source\\repos\\testedotnet1\\Hours.API\\Hours.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ronal\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -126,14 +126,14 @@
         }
       }
     },
-    "B:\\Projetos\\HoursLubyOficial\\Hours.API\\Hours.Infra\\Hours.Infra.csproj": {
+    "C:\\Users\\ronal\\source\\repos\\testedotnet1\\Hours.API\\Hours.Infra\\Hours.Infra.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "B:\\Projetos\\HoursLubyOficial\\Hours.API\\Hours.Infra\\Hours.Infra.csproj",
+        "projectUniqueName": "C:\\Users\\ronal\\source\\repos\\testedotnet1\\Hours.API\\Hours.Infra\\Hours.Infra.csproj",
         "projectName": "Hours.Infra",
-        "projectPath": "B:\\Projetos\\HoursLubyOficial\\Hours.API\\Hours.Infra\\Hours.Infra.csproj",
+        "projectPath": "C:\\Users\\ronal\\source\\repos\\testedotnet1\\Hours.API\\Hours.Infra\\Hours.Infra.csproj",
         "packagesPath": "C:\\Users\\ronal\\.nuget\\packages\\",
-        "outputPath": "B:\\Projetos\\HoursLubyOficial\\Hours.API\\Hours.Infra\\obj\\",
+        "outputPath": "C:\\Users\\ronal\\source\\repos\\testedotnet1\\Hours.API\\Hours.Infra\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ronal\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -149,11 +149,11 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "B:\\Projetos\\HoursLubyOficial\\Hours.API\\Hours.Domain.Shared\\Hours.Domain.Shared.csproj": {
-                "projectPath": "B:\\Projetos\\HoursLubyOficial\\Hours.API\\Hours.Domain.Shared\\Hours.Domain.Shared.csproj"
+              "C:\\Users\\ronal\\source\\repos\\testedotnet1\\Hours.API\\Hours.Domain.Shared\\Hours.Domain.Shared.csproj": {
+                "projectPath": "C:\\Users\\ronal\\source\\repos\\testedotnet1\\Hours.API\\Hours.Domain.Shared\\Hours.Domain.Shared.csproj"
               },
-              "B:\\Projetos\\HoursLubyOficial\\Hours.API\\Hours.Domain\\Hours.Domain.csproj": {
-                "projectPath": "B:\\Projetos\\HoursLubyOficial\\Hours.API\\Hours.Domain\\Hours.Domain.csproj"
+              "C:\\Users\\ronal\\source\\repos\\testedotnet1\\Hours.API\\Hours.Domain\\Hours.Domain.csproj": {
+                "projectPath": "C:\\Users\\ronal\\source\\repos\\testedotnet1\\Hours.API\\Hours.Domain\\Hours.Domain.csproj"
               }
             }
           }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wJfgR8QMQZ9b2bTcASyUcvWgotdd6KwV3APF2Vvs1+EmvfAtjxb1GZDyfyStUjgO1/MzdwPhcBCXOVSYfRrdFQ==",
+  "dgSpecHash": "M3yNAD89lzU9erA/zE2QL2+Cpao3IPUYI2LloAJoxszqDBH5gHh+tMDwebi5doK2/lSrf0VAGNHw5HdvTsMqqg==",
   "success": true,
-  "projectFilePath": "B:\\Projetos\\HoursLubyOficial\\Hours.API\\Hours.Domain\\Hours.Domain.csproj",
+  "projectFilePath": "C:\\Users\\ronal\\source\\repos\\testedotnet1\\Hours.API\\Hours.Domain\\Hours.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ronal\\.nuget\\packages\\fluentvalidation\\9.2.2\\fluentvalidation.9.2.2.nupkg.sha512",
     "C:\\Users\\ronal\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",

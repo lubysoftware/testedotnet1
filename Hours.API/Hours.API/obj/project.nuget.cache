@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "a8ov+AbuxpsMUbcXUzJJ70I6dq7YnTGjp2oq9dg/6UF4Ih7jO0NDeSwpvhTyOHYXWzvcq75yumJ+8LNw9pgw7Q==",
+  "dgSpecHash": "1OmlG7Jf8Zos6IUfPzeh9ctmEzAt2zW8Bw+cZQffO0rh7R6zb64TvzYTXLI5Wm7NenZg20GC//4H7UaN6fiO3w==",
   "success": true,
-  "projectFilePath": "B:\\Projetos\\HoursLubyOficial\\Hours.API\\Hours.API\\Hours.API.csproj",
+  "projectFilePath": "C:\\Users\\ronal\\source\\repos\\testedotnet1\\Hours.API\\Hours.API\\Hours.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ronal\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\ronal\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.0\\automapper.extensions.microsoft.dependencyinjection.8.1.0.nupkg.sha512",
