@@ -38,3 +38,9 @@ Desenvolver um serviço que seja capaz de gerar um lançamento de horas.
 #### Identificação:
 Nome: Ronaldo Bruno de Souza Santos<br/>
 E-mail: ronaldobrunoss@hotmail.com
+
+
+#### Dados para seguir:
+- Banco de dados utilizados - SQL SERVER.
+- Restaurar o banco que está em anexo em Hours.DB.
+- Abrir projeto e configurar o arquivo appsettings.json e adicionar os dados de seu banco de dados;
