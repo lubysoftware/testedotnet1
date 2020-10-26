@@ -8,6 +8,7 @@ using Hours.Domain.Entities;
 using Hours.Domain.Filters;
 using Hours.Domain.Interfaces.Services.Hours;
 using Hours.Domain.Validators;
+using Microsoft.AspNetCore.Authorization;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -25,7 +26,6 @@ namespace Hours.Application.Application
             _mapper = mapper;
             _hoursService = hoursServices;
         }    
-
         public async Task<Response<List<HoursGeneralResponse>>> GetAllAsync()
         {
             var data = await _hoursService.GetAllAsync();
@@ -42,6 +42,7 @@ namespace Hours.Application.Application
             return new Response<List<HoursGeneralResponse>>(_mapper.Map<List<HoursGeneralResponse>>(data));
         }
 
+
         public async Task<Response<HoursGeneralResponse>> GetByIdAsync(Guid id)
         {
             var data = await _hoursService.GetByIdAsync(id);
@@ -56,7 +57,7 @@ namespace Hours.Application.Application
             return new Response<List<HoursRankingResponse>>(_mapper.Map<List<HoursRankingResponse>>(data));
         }
 
-        public async Task<Response> SaveAsync(HoursRequest request)
+        public async Task<Response> SaveAsync(HoursGeneralRequest request)
         {
             var response = new Response();
 

@@ -24,13 +24,13 @@ namespace User.Application.Application
         {
             _mapper = mapper;
             _UserService = UserServices;
-        }    
+        }
 
         public async Task<Response<List<UserResponse>>> GetAllAsync()
         {
             var data = await _UserService.GetAllAsync();
 
-            return new Response<List<UserResponse>>(_mapper.Map<List<UserResponse>>(data));          
+            return new Response<List<UserResponse>>(_mapper.Map<List<UserResponse>>(data));
         }
 
         public async Task<Response<List<UserResponse>>> GetAsync(UserFilterRequest filter)
@@ -47,9 +47,9 @@ namespace User.Application.Application
             var data = await _UserService.GetByIdAsync(id);
 
             return new Response<UserResponse>(_mapper.Map<UserResponse>(data));
-        }      
+        }
 
-        public async Task<Response> SaveAsync(UserRequest request)
+        public async Task<Response> SaveAsync(UserGeneralRequest request)
         {
             var response = new Response();
 
@@ -63,10 +63,10 @@ namespace User.Application.Application
                 foreach (var erro in result.Errors)
                     response.Reports.Add(new Reports { Code = erro.PropertyName, Message = erro.ErrorMessage });
 
-                 return response;
+                return response;
             }
 
-            await _UserService.SaveAsync(data);  
+            await _UserService.SaveAsync(data);
 
             return response;
         }
@@ -104,6 +104,17 @@ namespace User.Application.Application
             await _UserService.DeleteAsync(id);
 
             return response;
+        }
+
+        public async Task<Response<UserResponse>> FindByLoginAsync(string email)
+        {
+            var response = new Response();
+
+            var data = await _UserService.FindByLoginAsync(email);
+            if (data == null)
+                 response.Reports.Add(new Reports { Code = email, Message = "User does not exist." });
+
+            return new Response<UserResponse>(_mapper.Map<UserResponse>(data));
         }
     }
 }

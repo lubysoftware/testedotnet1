@@ -2,7 +2,7 @@
 using Hours.Domain.Filters;
 using Hours.Domain.Interfaces.Repositories;
 using Hours.Domain.Interfaces.Repositories.Base;
-using Hours.Domain.Models;
+using Hours.Domain.DTO;
 using Hours.Domain.Shared.Helpers;
 using Hours.Infra.Context;
 using Microsoft.EntityFrameworkCore;
@@ -43,7 +43,7 @@ namespace Hours.Infra.Repository.Queries
                 queryResponse = queryResponse.Where(x => x.Id.Equals(filters.Id)).ToList();
 
             if (filters.Developer.ValidField())
-                queryResponse = queryResponse.Where(x => x.Developer.Equals(filters.Developer)).ToList();
+                queryResponse = queryResponse.Where(x => x.Developer.Contains(filters.Developer)).ToList();
            
             if (filters.StartDate.ToString().ValidDate())
             {
@@ -60,7 +60,7 @@ namespace Hours.Infra.Repository.Queries
 
         }
 
-        public async Task<List<HoursModelsResponse>> GetRankingDevsAsync()
+        public async Task<List<HoursDTO>> GetRankingDevsAsync()
         {
             var lDevelopersWeek = await GetDevelopersOfTheWeek();
 
@@ -72,7 +72,7 @@ namespace Hours.Infra.Repository.Queries
                                                    HoursWorkedInTheWeek = _gg.Sum(x => x.HoursWorkedInTheWeek.Ticks),
                                                    CountRegister = _gg.Count()
                                                })
-                                 select new HoursModelsResponse
+                                 select new HoursDTO
                                  {
                                      Developer = prin.Developer,
                                      HoursWorkedInTheWeek = TimeSpan.FromTicks(prin.HoursWorkedInTheWeek),
@@ -82,7 +82,7 @@ namespace Hours.Infra.Repository.Queries
             return queryResponse;
         }
 
-        public async Task<List<HoursModelsResponse>> GetDevelopersOfTheWeek()
+        public async Task<List<HoursDTO>> GetDevelopersOfTheWeek()
         {
             //first day week
             DateTime firtsDayWeek = DateTime.Now.AddDays(-(int)DateTime.Now.DayOfWeek).Date;
@@ -90,11 +90,11 @@ namespace Hours.Infra.Repository.Queries
             var firstDayWeek = firtsDayWeek;
             var lastDayWeek = firtsDayWeek.AddDays(7).AddSeconds(-1);
 
-            List<HoursModelsResponse> queryDevelopersWeek = await _db.Hours
+            List<HoursDTO> queryDevelopersWeek = await _db.Hours
                                                    .Where(x => x.StartDate >= firstDayWeek && x.EndDate < lastDayWeek)
                                                    .OrderByDescending(x => x.Developer)
                                                    .AsNoTracking()
-                                                   .Select(x => new HoursModelsResponse
+                                                   .Select(x => new HoursDTO
                                                    {
                                                        Developer = x.Developer,
                                                        HoursWorkedInTheWeek = x.EndDate - x.StartDate

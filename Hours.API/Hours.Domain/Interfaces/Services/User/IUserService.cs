@@ -9,6 +9,7 @@ namespace Hours.Domain.Interfaces.Services.User
     public interface IUserService
     {
         Task<UsersEntity> GetByIdAsync(Guid id);
+        Task<UsersEntity> FindByLoginAsync(string email);
         Task<IEnumerable<UsersEntity>> GetAllAsync();
         Task<IEnumerable<UsersEntity>> GetAsync(UserFilters filter);
         Task SaveAsync(UsersEntity data);

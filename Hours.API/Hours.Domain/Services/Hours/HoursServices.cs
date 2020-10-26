@@ -2,7 +2,7 @@
 using Hours.Domain.Filters;
 using Hours.Domain.Interfaces.Repositories;
 using Hours.Domain.Interfaces.Services.Hours;
-using Hours.Domain.Models;
+using Hours.Domain.DTO;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -35,7 +35,7 @@ namespace Hours.Domain.Services.Hours
             return await _hoursQueries.GetByIdAsync(id);
         }
 
-        public async Task<List<HoursModelsResponse>> GetRankingDevsAsync()
+        public async Task<List<HoursDTO>> GetRankingDevsAsync()
         {
             return await _hoursQueries.GetRankingDevsAsync();
         }

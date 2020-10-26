@@ -30,3 +30,5 @@ C:\Users\ronal\source\repos\testedotnet1\Hours.API\Hours.Application\obj\Debug\n
 C:\Users\ronal\source\repos\testedotnet1\Hours.API\Hours.Application\obj\Debug\netstandard2.0\Hours.Application.csproj.CopyComplete
 C:\Users\ronal\source\repos\testedotnet1\Hours.API\Hours.Application\obj\Debug\netstandard2.0\Hours.Application.dll
 C:\Users\ronal\source\repos\testedotnet1\Hours.API\Hours.Application\obj\Debug\netstandard2.0\Hours.Application.pdb
+C:\Users\ronal\source\repos\testedotnet1\Hours.API\Hours.Application\bin\Debug\netstandard2.0\Hours.Application.xml
+C:\Users\ronal\source\repos\testedotnet1\Hours.API\Hours.Application\obj\Debug\netstandard2.0\Hours.Application.xml

@@ -33,6 +33,15 @@ namespace User.Infra.Repository.Queries
             return await _repository.GetByIdAsync(id);
         }
 
+        public async Task<UsersEntity> FindByLoginAsync(string email)
+        {
+            var queryResponse = await (from h in _db.Users
+                                       where h.Email == email
+                                       select h).FirstOrDefaultAsync();          
+
+            return queryResponse;
+        }
+
         public async Task<IEnumerable<UsersEntity>> GetAsync(UserFilters filters)
         {
             var queryResponse = await (from h in _db.Users

@@ -24,6 +24,11 @@ namespace Hours.Domain.Services.User
              await _userCommands.DeleteAsync(id);
         }
 
+        public async Task<UsersEntity> FindByLoginAsync(string email)
+        {
+            return await _userQueries.FindByLoginAsync(email);
+        }
+
         public async Task<IEnumerable<UsersEntity>> GetAllAsync()
         {
             return await _userQueries.GetAllAsync();

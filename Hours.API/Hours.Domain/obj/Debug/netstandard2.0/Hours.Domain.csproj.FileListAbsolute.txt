@@ -13,6 +13,6 @@ C:\Users\ronal\source\repos\testedotnet1\Hours.API\Hours.Domain\bin\Debug\netsta
 C:\Users\ronal\source\repos\testedotnet1\Hours.API\Hours.Domain\obj\Debug\netstandard2.0\Hours.Domain.csprojAssemblyReference.cache
 C:\Users\ronal\source\repos\testedotnet1\Hours.API\Hours.Domain\obj\Debug\netstandard2.0\Hours.Domain.AssemblyInfoInputs.cache
 C:\Users\ronal\source\repos\testedotnet1\Hours.API\Hours.Domain\obj\Debug\netstandard2.0\Hours.Domain.AssemblyInfo.cs
-C:\Users\ronal\source\repos\testedotnet1\Hours.API\Hours.Domain\obj\Debug\netstandard2.0\Hours.Domain.csproj.CoreCompileInputs.cache
 C:\Users\ronal\source\repos\testedotnet1\Hours.API\Hours.Domain\obj\Debug\netstandard2.0\Hours.Domain.dll
 C:\Users\ronal\source\repos\testedotnet1\Hours.API\Hours.Domain\obj\Debug\netstandard2.0\Hours.Domain.pdb
+C:\Users\ronal\source\repos\testedotnet1\Hours.API\Hours.Domain\obj\Debug\netstandard2.0\Hours.Domain.csproj.CoreCompileInputs.cache

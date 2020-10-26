@@ -1,6 +1,6 @@
 ﻿using Hours.Domain.Entities;
 using Hours.Domain.Filters;
-using Hours.Domain.Models;
+using Hours.Domain.DTO;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -11,8 +11,8 @@ namespace Hours.Domain.Interfaces.Repositories
     {
         Task<IEnumerable<HoursEntity>> GetAllAsync();
         Task<IEnumerable<HoursEntity>> GetAsync(HoursFilters filters);
-        Task<List<HoursModelsResponse>> GetRankingDevsAsync();
+        Task<List<HoursDTO>> GetRankingDevsAsync();
         Task<HoursEntity> GetByIdAsync(Guid id);
-        Task<List<HoursModelsResponse>> GetDevelopersOfTheWeek();
+        Task<List<HoursDTO>> GetDevelopersOfTheWeek();
     }
 }

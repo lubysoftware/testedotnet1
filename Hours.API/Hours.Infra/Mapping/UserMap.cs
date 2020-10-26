@@ -21,10 +21,7 @@ namespace Hours.Infra.Mapping
 
             builder.Property(h => h.Name)
                  .IsRequired()
-                 .HasMaxLength(60);
-
-            builder.Property(h => h.Senha)
-             .IsRequired();
+                 .HasMaxLength(60);      
         }
     }
 }

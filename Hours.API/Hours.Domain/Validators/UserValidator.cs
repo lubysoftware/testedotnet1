@@ -9,7 +9,6 @@ namespace Hours.Domain.Validators
         {
             RuleFor(x => x.Name).Length(2, 50).WithMessage("Must be between 2 and 50 characters.");           
             RuleFor(x => x.Email).EmailAddress().NotNull();
-            RuleFor(x => x.Senha).NotEmpty().NotNull();
         }
     }
 }

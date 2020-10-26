@@ -176,6 +176,10 @@
             "System.Configuration.ConfigurationManager": {
               "target": "Package",
               "version": "[4.7.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.8.0, )"
             }
           },
           "imports": [

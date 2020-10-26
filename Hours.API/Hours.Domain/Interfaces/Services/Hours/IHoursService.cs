@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using Hours.Domain.DTO;
 using Hours.Domain.Entities;
 using Hours.Domain.Filters;
-using Hours.Domain.Models;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Hours.Domain.Interfaces.Services.Hours
 {
@@ -14,7 +14,7 @@ namespace Hours.Domain.Interfaces.Services.Hours
         Task DeleteAsync(Guid id);
         Task<IEnumerable<HoursEntity>> GetAllAsync();
         Task<IEnumerable<HoursEntity>> GetAsync(HoursFilters filter);
-        Task<List<HoursModelsResponse>> GetRankingDevsAsync();
+        Task<List<HoursDTO>> GetRankingDevsAsync();
         Task<HoursEntity> GetByIdAsync(Guid id);
     }
 }

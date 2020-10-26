@@ -11,6 +11,7 @@ using Hours.Domain.Services.User;
 using Hours.Infra.Repository.Base;
 using Hours.Infra.Repository.Commands;
 using Hours.Infra.Repository.Queries;
+using Login.Application.Application;
 using Microsoft.Extensions.DependencyInjection;
 using User.Application.Application;
 using User.Application.Interface;
@@ -31,6 +32,10 @@ namespace Hours.Extensions
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<IUserCommands, UserCommands>();
             services.AddTransient<IUserQueries, UserQueries>();
+
+            services.AddTransient<ILoginService, LoginService>();
+            services.AddTransient<ILoginApplication, LoginApplication>();
+
 
             services.AddTransient<IRepository<BaseEntity>, BaseRepository<BaseEntity>>();
         }

@@ -9,7 +9,7 @@ namespace Hours.Application.Interface
 {
     public interface IHoursApplication
     {
-        Task<Response> SaveAsync(HoursRequest data);
+        Task<Response> SaveAsync(HoursGeneralRequest data);
         Task<Response> UpdateAsync(HoursRequest data);
         Task<Response> DeleteAsync(Guid id);
         Task<Response<HoursGeneralResponse>> GetByIdAsync(Guid id);
