@@ -1,0 +1,9 @@
+/home/edward/development/test-dotNet/testedotnet1/TesteLuby/Business/bin/Debug/netcoreapp3.1/Business.deps.json
+/home/edward/development/test-dotNet/testedotnet1/TesteLuby/Business/bin/Debug/netcoreapp3.1/Business.dll
+/home/edward/development/test-dotNet/testedotnet1/TesteLuby/Business/bin/Debug/netcoreapp3.1/Business.pdb
+/home/edward/development/test-dotNet/testedotnet1/TesteLuby/Business/obj/Debug/netcoreapp3.1/Business.csprojAssemblyReference.cache
+/home/edward/development/test-dotNet/testedotnet1/TesteLuby/Business/obj/Debug/netcoreapp3.1/Business.AssemblyInfoInputs.cache
+/home/edward/development/test-dotNet/testedotnet1/TesteLuby/Business/obj/Debug/netcoreapp3.1/Business.AssemblyInfo.cs
+/home/edward/development/test-dotNet/testedotnet1/TesteLuby/Business/obj/Debug/netcoreapp3.1/Business.csproj.CoreCompileInputs.cache
+/home/edward/development/test-dotNet/testedotnet1/TesteLuby/Business/obj/Debug/netcoreapp3.1/Business.dll
+/home/edward/development/test-dotNet/testedotnet1/TesteLuby/Business/obj/Debug/netcoreapp3.1/Business.pdb

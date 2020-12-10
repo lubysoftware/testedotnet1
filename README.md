@@ -1,21 +1,27 @@
 # Desafio Back-end Luby Software
+
 Primeiramente, obrigado pelo seu interesse em trabalhar na Luby. Somos uma fábrica de software com mais de 110 desenvolvedores e 15 anos de mercado. Temos atuação em mais de 5 países e estamos em busca de talentos para integrar o nosso time no desenvolvimento .NET de forma 100% remota.
 
 #### Premissas:
+
 - Criar uma API usando .NET CORE.
-- O banco de dados pode ser  MySql ou SQL Server.
+- O banco de dados pode ser MySql ou SQL Server.
 
 #### Teste:
+
 Desenvolver um serviço que seja capaz de gerar um lançamento de horas.
+
 - Um lançamento de horas é composta por pelo menos **id**, **data inicio**, **data fim**, **desenvolvedor**.
 
 #### Sua tarefa é desenvolver os serviços REST abaixo:
+
 - CRUD para desenvolvedor
 - CRUD de projeto
 - Criar um lançamento de hora
 - Retornar ranking dos 5 desenvolvedores da semana com maior média de horas trabalhadas.
 
 #### Instruções:
+
 1. Realizar `fork` deste projeto.
 2. Desenvolver em cima do seu `fork`.
 3. Atualizar esse README.md com sua identificação no fim do arquivo
@@ -23,6 +29,7 @@ Desenvolver um serviço que seja capaz de gerar um lançamento de horas.
 5. Fique à vontade para perguntar qualquer dúvida aos recrutadores.
 
 #### E por fim:
+
 - Gostaríamos de ver o uso do controle de versão.
 - Entendimento de OO, conceitos de SOLID, e outros relacionados
 - Reuso do código
@@ -31,10 +38,12 @@ Desenvolver um serviço que seja capaz de gerar um lançamento de horas.
 - Avaliaremos também sua postura, honestidade e a maneira que resolve problemas.
 
 #### Desejável (Será considerado um diferencial)
+
 - Configurar o Swagger para termos acesso a documentação da API.
 - Implementar autenticação JWT com expiração de 5 minutos
-- Criar um client WEB para consumir essa API 
+- Criar um client WEB para consumir essa API
 
 #### Identificação:
-Nome: <br/>
-E-mail: 
+
+Nome: Edward Teixeira Dias Júnior<br/>
+E-mail: edwardteixeiradias@gmail.com

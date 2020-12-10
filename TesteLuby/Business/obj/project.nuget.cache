@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "+k+QBBpeqEfLFLqixE0ZqjQdiE0FYnfvM9I596Y3lLN8x63UWDTNfS86BoVTafNAiRRlRBI2S7Zll5TKD/y6yg==",
+  "success": true,
+  "projectFilePath": "/home/edward/development/test-dotNet/testedotnet1/TesteLuby/Business/Business.csproj",
+  "expectedPackageFiles": [
+    "/home/edward/.nuget/packages/fluentvalidation/8.6.2/fluentvalidation.8.6.2.nupkg.sha512",
+    "/home/edward/.nuget/packages/fluentvalidation.aspnetcore/8.6.2/fluentvalidation.aspnetcore.8.6.2.nupkg.sha512",
+    "/home/edward/.nuget/packages/fluentvalidation.dependencyinjectionextensions/8.6.2/fluentvalidation.dependencyinjectionextensions.8.6.2.nupkg.sha512",
+    "/home/edward/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/2.1.0/microsoft.extensions.dependencyinjection.abstractions.2.1.0.nupkg.sha512",
+    "/home/edward/.nuget/packages/system.componentmodel.annotations/4.4.1/system.componentmodel.annotations.4.4.1.nupkg.sha512"
+  ],
+  "logs": []
+}
