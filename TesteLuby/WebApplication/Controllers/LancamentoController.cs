@@ -15,13 +15,14 @@ namespace WebApplication.Controllers
     {
         private readonly ILancamentoDeHoraRepository _lancamentoDeHoraRepository;
         private readonly ILancamentoDeHoraService _lancamentoDeHoraService;
-
+        private readonly IUser _user;
 
         public LancamentoController(
             INotificador notificador,
             ILancamentoDeHoraRepository lancamentoDeHoraRepository,
             IMapper mapper,
-            ILancamentoDeHoraService lancamentoDeHoraService) : base(notificador)
+            IUser user,
+            ILancamentoDeHoraService lancamentoDeHoraService) : base(notificador, user)
         {
             _lancamentoDeHoraRepository = lancamentoDeHoraRepository;
             _mapper = mapper;

@@ -15,13 +15,14 @@ namespace WebApplication.Controllers
     {
         private readonly IProjetoRepository _projetoRepository;
         private readonly IProjetoService _projetoService;
-
+        private readonly IUser _user;
 
         public ProjetoController(
             INotificador notificador,
             IProjetoRepository projetoRepository,
             IMapper mapper,
-            IProjetoService projetoService) : base(notificador)
+            IUser user,
+            IProjetoService projetoService) : base(notificador, user)
         {
             _projetoRepository = projetoRepository;
             _mapper = mapper;

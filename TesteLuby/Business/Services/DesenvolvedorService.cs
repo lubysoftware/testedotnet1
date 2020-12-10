@@ -9,8 +9,7 @@ namespace Business.Services
     public class DesenvolvedorService : BaseService, IDesenvolvedorService
     {
         private readonly IDesenvolvedorRepository _desenvolvedorRepository;
-        private readonly IUser _user;
-
+        
         public DesenvolvedorService(
             INotificador notificador,
             IDesenvolvedorRepository desenvolvedorRepository) : base(notificador)
@@ -22,7 +21,6 @@ namespace Business.Services
         {
             using (_desenvolvedorRepository)
             {
-                //var user = _user.GetUserId();
                 if (!ExecutarValidacao(new DesenvolvedorValidation(), desenvolvedor))
                     return false;
                 if (_desenvolvedorRepository.Buscar(f => f.Email == desenvolvedor.Email).Result.Any())

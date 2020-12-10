@@ -4,24 +4,28 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Business;
 using Business.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using WebApplication.Extensoes;
 using WebApplication.ViewModels;
 
 namespace WebApplication.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class DesenvolvedorController : MainController
     {
         private readonly IDesenvolvedorRepository _desenvolvedorRepository;
         private readonly IDesenvolvedorService _desenvolvedorService;
-
+        private readonly IUser _user;
 
         public DesenvolvedorController(
             INotificador notificador,
             IDesenvolvedorRepository desenvolvedorRepository,
             IMapper mapper,
-            IDesenvolvedorService desenvolvedorService) : base(notificador)
+            IUser user,
+            IDesenvolvedorService desenvolvedorService) : base(notificador, user)
         {
             _desenvolvedorRepository = desenvolvedorRepository;
             _mapper = mapper;
@@ -30,6 +34,7 @@ namespace WebApplication.Controllers
 
         private IMapper _mapper { get; }
 
+        [AllowAnonymous]
         [HttpGet]
         public async Task<IEnumerable<DesenvolvedorViewModel>> ObterTodos()
         {
@@ -38,7 +43,7 @@ namespace WebApplication.Controllers
 
             return model;
         }
-
+        
         [HttpGet("{id:guid}")]
         public async Task<ActionResult<IEnumerable<DesenvolvedorViewModel>>> ObterPorId(Guid id)
         {
@@ -49,6 +54,7 @@ namespace WebApplication.Controllers
             return Ok(model);
         }
 
+        [CustomAuthorization.ClaimsAuthorizeAttribute("Admin", "Adicionar")]
         [HttpPost]
         public async Task<ActionResult<DesenvolvedorViewModel>> Adicionar(DesenvolvedorViewModel desenvolvedorViewModel)
         {
@@ -58,6 +64,7 @@ namespace WebApplication.Controllers
             return CustomResponse();
         }
 
+        [CustomAuthorization.ClaimsAuthorizeAttribute("Admin", "Atualizar")]
         [HttpPut("{id:guid}")]
         public async Task<ActionResult<DesenvolvedorViewModel>> Atualizar(Guid id,
             DesenvolvedorViewModel desenvolvedorViewModel)
@@ -73,7 +80,8 @@ namespace WebApplication.Controllers
 
             return CustomResponse(desenvolvedorViewModel);
         }
-
+        
+        [CustomAuthorization.ClaimsAuthorizeAttribute("Admin", "Remover")]
         [HttpDelete("{id:guid}")]
         public async Task<ActionResult<DesenvolvedorViewModel>> Remover(Guid id)
         {

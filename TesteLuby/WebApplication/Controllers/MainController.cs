@@ -11,18 +11,19 @@ namespace WebApplication.Controllers
     public class MainController : ControllerBase
     {
         private readonly INotificador _notificador;
-        public readonly IUser AppUser;
+        private readonly IUser _appUser;
 
-        protected MainController(INotificador notificador)
+        protected MainController(
+            INotificador notificador,
+            IUser appUser)
         {
             _notificador = notificador;
-            // AppUser = appUser;
-            //
-            // if (appUser.IsAuthenticated())
-            // {
-            //     UsuarioId = appUser.GetUserId();
-            //     UsuarioAutenticado = true;
-            // }
+            _appUser = appUser;
+
+            if (!appUser.IsAuthenticated()) return;
+            
+            UsuarioId = appUser.GetUserId();
+            UsuarioAutenticado = true;
         }
 
         protected Guid UsuarioId { get; set; }

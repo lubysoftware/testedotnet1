@@ -19,12 +19,12 @@ namespace WebApplication
         }
 
         public IConfiguration Configuration { get; }
-
-        // This method gets called by the runtime. Use this method to add services to the container.
+        
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
             services.AddAutoMapper(typeof(Startup));
+            services.AddIdentityConfig(Configuration);
             services.AddDbContext<ApiDbContext>(options =>
             {
                 options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection"));
@@ -33,8 +33,7 @@ namespace WebApplication
             services.AddControllers().AddNewtonsoftJson();
             services.ResolveDependencies();
         }
-
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment()) app.UseDeveloperExceptionPage();
@@ -42,7 +41,7 @@ namespace WebApplication
             app.UseHttpsRedirection();
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });

@@ -17,12 +17,7 @@ namespace Data.Mappings
             builder.Property(d => d.Email)
                 .IsRequired()
                 .HasColumnType("varchar(200)");
-
-            //
-            // builder.Property(p => p.Imagem)
-            //     .IsRequired()
-            //     .HasColumnType("varchar(100)");
-
+            
             builder.ToTable("Desenvolvedores");
         }
     }

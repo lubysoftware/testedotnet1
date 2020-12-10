@@ -9,22 +9,18 @@ namespace Business.Services
     public class ProjetoService : BaseService, IProjetoService
     {
         private readonly IProjetoRepository _projetoRepository;
-        private readonly IUser _user;
 
         public ProjetoService(
             IProjetoRepository projetoRepository,
             INotificador notificador) : base(notificador)
         {
             _projetoRepository = projetoRepository;
-            // _user = user;
         }
 
         public async Task<bool> Adicionar(Projeto projeto)
         {
-            //var user = _user.GetUserId();
             using (_projetoRepository)
             {
-                //var user = _user.GetUserId();
                 if (!ExecutarValidacao(new ProjetoValidation(), projeto))
                     return false;
                 if (_projetoRepository.Buscar(f => f.Nome == projeto.Nome).Result.Any())

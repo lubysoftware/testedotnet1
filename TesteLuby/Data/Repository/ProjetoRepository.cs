@@ -9,9 +9,7 @@ namespace Data.Repository
 {
     public class ProjetoRepository : Repository<Projeto>, IProjetoRepository
     {
-        public ProjetoRepository(ApiDbContext db) : base(db)
-        {
-        }
+        public ProjetoRepository(ApiDbContext db) : base(db) { }
 
         public async Task<Projeto> ObterProjetoPorNome(string nome)
         {

@@ -10,7 +10,6 @@ namespace Business.Services
         private readonly IDesenvolvedorRepository _desenvolvedorRepository;
         private readonly ILancamentoDeHoraRepository _lancamentoDeHoraRepository;
         private readonly IProjetoRepository _projetoRepository;
-        private readonly IUser _user;
 
         public LancamentoDeHoraService(
             IDesenvolvedorRepository desenvolvedorRepository,
@@ -21,12 +20,10 @@ namespace Business.Services
             _desenvolvedorRepository = desenvolvedorRepository;
             _lancamentoDeHoraRepository = lancamentoDeHoraRepository;
             _projetoRepository = projetoRepository;
-            // _user = user;
         }
 
         public async Task<bool> Adicionar(LancamentoDeHora lancamento)
         {
-            //var user = _user.GetUserId();
             if (!ExecutarValidacao(new LancamentoDeHoraValidation(), lancamento)) return false;
 
             var dev = await _desenvolvedorRepository.ObterPorId(lancamento.Desenvolvedor.Id);

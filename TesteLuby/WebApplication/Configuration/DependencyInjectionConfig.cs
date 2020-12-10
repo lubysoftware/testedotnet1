@@ -4,6 +4,7 @@ using Business.Services;
 using Data.Context;
 using Data.Repository;
 using Microsoft.Extensions.DependencyInjection;
+using WebApplication.Extensoes;
 
 namespace WebApplication.Configuration
 {
@@ -19,17 +20,7 @@ namespace WebApplication.Configuration
             services.AddScoped<IProjetoService, ProjetoService>();
             services.AddScoped<ILancamentoDeHoraRepository, LancamentoDeHoraRepository>();
             services.AddScoped<ILancamentoDeHoraService, LancamentoDeHoraService>();
-            // services.AddScoped<IFornecedorRepository, FornecedorRepository>();
-            // services.AddScoped<IEnderecoRepository, EnderecoRepository>();
-            //
-            // services.AddScoped<IFornecedorService, FornecedorService>();
-            // services.AddScoped<IProdutoService, ProdutoService>();
-            //
-            // services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            // services.AddScoped<IUser, AspNetUser>();
-            //
-            // services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();
-
+            services.AddScoped<IUser, AspNetUser>();
             return services;
         }
     }
