@@ -26,7 +26,7 @@ namespace WebApplication1.Services
                     new Claim(ClaimTypes.Name, usuario.Nome.ToString()),
                     new Claim(ClaimTypes.Role, usuario.Regra.ToString())
                 }),
-                Expires = DateTime.UtcNow.AddHours(2),
+                Expires = DateTime.UtcNow.AddMinutes(5),
                 SigningCredentials = new SigningCredentials(
                     new SymmetricSecurityKey(key),
                     SecurityAlgorithms.HmacSha256Signature)
