@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ecU01sEyuo17ErLmPq6FvUCiMTJpeBa2d/yRp3bT7c8pODSFC9u4XzpOGPEKqve4ilk3WRo+JdGkCW2ZRFqoPA==",
+  "dgSpecHash": "9Gh3PuY98HTUxGerX5JwF7lIoaRPvF9LW4Y/Wwc2vy/RY1/zDhooYZgVhF0A0oiTTLBQO1VFAU9tt9kE1v60sw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Notebook Gamer\\Documents\\Dev\\Temp\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+  "projectFilePath": "C:\\Users\\Notebook Gamer\\Documents\\Dev\\Temp\\testedotnet1\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Notebook Gamer\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Notebook Gamer\\.nuget\\packages\\microsoft.aspnet.webapi.client\\4.0.20710\\microsoft.aspnet.webapi.client.4.0.20710.nupkg.sha512",
