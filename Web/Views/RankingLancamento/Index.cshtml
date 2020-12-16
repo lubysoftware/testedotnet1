@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Web.Model.RankingLancamentoModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Ranking Top 5 Lançamentos</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdDesenvolvedor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeDesenvolvedor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MediaHoras)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdDesenvolvedor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeDesenvolvedor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MediaHoras)
+            </td>
+        </tr>}
+    </tbody>
+</table>
