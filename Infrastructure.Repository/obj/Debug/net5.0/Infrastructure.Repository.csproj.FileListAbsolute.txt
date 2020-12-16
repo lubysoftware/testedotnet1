@@ -1,0 +1,17 @@
+D:\DESENVOLVIMENTO\testedotnet1\Infrastructure.Repository\bin\Debug\net5.0\Infrastructure.Repository.deps.json
+D:\DESENVOLVIMENTO\testedotnet1\Infrastructure.Repository\bin\Debug\net5.0\Infrastructure.Repository.dll
+D:\DESENVOLVIMENTO\testedotnet1\Infrastructure.Repository\bin\Debug\net5.0\ref\Infrastructure.Repository.dll
+D:\DESENVOLVIMENTO\testedotnet1\Infrastructure.Repository\bin\Debug\net5.0\Infrastructure.Repository.pdb
+D:\DESENVOLVIMENTO\testedotnet1\Infrastructure.Repository\bin\Debug\net5.0\Domain.dll
+D:\DESENVOLVIMENTO\testedotnet1\Infrastructure.Repository\bin\Debug\net5.0\Infrastructure.dll
+D:\DESENVOLVIMENTO\testedotnet1\Infrastructure.Repository\bin\Debug\net5.0\Domain.pdb
+D:\DESENVOLVIMENTO\testedotnet1\Infrastructure.Repository\bin\Debug\net5.0\Infrastructure.pdb
+D:\DESENVOLVIMENTO\testedotnet1\Infrastructure.Repository\obj\Debug\net5.0\Infrastructure.Repository.csprojAssemblyReference.cache
+D:\DESENVOLVIMENTO\testedotnet1\Infrastructure.Repository\obj\Debug\net5.0\Infrastructure.Repository.GeneratedMSBuildEditorConfig.editorconfig
+D:\DESENVOLVIMENTO\testedotnet1\Infrastructure.Repository\obj\Debug\net5.0\Infrastructure.Repository.AssemblyInfoInputs.cache
+D:\DESENVOLVIMENTO\testedotnet1\Infrastructure.Repository\obj\Debug\net5.0\Infrastructure.Repository.AssemblyInfo.cs
+D:\DESENVOLVIMENTO\testedotnet1\Infrastructure.Repository\obj\Debug\net5.0\Infrastructure.Repository.csproj.CoreCompileInputs.cache
+D:\DESENVOLVIMENTO\testedotnet1\Infrastructure.Repository\obj\Debug\net5.0\Infrastructure.Repository.csproj.CopyComplete
+D:\DESENVOLVIMENTO\testedotnet1\Infrastructure.Repository\obj\Debug\net5.0\Infrastructure.Repository.dll
+D:\DESENVOLVIMENTO\testedotnet1\Infrastructure.Repository\obj\Debug\net5.0\ref\Infrastructure.Repository.dll
+D:\DESENVOLVIMENTO\testedotnet1\Infrastructure.Repository\obj\Debug\net5.0\Infrastructure.Repository.pdb
