@@ -70,6 +70,13 @@ namespace Api.Controllers
         }
 
         // POST api/<LancamentoController>
+        /// <summary>
+        /// Post API Value
+        /// </summary>
+        /// <param name="DataFim"></param>
+        /// <param name="DataInicio"></param>
+        /// <param name="IdDesenvolvedor"></param>
+        /// <returns></returns>
         [HttpPost]
         public string Post([FromBody] JsonElement value)
         {
@@ -88,6 +95,13 @@ namespace Api.Controllers
         }
 
         // PUT api/<LancamentoController>/5
+        /// <summary>
+        /// Put API Value
+        /// </summary>
+        /// <param name="DataFim"></param>
+        /// <param name="DataInicio"></param>
+        /// <param name="IdDesenvolvedor"></param>
+        /// <returns></returns>
         [HttpPut("{id}")]
         public string Put(int id, [FromBody] JsonElement value)
         {

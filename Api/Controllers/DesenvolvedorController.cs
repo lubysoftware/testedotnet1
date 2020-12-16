@@ -8,6 +8,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Text.Json;
 using Domain;
+using System.Net.Http;
+using System.Net;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -43,8 +45,7 @@ namespace Api.Controllers
                 model.Add(newD);
             }
 
-            var json = JsonSerializer.Serialize(model);          
-            return json;
+            return JsonSerializer.Serialize(model);            
         }
 
         // GET api/<DesenvolvedorController>/5
@@ -67,7 +68,12 @@ namespace Api.Controllers
         }
 
         // POST api/<DesenvolvedorController>
-        [HttpPost]
+        /// <summary>
+        /// Post API Value
+        /// </summary>
+        /// <param name="Nome"></param>
+        /// <returns></returns>
+        [HttpPost]        
         public string Post([FromBody] JsonElement value)
         {            
             var model = JsonSerializer.Deserialize<DesenvolvedorModel>(value.ToString());
@@ -83,6 +89,11 @@ namespace Api.Controllers
 
         // PUT api/<DesenvolvedorController>/5
         [HttpPut("{id}")]
+        /// <summary>
+        /// Put API Value
+        /// </summary>
+        /// <param name="Nome"></param>
+        /// <returns></returns>
         public string Put(int id, [FromBody] JsonElement value)
         {
             var desenvolvedor = desenvolvedorBusiness.GetAllById(id);
