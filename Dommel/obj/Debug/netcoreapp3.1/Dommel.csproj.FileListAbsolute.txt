@@ -1,0 +1,8 @@
+C:\Users\Matheus Ribeiro\Desktop\Projeto\FabricaDeProjetos\Dommel\bin\Debug\netcoreapp3.1\Dommel.deps.json
+C:\Users\Matheus Ribeiro\Desktop\Projeto\FabricaDeProjetos\Dommel\bin\Debug\netcoreapp3.1\Dommel.dll
+C:\Users\Matheus Ribeiro\Desktop\Projeto\FabricaDeProjetos\Dommel\bin\Debug\netcoreapp3.1\Dommel.pdb
+C:\Users\Matheus Ribeiro\Desktop\Projeto\FabricaDeProjetos\Dommel\obj\Debug\netcoreapp3.1\Dommel.AssemblyInfoInputs.cache
+C:\Users\Matheus Ribeiro\Desktop\Projeto\FabricaDeProjetos\Dommel\obj\Debug\netcoreapp3.1\Dommel.AssemblyInfo.cs
+C:\Users\Matheus Ribeiro\Desktop\Projeto\FabricaDeProjetos\Dommel\obj\Debug\netcoreapp3.1\Dommel.csproj.CoreCompileInputs.cache
+C:\Users\Matheus Ribeiro\Desktop\Projeto\FabricaDeProjetos\Dommel\obj\Debug\netcoreapp3.1\Dommel.dll
+C:\Users\Matheus Ribeiro\Desktop\Projeto\FabricaDeProjetos\Dommel\obj\Debug\netcoreapp3.1\Dommel.pdb

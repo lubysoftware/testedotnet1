@@ -1,0 +1,8 @@
+C:\Users\Matheus Ribeiro\Desktop\Projeto\FabricaDeProjetos\FabricaDeProjetos.Domain\bin\Debug\netcoreapp3.1\FabricaDeProjetos.Domain.deps.json
+C:\Users\Matheus Ribeiro\Desktop\Projeto\FabricaDeProjetos\FabricaDeProjetos.Domain\bin\Debug\netcoreapp3.1\FabricaDeProjetos.Domain.dll
+C:\Users\Matheus Ribeiro\Desktop\Projeto\FabricaDeProjetos\FabricaDeProjetos.Domain\bin\Debug\netcoreapp3.1\FabricaDeProjetos.Domain.pdb
+C:\Users\Matheus Ribeiro\Desktop\Projeto\FabricaDeProjetos\FabricaDeProjetos.Domain\obj\Debug\netcoreapp3.1\FabricaDeProjetos.Domain.AssemblyInfoInputs.cache
+C:\Users\Matheus Ribeiro\Desktop\Projeto\FabricaDeProjetos\FabricaDeProjetos.Domain\obj\Debug\netcoreapp3.1\FabricaDeProjetos.Domain.AssemblyInfo.cs
+C:\Users\Matheus Ribeiro\Desktop\Projeto\FabricaDeProjetos\FabricaDeProjetos.Domain\obj\Debug\netcoreapp3.1\FabricaDeProjetos.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Matheus Ribeiro\Desktop\Projeto\FabricaDeProjetos\FabricaDeProjetos.Domain\obj\Debug\netcoreapp3.1\FabricaDeProjetos.Domain.dll
+C:\Users\Matheus Ribeiro\Desktop\Projeto\FabricaDeProjetos\FabricaDeProjetos.Domain\obj\Debug\netcoreapp3.1\FabricaDeProjetos.Domain.pdb
