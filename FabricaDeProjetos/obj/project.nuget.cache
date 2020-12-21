@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "qUkCjAKyHLJY+jPeE2sTY6PSlBhKRfu3OPgrd+R9jqfmKUuW1vbBuZ7mUclvknYCfpEgG2n9YRaJEcggvgJfzQ==",
+  "dgSpecHash": "bh+YoEJdbG4YzmYV7HLehgDFoZC4as1xUxBui46+3nRDU0RDwgBqphwizBcVjDcznMuRr9KSJjeBrKS10L9BBg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Matheus Ribeiro\\Desktop\\Projeto\\FabricaDeProjetos\\FabricaDeProjetos\\FabricaDeProjetos.csproj",
   "expectedPackageFiles": [
@@ -11,6 +11,7 @@
     "C:\\Users\\Matheus Ribeiro\\.nuget\\packages\\dapper.contrib\\2.0.78\\dapper.contrib.2.0.78.nupkg.sha512",
     "C:\\Users\\Matheus Ribeiro\\.nuget\\packages\\dapper.fluentmap\\2.0.0\\dapper.fluentmap.2.0.0.nupkg.sha512",
     "C:\\Users\\Matheus Ribeiro\\.nuget\\packages\\dapper.fluentmap.dommel\\2.0.0\\dapper.fluentmap.dommel.2.0.0.nupkg.sha512",
+    "C:\\Users\\Matheus Ribeiro\\.nuget\\packages\\dommel\\2.1.0\\dommel.2.1.0.nupkg.sha512",
     "C:\\Users\\Matheus Ribeiro\\.nuget\\packages\\google.protobuf\\3.11.4\\google.protobuf.3.11.4.nupkg.sha512",
     "C:\\Users\\Matheus Ribeiro\\.nuget\\packages\\k4os.compression.lz4\\1.1.11\\k4os.compression.lz4.1.1.11.nupkg.sha512",
     "C:\\Users\\Matheus Ribeiro\\.nuget\\packages\\k4os.compression.lz4.streams\\1.1.11\\k4os.compression.lz4.streams.1.1.11.nupkg.sha512",

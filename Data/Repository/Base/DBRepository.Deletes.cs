@@ -160,7 +160,7 @@ namespace FabricaDeProjetos.Data.Repository
             {
                 switch (pEntity.Name)
                 {
-                    case "Ativo":
+                    case "Active":
                         pEntity.SetValue(entity, false);
                         possuiAtivo = true;
                         break;

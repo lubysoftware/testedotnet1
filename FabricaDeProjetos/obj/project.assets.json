@@ -92,6 +92,19 @@
           "lib/netstandard2.0/Dapper.FluentMap.Dommel.dll": {}
         }
       },
+      "Dommel/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Dapper": "2.0.35",
+          "System.ComponentModel.Annotations": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Dommel.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Dommel.dll": {}
+        }
+      },
       "Google.Protobuf/3.11.4": {
         "type": "package",
         "dependencies": {
@@ -2373,19 +2386,6 @@
           "Microsoft.AspNetCore.App"
         ]
       },
-      "Dommel/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "dependencies": {
-          "Dapper": "2.0.78"
-        },
-        "compile": {
-          "bin/placeholder/Dommel.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Dommel.dll": {}
-        }
-      },
       "FabricaDeProjetos.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -2537,6 +2537,19 @@
         "dapper.fluentmap.dommel.nuspec",
         "lib/netstandard2.0/Dapper.FluentMap.Dommel.dll",
         "lib/netstandard2.0/Dapper.FluentMap.Dommel.xml"
+      ]
+    },
+    "Dommel/2.1.0": {
+      "sha512": "On4oTiGtDpqL0C1RHwYqwkrLT4r+ZptkgtLZjrJwqyzDB3MfhrzbV0vCYtoqYCmuCjnle74zvF9C3711g4ZUig==",
+      "type": "package",
+      "path": "dommel/2.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "dommel.2.1.0.nupkg.sha512",
+        "dommel.nuspec",
+        "lib/netstandard2.0/Dommel.dll",
+        "lib/netstandard2.0/Dommel.xml"
       ]
     },
     "Google.Protobuf/3.11.4": {
@@ -7724,11 +7737,6 @@
       "path": "../Data/Data.csproj",
       "msbuildProject": "../Data/Data.csproj"
     },
-    "Dommel/1.0.0": {
-      "type": "project",
-      "path": "../Dommel/Dommel.csproj",
-      "msbuildProject": "../Dommel/Dommel.csproj"
-    },
     "FabricaDeProjetos.Domain/1.0.0": {
       "type": "project",
       "path": "../FabricaDeProjetos.Domain/FabricaDeProjetos.Domain.csproj",
@@ -7740,6 +7748,7 @@
       "AWSSDK.Core >= 3.5.1.52",
       "AWSSDK.Extensions.NETCore.Setup >= 3.3.101",
       "Core >= 1.0.0",
+      "Dommel >= 2.1.0",
       "FabricaDeProjetos.Domain >= 1.0.0",
       "Microsoft.AspNetCore.Authentication >= 2.2.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 3.1.7",
@@ -7804,6 +7813,10 @@
           "AWSSDK.Extensions.NETCore.Setup": {
             "target": "Package",
             "version": "[3.3.101, )"
+          },
+          "Dommel": {
+            "target": "Package",
+            "version": "[2.1.0, )"
           },
           "Microsoft.AspNetCore.Authentication": {
             "target": "Package",

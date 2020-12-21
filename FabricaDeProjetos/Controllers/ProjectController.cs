@@ -1,105 +1,92 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Core;
 using Core.Contracts;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using FabricaDeProjetos.Domain.Entities;
+using Microsoft.Extensions.Configuration;
+using FabricaDeProjetos.Controllers.Base;
 using Core.ViewModels;
 
 namespace FabricaDeProjetos.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProjectController : ControllerBase
+    public class ProjectController : FabricaDeProjetosControllerBase
     {
         private readonly IProjectCore _core;
 
-        public ProjectController(IProjectCore core)
+        public ProjectController(IProjectCore core, IConfiguration configuration) : base(configuration)
         {
             _core = core;
         }
 
-        [HttpGet]
-        [Authorize]
-        [Route("GetProjectsById")]
-        public IEnumerable<Project> GetProjectsById(int id)
+        internal override void CreateCoreConnections()
         {
-            return _core.GetProjectsById(id);
+            _core.CreateConnection(_Server);
         }
 
         [HttpGet]
-        [Authorize]
-        [Route("GetProjectsByIdDeveloper")]
-        public IEnumerable<Project> GetProjectsByIdDeveloper(int idDeveloper)
+        [Route("GetProjectsById/{id:int}")]
+        [AllowAnonymous]
+        public IActionResult GetProjectsById(int id)
         {
-            return _core.GetProjectsByIdDeveloper(idDeveloper);
+            var ret = _core.GetProjectsById(id);
+            return Ok(ret);
         }
 
         [HttpGet]
-        [Authorize]
-        [Route("GetProjectsActive")]
-        public IEnumerable<Project> GetProjectsActive()
+        [Route("GetProjectsByIdDeveloper/{id:int}")]
+        [AllowAnonymous]
+        public IActionResult GetProjectsByIdDeveloper(int id)
         {
-            return _core.GetProjectsActive();
-        }
-
-        [HttpGet]
-        [Authorize]
-        [Route("GetProjectsNoActive")]
-        public IEnumerable<Project> GetProjectsNoActive()
-        {
-            return _core.GetProjectsNoActive();
+            var ret = _core.GetProjectsByIdDeveloper(id);
+            return Ok(ret);
         }
 
         [HttpPost]
-        [Authorize]
         [Route("AddProject")]
-        public IActionResult AddProject([FromBody] ProjectViewModel project)
+        [AllowAnonymous]
+        public IActionResult AddProject([FromBody] ProjectViewModel developer)
         {
             try
             {
-                object ret = _core.AddProject(project);
+                object ret = _core.AddProject(developer);
                 return Created("Get", ret);
             }
             catch (Exception)
             {
-                return BadRequest("Não foi possível cadastrar o projeto.");
+                return BadRequest("Não foi possível cadastrar o cliente.");
             }
         }
 
         [HttpPut]
-        [Authorize]
         [Route("UpdateProject")]
-        public IActionResult UpdateProject([FromBody] ProjectViewModel project)
+        [AllowAnonymous]
+        public IActionResult UpdateProject([FromBody] ProjectViewModel developer)
         {
             try
             {
-                object ret = _core.UpdateProject(project);
+                object ret = _core.UpdateProject(developer);
                 return Created("Get", ret);
             }
             catch (Exception)
             {
-                return BadRequest("Não foi possível modificar o projeto.");
+                return BadRequest("Não foi possível modificar o cliente.");
             }
         }
 
         [HttpDelete]
-        [Authorize]
         [Route("DeleteProject")]
-        public IActionResult DeleteProject([FromBody] ProjectViewModel project)
+        [AllowAnonymous]
+        public IActionResult DeleteProject(int id)
         {
             try
             {
-                object ret = _core.DeleteProject(project);
+                object ret = _core.DeleteProject(id);
                 return Created("Get", ret);
             }
             catch (Exception)
             {
-                return BadRequest("Não foi possível deletar o projeto.");
+                return BadRequest("Não foi possível deletar  o cliente.");
             }
         }
     }

@@ -27,6 +27,7 @@
           "AWSSDK.Core": "3.5.1.52",
           "AWSSDK.Extensions.NETCore.Setup": "3.3.101",
           "Core": "1.0.0",
+          "Dommel": "2.1.0",
           "FabricaDeProjetos.Domain": "1.0.0",
           "Microsoft.AspNetCore.Authentication": "2.2.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "3.1.7",
@@ -407,7 +408,7 @@
         "dependencies": {
           "Dapper": "2.0.78",
           "Dapper.FluentMap": "2.0.0",
-          "Dommel": "1.0.0"
+          "Dommel": "2.1.0"
         },
         "runtime": {
           "lib/netstandard2.0/Dapper.FluentMap.Dommel.dll": {
@@ -417,6 +418,21 @@
         },
         "compile": {
           "lib/netstandard2.0/Dapper.FluentMap.Dommel.dll": {}
+        }
+      },
+      "Dommel/2.1.0": {
+        "dependencies": {
+          "Dapper": "2.0.78",
+          "System.ComponentModel.Annotations": "4.7.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Dommel.dll": {
+            "assemblyVersion": "2.1.0.0",
+            "fileVersion": "2.1.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Dommel.dll": {}
         }
       },
       "Google.Protobuf/3.11.4": {
@@ -1965,7 +1981,7 @@
           "Dapper": "2.0.78",
           "Dapper.Contrib": "2.0.78",
           "Dapper.FluentMap.Dommel": "2.0.0",
-          "Dommel": "1.0.0",
+          "Dommel": "2.1.0",
           "FabricaDeProjetos.Domain": "1.0.0",
           "MySql.Data": "8.0.22",
           "MySql.Data.EntityFrameworkCore": "8.0.22",
@@ -1976,17 +1992,6 @@
         },
         "compile": {
           "Data.dll": {}
-        }
-      },
-      "Dommel/1.0.0": {
-        "dependencies": {
-          "Dapper": "2.0.78"
-        },
-        "runtime": {
-          "Dommel.dll": {}
-        },
-        "compile": {
-          "Dommel.dll": {}
         }
       },
       "FabricaDeProjetos.Domain/1.0.0": {
@@ -3687,6 +3692,13 @@
       "path": "dapper.fluentmap.dommel/2.0.0",
       "hashPath": "dapper.fluentmap.dommel.2.0.0.nupkg.sha512"
     },
+    "Dommel/2.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-On4oTiGtDpqL0C1RHwYqwkrLT4r+ZptkgtLZjrJwqyzDB3MfhrzbV0vCYtoqYCmuCjnle74zvF9C3711g4ZUig==",
+      "path": "dommel/2.1.0",
+      "hashPath": "dommel.2.1.0.nupkg.sha512"
+    },
     "Google.Protobuf/3.11.4": {
       "type": "package",
       "serviceable": true,
@@ -4722,11 +4734,6 @@
       "sha512": ""
     },
     "Data/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Dommel/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -362,6 +362,10 @@
               "target": "Package",
               "version": "[3.3.101, )"
             },
+            "Dommel": {
+              "target": "Package",
+              "version": "[2.1.0, )"
+            },
             "Microsoft.AspNetCore.Authentication": {
               "target": "Package",
               "version": "[2.2.0, )"
