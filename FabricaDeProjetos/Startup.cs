@@ -12,6 +12,8 @@ using Dommel;
 using Dapper.FluentMap.Dommel.Resolvers;
 using FabricaDeProjetos.Configuration;
 using Microsoft.OpenApi.Models;
+using Core;
+using Core.Core;
 
 namespace FabricaDeProjetos
 {
@@ -32,12 +34,13 @@ namespace FabricaDeProjetos
         {
 
             services.AddScoped<ITokenServiceCore, TokenServiceCore>();
+            services.AddScoped<IProjectCore, ProjectCore>();
 
             DependencyInjection.AddDependencies(ref services);
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "testedotnet1", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Fabrica de Projetos", Version = "v1" });
             });
 
             //Connection DB
@@ -98,7 +101,7 @@ namespace FabricaDeProjetos
             app.UseRouting();
 
             app.UseSwagger();
-            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "testedotnet1 v1"));
+            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Fabrida de Projetos"));
 
             app.UseCors(x => x
                 .AllowAnyOrigin()

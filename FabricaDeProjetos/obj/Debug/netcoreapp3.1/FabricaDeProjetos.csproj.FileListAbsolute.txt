@@ -64,7 +64,6 @@ C:\Users\Matheus Ribeiro\Desktop\Projeto\FabricaDeProjetos\FabricaDeProjetos\bin
 C:\Users\Matheus Ribeiro\Desktop\Projeto\FabricaDeProjetos\FabricaDeProjetos\bin\Debug\netcoreapp3.1\Core.pdb
 C:\Users\Matheus Ribeiro\Desktop\Projeto\FabricaDeProjetos\FabricaDeProjetos\bin\Debug\netcoreapp3.1\FabricaDeProjetos.Domain.pdb
 C:\Users\Matheus Ribeiro\Desktop\Projeto\FabricaDeProjetos\FabricaDeProjetos\bin\Debug\netcoreapp3.1\Data.pdb
-C:\Users\Matheus Ribeiro\Desktop\Projeto\FabricaDeProjetos\FabricaDeProjetos\bin\Debug\netcoreapp3.1\Dommel.pdb
 C:\Users\Matheus Ribeiro\Desktop\Projeto\FabricaDeProjetos\FabricaDeProjetos\obj\Debug\netcoreapp3.1\FabricaDeProjetos.csprojAssemblyReference.cache
 C:\Users\Matheus Ribeiro\Desktop\Projeto\FabricaDeProjetos\FabricaDeProjetos\obj\Debug\netcoreapp3.1\FabricaDeProjetos.AssemblyInfoInputs.cache
 C:\Users\Matheus Ribeiro\Desktop\Projeto\FabricaDeProjetos\FabricaDeProjetos\obj\Debug\netcoreapp3.1\FabricaDeProjetos.AssemblyInfo.cs

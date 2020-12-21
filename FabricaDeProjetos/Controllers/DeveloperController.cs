@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Core.Contracts;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using FabricaDeProjetos.Controllers.Base;
-using FabricaDeProjetos.Domain.Entities;
-using Core.Core;
 using Core.ViewModels;
 
 namespace FabricaDeProjetos.Controllers
@@ -30,30 +25,21 @@ namespace FabricaDeProjetos.Controllers
         }
 
         [HttpGet]
-        [Authorize]
-        [Route("GetLogin")]
-        public Developer GetDeveloperByEmail(string email)
+        [Route("GetDeveloperById/{id:int}")]
+        [AllowAnonymous]
+        public IActionResult  GetDeveloperById(int id)
         {
-            Developer user = _core.GetDeveloperByEmail(email);
-
-            return user;
+            var ret = _core.GetDeveloperById(id);
+            return Ok(ret);
         }
 
         [HttpGet]
-        [Authorize]
-        [Route("GetDeveloperById")]
-        public IEnumerable<Developer> GetDeveloperById(int id)
-        {
-            return _core.GetDeveloperById(id);
-        }
-
-        [HttpPost]
-        [Route("Login")]
+        [Route("GetDevelopers")]
         [AllowAnonymous]
-        public object LoginDeveloper([FromBody] Developer developer)
+        public IActionResult GetDevelopers()
         {
-            if (developer == null) return BadRequest();
-            return _core.LoginDeveloper(developer);
+            var ret = _core.GetDevelopers();
+            return Ok(ret);
         }
 
         [HttpPost]
@@ -73,7 +59,7 @@ namespace FabricaDeProjetos.Controllers
         }
 
         [HttpPut]
-        [Route("AddDeveloper")]
+        [Route("UpdateDeveloper")]
         [AllowAnonymous]
         public IActionResult UpdateDeveloper([FromBody] DeveloperViewModel developer)
         {
@@ -89,13 +75,13 @@ namespace FabricaDeProjetos.Controllers
         }
 
         [HttpDelete]
-        [Route("AddDeveloper")]
+        [Route("DeleteDeveloper")]
         [AllowAnonymous]
-        public IActionResult DeleteDeveloper([FromBody] DeveloperViewModel developer)
+        public IActionResult DeleteDeveloper(int id)
         {
             try
             {
-                object ret = _core.DeleteDeveloper(developer);
+                object ret = _core.DeleteDeveloper(id);
                 return Created("Get", ret);
             }
             catch (Exception)

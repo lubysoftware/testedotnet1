@@ -41,20 +41,20 @@ namespace Core
 
         #endregion [ Configurações de Conexão ]
 
-        public Developer GetDeveloperByEmail(string email)
+        public Developer GetLogin(string email)
         {
-            var developer = _developerCore.SelectFirst(s => s.Email == email && s.Active);
+            var developer = _developerCore.SelectFirst(s => s.Email == email);
             return developer;
         }
 
-        public object LoginDeveloper(Developer developer)
+        public object LoginDeveloper(Login developer)
         {
             var developerServer = _developerCore.SelectFirst(s => s.Email == developer.Email && s.Password == developer.Password);
 
             if (developer == null || developerServer == null || string.IsNullOrEmpty(developerServer.Email) || string.IsNullOrEmpty(developer.Password))
                 return NotFound("Usuário ou senha inválidos");
 
-            var developerToken = _tokenServiceCore.GenerateToken(developer);
+            var developerToken = _tokenServiceCore.GenerateToken(developerServer);
 
             // Oculta a senha
             developer.Password = "";
@@ -67,9 +67,20 @@ namespace Core
 
         }
 
-        public IEnumerable<Developer> GetDeveloperById(int id)
+        private FabricaDeProjetosResult NotFound(string message)
+        {
+            return new FabricaDeProjetosResult(HttpStatusCode.OK, false, message);
+        }
+
+        public object GetDeveloperById(int id)
         {
             IEnumerable<Developer> developer = _developerCore.Select(s => s.Id == id);
+            return developer;
+        }
+
+        public object GetDevelopers()
+        {
+            IEnumerable<Developer> developer = _developerCore.Select(x => x.Active || !x.Active);
             return developer;
         }
 
@@ -87,14 +98,13 @@ namespace Core
                         {
                             Email = developerVM.Email,
                             Password = developerVM.Password,
+                            UrlImage = developerVM.UrlImage,
                             Name = developerVM.Name,
                             LastName = developerVM.LastName,
                             Description = developerVM.Description,
                             Role = developerVM.Role,
                             Active = developerVM.Active,
                             CreationDate = developerVM.CreationDate,
-                            ChangeDate = developerVM.ChangeDate,
-                            EndDate = developerVM.EndDate,
                         };
                         var developerInsert = _developerCore.Insert(developer, dbContext);
                         dbContext.Commit();
@@ -120,18 +130,18 @@ namespace Core
                 {
                     dbContext.BeginTransaction();
 
-                    Developer developer = _developerCore.SelectFirst(p => p.Id == developerVM.Id && p.Active);
+                    Developer developer = _developerCore.SelectFirst(p => p.Id == developerVM.Id);
 
                     if (developer != null)
                     {
                         developer.Email = developerVM.Email;
                         developer.Password = developerVM.Password;
+                        developer.UrlImage = developerVM.UrlImage;
                         developer.Name = developerVM.Name;
                         developer.LastName = developerVM.LastName;
                         developer.Description = developerVM.Description;
                         developer.Role = developerVM.Role;
                         developer.Active = developerVM.Active;
-                        developer.CreationDate = developerVM.CreationDate;
                         developer.ChangeDate = developerVM.ChangeDate;
                         developer.EndDate = developerVM.EndDate;
 
@@ -152,7 +162,7 @@ namespace Core
             }
         }
 
-        public FabricaDeProjetosResult DeleteDeveloper(DeveloperViewModel developerVM)
+        public FabricaDeProjetosResult DeleteDeveloper(int id)
         {
             try
             {
@@ -160,11 +170,11 @@ namespace Core
                 {
                     dbContext.BeginTransaction();
 
-                    Developer developer = _developerCore.SelectFirst(p => p.Id == developerVM.Id);
+                    Developer developer = _developerCore.SelectFirst(p => p.Id == id);
 
                     if (developer != null)
                     {
-                        var developerDelete = _developerCore.Delete(developer, dbContext);
+                        var developerDelete = _developerCore.DeletePermanent(developer, dbContext);
                         dbContext.Commit();
                         return new FabricaDeProjetosResult(HttpStatusCode.OK, true, "Desenvolvedor excluído com sucesso.", developerDelete);
                     }
@@ -178,11 +188,6 @@ namespace Core
             {
                 return new FabricaDeProjetosResult(HttpStatusCode.OK, false, "Erro ao excluir desenvolvedor. " + ex.Message);
             }
-        }
-
-        private FabricaDeProjetosResult NotFound(string message)
-        {
-            return new FabricaDeProjetosResult(HttpStatusCode.OK, false, message);
         }
 
     }

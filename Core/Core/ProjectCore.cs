@@ -2,52 +2,61 @@
 using Core.Core;
 using Core.Core.Base;
 using Core.Server;
-using Core.ViewModels;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
+using System.Threading.Tasks;
+using FabricaDeProjetos.Core;
 using FabricaDeProjetos.Domain.Entities;
+using System.Collections.Generic;
+using Core.ViewModels;
 
 namespace Core
 {
     public class ProjectCore : EntityCoreBase<Project>, IProjectCore
     {
-
         #region [ Propriedades / Construtor ]
 
         private IEntityCoreBase<Project> _projectCore;
 
-        public ProjectCore() { }
+        public ProjectCore()
+        {
+           
+        }
 
         internal ProjectCore(ServerContainer serverContainer)
             : base(serverContainer) { }
 
         #endregion [ Propriedades / Construtor ]
 
+        #region [ Configurações de Conexão ]
 
-        public IEnumerable<Project> GetProjectsById(int id)
+        protected override void StartDependenciesConnections()
         {
-            IEnumerable<Project> projects = _projectCore.Select(s => s.Id == id);
+            _projectCore = new EntityCoreBase<Project>(_Server);
+        }
+
+        #endregion [ Configurações de Conexão ]
+
+        public object GetProjectsById(int id)
+        {
+            IEnumerable<Project> projects = _projectCore?.Select(s => s.Id == id);
             return projects;
         }
 
-        public IEnumerable<Project> GetProjectsByIdDeveloper(int idDeveloper)
+        public object GetProjectsByIdDeveloper(int idDeveloper)
         {
             IEnumerable<Project> projects = _projectCore.Select(s => s.IdDeveloper == idDeveloper);
             return projects;
         }
 
-        public IEnumerable<Project> GetProjectsActive()
+        public object GetProjectActive()
         {
             IEnumerable<Project> projects = _projectCore.Select(s => s.Active);
             return projects;
         }
-        public IEnumerable<Project> GetProjectsNoActive()
+
+        public object GetProjectNoActive()
         {
             IEnumerable<Project> projects = _projectCore.Select(s => !s.Active);
             return projects;
@@ -73,7 +82,6 @@ namespace Core
                             FinalDate = projectVM.FinalDate,
                             CreationDate = projectVM.CreationDate,
                             ChangeDate = projectVM.ChangeDate,
-                            EndDate = projectVM.EndDate,
                         };
                         var projectInsert = _projectCore.Insert(project, dbContext);
                         dbContext.Commit();
@@ -90,7 +98,7 @@ namespace Core
                 return new FabricaDeProjetosResult(HttpStatusCode.OK, false, "Erro ao cadastrar projeto. " + ex.Message);
             }
         }
-
+         
         public FabricaDeProjetosResult UpdateProject(ProjectViewModel projectVM)
         {
             try
@@ -99,7 +107,7 @@ namespace Core
                 {
                     dbContext.BeginTransaction();
 
-                    Project project = _projectCore.SelectFirst(p => p.Id == projectVM.Id && p.Active);
+                    Project project = _projectCore.SelectFirst(p => p.Id == projectVM.Id);
 
                     if (project != null)
                     {
@@ -130,7 +138,7 @@ namespace Core
             }
         }
 
-        public FabricaDeProjetosResult DeleteProject(ProjectViewModel projectVM)
+        public FabricaDeProjetosResult DeleteProject(int id)
         {
             try
             {
@@ -138,11 +146,11 @@ namespace Core
                 {
                     dbContext.BeginTransaction();
 
-                    Project project = _projectCore.SelectFirst(p => p.Id == projectVM.Id);
+                    Project project = _projectCore.SelectFirst(p => p.Id == id);
 
                     if (project != null)
                     {
-                        var projectDelete = _projectCore.Delete(project, dbContext);
+                        var projectDelete = _projectCore.DeletePermanent(project, dbContext);
                         dbContext.Commit();
                         return new FabricaDeProjetosResult(HttpStatusCode.OK, true, "Projeto excluído com sucesso.", projectDelete);
                     }
