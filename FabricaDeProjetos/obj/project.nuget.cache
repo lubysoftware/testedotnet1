@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bh+YoEJdbG4YzmYV7HLehgDFoZC4as1xUxBui46+3nRDU0RDwgBqphwizBcVjDcznMuRr9KSJjeBrKS10L9BBg==",
+  "dgSpecHash": "dyoV2hHwZ19bTT2suEbGCYo/0h3MUX+5Sx3KynxwF9DltlpYbbT6djaW0njP4ZJjckxkHwIxTltPMwYaQZR7Rg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Matheus Ribeiro\\Desktop\\Projeto\\FabricaDeProjetos\\FabricaDeProjetos\\FabricaDeProjetos.csproj",
+  "projectFilePath": "D:\\Projetos\\testedotnet1\\FabricaDeProjetos\\FabricaDeProjetos.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Matheus Ribeiro\\.nuget\\packages\\awssdk.core\\3.5.1.52\\awssdk.core.3.5.1.52.nupkg.sha512",
     "C:\\Users\\Matheus Ribeiro\\.nuget\\packages\\awssdk.extensions.netcore.setup\\3.3.101\\awssdk.extensions.netcore.setup.3.3.101.nupkg.sha512",

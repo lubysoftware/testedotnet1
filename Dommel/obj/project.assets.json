@@ -113,11 +113,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Matheus Ribeiro\\Desktop\\Projeto\\FabricaDeProjetos\\Dommel\\Dommel.csproj",
+      "projectUniqueName": "D:\\Projetos\\testedotnet1\\Dommel\\Dommel.csproj",
       "projectName": "Dommel",
-      "projectPath": "C:\\Users\\Matheus Ribeiro\\Desktop\\Projeto\\FabricaDeProjetos\\Dommel\\Dommel.csproj",
+      "projectPath": "D:\\Projetos\\testedotnet1\\Dommel\\Dommel.csproj",
       "packagesPath": "C:\\Users\\Matheus Ribeiro\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Matheus Ribeiro\\Desktop\\Projeto\\FabricaDeProjetos\\Dommel\\obj\\",
+      "outputPath": "D:\\Projetos\\testedotnet1\\Dommel\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Matheus Ribeiro\\AppData\\Roaming\\NuGet\\NuGet.Config",

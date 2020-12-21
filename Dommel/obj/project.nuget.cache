@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qgi5pLLS9AkzDunryACNW+t2juSdByVz/gR9pLpttTbL7TaMfQdmZUheUK6u0rko1IvT8NG8L8b/9WVpKtGHtQ==",
+  "dgSpecHash": "4y5IT5GYSIOMvKZ6NVqXLXCl4IR7mR1E+1m0/B/cJv42z6vw1/mgBf3bCkhbZAtWzJ9GFlz6XX0EBCfwNOWRkQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Matheus Ribeiro\\Desktop\\Projeto\\FabricaDeProjetos\\Dommel\\Dommel.csproj",
+  "projectFilePath": "D:\\Projetos\\testedotnet1\\Dommel\\Dommel.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Matheus Ribeiro\\.nuget\\packages\\dapper\\2.0.78\\dapper.2.0.78.nupkg.sha512",
     "C:\\Users\\Matheus Ribeiro\\.nuget\\packages\\system.reflection.emit.lightweight\\4.7.0\\system.reflection.emit.lightweight.4.7.0.nupkg.sha512"
