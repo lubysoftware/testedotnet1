@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "aCdVK8t0dAlPuonflv2B9RorwkvsA520otnwvccmsAoP7tjosYVX2ytpXViHR/eBsX4tgzqXGGP6paH0Kzsspw==",
+  "dgSpecHash": "EBJV52jgHF76fepm+kA5MIhLPt3fueQ4YgOGrbg20Qy/U8Uh7WMbi/zkrbMMd03dGgder9Huje+F//6ElCFTOQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Matheus Ribeiro\\Desktop\\Projeto\\FabricaDeProjetos\\Core\\Core.csproj",
+  "projectFilePath": "D:\\Projetos\\testedotnet1\\Core\\Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Matheus Ribeiro\\.nuget\\packages\\bouncycastle.netcore\\1.8.3\\bouncycastle.netcore.1.8.3.nupkg.sha512",
     "C:\\Users\\Matheus Ribeiro\\.nuget\\packages\\dapper\\2.0.78\\dapper.2.0.78.nupkg.sha512",

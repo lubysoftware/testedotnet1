@@ -7286,11 +7286,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Matheus Ribeiro\\Desktop\\Projeto\\FabricaDeProjetos\\Core\\Core.csproj",
+      "projectUniqueName": "D:\\Projetos\\testedotnet1\\Core\\Core.csproj",
       "projectName": "Core",
-      "projectPath": "C:\\Users\\Matheus Ribeiro\\Desktop\\Projeto\\FabricaDeProjetos\\Core\\Core.csproj",
+      "projectPath": "D:\\Projetos\\testedotnet1\\Core\\Core.csproj",
       "packagesPath": "C:\\Users\\Matheus Ribeiro\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Matheus Ribeiro\\Desktop\\Projeto\\FabricaDeProjetos\\Core\\obj\\",
+      "outputPath": "D:\\Projetos\\testedotnet1\\Core\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Matheus Ribeiro\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -7307,11 +7307,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\Matheus Ribeiro\\Desktop\\Projeto\\FabricaDeProjetos\\Data\\Data.csproj": {
-              "projectPath": "C:\\Users\\Matheus Ribeiro\\Desktop\\Projeto\\FabricaDeProjetos\\Data\\Data.csproj"
+            "D:\\Projetos\\testedotnet1\\Data\\Data.csproj": {
+              "projectPath": "D:\\Projetos\\testedotnet1\\Data\\Data.csproj"
             },
-            "C:\\Users\\Matheus Ribeiro\\Desktop\\Projeto\\FabricaDeProjetos\\FabricaDeProjetos.Domain\\FabricaDeProjetos.Domain.csproj": {
-              "projectPath": "C:\\Users\\Matheus Ribeiro\\Desktop\\Projeto\\FabricaDeProjetos\\FabricaDeProjetos.Domain\\FabricaDeProjetos.Domain.csproj"
+            "D:\\Projetos\\testedotnet1\\FabricaDeProjetos.Domain\\FabricaDeProjetos.Domain.csproj": {
+              "projectPath": "D:\\Projetos\\testedotnet1\\FabricaDeProjetos.Domain\\FabricaDeProjetos.Domain.csproj"
             }
           }
         }

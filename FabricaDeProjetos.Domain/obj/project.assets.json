@@ -7093,11 +7093,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Matheus Ribeiro\\Desktop\\Projeto\\FabricaDeProjetos\\FabricaDeProjetos.Domain\\FabricaDeProjetos.Domain.csproj",
+      "projectUniqueName": "D:\\Projetos\\testedotnet1\\FabricaDeProjetos.Domain\\FabricaDeProjetos.Domain.csproj",
       "projectName": "FabricaDeProjetos.Domain",
-      "projectPath": "C:\\Users\\Matheus Ribeiro\\Desktop\\Projeto\\FabricaDeProjetos\\FabricaDeProjetos.Domain\\FabricaDeProjetos.Domain.csproj",
+      "projectPath": "D:\\Projetos\\testedotnet1\\FabricaDeProjetos.Domain\\FabricaDeProjetos.Domain.csproj",
       "packagesPath": "C:\\Users\\Matheus Ribeiro\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Matheus Ribeiro\\Desktop\\Projeto\\FabricaDeProjetos\\FabricaDeProjetos.Domain\\obj\\",
+      "outputPath": "D:\\Projetos\\testedotnet1\\FabricaDeProjetos.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Matheus Ribeiro\\AppData\\Roaming\\NuGet\\NuGet.Config",

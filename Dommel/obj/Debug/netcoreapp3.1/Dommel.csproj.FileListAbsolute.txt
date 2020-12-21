@@ -6,3 +6,12 @@ C:\Users\Matheus Ribeiro\Desktop\Projeto\FabricaDeProjetos\Dommel\obj\Debug\netc
 C:\Users\Matheus Ribeiro\Desktop\Projeto\FabricaDeProjetos\Dommel\obj\Debug\netcoreapp3.1\Dommel.csproj.CoreCompileInputs.cache
 C:\Users\Matheus Ribeiro\Desktop\Projeto\FabricaDeProjetos\Dommel\obj\Debug\netcoreapp3.1\Dommel.dll
 C:\Users\Matheus Ribeiro\Desktop\Projeto\FabricaDeProjetos\Dommel\obj\Debug\netcoreapp3.1\Dommel.pdb
+D:\Projetos\testedotnet1\Dommel\bin\Debug\netcoreapp3.1\Dommel.deps.json
+D:\Projetos\testedotnet1\Dommel\bin\Debug\netcoreapp3.1\Dommel.dll
+D:\Projetos\testedotnet1\Dommel\bin\Debug\netcoreapp3.1\Dommel.pdb
+D:\Projetos\testedotnet1\Dommel\obj\Debug\netcoreapp3.1\Dommel.csprojAssemblyReference.cache
+D:\Projetos\testedotnet1\Dommel\obj\Debug\netcoreapp3.1\Dommel.AssemblyInfoInputs.cache
+D:\Projetos\testedotnet1\Dommel\obj\Debug\netcoreapp3.1\Dommel.AssemblyInfo.cs
+D:\Projetos\testedotnet1\Dommel\obj\Debug\netcoreapp3.1\Dommel.csproj.CoreCompileInputs.cache
+D:\Projetos\testedotnet1\Dommel\obj\Debug\netcoreapp3.1\Dommel.dll
+D:\Projetos\testedotnet1\Dommel\obj\Debug\netcoreapp3.1\Dommel.pdb

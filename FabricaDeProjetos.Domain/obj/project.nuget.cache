@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rmQLGyHlZgvdig1XCvG2ev9DzTOGTfRQcIAWfzzbK7vOyRQ0UBnaMaY85Q/utAiIhDiaacGmjuDaodYbhlGZnw==",
+  "dgSpecHash": "A/rEPRzsWcBXxl52+C9tL2AvAl++sOHYZ/jNDNpelmXG8lSiUFDy/P5qTCvBCXpS8o5XLz9sCAf0C4Z1P3mAYg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Matheus Ribeiro\\Desktop\\Projeto\\FabricaDeProjetos\\FabricaDeProjetos.Domain\\FabricaDeProjetos.Domain.csproj",
+  "projectFilePath": "D:\\Projetos\\testedotnet1\\FabricaDeProjetos.Domain\\FabricaDeProjetos.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Matheus Ribeiro\\.nuget\\packages\\bouncycastle.netcore\\1.8.3\\bouncycastle.netcore.1.8.3.nupkg.sha512",
     "C:\\Users\\Matheus Ribeiro\\.nuget\\packages\\google.protobuf\\3.11.4\\google.protobuf.3.11.4.nupkg.sha512",

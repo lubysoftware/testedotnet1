@@ -14,3 +14,19 @@ C:\Users\Matheus Ribeiro\Desktop\Projeto\FabricaDeProjetos\Core\obj\Debug\netcor
 C:\Users\Matheus Ribeiro\Desktop\Projeto\FabricaDeProjetos\Core\obj\Debug\netcoreapp3.1\Core.csproj.CopyComplete
 C:\Users\Matheus Ribeiro\Desktop\Projeto\FabricaDeProjetos\Core\obj\Debug\netcoreapp3.1\Core.dll
 C:\Users\Matheus Ribeiro\Desktop\Projeto\FabricaDeProjetos\Core\obj\Debug\netcoreapp3.1\Core.pdb
+D:\Projetos\testedotnet1\Core\bin\Debug\netcoreapp3.1\Core.deps.json
+D:\Projetos\testedotnet1\Core\bin\Debug\netcoreapp3.1\Core.dll
+D:\Projetos\testedotnet1\Core\bin\Debug\netcoreapp3.1\Core.pdb
+D:\Projetos\testedotnet1\Core\bin\Debug\netcoreapp3.1\Data.dll
+D:\Projetos\testedotnet1\Core\bin\Debug\netcoreapp3.1\Dommel.dll
+D:\Projetos\testedotnet1\Core\bin\Debug\netcoreapp3.1\FabricaDeProjetos.Domain.dll
+D:\Projetos\testedotnet1\Core\bin\Debug\netcoreapp3.1\Data.pdb
+D:\Projetos\testedotnet1\Core\bin\Debug\netcoreapp3.1\FabricaDeProjetos.Domain.pdb
+D:\Projetos\testedotnet1\Core\bin\Debug\netcoreapp3.1\Dommel.pdb
+D:\Projetos\testedotnet1\Core\obj\Debug\netcoreapp3.1\Core.csprojAssemblyReference.cache
+D:\Projetos\testedotnet1\Core\obj\Debug\netcoreapp3.1\Core.AssemblyInfoInputs.cache
+D:\Projetos\testedotnet1\Core\obj\Debug\netcoreapp3.1\Core.AssemblyInfo.cs
+D:\Projetos\testedotnet1\Core\obj\Debug\netcoreapp3.1\Core.csproj.CoreCompileInputs.cache
+D:\Projetos\testedotnet1\Core\obj\Debug\netcoreapp3.1\Core.csproj.CopyComplete
+D:\Projetos\testedotnet1\Core\obj\Debug\netcoreapp3.1\Core.dll
+D:\Projetos\testedotnet1\Core\obj\Debug\netcoreapp3.1\Core.pdb
