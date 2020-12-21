@@ -1,0 +1,18 @@
+C:\Users\Matheus Ribeiro\Desktop\Projeto\FabricaDeProjetos\FabricaDeProjetos.Domain\bin\Debug\netcoreapp3.1\FabricaDeProjetos.Domain.deps.json
+C:\Users\Matheus Ribeiro\Desktop\Projeto\FabricaDeProjetos\FabricaDeProjetos.Domain\bin\Debug\netcoreapp3.1\FabricaDeProjetos.Domain.dll
+C:\Users\Matheus Ribeiro\Desktop\Projeto\FabricaDeProjetos\FabricaDeProjetos.Domain\bin\Debug\netcoreapp3.1\FabricaDeProjetos.Domain.pdb
+C:\Users\Matheus Ribeiro\Desktop\Projeto\FabricaDeProjetos\FabricaDeProjetos.Domain\obj\Debug\netcoreapp3.1\FabricaDeProjetos.Domain.AssemblyInfoInputs.cache
+C:\Users\Matheus Ribeiro\Desktop\Projeto\FabricaDeProjetos\FabricaDeProjetos.Domain\obj\Debug\netcoreapp3.1\FabricaDeProjetos.Domain.AssemblyInfo.cs
+C:\Users\Matheus Ribeiro\Desktop\Projeto\FabricaDeProjetos\FabricaDeProjetos.Domain\obj\Debug\netcoreapp3.1\FabricaDeProjetos.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Matheus Ribeiro\Desktop\Projeto\FabricaDeProjetos\FabricaDeProjetos.Domain\obj\Debug\netcoreapp3.1\FabricaDeProjetos.Domain.dll
+C:\Users\Matheus Ribeiro\Desktop\Projeto\FabricaDeProjetos\FabricaDeProjetos.Domain\obj\Debug\netcoreapp3.1\FabricaDeProjetos.Domain.pdb
+C:\Users\Matheus Ribeiro\Desktop\Projeto\FabricaDeProjetos\FabricaDeProjetos.Domain\obj\Debug\netcoreapp3.1\FabricaDeProjetos.Domain.csprojAssemblyReference.cache
+D:\Projetos\testedotnet1\FabricaDeProjetos.Domain\bin\Debug\netcoreapp3.1\FabricaDeProjetos.Domain.deps.json
+D:\Projetos\testedotnet1\FabricaDeProjetos.Domain\bin\Debug\netcoreapp3.1\FabricaDeProjetos.Domain.dll
+D:\Projetos\testedotnet1\FabricaDeProjetos.Domain\bin\Debug\netcoreapp3.1\FabricaDeProjetos.Domain.pdb
+D:\Projetos\testedotnet1\FabricaDeProjetos.Domain\obj\Debug\netcoreapp3.1\FabricaDeProjetos.Domain.csprojAssemblyReference.cache
+D:\Projetos\testedotnet1\FabricaDeProjetos.Domain\obj\Debug\netcoreapp3.1\FabricaDeProjetos.Domain.AssemblyInfoInputs.cache
+D:\Projetos\testedotnet1\FabricaDeProjetos.Domain\obj\Debug\netcoreapp3.1\FabricaDeProjetos.Domain.AssemblyInfo.cs
+D:\Projetos\testedotnet1\FabricaDeProjetos.Domain\obj\Debug\netcoreapp3.1\FabricaDeProjetos.Domain.csproj.CoreCompileInputs.cache
+D:\Projetos\testedotnet1\FabricaDeProjetos.Domain\obj\Debug\netcoreapp3.1\FabricaDeProjetos.Domain.dll
+D:\Projetos\testedotnet1\FabricaDeProjetos.Domain\obj\Debug\netcoreapp3.1\FabricaDeProjetos.Domain.pdb

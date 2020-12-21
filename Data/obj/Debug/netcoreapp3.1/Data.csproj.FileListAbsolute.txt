@@ -1,0 +1,28 @@
+C:\Users\Matheus Ribeiro\Desktop\Projeto\FabricaDeProjetos\Data\bin\Debug\netcoreapp3.1\Data.deps.json
+C:\Users\Matheus Ribeiro\Desktop\Projeto\FabricaDeProjetos\Data\bin\Debug\netcoreapp3.1\Data.dll
+C:\Users\Matheus Ribeiro\Desktop\Projeto\FabricaDeProjetos\Data\bin\Debug\netcoreapp3.1\Data.pdb
+C:\Users\Matheus Ribeiro\Desktop\Projeto\FabricaDeProjetos\Data\bin\Debug\netcoreapp3.1\Dommel.dll
+C:\Users\Matheus Ribeiro\Desktop\Projeto\FabricaDeProjetos\Data\bin\Debug\netcoreapp3.1\FabricaDeProjetos.Domain.dll
+C:\Users\Matheus Ribeiro\Desktop\Projeto\FabricaDeProjetos\Data\bin\Debug\netcoreapp3.1\Dommel.pdb
+C:\Users\Matheus Ribeiro\Desktop\Projeto\FabricaDeProjetos\Data\bin\Debug\netcoreapp3.1\FabricaDeProjetos.Domain.pdb
+C:\Users\Matheus Ribeiro\Desktop\Projeto\FabricaDeProjetos\Data\obj\Debug\netcoreapp3.1\Data.csprojAssemblyReference.cache
+C:\Users\Matheus Ribeiro\Desktop\Projeto\FabricaDeProjetos\Data\obj\Debug\netcoreapp3.1\Data.AssemblyInfoInputs.cache
+C:\Users\Matheus Ribeiro\Desktop\Projeto\FabricaDeProjetos\Data\obj\Debug\netcoreapp3.1\Data.AssemblyInfo.cs
+C:\Users\Matheus Ribeiro\Desktop\Projeto\FabricaDeProjetos\Data\obj\Debug\netcoreapp3.1\Data.csproj.CoreCompileInputs.cache
+C:\Users\Matheus Ribeiro\Desktop\Projeto\FabricaDeProjetos\Data\obj\Debug\netcoreapp3.1\Data.csproj.CopyComplete
+C:\Users\Matheus Ribeiro\Desktop\Projeto\FabricaDeProjetos\Data\obj\Debug\netcoreapp3.1\Data.dll
+C:\Users\Matheus Ribeiro\Desktop\Projeto\FabricaDeProjetos\Data\obj\Debug\netcoreapp3.1\Data.pdb
+D:\Projetos\testedotnet1\Data\bin\Debug\netcoreapp3.1\Data.deps.json
+D:\Projetos\testedotnet1\Data\bin\Debug\netcoreapp3.1\Data.dll
+D:\Projetos\testedotnet1\Data\bin\Debug\netcoreapp3.1\Data.pdb
+D:\Projetos\testedotnet1\Data\bin\Debug\netcoreapp3.1\Dommel.dll
+D:\Projetos\testedotnet1\Data\bin\Debug\netcoreapp3.1\FabricaDeProjetos.Domain.dll
+D:\Projetos\testedotnet1\Data\bin\Debug\netcoreapp3.1\Dommel.pdb
+D:\Projetos\testedotnet1\Data\bin\Debug\netcoreapp3.1\FabricaDeProjetos.Domain.pdb
+D:\Projetos\testedotnet1\Data\obj\Debug\netcoreapp3.1\Data.csprojAssemblyReference.cache
+D:\Projetos\testedotnet1\Data\obj\Debug\netcoreapp3.1\Data.AssemblyInfoInputs.cache
+D:\Projetos\testedotnet1\Data\obj\Debug\netcoreapp3.1\Data.AssemblyInfo.cs
+D:\Projetos\testedotnet1\Data\obj\Debug\netcoreapp3.1\Data.csproj.CoreCompileInputs.cache
+D:\Projetos\testedotnet1\Data\obj\Debug\netcoreapp3.1\Data.csproj.CopyComplete
+D:\Projetos\testedotnet1\Data\obj\Debug\netcoreapp3.1\Data.dll
+D:\Projetos\testedotnet1\Data\obj\Debug\netcoreapp3.1\Data.pdb
