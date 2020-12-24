@@ -36,5 +36,6 @@ Desenvolver um serviço que seja capaz de gerar um lançamento de horas.
 - Criar um client WEB para consumir essa API 
 
 #### Identificação:
-Nome: <br/>
-E-mail: 
+Nome: Daniel da Silva Ferreira
+<br/>
+E-mail: daniel6991ferreira@gmail.com
