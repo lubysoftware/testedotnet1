@@ -13,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Gabriel\\source\\repos\\testedotnet1\\LubyTestApplication\\LubyTestApplication\\application.csproj",
-      "projectName": "application",
-      "projectPath": "C:\\Users\\Gabriel\\source\\repos\\testedotnet1\\LubyTestApplication\\LubyTestApplication\\application.csproj",
+      "projectUniqueName": "C:\\Users\\Gabriel\\source\\repos\\testedotnet1\\LubyTestApplication\\LubyTestApplication\\test.application.csproj",
+      "projectName": "test.application",
+      "projectPath": "C:\\Users\\Gabriel\\source\\repos\\testedotnet1\\LubyTestApplication\\LubyTestApplication\\test.application.csproj",
       "packagesPath": "C:\\Users\\Gabriel\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Gabriel\\source\\repos\\testedotnet1\\LubyTestApplication\\LubyTestApplication\\obj\\",
       "projectStyle": "PackageReference",

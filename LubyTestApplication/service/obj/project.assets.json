@@ -185,9 +185,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Gabriel\\source\\repos\\testedotnet1\\LubyTestApplication\\service\\service.csproj",
-      "projectName": "service",
-      "projectPath": "C:\\Users\\Gabriel\\source\\repos\\testedotnet1\\LubyTestApplication\\service\\service.csproj",
+      "projectUniqueName": "C:\\Users\\Gabriel\\source\\repos\\testedotnet1\\LubyTestApplication\\service\\test.service.csproj",
+      "projectName": "test.service",
+      "projectPath": "C:\\Users\\Gabriel\\source\\repos\\testedotnet1\\LubyTestApplication\\service\\test.service.csproj",
       "packagesPath": "C:\\Users\\Gabriel\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Gabriel\\source\\repos\\testedotnet1\\LubyTestApplication\\service\\obj\\",
       "projectStyle": "PackageReference",

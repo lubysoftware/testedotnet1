@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gT9FGSUPK81YkOCynmPWe+crSiJZIjySzupRRZxMeLDg1l4TOSO9DvIP8mdhbOpSvXNRx+o1I+dr6X2VksBYEQ==",
+  "dgSpecHash": "TZYqVlnRz7Yt3fWmNip84gAG6iD6hM+FzFNKYjgGxQDiNRz5TnxuhqlsDfMtwq1y921BY4Aj6RSJvlop3VfV6Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Gabriel\\source\\repos\\testedotnet1\\LubyTestApplication\\LubyTestApplication\\application.csproj",
+  "projectFilePath": "C:\\Users\\Gabriel\\source\\repos\\testedotnet1\\LubyTestApplication\\LubyTestApplication\\test.application.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
