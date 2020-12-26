@@ -45,6 +45,11 @@ namespace test.data.Repository
             return await _dataset.AnyAsync(p => p.Id.Equals(id));
         }
 
+        public async Task<Developer> FindByLogin(string email)
+        {
+            return await _dataset.FirstOrDefaultAsync(u => u.Email.Equals(email));
+        }
+
         public async Task<Developer> InsertAsync(Developer developer)
         {
             try

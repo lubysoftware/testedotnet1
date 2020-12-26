@@ -6,5 +6,6 @@ namespace test.domain.Entities
 {
     public class Developer : Base
     {
+        public string Email { get; set; }
     }
 }

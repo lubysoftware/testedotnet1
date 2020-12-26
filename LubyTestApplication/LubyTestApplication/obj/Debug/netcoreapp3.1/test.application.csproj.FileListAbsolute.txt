@@ -70,3 +70,5 @@ C:\Users\Gabriel\source\repos\testedotnet1\LubyTestApplication\LubyTestApplicati
 C:\Users\Gabriel\source\repos\testedotnet1\LubyTestApplication\LubyTestApplication\bin\Debug\netcoreapp3.1\test.service.pdb
 C:\Users\Gabriel\source\repos\testedotnet1\LubyTestApplication\LubyTestApplication\bin\Debug\netcoreapp3.1\test.data.pdb
 C:\Users\Gabriel\source\repos\testedotnet1\LubyTestApplication\LubyTestApplication\obj\Debug\netcoreapp3.1\test.application.csproj.CopyComplete
+C:\Users\Gabriel\source\repos\testedotnet1\LubyTestApplication\LubyTestApplication\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Gabriel\source\repos\testedotnet1\LubyTestApplication\LubyTestApplication\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
