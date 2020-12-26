@@ -5,10 +5,11 @@ using System.Threading.Tasks;
 using test.data.Context;
 using test.domain.Entities;
 using test.domain.Interfaces;
+using test.domain.Interfaces.Repositories;
 
 namespace test.data.Repository
 {
-    public class DeveloperRepository : IRepository<Developer> 
+    public class DeveloperRepository : IDeveloperRepository
     {
         protected readonly MyContext _context;
         private DbSet<Developer> _dataset;

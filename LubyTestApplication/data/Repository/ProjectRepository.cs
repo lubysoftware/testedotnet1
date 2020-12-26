@@ -1,15 +1,14 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using test.data.Context;
 using test.domain.Entities;
-using test.domain.Interfaces;
+using test.domain.Interfaces.Repositories;
 
 namespace test.data.Repository
 {
-    public class ProjectRepository : IRepository<Project>
+    public class ProjectRepository : IProjectRepository
     {
         protected readonly MyContext _context;
         private DbSet<Project> _dataset;
