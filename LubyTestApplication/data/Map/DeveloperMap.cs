@@ -12,8 +12,13 @@ namespace test.data.Map
 
             builder.HasKey(p => p.Id);
             builder.Property(p => p.Name).IsRequired();
-            builder.Property(p => p.StartDate).IsRequired();
-            builder.Property(p => p.EndDate).IsRequired();
+            builder.Property(p => p.CreateAt).IsRequired();
+            builder.Property(p => p.LastUpdate).IsRequired();
+            builder.Property(p => p.Email).IsRequired();
+            builder.Property(p => p.Password).IsRequired();
+
+            builder.HasMany(c => c.Hours)
+                .WithOne(c => c.Developer);
 
         }
     }

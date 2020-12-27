@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Net;
 using System.Threading.Tasks;
@@ -11,7 +10,6 @@ namespace test.application.Controllers
     [ApiController]
     public class LoginController : ControllerBase
     {
-        [AllowAnonymous]
         [HttpPost]
         public async Task<object> Login([FromBody] LoginDto loginDto,
                                         [FromServices] domain.Interfaces.Services.DeveloperService.ILoginService service)

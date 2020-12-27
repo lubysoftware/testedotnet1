@@ -11,6 +11,8 @@ namespace test.application.Middlewares.DependencyInjection
         {
             serviceCollection.AddTransient<IDeveloperService, DeveloperService>();
             serviceCollection.AddTransient<IProjectService, ProjectService>();
+            serviceCollection.AddTransient<ILoginService, LoginService>();
+
         }
     }
 }

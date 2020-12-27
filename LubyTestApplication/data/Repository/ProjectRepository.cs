@@ -47,20 +47,9 @@ namespace test.data.Repository
         public async Task<Project> InsertAsync(Project project)
         {
             try
-            {
-                if (project.Id == Guid.Empty)
-                {
-                    project.Id = Guid.NewGuid();
-                }
-
-                project.StartDate = DateTime.UtcNow;
-                project.EndDate = DateTime.UtcNow;
-
+            { 
                 _context.Projects.Add(project);
-                _dataset.Add(project);
-
                 await _context.SaveChangesAsync();
-
             }
             catch (Exception ex)
             {
@@ -104,8 +93,8 @@ namespace test.data.Repository
                     return null;
                 }
 
-                project.StartDate = result.StartDate;
-                project.EndDate = result.EndDate;
+                project.CreateAt = result.CreateAt;
+                project.LastUpdate = result.LastUpdate;
                 project.Name = result.Name;
 
                 _context.Entry(result).CurrentValues.SetValues(project);

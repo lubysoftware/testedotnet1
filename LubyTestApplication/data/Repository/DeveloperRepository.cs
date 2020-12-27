@@ -53,20 +53,9 @@ namespace test.data.Repository
         public async Task<Developer> InsertAsync(Developer developer)
         {
             try
-            {
-                if (developer.Id == Guid.Empty)
-                {
-                    developer.Id = Guid.NewGuid();
-                }
-
-                developer.StartDate = DateTime.UtcNow;
-                developer.EndDate = DateTime.UtcNow;
-
+            {               
                 _context.Developers.Add(developer);
-                _dataset.Add(developer);
-
                 await _context.SaveChangesAsync();
-
             }
             catch (Exception ex)
             {
@@ -110,9 +99,10 @@ namespace test.data.Repository
                     return null;
                 }
 
-                developer.StartDate = result.StartDate;
-                developer.EndDate = result.EndDate;
+                developer.CreateAt = result.CreateAt;
+                developer.LastUpdate = result.LastUpdate;
                 developer.Name = result.Name;
+                developer.Email = result.Email;
 
                 _context.Entry(result).CurrentValues.SetValues(developer);
                 await _context.SaveChangesAsync();

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Net;
 using System.Threading.Tasks;
@@ -54,9 +55,10 @@ namespace test.application.Controllers
             }
         }
 
+        [AllowAnonymous]
         [HttpPost]
         [Route("post")]
-        public async Task<ActionResult> Post([FromBody] Developer developer)
+        public async Task<ActionResult> Post(string name, string email)
         {
             if (!ModelState.IsValid)
             {
@@ -64,10 +66,17 @@ namespace test.application.Controllers
             }
             try
             {
+                var developer = new Developer
+                {   Email = email,
+                    CreateAt = DateTime.Now,
+                    LastUpdate = DateTime.Now,
+                    Name = name
+                };
+                
                 var result = await _developerService.Post(developer);
                 if (result != null)
                 {
-                    return Created(new Uri(Url.Link("GetWithId", new { id = result.Id })), result);
+                    return Ok(result);
                 }
                 else
                 {

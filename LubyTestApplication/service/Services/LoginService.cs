@@ -58,7 +58,7 @@ namespace test.service.Services
                         }
                     );
 
-                    DateTime createDate = DateTime.UtcNow;
+                    DateTime createDate = DateTime.Now;
                     DateTime expirationDate = createDate + TimeSpan.FromSeconds(_tokenConfigurations.Seconds);
 
                     var handler = new JwtSecurityTokenHandler();

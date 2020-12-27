@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Net;
 using System.Threading.Tasks;
@@ -56,7 +57,7 @@ namespace test.application.Controllers
 
         [HttpPost]
         [Route("post")]
-        public async Task<ActionResult> Post([FromBody] Project project)
+        public async Task<ActionResult> Post(string name)
         {
             if (!ModelState.IsValid)
             {
@@ -64,10 +65,16 @@ namespace test.application.Controllers
             }
             try
             {
+                var project = new Project
+                {
+                    CreateAt = DateTime.Now,
+                    LastUpdate = DateTime.Now,
+                    Name = name
+                };
                 var result = await _projectService.Post(project);
                 if (result != null)
                 {
-                    return Created(new Uri(Url.Link("GetWithId", new { id = result.Id })), result);
+                    return Ok(result);
                 }
                 else
                 {
