@@ -14,6 +14,8 @@ namespace test.application.Middlewares.DependencyInjection
         {
             serviceCollection.AddScoped<IDeveloperRepository, DeveloperRepository>();
             serviceCollection.AddScoped<IProjectRepository, ProjectRepository>();
+            serviceCollection.AddScoped<IHoursRepository, HoursRepository>();
+
         }
     }
 }

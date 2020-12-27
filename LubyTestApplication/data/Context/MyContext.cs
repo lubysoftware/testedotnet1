@@ -8,6 +8,8 @@ namespace test.data.Context
     {
         public DbSet<Developer> Developers { get; set; }
         public DbSet<Project> Projects { get; set; }
+        public DbSet<Hours> Hours { get; set; }
+
 
 
         public MyContext(DbContextOptions<MyContext> options) : base(options)
@@ -19,6 +21,8 @@ namespace test.data.Context
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Project>(new ProjectMap().Configure);
             modelBuilder.Entity<Developer>(new DeveloperMap().Configure);
+            modelBuilder.Entity<Hours>(new HoursMap().Configure);
+
         }
 
     }

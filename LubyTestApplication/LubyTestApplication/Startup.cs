@@ -75,13 +75,26 @@ namespace test.application
                 {
                     Version = "v1",
                     Title = "Teste Luby .NET Jr",
-                    Description = "",
+                    Description =
+                    "CRUD para desenvolvedor -> OK\n\n\n" +
+                    "CRUD de projeto -> OK\n\n\n" +
+                    "Criar um lançamento de hora -> OK\n\n" +
+                    "Retornar ranking dos 5 desenvolvedores da semana com maior média de horas trabalhadas. -> NOT ok\n\n\n\n" +
+                    "Configurar o Swagger para termos acesso a documentação da API. -> OK\n\n" +
+                    "Implementar autenticação JWT com expiração de 5 minutos -> Configurei, mas não ativei, não sabia como fazer, segui as instruções de um curso que possuo" +
+                    "na udemy, mas não sei se fiz certo \n\n" +
+                    "Criar um client WEB para consumir essa API -> Pensei em criar em Vue.JS, mas não deu tempo :C\n\n\n\n" +
+                    "" +
+                    "" +
+                    "Agradeço muito a oportunidade de fazer o teste, tentei usar um pouco do conhecimento que eu sabia, aprendi isso no emprego que estou atualmente" +
+                    "e  em cursos online que faço. Tentei utilizar a arquitetura DDD, separando em application, domain, data e service. Utilizei SQL Server." +
+                    "Dava para ter feito melhor sim, separando em models e commands, utilizando automapper, etc. Tive dois dias para fazer (sábado e domingo) e foi o que consegui.\n\n\n",
+
                     Contact = new OpenApiContact
                     {
                         Name = "Gabriel Jorge Coronin",
-                        Email = "gabrielcoronin@gmail.com",
-                      //  Url = new Uri("")
-                    }              
+                        Email = "gabrielcoronin@gmail.com"
+                    }
                 });
 
                 c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme

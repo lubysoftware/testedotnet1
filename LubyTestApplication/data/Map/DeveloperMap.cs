@@ -17,8 +17,8 @@ namespace test.data.Map
             builder.Property(p => p.Email).IsRequired();
             builder.Property(p => p.Password).IsRequired();
 
-            builder.HasMany(c => c.Hours)
-                .WithOne(c => c.Developer);
+            //builder.HasMany(c => c.Hours)
+            //    .WithOne(c => c.Developer);
 
         }
     }

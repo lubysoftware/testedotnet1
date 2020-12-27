@@ -24,6 +24,20 @@ namespace test.data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Hours",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(nullable: false),
+                    StartDate = table.Column<DateTime>(nullable: false),
+                    EndDate = table.Column<DateTime>(nullable: false),
+                    Developer = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Hours", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Project",
                 columns: table => new
                 {
@@ -35,26 +49,6 @@ namespace test.data.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Project", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Hours",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(nullable: false),
-                    StartDate = table.Column<DateTime>(nullable: false),
-                    EndDate = table.Column<DateTime>(nullable: false),
-                    DeveloperId = table.Column<Guid>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Hours", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Hours_Developer_DeveloperId",
-                        column: x => x.DeveloperId,
-                        principalTable: "Developer",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -91,11 +85,6 @@ namespace test.data.Migrations
                 name: "IX_DeveloperOnProject_ProjectId",
                 table: "DeveloperOnProject",
                 column: "ProjectId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Hours_DeveloperId",
-                table: "Hours",
-                column: "DeveloperId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -107,10 +96,10 @@ namespace test.data.Migrations
                 name: "Hours");
 
             migrationBuilder.DropTable(
-                name: "Project");
+                name: "Developer");
 
             migrationBuilder.DropTable(
-                name: "Developer");
+                name: "Project");
         }
     }
 }

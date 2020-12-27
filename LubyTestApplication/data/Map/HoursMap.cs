@@ -16,9 +16,11 @@ namespace test.data.Map
 
             builder.Property(c => c.EndDate);
             builder.Property(c => c.StartDate);
+            builder.Property(c => c.Developer);
 
-            builder.HasOne(c => c.Developer)
-                .WithMany(c => c.Hours);
+            //builder.HasOne(c => c.Developer)
+            //    .WithMany(c => c.Hours);
+
         }
     }
 }

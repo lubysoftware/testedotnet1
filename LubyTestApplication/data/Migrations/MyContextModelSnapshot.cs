@@ -75,8 +75,8 @@ namespace test.data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid?>("DeveloperId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("Developer")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("datetime2");
@@ -85,8 +85,6 @@ namespace test.data.Migrations
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("DeveloperId");
 
                     b.ToTable("Hours");
                 });
@@ -125,13 +123,6 @@ namespace test.data.Migrations
                         .HasForeignKey("ProjectId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("test.domain.Entities.Hours", b =>
-                {
-                    b.HasOne("test.domain.Entities.Developer", "Developer")
-                        .WithMany("Hours")
-                        .HasForeignKey("DeveloperId");
                 });
 #pragma warning restore 612, 618
         }
