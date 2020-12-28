@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TesteLuby.Data\TesteLuby.Data.csproj" />
+    <ProjectReference Include="..\TesteLuby.Interfaces\TesteLuby.Interfaces.csproj" />
+    <ProjectReference Include="..\TesteLuby.Repository\TesteLuby.Repository.csproj" />
+    <ProjectReference Include="..\TesteLuby.Services\TesteLuby.Services.csproj" />
+  </ItemGroup>
+
+</Project>
