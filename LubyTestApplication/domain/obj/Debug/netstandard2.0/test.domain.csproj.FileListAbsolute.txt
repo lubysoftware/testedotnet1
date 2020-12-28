@@ -1,0 +1,9 @@
+C:\Users\Gabriel\source\repos\testedotnet1\LubyTestApplication\domain\bin\Debug\netstandard2.0\test.domain.deps.json
+C:\Users\Gabriel\source\repos\testedotnet1\LubyTestApplication\domain\bin\Debug\netstandard2.0\test.domain.dll
+C:\Users\Gabriel\source\repos\testedotnet1\LubyTestApplication\domain\bin\Debug\netstandard2.0\test.domain.pdb
+C:\Users\Gabriel\source\repos\testedotnet1\LubyTestApplication\domain\obj\Debug\netstandard2.0\test.domain.AssemblyInfoInputs.cache
+C:\Users\Gabriel\source\repos\testedotnet1\LubyTestApplication\domain\obj\Debug\netstandard2.0\test.domain.AssemblyInfo.cs
+C:\Users\Gabriel\source\repos\testedotnet1\LubyTestApplication\domain\obj\Debug\netstandard2.0\test.domain.csproj.CoreCompileInputs.cache
+C:\Users\Gabriel\source\repos\testedotnet1\LubyTestApplication\domain\obj\Debug\netstandard2.0\test.domain.dll
+C:\Users\Gabriel\source\repos\testedotnet1\LubyTestApplication\domain\obj\Debug\netstandard2.0\test.domain.pdb
+C:\Users\Gabriel\source\repos\testedotnet1\LubyTestApplication\domain\obj\Debug\netstandard2.0\test.domain.csprojAssemblyReference.cache

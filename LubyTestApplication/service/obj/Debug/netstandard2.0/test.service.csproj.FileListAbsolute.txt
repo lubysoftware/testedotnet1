@@ -1,0 +1,14 @@
+C:\Users\Gabriel\source\repos\testedotnet1\LubyTestApplication\service\bin\Debug\netstandard2.0\test.service.deps.json
+C:\Users\Gabriel\source\repos\testedotnet1\LubyTestApplication\service\bin\Debug\netstandard2.0\test.service.dll
+C:\Users\Gabriel\source\repos\testedotnet1\LubyTestApplication\service\bin\Debug\netstandard2.0\test.service.pdb
+C:\Users\Gabriel\source\repos\testedotnet1\LubyTestApplication\service\obj\Debug\netstandard2.0\test.service.AssemblyInfoInputs.cache
+C:\Users\Gabriel\source\repos\testedotnet1\LubyTestApplication\service\obj\Debug\netstandard2.0\test.service.AssemblyInfo.cs
+C:\Users\Gabriel\source\repos\testedotnet1\LubyTestApplication\service\obj\Debug\netstandard2.0\test.service.csproj.CoreCompileInputs.cache
+C:\Users\Gabriel\source\repos\testedotnet1\LubyTestApplication\service\obj\Debug\netstandard2.0\test.service.dll
+C:\Users\Gabriel\source\repos\testedotnet1\LubyTestApplication\service\obj\Debug\netstandard2.0\test.service.pdb
+C:\Users\Gabriel\source\repos\testedotnet1\LubyTestApplication\service\bin\Debug\netstandard2.0\test.data.dll
+C:\Users\Gabriel\source\repos\testedotnet1\LubyTestApplication\service\bin\Debug\netstandard2.0\test.domain.dll
+C:\Users\Gabriel\source\repos\testedotnet1\LubyTestApplication\service\bin\Debug\netstandard2.0\test.data.pdb
+C:\Users\Gabriel\source\repos\testedotnet1\LubyTestApplication\service\bin\Debug\netstandard2.0\test.domain.pdb
+C:\Users\Gabriel\source\repos\testedotnet1\LubyTestApplication\service\obj\Debug\netstandard2.0\test.service.csprojAssemblyReference.cache
+C:\Users\Gabriel\source\repos\testedotnet1\LubyTestApplication\service\obj\Debug\netstandard2.0\test.service.csproj.CopyComplete
