@@ -36,5 +36,5 @@ Desenvolver um serviço que seja capaz de gerar um lançamento de horas.
 - Criar um client WEB para consumir essa API 
 
 #### Identificação:
-Nome: <br/> Ian Fraga Bitar	
+Nome:  Ian Fraga Bitar<br/>
 E-mail: ian-fraga@hotmail.com/ianfragabitar@gmail.com
