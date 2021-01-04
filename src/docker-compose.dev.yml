@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  db.luby.dev:
+    image: mcr.microsoft.com/mssql/server:2017-latest
+    volumes:
+      - dbdata:/var/opt/mssql
+    ports:
+      - 1433:1433
+    environment:
+      SA_PASSWORD: 'P#_LUBy@_'
+      ACCEPT_EULA: 'Y'
+      
+volumes:
+  dbdata:
