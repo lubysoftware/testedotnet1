@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace ApiDevs.Models
+namespace ApiRestDevs.Models
 {
     public class Desenvolvedor
     {
