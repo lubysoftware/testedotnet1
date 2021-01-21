@@ -13,5 +13,6 @@ namespace ApiRestDevs.Data
         }
 
         public DbSet<Desenvolvedor> Desenvolvedores { get; set; }
+        public DbSet<Projeto> Projetos { get; set; }
     }
 }
