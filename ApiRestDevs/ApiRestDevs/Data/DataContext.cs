@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using ApiDevs.Models;
+using Microsoft.EntityFrameworkCore;
 
 
 namespace ApiRestDevs.Data
@@ -11,5 +12,6 @@ namespace ApiRestDevs.Data
         {
         }
 
+        public DbSet<Desenvolvedor> Desenvolvedores { get; set; }
     }
 }
