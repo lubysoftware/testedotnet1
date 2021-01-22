@@ -2,13 +2,16 @@ using ApiRestDevs.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-
+using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Globalization;
 
 namespace ApiRestDevs
 {
@@ -36,12 +39,26 @@ namespace ApiRestDevs
                         builder.MigrationsAssembly("ApiRestDevs")));
 
             services.AddScoped<DataContext, DataContext>();
+                     
 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            var ptBR = new CultureInfo("pt-BR");
+
+            var localizationOption = new RequestLocalizationOptions
+            {
+                DefaultRequestCulture = new RequestCulture(ptBR),
+                SupportedCultures = new List<CultureInfo> { ptBR },
+                SupportedUICultures = new List<CultureInfo> { ptBR }
+            };
+
+            app.UseRequestLocalization(localizationOption);
+
+
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

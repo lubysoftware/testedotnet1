@@ -14,5 +14,42 @@ namespace ApiRestDevs.Data
 
         public DbSet<Desenvolvedor> Desenvolvedores { get; set; }
         public DbSet<Projeto> Projetos { get; set; }
+        public DbSet<LancamentoDeHora> LancamentoDeHoras { get; set; }
+
+        // Mapeando banco com Fluent API
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<LancamentoDeHora>()
+            .HasOne(s => s.Desenvolvedor)
+            .WithMany(g => g.LancamentoDeHoras)
+            .HasForeignKey(s => s.DesenvolvedorId);
+
+            modelBuilder.Entity<LancamentoDeHora>()
+            .HasOne(s => s.ProjetoTrabalhado)
+            .WithMany(g => g.LancamentoDeHoras)
+            .HasForeignKey(s => s.ProjetoTrabalhadoId);
+
+            modelBuilder.Entity<LancamentoDeHora>()
+            .HasKey(x => x.Id);
+
+            modelBuilder.Entity<LancamentoDeHora>()
+            .Property(x => x.Id).ValueGeneratedOnAdd();
+
+            modelBuilder.Entity<Projeto>()
+           .HasKey(x => x.Id);
+
+            modelBuilder.Entity<Projeto>()
+            .Property(x => x.Id).ValueGeneratedOnAdd();
+
+            modelBuilder.Entity<Desenvolvedor>()
+           .HasKey(x => x.Id);
+
+            modelBuilder.Entity<Desenvolvedor>()
+            .Property(x => x.Id).ValueGeneratedOnAdd();
+
+            base.OnModelCreating(modelBuilder);
+        }
+
     }
+
 }

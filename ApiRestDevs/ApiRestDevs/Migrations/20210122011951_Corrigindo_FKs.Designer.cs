@@ -3,14 +3,16 @@ using System;
 using ApiRestDevs.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ApiRestDevs.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20210122011951_Corrigindo_FKs")]
+    partial class Corrigindo_FKs
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -48,14 +50,14 @@ namespace ApiRestDevs.Migrations
                     b.Property<int>("DesenvolvedorId")
                         .HasColumnType("int");
 
-                    b.Property<int>("ProjetoTrabalhadoId")
+                    b.Property<int?>("ProjetoId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("DesenvolvedorId");
 
-                    b.HasIndex("ProjetoTrabalhadoId");
+                    b.HasIndex("ProjetoId");
 
                     b.ToTable("LancamentoDeHoras");
                 });
@@ -84,11 +86,9 @@ namespace ApiRestDevs.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ApiRestDevs.Models.Projeto", "ProjetoTrabalhado")
+                    b.HasOne("ApiRestDevs.Models.Projeto", null)
                         .WithMany("LancamentoDeHoras")
-                        .HasForeignKey("ProjetoTrabalhadoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ProjetoId");
                 });
 #pragma warning restore 612, 618
         }

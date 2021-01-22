@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "TDmItJNcZ8Hke12QGxOKdD9hW+FS/kwcfv9MGwAGJMZJEKVzvU8kvA8ljGf0CqKP7BC1QfH8Lp+QZq9YQwIKCg==",
+  "dgSpecHash": "AOvo99/7xWIVIZvvYhxGTN48n+HusisBwwkEG5ETIe8/P8+7bJObOMWQLcezRRs5PHmUVqoEemySMLgrCZ0YgA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Santi\\source\\repos\\SantiSjp\\testedotnet1\\ApiRestDevs\\ApiRestDevs\\ApiRestDevs.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Santi\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\3.1.11\\microsoft.aspnetcore.jsonpatch.3.1.11.nupkg.sha512",
+    "C:\\Users\\Santi\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\3.1.11\\microsoft.aspnetcore.mvc.newtonsoftjson.3.1.11.nupkg.sha512",
     "C:\\Users\\Santi\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Santi\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.1\\microsoft.bcl.hashcode.1.1.1.nupkg.sha512",
     "C:\\Users\\Santi\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
@@ -27,7 +29,8 @@
     "C:\\Users\\Santi\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.11\\microsoft.extensions.primitives.3.1.11.nupkg.sha512",
     "C:\\Users\\Santi\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\Santi\\.nuget\\packages\\mysqlconnector\\0.69.9\\mysqlconnector.0.69.9.nupkg.sha512",
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
+    "C:\\Users\\Santi\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
+    "C:\\Users\\Santi\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
     "C:\\Users\\Santi\\.nuget\\packages\\pomelo.entityframeworkcore.mysql\\3.2.4\\pomelo.entityframeworkcore.mysql.3.2.4.nupkg.sha512",
     "C:\\Users\\Santi\\.nuget\\packages\\pomelo.jsonobject\\2.2.1\\pomelo.jsonobject.2.2.1.nupkg.sha512",
     "C:\\Users\\Santi\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
@@ -36,7 +39,8 @@
     "C:\\Users\\Santi\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.6.3\\swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512",
     "C:\\Users\\Santi\\.nuget\\packages\\system.collections.immutable\\1.7.1\\system.collections.immutable.1.7.1.nupkg.sha512",
     "C:\\Users\\Santi\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512",
-    "C:\\Users\\Santi\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.1\\system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512"
+    "C:\\Users\\Santi\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.1\\system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512",
+    "C:\\Users\\Santi\\.nuget\\packages\\system.text.json\\5.0.1\\system.text.json.5.0.1.nupkg.sha512"
   ],
   "logs": []
 }

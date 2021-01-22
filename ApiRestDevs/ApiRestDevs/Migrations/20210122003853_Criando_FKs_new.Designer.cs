@@ -3,14 +3,16 @@ using System;
 using ApiRestDevs.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ApiRestDevs.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20210122003853_Criando_FKs_new")]
+    partial class Criando_FKs_new
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -23,12 +25,17 @@ namespace ApiRestDevs.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<int?>("DesenvolvedorId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasColumnType("varchar(60) CHARACTER SET utf8mb4")
                         .HasMaxLength(60);
 
                     b.HasKey("Id");
+
+                    b.HasIndex("DesenvolvedorId");
 
                     b.ToTable("Desenvolvedores");
                 });
@@ -48,14 +55,9 @@ namespace ApiRestDevs.Migrations
                     b.Property<int>("DesenvolvedorId")
                         .HasColumnType("int");
 
-                    b.Property<int>("ProjetoTrabalhadoId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.HasIndex("DesenvolvedorId");
-
-                    b.HasIndex("ProjetoTrabalhadoId");
 
                     b.ToTable("LancamentoDeHoras");
                 });
@@ -76,17 +78,18 @@ namespace ApiRestDevs.Migrations
                     b.ToTable("Projetos");
                 });
 
+            modelBuilder.Entity("ApiRestDevs.Models.Desenvolvedor", b =>
+                {
+                    b.HasOne("ApiRestDevs.Models.Desenvolvedor", null)
+                        .WithMany("Desenvolvedores")
+                        .HasForeignKey("DesenvolvedorId");
+                });
+
             modelBuilder.Entity("ApiRestDevs.Models.LancamentoDeHora", b =>
                 {
                     b.HasOne("ApiRestDevs.Models.Desenvolvedor", "Desenvolvedor")
-                        .WithMany("LancamentoDeHoras")
+                        .WithMany()
                         .HasForeignKey("DesenvolvedorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ApiRestDevs.Models.Projeto", "ProjetoTrabalhado")
-                        .WithMany("LancamentoDeHoras")
-                        .HasForeignKey("ProjetoTrabalhadoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
