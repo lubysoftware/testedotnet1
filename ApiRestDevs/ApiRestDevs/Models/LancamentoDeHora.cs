@@ -25,6 +25,9 @@ namespace ApiRestDevs.Models
         [Required(ErrorMessage = "Data Final é Obrigatória")]
         public DateTime DataFinal { get; set; }
 
+        [Required(ErrorMessage = "Quantidade de Horas trabalhadas é Obrigatória")]        
+        public double QtdHorasTrabalhadas  { get; set; }
+
         [JsonIgnore]
         public Projeto ProjetoTrabalhado { get; set; }
         [JsonIgnore]
