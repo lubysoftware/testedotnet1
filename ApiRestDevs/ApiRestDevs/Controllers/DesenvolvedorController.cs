@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ApiRestDevs.Controllers
 {
@@ -16,58 +17,93 @@ namespace ApiRestDevs.Controllers
 
         [HttpGet]
         [Route("")]
+        [Authorize(Roles = "all")]
         public async Task<ActionResult<List<Desenvolvedor>>> Get([FromServices] DataContext context)
         {
-            var result = await context.Desenvolvedores.ToListAsync();
-            return result;
+            try
+            {
+                var result = await context.Desenvolvedores.ToListAsync();
+                return result;
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }            
         }
 
         [HttpGet]
         [Route("{id:int}")]
+        [Authorize(Roles = "all")]
         public async Task<ActionResult<Desenvolvedor>> GetById([FromServices] DataContext context, int id)
         {
-            var result = await context.Desenvolvedores.FirstOrDefaultAsync(x => x.Id == id);
-            return result;
+            try
+            {
+                var result = await context.Desenvolvedores.FirstOrDefaultAsync(x => x.Id == id);
+                return result;
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+            
         }
 
         [HttpPost]
         [Route("")]
+        [Authorize(Roles = "all")]
         public async Task<ActionResult<Desenvolvedor>> Post(
             [FromServices] DataContext context,
             [FromBody] Desenvolvedor model)
         {
-            if (ModelState.IsValid)
+            try
             {
-                context.Desenvolvedores.Add(model);
-                await context.SaveChangesAsync();
-                return model;
+                if (ModelState.IsValid)
+                {
+                    context.Desenvolvedores.Add(model);
+                    await context.SaveChangesAsync();
+                    return model;
+                }
+                else
+                {
+                    return BadRequest(ModelState);
+                }
             }
-            else
+            catch (Exception e)
             {
-                return BadRequest(ModelState);
-            }
+                return BadRequest(e.Message);
+            }                       
         }
 
         [HttpDelete]
         [Route("{id:int}")]
+        [Authorize(Roles = "all")]
         public async Task<ActionResult<Desenvolvedor>> DeleteByID([FromServices] DataContext context, int id)
         {
-            var validaIdDesenvolvedor = context.Desenvolvedores.FirstOrDefault(x => x.Id == id);
+            try
+            {
+                var validaIdDesenvolvedor = context.Desenvolvedores.FirstOrDefault(x => x.Id == id);
 
-            if (validaIdDesenvolvedor != null)
-            {
-                context.Desenvolvedores.Remove(validaIdDesenvolvedor);
-                await context.SaveChangesAsync();
-                return Ok("Desenvolvedor " + validaIdDesenvolvedor.Nome + " Excluido com sucesso!");
+                if (validaIdDesenvolvedor != null)
+                {
+                    context.Desenvolvedores.Remove(validaIdDesenvolvedor);
+                    await context.SaveChangesAsync();
+                    return Ok("Desenvolvedor " + validaIdDesenvolvedor.Nome + " Excluido com sucesso!");
+                }
+                else
+                {
+                    return BadRequest("Desenvolvedor não encontrado!");
+                }
             }
-            else
+            catch (Exception e)
             {
-                return BadRequest("Desenvolvedor não encontrado!");
+                return BadRequest(e.Message);
             }
+ 
         }
 
         [HttpPut]
         [Route("")]
+        [Authorize(Roles = "all")]
         public ActionResult<Desenvolvedor> UpdateById([FromServices] DataContext context,
             [FromBody] Desenvolvedor model)
         {
@@ -86,7 +122,7 @@ namespace ApiRestDevs.Controllers
                     throw new Exception("Desenvolvedor não encontrado!");
                 }
             }
-            catch (System.Exception e)
+            catch (Exception e)
             {
                 return BadRequest(e.Message);
             }

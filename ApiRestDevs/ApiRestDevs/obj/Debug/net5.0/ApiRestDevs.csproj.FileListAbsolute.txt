@@ -12,6 +12,14 @@ C:\Users\Santi\source\repos\SantiSjp\testedotnet1\ApiRestDevs\ApiRestDevs\bin\De
 C:\Users\Santi\source\repos\SantiSjp\testedotnet1\ApiRestDevs\ApiRestDevs\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\Santi\source\repos\SantiSjp\testedotnet1\ApiRestDevs\ApiRestDevs\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\Santi\source\repos\SantiSjp\testedotnet1\ApiRestDevs\ApiRestDevs\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Santi\source\repos\SantiSjp\testedotnet1\ApiRestDevs\ApiRestDevs\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Users\Santi\source\repos\SantiSjp\testedotnet1\ApiRestDevs\ApiRestDevs\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Santi\source\repos\SantiSjp\testedotnet1\ApiRestDevs\ApiRestDevs\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Santi\source\repos\SantiSjp\testedotnet1\ApiRestDevs\ApiRestDevs\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Santi\source\repos\SantiSjp\testedotnet1\ApiRestDevs\ApiRestDevs\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Santi\source\repos\SantiSjp\testedotnet1\ApiRestDevs\ApiRestDevs\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Santi\source\repos\SantiSjp\testedotnet1\ApiRestDevs\ApiRestDevs\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Santi\source\repos\SantiSjp\testedotnet1\ApiRestDevs\ApiRestDevs\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\Santi\source\repos\SantiSjp\testedotnet1\ApiRestDevs\ApiRestDevs\bin\Debug\net5.0\appsettings.Development.json
 C:\Users\Santi\source\repos\SantiSjp\testedotnet1\ApiRestDevs\ApiRestDevs\bin\Debug\net5.0\appsettings.json
 C:\Users\Santi\source\repos\SantiSjp\testedotnet1\ApiRestDevs\ApiRestDevs\bin\Debug\net5.0\ApiRestDevs.deps.json
@@ -22,10 +30,8 @@ C:\Users\Santi\source\repos\SantiSjp\testedotnet1\ApiRestDevs\ApiRestDevs\bin\De
 C:\Users\Santi\source\repos\SantiSjp\testedotnet1\ApiRestDevs\ApiRestDevs\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
 C:\Users\Santi\source\repos\SantiSjp\testedotnet1\ApiRestDevs\ApiRestDevs\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\Santi\source\repos\SantiSjp\testedotnet1\ApiRestDevs\ApiRestDevs\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
-C:\Users\Santi\source\repos\SantiSjp\testedotnet1\ApiRestDevs\ApiRestDevs\bin\Debug\net5.0\Newtonsoft.Json.dll
 C:\Users\Santi\source\repos\SantiSjp\testedotnet1\ApiRestDevs\ApiRestDevs\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
 C:\Users\Santi\source\repos\SantiSjp\testedotnet1\ApiRestDevs\ApiRestDevs\bin\Debug\net5.0\System.Text.Json.dll
-C:\Users\Santi\source\repos\SantiSjp\testedotnet1\ApiRestDevs\ApiRestDevs\obj\Debug\net5.0\ApiRestDevs.csprojAssemblyReference.cache
 C:\Users\Santi\source\repos\SantiSjp\testedotnet1\ApiRestDevs\ApiRestDevs\obj\Debug\net5.0\ApiRestDevs.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Santi\source\repos\SantiSjp\testedotnet1\ApiRestDevs\ApiRestDevs\obj\Debug\net5.0\ApiRestDevs.AssemblyInfoInputs.cache
 C:\Users\Santi\source\repos\SantiSjp\testedotnet1\ApiRestDevs\ApiRestDevs\obj\Debug\net5.0\ApiRestDevs.AssemblyInfo.cs
@@ -41,3 +47,4 @@ C:\Users\Santi\source\repos\SantiSjp\testedotnet1\ApiRestDevs\ApiRestDevs\obj\De
 C:\Users\Santi\source\repos\SantiSjp\testedotnet1\ApiRestDevs\ApiRestDevs\obj\Debug\net5.0\ref\ApiRestDevs.dll
 C:\Users\Santi\source\repos\SantiSjp\testedotnet1\ApiRestDevs\ApiRestDevs\obj\Debug\net5.0\ApiRestDevs.pdb
 C:\Users\Santi\source\repos\SantiSjp\testedotnet1\ApiRestDevs\ApiRestDevs\obj\Debug\net5.0\ApiRestDevs.genruntimeconfig.cache
+C:\Users\Santi\source\repos\SantiSjp\testedotnet1\ApiRestDevs\ApiRestDevs\obj\Debug\net5.0\ApiRestDevs.csprojAssemblyReference.cache
