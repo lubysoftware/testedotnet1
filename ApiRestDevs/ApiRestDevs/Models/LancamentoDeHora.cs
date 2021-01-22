@@ -40,7 +40,7 @@ namespace ApiRestDevs.Models
         public Desenvolvedor Desenvolvedor { get; set; }
 
 
-        public static List<object> CalculaHoras(DataContext context)
+        public static List<object> CalculaRankingDeHoras(DataContext context)
         {
             var cincoMaioresMedias = context.Desenvolvedores
                    .Select(x => x.LancamentoDeHoras.Select(y => y.QtdHorasTrabalhadas).Average())

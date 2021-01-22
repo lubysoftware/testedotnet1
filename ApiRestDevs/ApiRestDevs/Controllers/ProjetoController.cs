@@ -1,5 +1,6 @@
 ﻿using ApiRestDevs.Data;
 using ApiRestDevs.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -15,58 +16,91 @@ namespace ApiRestDevs.Controllers
     {
         [HttpGet]
         [Route("")]
+        [Authorize(Roles = "all")]
         public async Task<ActionResult<List<Projeto>>> Get([FromServices] DataContext context)
         {
-            var result = await context.Projetos.ToListAsync();
-            return result;
+            try
+            {
+                var result = await context.Projetos.ToListAsync();
+                return result;
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }            
         }
 
         [HttpGet]
         [Route("{id:int}")]
+        [Authorize(Roles = "all")]
         public async Task<ActionResult<Projeto>> GetById([FromServices] DataContext context, int id)
         {
-            var result = await context.Projetos.FirstOrDefaultAsync(x => x.Id == id);
-            return result;
+            try
+            {
+                var result = await context.Projetos.FirstOrDefaultAsync(x => x.Id == id);
+                return result;
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }            
         }
 
         [HttpPost]
         [Route("")]
+        [Authorize(Roles = "all")]
         public async Task<ActionResult<Projeto>> Post(
             [FromServices] DataContext context,
             [FromBody] Projeto model)
         {
-            if (ModelState.IsValid)
+            try
             {
-                context.Projetos.Add(model);
-                await context.SaveChangesAsync();
-                return model;
+                if (ModelState.IsValid)
+                {
+                    context.Projetos.Add(model);
+                    await context.SaveChangesAsync();
+                    return model;
+                }
+                else
+                {
+                    return BadRequest(ModelState);
+                }
             }
-            else
+            catch (Exception e)
             {
-                return BadRequest(ModelState);
-            }
+                return BadRequest(e.Message);
+            }            
         }
 
         [HttpDelete]
         [Route("{id:int}")]
+        [Authorize(Roles = "all")]
         public async Task<ActionResult<Projeto>> DeleteByID([FromServices] DataContext context, int id)
         {
-            var validaIdProjeto = context.Projetos.FirstOrDefault(x => x.Id == id);
+            try
+            {
+                var validaIdProjeto = context.Projetos.FirstOrDefault(x => x.Id == id);
 
-            if (validaIdProjeto != null)
-            {
-                context.Projetos.Remove(validaIdProjeto);
-                await context.SaveChangesAsync();
-                return Ok("Projeto " + validaIdProjeto.Nome + " Excluido com sucesso!");
+                if (validaIdProjeto != null)
+                {
+                    context.Projetos.Remove(validaIdProjeto);
+                    await context.SaveChangesAsync();
+                    return Ok("Projeto " + validaIdProjeto.Nome + " Excluido com sucesso!");
+                }
+                else
+                {
+                    return BadRequest("Projeto não encontrado!");
+                }
             }
-            else
+            catch (Exception e)
             {
-                return BadRequest("Projeto não encontrado!");
-            }
+                return BadRequest(e.Message);
+            }            
         }
 
         [HttpPut]
         [Route("")]
+        [Authorize(Roles = "all")]
         public ActionResult<Projeto> UpdateById([FromServices] DataContext context,
             [FromBody] Projeto model)
         {

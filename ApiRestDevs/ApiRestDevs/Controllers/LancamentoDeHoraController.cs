@@ -1,5 +1,6 @@
 ﻿using ApiRestDevs.Data;
 using ApiRestDevs.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,7 @@ namespace ApiRestDevs.Controllers
 
         [HttpPost]
         [Route("")]
+        [Authorize(Roles = "all")]
         public ActionResult<LancamentoDeHora> Post(
             [FromServices] DataContext context,
             [FromBody] LancamentoDeHora model)
@@ -43,17 +45,17 @@ namespace ApiRestDevs.Controllers
             {
                 return BadRequest(e.Message);
 
-            }
-         
+            }         
         }
 
         [HttpGet]
         [Route("ranking")]
+        [Authorize(Roles = "all")]
         public ActionResult<List<object>> Get([FromServices] DataContext context)
         {
             try
             {
-                var resultado = LancamentoDeHora.CalculaHoras(context);
+                var resultado = LancamentoDeHora.CalculaRankingDeHoras(context);
 
                 return resultado;
             }
