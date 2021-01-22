@@ -10,6 +10,7 @@ namespace ApiRestDevs.Models
         {
 
         }
+
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Este Campo é Obrigatório")]

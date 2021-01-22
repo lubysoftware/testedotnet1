@@ -1,12 +1,9 @@
 ﻿using ApiRestDevs.Data;
 using ApiRestDevs.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace ApiRestDevs.Controllers
 {
@@ -24,10 +21,11 @@ namespace ApiRestDevs.Controllers
             try
             {
 
-                var validaIdDesenvolvedor = context.Desenvolvedores.Any(x => x.Id == model.DesenvolvedorId) ? true : throw new Exception("Desenvolvedor não Existe!");
-                var validaIdProjeto =  context.Projetos.Any(x => x.Id == model.ProjetoTrabalhadoId) ? true : throw new Exception("Projeto não Existe!");
-                var validaHorasTrabalhadas = model.QtdHorasTrabalhadas > 0 ? true : throw new Exception("Horas devem ser Positivass"); ;
- 
+                var validaIdDesenvolvedor = context.Desenvolvedores
+                    .Any(x => x.Id == model.DesenvolvedorId) ? true : throw new Exception("Desenvolvedor não Existe!");
+                var validaIdProjeto =  context.Projetos
+                    .Any(x => x.Id == model.ProjetoTrabalhadoId) ? true : throw new Exception("Projeto não Existe!");
+                
                 if (ModelState.IsValid)
                 {
 
@@ -51,13 +49,13 @@ namespace ApiRestDevs.Controllers
 
         [HttpGet]
         [Route("ranking")]
-        public async Task<ActionResult<List<LancamentoDeHora>>> Get(
-            [FromServices] DataContext context)
+        public ActionResult<List<object>> Get([FromServices] DataContext context)
         {
             try
             {
-                var result = await context.LancamentoDeHoras.ToListAsync();
-                return result;
+                var resultado = LancamentoDeHora.CalculaHoras(context);
+
+                return resultado;
             }
             catch (Exception e)
             {

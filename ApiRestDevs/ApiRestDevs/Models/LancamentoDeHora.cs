@@ -1,5 +1,8 @@
-﻿using System;
+﻿using ApiRestDevs.Data;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
 using System.Text.Json.Serialization;
 
 namespace ApiRestDevs.Models
@@ -11,6 +14,7 @@ namespace ApiRestDevs.Models
 
         }
 
+        [JsonIgnore]
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Id do desenvolvedor é Obrigatório")]
@@ -20,18 +24,43 @@ namespace ApiRestDevs.Models
         public int ProjetoTrabalhadoId { get; set; }
 
         [Required(ErrorMessage = "Data de Inicio é Obrigatória")]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}")]
         public DateTime DataDeInicio { get; set; }
 
         [Required(ErrorMessage = "Data Final é Obrigatória")]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}")]
         public DateTime DataFinal { get; set; }
 
         [Required(ErrorMessage = "Quantidade de Horas trabalhadas é Obrigatória")]        
-        public double QtdHorasTrabalhadas  { get; set; }
+        public int QtdHorasTrabalhadas  { get; set; }
 
         [JsonIgnore]
         public Projeto ProjetoTrabalhado { get; set; }
         [JsonIgnore]
         public Desenvolvedor Desenvolvedor { get; set; }
 
+
+        public static List<object> CalculaHoras(DataContext context)
+        {
+            var cincoMaioresMedias = context.Desenvolvedores
+                   .Select(x => x.LancamentoDeHoras.Select(y => y.QtdHorasTrabalhadas).Average())
+                   .OrderByDescending(x => x)
+                   .Take(5)
+                   .ToList();
+
+            var ranking = new List<object>();
+            var contador = 1;
+
+            foreach (var item in cincoMaioresMedias)
+            {
+                var desenvolvedor = context.Desenvolvedores
+                    .FirstOrDefault(x => x.LancamentoDeHoras
+                    .Select(y => y.QtdHorasTrabalhadas)
+                    .Average() == item);
+
+                ranking.Add(new { NomeDoDesenvolvedor = desenvolvedor.Nome, PosicaoDoRanking = contador++, MediaDeHoras = item });
+            }
+            return ranking;
+        }
     }
 }
