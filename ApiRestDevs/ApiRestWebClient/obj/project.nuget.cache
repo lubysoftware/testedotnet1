@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "f7fO9NKO/rTGnp6ZBoB3hsGiufBCWqP8zqsAV0beRXib+RQaaMAAQaKfUNDfRqWcZW09qZZ2+b7G6MbJkRaPBw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Santi\\source\\repos\\SantiSjp\\testedotnet1\\ApiRestDevs\\ApiRestWebClient\\ApiRestWebClient.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Santi\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\Santi\\.nuget\\packages\\restsharp\\106.11.7\\restsharp.106.11.7.nupkg.sha512"
+  ],
+  "logs": []
+}
