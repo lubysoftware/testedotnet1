@@ -117,3 +117,6 @@ C:\Users\Santi\source\repos\SantiSjp\testedotnet1\ApiRestDevs\ApiRestWebClient\b
 C:\Users\Santi\source\repos\SantiSjp\testedotnet1\ApiRestDevs\ApiRestWebClient\obj\Debug\net5.0\Razor\Views\Token\Index.cshtml.g.cs
 C:\Users\Santi\source\repos\SantiSjp\testedotnet1\ApiRestDevs\ApiRestWebClient\bin\Debug\net5.0\Microsoft.DotNet.PlatformAbstractions.dll
 C:\Users\Santi\source\repos\SantiSjp\testedotnet1\ApiRestDevs\ApiRestWebClient\bin\Debug\net5.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\Santi\source\repos\SantiSjp\testedotnet1\ApiRestDevs\ApiRestWebClient\obj\Debug\net5.0\Razor\Views\Devs\Index.cshtml.g.cs
+C:\Users\Santi\source\repos\SantiSjp\testedotnet1\ApiRestDevs\ApiRestWebClient\obj\Debug\net5.0\Razor\Views\Projeto\Index.cshtml.g.cs
+C:\Users\Santi\source\repos\SantiSjp\testedotnet1\ApiRestDevs\ApiRestWebClient\obj\Debug\net5.0\Razor\Views\Ranking\Index.cshtml.g.cs

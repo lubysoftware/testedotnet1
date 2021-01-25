@@ -1,10 +1,9 @@
 using ApiRestDevs.Data;
+using ApiRestDevs.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Localization;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Cors;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -70,29 +69,22 @@ namespace ApiRestDevs
             services.AddScoped<DataContext, DataContext>();
 
             services.AddCors(options =>
-
             {
-
                 options.AddPolicy(allowSpecificOrigins,
-
                 builder =>
-
                 {
-
                     builder.WithOrigins("https://localhost:44308")
-
                             .AllowAnyHeader()
-
                             .AllowAnyMethod();
-
                 });
-
             });
+
+            services.AddScoped<SeedingService>();
 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, SeedingService seedingService)
         {
             var ptBR = new CultureInfo("pt-BR");
 
@@ -112,9 +104,12 @@ namespace ApiRestDevs
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ApiRestDevs v1"));
+                seedingService.Seed();
             }
 
             //app.UseHttpsRedirection();
+
+            seedingService.Seed();
 
             app.UseRouting();
 

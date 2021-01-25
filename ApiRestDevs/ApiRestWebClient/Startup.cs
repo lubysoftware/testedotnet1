@@ -25,11 +25,7 @@ namespace ApiRestWebClient
         public void ConfigureServices(IServiceCollection services)
         {             
 
-            services.AddControllersWithViews();
-
-            services.Configure<MvcOptions>(options => {
-                options.Filters.Add(new CorsAuthorizationFilterFactory("AllowSpecificOrigin"));
-            });
+            services.AddControllersWithViews();           
 
         }
 
