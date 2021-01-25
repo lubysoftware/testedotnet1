@@ -48,3 +48,5 @@ C:\Users\Santi\source\repos\SantiSjp\testedotnet1\ApiRestDevs\ApiRestDevs\obj\De
 C:\Users\Santi\source\repos\SantiSjp\testedotnet1\ApiRestDevs\ApiRestDevs\obj\Debug\net5.0\ApiRestDevs.pdb
 C:\Users\Santi\source\repos\SantiSjp\testedotnet1\ApiRestDevs\ApiRestDevs\obj\Debug\net5.0\ApiRestDevs.genruntimeconfig.cache
 C:\Users\Santi\source\repos\SantiSjp\testedotnet1\ApiRestDevs\ApiRestDevs\obj\Debug\net5.0\ApiRestDevs.csprojAssemblyReference.cache
+C:\Users\Santi\source\repos\SantiSjp\testedotnet1\ApiRestDevs\ApiRestDevs\bin\Debug\net5.0\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\Santi\source\repos\SantiSjp\testedotnet1\ApiRestDevs\ApiRestDevs\bin\Debug\net5.0\Microsoft.Extensions.DependencyModel.dll
