@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Cors;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -17,6 +19,9 @@ namespace ApiRestDevs
 {
     public class Startup
     {
+
+        readonly string allowSpecificOrigins = "_allowSpecificOrigins";
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -27,8 +32,9 @@ namespace ApiRestDevs
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddCors();
+
             services.AddControllers();
+            
 
             var key = Encoding.ASCII.GetBytes(Settings.Secret);
 
@@ -62,8 +68,26 @@ namespace ApiRestDevs
                         builder.MigrationsAssembly("ApiRestDevs")));
 
             services.AddScoped<DataContext, DataContext>();
-                     
 
+            services.AddCors(options =>
+
+            {
+
+                options.AddPolicy(allowSpecificOrigins,
+
+                builder =>
+
+                {
+
+                    builder.WithOrigins("https://localhost:44308")
+
+                            .AllowAnyHeader()
+
+                            .AllowAnyMethod();
+
+                });
+
+            });
 
         }
 
@@ -90,7 +114,7 @@ namespace ApiRestDevs
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ApiRestDevs v1"));
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
             app.UseRouting();
 
@@ -99,6 +123,9 @@ namespace ApiRestDevs
                 .AllowAnyMethod()
                 .AllowAnyHeader()
             );
+
+            app.UseCors(allowSpecificOrigins);
+
 
             app.UseAuthentication();
             app.UseAuthorization();

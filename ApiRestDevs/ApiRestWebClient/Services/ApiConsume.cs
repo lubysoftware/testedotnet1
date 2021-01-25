@@ -11,11 +11,11 @@ namespace ApiRestWebClient.Services
         private static readonly RestClient restClient = new RestClient();
         private static readonly string Url = "http://localhost:5000/api/";
 
-        public static async Task<string> GetToken(string rest)
+        public static async Task<string> GetToken(string rest, string username, string password)
         {
             restClient.BaseUrl = new Uri(Url);
             var request = new RestRequest(rest, Method.POST);
-            request.AddJsonBody(new { username = "santi", password = "santi" });
+            request.AddJsonBody(new { username = username, password = password });
 
             var response = await restClient.ExecuteAsync(request);
             return response.Content;
