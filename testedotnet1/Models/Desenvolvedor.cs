@@ -9,5 +9,10 @@ namespace testedotnet1.Models
     {
         public int Id { get; set; }
         public string Nome { get; set; }
+
+        public Desenvolvedor (string nome)
+        {
+            this.Nome = nome;
+        }
     }
 }
