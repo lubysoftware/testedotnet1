@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "apiLuby", "apiLuby\apiLuby.csproj", "{F8E0A5E8-D56F-48AC-AE94-F9EBE1096724}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F8E0A5E8-D56F-48AC-AE94-F9EBE1096724}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8E0A5E8-D56F-48AC-AE94-F9EBE1096724}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8E0A5E8-D56F-48AC-AE94-F9EBE1096724}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8E0A5E8-D56F-48AC-AE94-F9EBE1096724}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5788D5CE-06F8-453F-A5B0-36F7F2D3EFAA}
+	EndGlobalSection
+EndGlobal
