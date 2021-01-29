@@ -69,5 +69,20 @@ namespace testedotnet1.Controllers
             var desenvolvedor = _contexto.Desenvolvedor.FirstOrDefault(d => d.Id == id);
             _contexto.Remove(desenvolvedor);
         }
+
+        [HttpGet]
+        public IEnumerable<Desenvolvedor> GetRankingDesenvolvedores()
+        { 
+            var devlist = _contexto.Desenvolvedor.ToList();
+            var horarioslist = _contexto.Relogio_Ponto.ToList();
+
+            IEnumerable<Desenvolvedor> query = (from d in devlist
+                                               join h in horarioslist on d.Id equals h.Id_Desenvolvedor
+                                               orderby ( new TimeSpan(h.saida.Hour,h.saida.Minute,h.saida.Second) - 
+                                               new TimeSpan(h.entrada.Hour, h.entrada.Minute, h.entrada.Second)).TotalHours descending
+                                               select d).Take(5);            
+            
+            return query;
+        }
     }
 }
