@@ -21,22 +21,31 @@ namespace testedotnet1.Controllers
         [HttpGet]
         public IEnumerable<Relogio_Ponto> Get()
         {
-            return _contexto.tbl_RelogioPonto.ToList();
+            var existe = _contexto.Relogio_Ponto.ToList();
+            if(existe != null)
+                return existe;
+            else
+                return null;
         }
 
         
         [HttpGet("{id}")]
         public Relogio_Ponto Get(int id)
         {
-            var relogioPonto = _contexto.tbl_RelogioPonto.FirstOrDefault(d => d.Id == id);
+            var relogioPonto = _contexto.Relogio_Ponto.FirstOrDefault(d => d.Id == id);
             return relogioPonto;
         }
 
         
         [HttpPost]
-        public void Post([FromBody]Relogio_Ponto relogioPonto)
+        public void Post([FromBody]int idDesenvolvedor, DateTime hora_entrada, DateTime hora_saida)
         {
-            _contexto.tbl_RelogioPonto.Add(relogioPonto);
+            _contexto.Relogio_Ponto.Add(new Relogio_Ponto()
+            {
+                Id_Desenvolvedor = idDesenvolvedor,
+                entrada = hora_entrada,
+                saida = hora_saida
+            });
         }
 
        
@@ -50,7 +59,7 @@ namespace testedotnet1.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            var relogioPonto = _contexto.tbl_RelogioPonto.FirstOrDefault(d => d.Id == id);
+            var relogioPonto = _contexto.Relogio_Ponto.FirstOrDefault(d => d.Id == id);
             _contexto.Remove(relogioPonto);
         }
     }

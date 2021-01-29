@@ -22,14 +22,18 @@ namespace testedotnet1.Controllers
         [HttpGet]
         public IEnumerable<Projeto> Get()
         {
-            return _contexto.tbl_Projeto.ToList();
+            var existe = _contexto.Projeto.ToList();
+            if (existe != null)
+                return existe;
+            else
+                return null;
         }
 
        
         [HttpGet("{id}")]
         public Projeto Get(int id)
         {
-            var projeto = _contexto.tbl_Projeto.FirstOrDefault(d => d.Id == id);
+            var projeto = _contexto.Projeto.FirstOrDefault(d => d.Id == id);
             return projeto;
         }
 
@@ -37,7 +41,7 @@ namespace testedotnet1.Controllers
         [HttpPost]
         public void Post([FromBody]Projeto projeto)
         {
-            _contexto.tbl_Projeto.Add(projeto);
+            _contexto.Projeto.Add(projeto);
         }
 
        
@@ -51,7 +55,7 @@ namespace testedotnet1.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            var projeto = _contexto.tbl_Projeto.FirstOrDefault(d => d.Id == id);
+            var projeto = _contexto.Projeto.FirstOrDefault(d => d.Id == id);
             _contexto.Remove(projeto);
         }
     }

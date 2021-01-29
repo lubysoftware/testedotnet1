@@ -24,22 +24,35 @@ namespace testedotnet1.Controllers
         [HttpGet]
         public IEnumerable<Desenvolvedor> Get()
         {
-            return _contexto.tbl_Desenvolvedor.ToList();
+            var existe = _contexto.Desenvolvedor.ToList();
+            if (existe != null)
+                return existe;
+            else
+                return null;
         }
 
        
         [HttpGet("{id}")]
         public Desenvolvedor Get(int id)
         {
-            var desenvolvedor = _contexto.tbl_Desenvolvedor.FirstOrDefault(d => d.Id == id);
+            var desenvolvedor = _contexto.Desenvolvedor.FirstOrDefault(d => d.Id == id);
             return desenvolvedor;
         }
 
+
         
-        [HttpPost]
-        public void Post([FromBody]Desenvolvedor desenvolvedor)
+        public string Post(string desenvolvedor)
         {
-            _contexto.tbl_Desenvolvedor.Add(desenvolvedor);
+            try
+            {
+                _contexto.Desenvolvedor.Add(new Desenvolvedor(desenvolvedor));
+                return "sucesso";
+            }
+            catch(Exception)
+            {
+                return "Falhou";
+            }
+            
         }
 
         
@@ -53,7 +66,7 @@ namespace testedotnet1.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            var desenvolvedor = _contexto.tbl_Desenvolvedor.FirstOrDefault(d => d.Id == id);
+            var desenvolvedor = _contexto.Desenvolvedor.FirstOrDefault(d => d.Id == id);
             _contexto.Remove(desenvolvedor);
         }
     }

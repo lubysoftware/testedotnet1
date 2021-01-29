@@ -14,9 +14,9 @@ namespace testedotnet1.Models
 
         }
 
-        public DbSet<Desenvolvedor> tbl_Desenvolvedor { get; set; }
-        public DbSet<Projeto> tbl_Projeto { get; set; }
-        public DbSet<Relogio_Ponto> tbl_RelogioPonto { get; set; }
+        public DbSet<Desenvolvedor> Desenvolvedor { get; set; }
+        public DbSet<Projeto> Projeto { get; set; }
+        public DbSet<Relogio_Ponto> Relogio_Ponto { get; set; }
     }
    
 }

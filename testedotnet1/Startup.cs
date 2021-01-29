@@ -19,11 +19,12 @@ namespace testedotnet1
 {
     public class Startup
     {
-        public IConfigurationRoot Configuration { get; }
+        public IConfiguration Configuration;
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<Contexto>(options => options.UseSqlServer(Configuration.GetConnectionString("ConnectionString")));
+            //services.AddDbContext<Contexto>(options => options.UseSqlServer(Configuration.GetConnectionString("Data Source=DESKTOP-5H2IR2A; Initial Catalog=RelogioBancoHoras;Trusted_Connection=True;MultipleActiveResultSets=true")));
+            services.AddDbContext<Contexto>(options => options.UseSqlServer("Data Source=DESKTOP-5H2IR2A; Initial Catalog=RelogioBancoHoras;Trusted_Connection=True;MultipleActiveResultSets=true"));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
