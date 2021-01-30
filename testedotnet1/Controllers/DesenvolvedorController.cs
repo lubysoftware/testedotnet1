@@ -24,11 +24,7 @@ namespace testedotnet1.Controllers
         [HttpGet]
         public IEnumerable<Desenvolvedor> Get()
         {
-            var existe = _contexto.Desenvolvedor.ToList();
-            if (existe != null)
-                return existe;
-            else
-                return null;
+            return _contexto.Desenvolvedor.ToList();            
         }
 
        
@@ -40,26 +36,20 @@ namespace testedotnet1.Controllers
         }
 
 
-        
-        public string Post(string desenvolvedor)
+        [HttpPost]
+        public void Post([FromBody] Desenvolvedor desenvolvedor)
         {
-            try
-            {
-                _contexto.Desenvolvedor.Add(new Desenvolvedor(desenvolvedor));
-                return "sucesso";
-            }
-            catch(Exception)
-            {
-                return "Falhou";
-            }
-            
+            _contexto.Desenvolvedor.Add(desenvolvedor);
+            _contexto.SaveChanges();
         }
 
-        
-        [HttpPut]
-        public void Put([FromBody]Desenvolvedor desenvolvedor)
+
+        [HttpPut("{id}")]
+        public void Put(int id, [FromBody]Desenvolvedor desenvolvedor)
         {
-            _contexto.Entry(desenvolvedor).State = EntityState.Modified;
+            var existe = _contexto.Desenvolvedor.FirstOrDefault(d => d.Id == id);
+            existe.Nome = desenvolvedor.Nome;
+            _contexto.SaveChanges();
         }
 
        
@@ -68,21 +58,10 @@ namespace testedotnet1.Controllers
         {
             var desenvolvedor = _contexto.Desenvolvedor.FirstOrDefault(d => d.Id == id);
             _contexto.Remove(desenvolvedor);
+            contexto.SaveChanges();
         }
 
-        [HttpGet]
-        public IEnumerable<Desenvolvedor> GetRankingDesenvolvedores()
-        { 
-            var devlist = _contexto.Desenvolvedor.ToList();
-            var horarioslist = _contexto.Relogio_Ponto.ToList();
-
-            IEnumerable<Desenvolvedor> query = (from d in devlist
-                                               join h in horarioslist on d.Id equals h.Id_Desenvolvedor
-                                               orderby ( new TimeSpan(h.saida.Hour,h.saida.Minute,h.saida.Second) - 
-                                               new TimeSpan(h.entrada.Hour, h.entrada.Minute, h.entrada.Second)).TotalHours descending
-                                               select d).Take(5);            
-            
-            return query;
-        }
+       
+       
     }
 }

@@ -18,49 +18,28 @@ namespace testedotnet1.Controllers
             _contexto = contexto;
         }
 
-        [HttpGet]
-        public IEnumerable<Relogio_Ponto> Get()
-        {
-            var existe = _contexto.Relogio_Ponto.ToList();
-            if(existe != null)
-                return existe;
-            else
-                return null;
-        }
-
-        
-        [HttpGet("{id}")]
-        public Relogio_Ponto Get(int id)
-        {
-            var relogioPonto = _contexto.Relogio_Ponto.FirstOrDefault(d => d.Id == id);
-            return relogioPonto;
-        }
-
+       
         //LANÇAMENTO DE HORA
         [HttpPost]
-        public void Post([FromBody]int idDesenvolvedor, DateTime hora_entrada, DateTime hora_saida)
+        public void Post([FromBody]Relogio_Ponto relogioPonto)
         {
-            _contexto.Relogio_Ponto.Add(new Relogio_Ponto()
-            {
-                Id_Desenvolvedor = idDesenvolvedor,
-                entrada = hora_entrada,
-                saida = hora_saida
-            });
+            _contexto.Relogio_Ponto.Add(relogioPonto);            
+            _contexto.SaveChanges();
         }
-
        
-        [HttpPut("{id}")]
-        public void Put([FromBody]Relogio_Ponto relogioPonto)
-        {
-            _contexto.Entry(relogioPonto).State = EntityState.Modified;
-        }
 
-        
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpGet]
+        public IEnumerable<Desenvolvedor> GetRankingDesenvolvedores()
         {
-            var relogioPonto = _contexto.Relogio_Ponto.FirstOrDefault(d => d.Id == id);
-            _contexto.Remove(relogioPonto);
+            var devlist = _contexto.Desenvolvedor.ToList();
+            var horarioslist = _contexto.Relogio_Ponto.ToList();
+
+            IEnumerable<Desenvolvedor> query = (from d in devlist
+                                                join h in horarioslist on d.Id equals h.Id_Desenvolvedor
+                                                orderby (h.saida - h.entrada) descending
+                                                select d).Take(5);
+
+            return query;
         }
     }
 }
