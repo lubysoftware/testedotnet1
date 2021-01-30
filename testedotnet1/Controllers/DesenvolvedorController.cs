@@ -58,7 +58,7 @@ namespace testedotnet1.Controllers
         {
             var desenvolvedor = _contexto.Desenvolvedor.FirstOrDefault(d => d.Id == id);
             _contexto.Remove(desenvolvedor);
-            contexto.SaveChanges();
+            _contexto.SaveChanges();
         }
 
        
