@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ApiLuby</name>
+    </assembly>
+    <members>
+        <member name="M:ApiLuby.Controllers.BankOfHoursController.Post(ApiLuby.Models.BankOfHours.BankOfHoursViewModelInput)">
+            <summary>
+            Este serviço permite lançar horas ativas para um desenvolvedor.
+            </summary>
+            <returns>Retorna status ok, dados do developer e o token em caso de sucesso</returns>
+        </member>
+        <member name="M:ApiLuby.Controllers.BankOfHoursController.Get">
+            <summary>
+            Este serviço permite obter todas as horas ativas do desenvolvedor.
+            </summary>
+            <returns>Retorna status ok </returns>
+        </member>
+        <member name="M:ApiLuby.Controllers.DeveloperController.Login(ApiLuby.Models.Developers.LoginViewModelInput)">
+            <summary>
+            Este serviço permite autenticar um usuário cadastrado e ativo(token válido por 5 minutos!)
+            </summary>
+            <param name="loginViewModelInput">View model do login</param>
+            <returns>Retorna status ok, dados do developer e o token em caso de sucesso</returns>
+        </member>
+        <member name="M:ApiLuby.Controllers.DeveloperController.Register(ApiLuby.Models.Developers.RegisterViewModelInput)">
+            <summary>
+            Este serviço permite cria um desenvolvedor não existente.
+            </summary>
+            <param name="loginViewModelInput">"View model do registro de login</param>
+        </member>
+        <member name="M:ApiLuby.Controllers.RankingController.GetRanking(System.Int32)">
+            <summary>
+            Este serviço permite obter o ranking dos desenvolvedores com maior número de horas.
+            </summary>
+            <returns>Retorna status ok </returns>
+        </member>
+    </members>
+</doc>

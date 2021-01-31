@@ -1,0 +1,1 @@
+Tive alguns problemas na hora do lançamento de novas horas para a api, onde até então não conseguir resolver.
