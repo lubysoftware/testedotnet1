@@ -9,7 +9,7 @@ using TesteApi.Data;
 
 namespace TesteApi.Migrations
 {
-    [DbContext(typeof(DesenvolvedorContext))]
+    [DbContext(typeof(TesteApiContext))]
     [Migration("20210129020958_initial")]
     partial class initial
     {

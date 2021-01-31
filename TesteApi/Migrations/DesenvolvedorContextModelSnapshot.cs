@@ -8,7 +8,7 @@ using TesteApi.Data;
 
 namespace TesteApi.Migrations
 {
-    [DbContext(typeof(DesenvolvedorContext))]
+    [DbContext(typeof(TesteApiContext))]
     partial class DesenvolvedorContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
@@ -26,25 +26,21 @@ namespace TesteApi.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("HoraTrabalhadaId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Nome")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("HoraTrabalhadaId");
 
                     b.ToTable("Desenvolvedores");
                 });
 
             modelBuilder.Entity("TesteApi.Models.HoraTrabalhada", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<int>("ProjetoId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("DesenvolvedorId")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("DtFim")
                         .HasColumnType("datetime2");
@@ -52,10 +48,9 @@ namespace TesteApi.Migrations
                     b.Property<DateTime>("DtInicio")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Nome")
-                        .HasColumnType("nvarchar(max)");
+                    b.HasKey("ProjetoId", "DesenvolvedorId");
 
-                    b.HasKey("Id");
+                    b.HasIndex("DesenvolvedorId");
 
                     b.ToTable("HorasTrabalhadas");
                 });
@@ -67,31 +62,25 @@ namespace TesteApi.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("DesenvolvedorId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Nome")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("DesenvolvedorId");
-
                     b.ToTable("Projetos");
                 });
 
-            modelBuilder.Entity("TesteApi.Models.Desenvolvedor", b =>
-                {
-                    b.HasOne("TesteApi.Models.HoraTrabalhada", "HoraTrabalhada")
-                        .WithMany()
-                        .HasForeignKey("HoraTrabalhadaId");
-                });
-
-            modelBuilder.Entity("TesteApi.Models.Projeto", b =>
+            modelBuilder.Entity("TesteApi.Models.HoraTrabalhada", b =>
                 {
                     b.HasOne("TesteApi.Models.Desenvolvedor", "Desenvolvedor")
                         .WithMany()
                         .HasForeignKey("DesenvolvedorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("TesteApi.Models.Projeto", "Projeto")
+                        .WithMany()
+                        .HasForeignKey("ProjetoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "type": "mssql",
+      "connectionId": "DESKTOP-H6G5SVI\\SQLEXPRESS"
+    }
+  }
+}
