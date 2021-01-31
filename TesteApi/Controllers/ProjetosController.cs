@@ -2,13 +2,17 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Web.Http;
 using TesteApi.Models;
 
 namespace TesteApi.Controllers
 {
-    public class DesenvolvedoresController : ApiController
+    public class ProjetosController : ApiController
     {
+
         SqlConnection conexao;
         SqlCommand comando;
         SqlDataAdapter da;
@@ -21,7 +25,7 @@ namespace TesteApi.Controllers
             try
             {
                 var conexao = new SqlConnection("Server=DESKTOP-H6G5SVI\\SQLEXPRESS;Database=TesteApiBd;Trusted_Connection=True;");
-                strSQL = "SELECT * FROM[TesteApiBd].[dbo].Desenvolvedores";
+                strSQL = "SELECT * FROM[TesteApiBd].[dbo].Projetos";
                 DataSet ds = new DataSet();
                 da = new SqlDataAdapter(strSQL, conexao);
                 conexao.Open();
@@ -43,7 +47,7 @@ namespace TesteApi.Controllers
                 conexao = new SqlConnection("Server=DESKTOP-H6G5SVI\\SQLEXPRESS;Database=TesteApiBd;Trusted_Connection=True;");
                 if (!string.IsNullOrEmpty(nome))
                 {
-                    strSQL = "INSERT INTO [dbo].[Desenvolvedores] ([Nome]) VALUES (@Nome);";
+                    strSQL = "INSERT INTO [dbo].Projetos ([Nome]) VALUES (@Nome);";
                     comando = new SqlCommand(strSQL, conexao);
                     comando.Parameters.AddWithValue("@Nome", nome);
                     conexao.Open();
@@ -72,7 +76,7 @@ namespace TesteApi.Controllers
                 if (!string.IsNullOrEmpty(id))
                 {
 
-                    strSQL = "DELETE TesteApiBd.dbo.Desenvolvedores WHERE ID = @Id";
+                    strSQL = "DELETE TesteApiBd.dbo.Projetos WHERE ID = @Id";
 
                     comando = new SqlCommand(strSQL, conexao);
                     comando.Parameters.AddWithValue("@Id", id);
