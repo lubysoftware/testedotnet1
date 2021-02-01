@@ -16,12 +16,8 @@ namespace apiLuby.Models
 
         public int EstimatedHours { get; set; }
 
-        public Appointment Appointment { get; set; }
+        public ICollection<Appointment> Appointment { get; set; }
 
         public Guid IdAppointment { get; set; }
-
-        public Developer Developer { get; set; }
-
-        public Guid IdDeveloper { get; set; }
     }
 }

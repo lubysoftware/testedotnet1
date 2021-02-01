@@ -23,8 +23,12 @@ namespace apiLuby.Models
 
         public bool Active { get; set; }
 
-        public Project Project { get; set; }
+        public ICollection<Project> Projects { get; set; }
 
         public Guid IdProject { get; set; }
+
+        public ICollection<Appointment> Appointments { get; set; }
+
+        public Guid IdAppointment { get; set; }
     }
 }
