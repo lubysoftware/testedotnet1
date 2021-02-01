@@ -36,5 +36,5 @@ Desenvolver um serviço que seja capaz de gerar um lançamento de horas.
 - Criar um client WEB para consumir essa API 
 
 #### Identificação:
-Nome: <br/> Victor André Costa da Silva
+Nome: Victor André Costa da Silva <br/> 
 E-mail: victor27andre@gmail.com
