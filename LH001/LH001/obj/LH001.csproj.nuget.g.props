@@ -19,6 +19,11 @@
     <Import Project="$(NuGetPackageRoot)microsoft.entityframeworkcore.design\5.0.2\build\netcoreapp3.0\Microsoft.EntityFrameworkCore.Design.props" Condition="Exists('$(NuGetPackageRoot)microsoft.entityframeworkcore.design\5.0.2\build\netcoreapp3.0\Microsoft.EntityFrameworkCore.Design.props')" />
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgNode_js Condition=" '$(PkgNode_js)' == '' ">C:\Users\c.vasconcelos\.nuget\packages\node.js\0.10.28</PkgNode_js>
+    <PkgNoGit Condition=" '$(PkgNoGit)' == '' ">C:\Users\c.vasconcelos\.nuget\packages\nogit\0.0.8</PkgNoGit>
+    <PkgMicrosoft_CodeAnalysis_Analyzers Condition=" '$(PkgMicrosoft_CodeAnalysis_Analyzers)' == '' ">C:\Users\c.vasconcelos\.nuget\packages\microsoft.codeanalysis.analyzers\2.9.4</PkgMicrosoft_CodeAnalysis_Analyzers>
     <PkgMicrosoft_EntityFrameworkCore_Tools Condition=" '$(PkgMicrosoft_EntityFrameworkCore_Tools)' == '' ">C:\Users\c.vasconcelos\.nuget\packages\microsoft.entityframeworkcore.tools\5.0.2</PkgMicrosoft_EntityFrameworkCore_Tools>
+    <PkgjQuery Condition=" '$(PkgjQuery)' == '' ">C:\Users\c.vasconcelos\.nuget\packages\jquery\3.5.1</PkgjQuery>
+    <PkgBower Condition=" '$(PkgBower)' == '' ">C:\Users\c.vasconcelos\.nuget\packages\bower\1.3.11</PkgBower>
   </PropertyGroup>
 </Project>

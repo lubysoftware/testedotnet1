@@ -10,5 +10,19 @@
             </summary>
             <returns>Retorna uma lista do tipo desenvolvedor</returns>
         </member>
+        <member name="M:LH001.ServiceAPI.Controllers.v1.DesenvolvedorController.BuscarDesenvolvedores(System.String,System.String)">
+            <summary>
+            Get os Desenvolvedores por nome ou Id. Versão atual 1.0
+            </summary>
+            <param name="Id">Numero do Id para pesquisa. Deve ser = 0 se não for buscar por ele</param>
+            <param name="Nome">Nome do desenvolvedor, Parte ou inteiro</param>
+            <returns>Retorna uma lista do tipo desenvolvedor</returns>
+        </member>
+        <member name="M:LH001.ServiceAPI.Controllers.v1.DesenvolvedorController.Incluir(System.String)">
+            <summary>
+            Adiciona o um novo Desenvolvedor. Versão atual 1.0
+            </summary>
+            <param name="Nome">Nome do desenvolvedor, não deve ser um já cadastrado.</param>
+        </member>
     </members>
 </doc>

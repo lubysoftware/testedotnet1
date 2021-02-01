@@ -1,0 +1,30 @@
+﻿body {
+    background: #2a2829d1 !important;
+}
+
+#caixa {
+    background-color: whitesmoke;
+    width: 85%;
+    margin-top: 3%;
+    margin-left: 7%;
+    height: 800px;
+    -webkit-box-shadow: -19px -18px 19px 0px rgba(34, 50, 50, 0.75);
+    -moz-box-shadow: -19px -18px 19px 0px rgba(34, 50, 50, 0.75);
+    box-shadow: -19px -18px 19px 0px rgba(34, 50, 50, 0.75);
+}
+
+#caixa_menu {
+    -webkit-box-shadow: 7px 7px 8px 0px rgba(50, 50, 50, 0.35);
+    -moz-box-shadow: 7px 7px 8px 0px rgba(50, 50, 50, 0.35);
+    box-shadow: 7px 7px 8px 0px rgba(50, 50, 50, 0.35);
+}
+
+#Titulo_index {
+    font-size: 30px;
+    font-family: Tahoma;
+}
+
+#descricao_index {
+    font-size: 15px;
+    font-family: Tahoma;
+}

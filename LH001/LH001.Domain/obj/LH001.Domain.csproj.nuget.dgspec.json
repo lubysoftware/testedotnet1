@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\c.vasconcelos\\Documents\\GitHub\\LH001\\LH001\\LH001.Domain\\LH001.Domain.csproj": {}
+    "C:\\Users\\c.vasconcelos\\Documents\\GitHub\\testedotnet1\\LH001\\LH001.Domain\\LH001.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\c.vasconcelos\\Documents\\GitHub\\LH001\\LH001\\LH001.Domain\\LH001.Domain.csproj": {
+    "C:\\Users\\c.vasconcelos\\Documents\\GitHub\\testedotnet1\\LH001\\LH001.Domain\\LH001.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\c.vasconcelos\\Documents\\GitHub\\LH001\\LH001\\LH001.Domain\\LH001.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\c.vasconcelos\\Documents\\GitHub\\testedotnet1\\LH001\\LH001.Domain\\LH001.Domain.csproj",
         "projectName": "LH001.Domain",
-        "projectPath": "C:\\Users\\c.vasconcelos\\Documents\\GitHub\\LH001\\LH001\\LH001.Domain\\LH001.Domain.csproj",
+        "projectPath": "C:\\Users\\c.vasconcelos\\Documents\\GitHub\\testedotnet1\\LH001\\LH001.Domain\\LH001.Domain.csproj",
         "packagesPath": "C:\\Users\\c.vasconcelos\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\c.vasconcelos\\Documents\\GitHub\\LH001\\LH001\\LH001.Domain\\obj\\",
+        "outputPath": "C:\\Users\\c.vasconcelos\\Documents\\GitHub\\testedotnet1\\LH001\\LH001.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\c.vasconcelos\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -41,6 +41,10 @@
             "IdentityModel": {
               "target": "Package",
               "version": "[5.0.0, )"
+            },
+            "Microsoft.AspNetCore.WebUtilities": {
+              "target": "Package",
+              "version": "[2.2.0, )"
             },
             "NETStandard.Library": {
               "suppressParent": "All",

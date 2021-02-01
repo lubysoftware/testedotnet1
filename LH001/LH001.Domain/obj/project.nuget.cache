@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "yAxGAeQJ6BdTPmnF1U5vvs2NwgqZd/4rZQcNXzT6GDIu0X+75uZ8SxXpEI5uKzUG8k4ajjDdOIgX2aNHoSQ5qg==",
+  "dgSpecHash": "oUAsMdmDA19USSbChz+BIb1HsNDjoyhJ5oUykemQnuvkXR3Z4tfhf2iQCZ3buR9dTNr/VRyQwcvv/O+AMHOM5Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\c.vasconcelos\\Documents\\GitHub\\LH001\\LH001\\LH001.Domain\\LH001.Domain.csproj",
+  "projectFilePath": "C:\\Users\\c.vasconcelos\\Documents\\GitHub\\testedotnet1\\LH001\\LH001.Domain\\LH001.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\c.vasconcelos\\.nuget\\packages\\identitymodel\\5.0.0\\identitymodel.5.0.0.nupkg.sha512",
+    "C:\\Users\\c.vasconcelos\\.nuget\\packages\\microsoft.aspnetcore.webutilities\\2.2.0\\microsoft.aspnetcore.webutilities.2.2.0.nupkg.sha512",
     "C:\\Users\\c.vasconcelos\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\5.0.0\\microsoft.bcl.asyncinterfaces.5.0.0.nupkg.sha512",
+    "C:\\Users\\c.vasconcelos\\.nuget\\packages\\microsoft.extensions.primitives\\2.2.0\\microsoft.extensions.primitives.2.2.0.nupkg.sha512",
+    "C:\\Users\\c.vasconcelos\\.nuget\\packages\\microsoft.net.http.headers\\2.2.0\\microsoft.net.http.headers.2.2.0.nupkg.sha512",
     "C:\\Users\\c.vasconcelos\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\c.vasconcelos\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
     "C:\\Users\\c.vasconcelos\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",

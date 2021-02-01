@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\c.vasconcelos\\Documents\\GitHub\\LH001\\LH001\\LH001\\LH001.csproj": {}
+    "C:\\Users\\c.vasconcelos\\Documents\\GitHub\\testedotnet1\\LH001\\LH001\\LH001.csproj": {}
   },
   "projects": {
-    "C:\\Users\\c.vasconcelos\\Documents\\GitHub\\LH001\\LH001\\LH001.Domain\\LH001.Domain.csproj": {
+    "C:\\Users\\c.vasconcelos\\Documents\\GitHub\\testedotnet1\\LH001\\LH001.Domain\\LH001.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\c.vasconcelos\\Documents\\GitHub\\LH001\\LH001\\LH001.Domain\\LH001.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\c.vasconcelos\\Documents\\GitHub\\testedotnet1\\LH001\\LH001.Domain\\LH001.Domain.csproj",
         "projectName": "LH001.Domain",
-        "projectPath": "C:\\Users\\c.vasconcelos\\Documents\\GitHub\\LH001\\LH001\\LH001.Domain\\LH001.Domain.csproj",
+        "projectPath": "C:\\Users\\c.vasconcelos\\Documents\\GitHub\\testedotnet1\\LH001\\LH001.Domain\\LH001.Domain.csproj",
         "packagesPath": "C:\\Users\\c.vasconcelos\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\c.vasconcelos\\Documents\\GitHub\\LH001\\LH001\\LH001.Domain\\obj\\",
+        "outputPath": "C:\\Users\\c.vasconcelos\\Documents\\GitHub\\testedotnet1\\LH001\\LH001.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\c.vasconcelos\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -42,6 +42,10 @@
               "target": "Package",
               "version": "[5.0.0, )"
             },
+            "Microsoft.AspNetCore.WebUtilities": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",
@@ -71,14 +75,14 @@
         }
       }
     },
-    "C:\\Users\\c.vasconcelos\\Documents\\GitHub\\LH001\\LH001\\LH001\\LH001.csproj": {
+    "C:\\Users\\c.vasconcelos\\Documents\\GitHub\\testedotnet1\\LH001\\LH001\\LH001.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\c.vasconcelos\\Documents\\GitHub\\LH001\\LH001\\LH001\\LH001.csproj",
+        "projectUniqueName": "C:\\Users\\c.vasconcelos\\Documents\\GitHub\\testedotnet1\\LH001\\LH001\\LH001.csproj",
         "projectName": "LH001",
-        "projectPath": "C:\\Users\\c.vasconcelos\\Documents\\GitHub\\LH001\\LH001\\LH001\\LH001.csproj",
+        "projectPath": "C:\\Users\\c.vasconcelos\\Documents\\GitHub\\testedotnet1\\LH001\\LH001\\LH001.csproj",
         "packagesPath": "C:\\Users\\c.vasconcelos\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\c.vasconcelos\\Documents\\GitHub\\LH001\\LH001\\LH001\\obj\\",
+        "outputPath": "C:\\Users\\c.vasconcelos\\Documents\\GitHub\\testedotnet1\\LH001\\LH001\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\c.vasconcelos\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -94,8 +98,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\c.vasconcelos\\Documents\\GitHub\\LH001\\LH001\\LH001.Domain\\LH001.Domain.csproj": {
-                "projectPath": "C:\\Users\\c.vasconcelos\\Documents\\GitHub\\LH001\\LH001\\LH001.Domain\\LH001.Domain.csproj"
+              "C:\\Users\\c.vasconcelos\\Documents\\GitHub\\testedotnet1\\LH001\\LH001.Domain\\LH001.Domain.csproj": {
+                "projectPath": "C:\\Users\\c.vasconcelos\\Documents\\GitHub\\testedotnet1\\LH001\\LH001.Domain\\LH001.Domain.csproj"
               }
             }
           }
@@ -109,15 +113,31 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Bower": {
+              "target": "Package",
+              "version": "[1.3.11, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[5.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[3.1.11, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
               "version": "[5.0.2, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            },
+            "jQuery": {
+              "target": "Package",
+              "version": "[3.5.1, )"
             }
           },
           "imports": [

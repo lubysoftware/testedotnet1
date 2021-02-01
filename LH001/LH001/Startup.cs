@@ -30,7 +30,8 @@ namespace LH001
             services.AddControllers();
             var connection = @"Data Source=server-jovemdeelite.database.windows.net;Initial Catalog=LH001;Persist Security Info=True;User ID=JovemDeElite;Password=pwd_LH001;";
             //services.AddDbContext<BdContext>(options => options.UseSqlServer(connection));
-            services.AddDbContext<BdContext>(options => {
+            services.AddDbContext<BdContext>(options =>
+            {
                 options.UseSqlServer(connection,
                     sqlServerOptionsAction: sqlOptions =>
                     {
@@ -41,10 +42,16 @@ namespace LH001
                     });
             });
             services.AddMvc(option => option.EnableEndpointRouting = false);
+            services.AddRazorPages();
+    //.AddNewtonsoftJson(options =>
+    //{
+    //    options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+    //    options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
+    //})
+    //.AddSessionStateTempDataProvider();
 
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
 
@@ -54,7 +61,7 @@ namespace LH001
             }
 
             app.UseHttpsRedirection();
-
+            app.UseStaticFiles();
             app.UseRouting();
 
             app.UseAuthorization();

@@ -20,7 +20,6 @@ namespace LH001.Pages
         }
         public async Task<IActionResult> OnGet()
         {
-            var resultado = await new ChamadaDesenvolvedor(_configuration["URLs:LH.Service"]).Listar();
             return Page();
         }
     }

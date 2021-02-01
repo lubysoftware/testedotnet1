@@ -1,1 +1,3 @@
-﻿<StaticWebAssets Version="1.0" />
+﻿<StaticWebAssets Version="1.0">
+  <ContentRoot BasePath="_content/LH001" Path="C:\Users\c.vasconcelos\Documents\GitHub\testedotnet1\LH001\LH001\wwwroot\" />
+</StaticWebAssets>
