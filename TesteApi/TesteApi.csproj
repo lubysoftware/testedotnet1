@@ -225,6 +225,7 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\DesenvolvedoresController.cs" />
+    <Compile Include="Controllers\HorasTrabalhadasController.cs" />
     <Compile Include="Controllers\ProjetosController.cs" />
     <Compile Include="Data\TesteApiContext.cs" />
     <Compile Include="Global.asax.cs">
