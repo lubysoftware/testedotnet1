@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,10 +14,9 @@ namespace TesteApi.Data
         public DbSet<HoraTrabalhada> HorasTrabalhadas { get; set; }
         public DbSet<Projeto> Projetos { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=TesteApiBd;Data Source=DESKTOP-H6G5SVI\\SQLEXPRESS");
-        }
+        public TesteApiContext(DbContextOptions<TesteApiContext> options) : base(options)
+            {
+            }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
