@@ -40,6 +40,7 @@ namespace testeAPI.Migrations
                 {
                     DesenvolvedorId = table.Column<int>(nullable: false),
                     ProjetoId = table.Column<int>(nullable: false),
+                    Id = table.Column<int>(nullable: false),
                     DtInicio = table.Column<DateTime>(nullable: false),
                     DtFim = table.Column<DateTime>(nullable: false)
                 },

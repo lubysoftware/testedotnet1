@@ -48,6 +48,9 @@ namespace testeAPI.Migrations
                     b.Property<DateTime>("DtInicio")
                         .HasColumnType("timestamp without time zone");
 
+                    b.Property<int>("Id")
+                        .HasColumnType("integer");
+
                     b.HasKey("ProjetoId", "DesenvolvedorId");
 
                     b.HasIndex("DesenvolvedorId");
