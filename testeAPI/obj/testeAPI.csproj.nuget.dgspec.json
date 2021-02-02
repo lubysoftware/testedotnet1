@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\victor.costa\\Documents\\docsVictor\\testeAPI\\testeAPI.csproj": {}
+    "C:\\Users\\victor.costa\\Documents\\docsVictor\\testedotnet1\\testeAPI\\testeAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\victor.costa\\Documents\\docsVictor\\testeAPI\\testeAPI.csproj": {
+    "C:\\Users\\victor.costa\\Documents\\docsVictor\\testedotnet1\\testeAPI\\testeAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\victor.costa\\Documents\\docsVictor\\testeAPI\\testeAPI.csproj",
+        "projectUniqueName": "C:\\Users\\victor.costa\\Documents\\docsVictor\\testedotnet1\\testeAPI\\testeAPI.csproj",
         "projectName": "testeAPI",
-        "projectPath": "C:\\Users\\victor.costa\\Documents\\docsVictor\\testeAPI\\testeAPI.csproj",
+        "projectPath": "C:\\Users\\victor.costa\\Documents\\docsVictor\\testedotnet1\\testeAPI\\testeAPI.csproj",
         "packagesPath": "C:\\Users\\victor.costa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\victor.costa\\Documents\\docsVictor\\testeAPI\\obj\\",
+        "outputPath": "C:\\Users\\victor.costa\\Documents\\docsVictor\\testedotnet1\\testeAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",

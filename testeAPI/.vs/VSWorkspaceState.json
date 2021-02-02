@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Controllers"
   ],
-  "SelectedNode": "\\testeAPI.csproj",
+  "SelectedNode": "\\Controllers\\Desenvolvedores.Controller.cs",
   "PreviewInSolutionExplorer": false
 }

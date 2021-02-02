@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "X16gazgF+IbbRzZiGpEzzG4yIHeLQu+auejxd+Rmet6MFx6Bk88EmvLSy8cLTMhJOhw4w94PC8u/WCiFA4qvww==",
+  "dgSpecHash": "DrD8mLNVGA5X1NGCb38qpiRBSjRdQ3yj0dM4BCIGJUrGeatuUseLe4UMRWzY0TvqG6HwzWfChp5NJhlfh5QMHA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\victor.costa\\Documents\\docsVictor\\testeAPI\\testeAPI.csproj",
+  "projectFilePath": "C:\\Users\\victor.costa\\Documents\\docsVictor\\testedotnet1\\testeAPI\\testeAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\victor.costa\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.0\\microsoft.bcl.asyncinterfaces.1.1.0.nupkg.sha512",
     "C:\\Users\\victor.costa\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
