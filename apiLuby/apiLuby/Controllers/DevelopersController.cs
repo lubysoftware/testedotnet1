@@ -62,8 +62,6 @@ namespace apiLuby.Controllers
             {
                 return NotFound();
             }
-
-            return NoContent();
         }
 
         [HttpDelete("{id}")]
