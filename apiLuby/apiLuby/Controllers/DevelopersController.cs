@@ -29,7 +29,7 @@ namespace apiLuby.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Developer>> GetDeveloper(Guid id)
+        public async Task<ActionResult<Developer>> GetDeveloper(int id)
         {
             var developer = await developerContext.FindAsync(id);
             return Ok(developer);
@@ -44,7 +44,7 @@ namespace apiLuby.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult<Developer>> PutDeveloper(Guid id, [FromBody]Developer developer)
+        public async Task<ActionResult<Developer>> PutDeveloper(int id, [FromBody]Developer developer)
         {
             if (developer.Id != id)
             {
@@ -65,7 +65,7 @@ namespace apiLuby.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Developer>> DeleteDeveloper(Guid id)
+        public async Task<ActionResult<Developer>> DeleteDeveloper(int id)
         {
             var developer = await developerContext.FindAsync(id);
 
@@ -76,7 +76,7 @@ namespace apiLuby.Controllers
 
             developerContext.Remove(developer);
             await context.SaveChangesAsync();
-            return Ok();
+            return Ok(developer);
         }
     }
 }

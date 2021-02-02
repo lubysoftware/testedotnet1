@@ -10,7 +10,7 @@ using apiLuby.Context;
 namespace apiLuby.Migrations
 {
     [DbContext(typeof(MSSQLContext))]
-    [Migration("20210201225026_initial")]
+    [Migration("20210202213123_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -23,24 +23,25 @@ namespace apiLuby.Migrations
 
             modelBuilder.Entity("apiLuby.Models.Appointment", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
-                    b.Property<Guid?>("DeveloperId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int?>("DeveloperId")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("FinishedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid>("IdDeveloper")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("IdDeveloper")
+                        .HasColumnType("int");
 
-                    b.Property<Guid>("IdProject")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("IdProject")
+                        .HasColumnType("int");
 
-                    b.Property<Guid?>("ProjectId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int?>("ProjectId")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("StartedAt")
                         .HasColumnType("datetime2");
@@ -56,18 +57,19 @@ namespace apiLuby.Migrations
 
             modelBuilder.Entity("apiLuby.Models.Developer", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<bool>("Active")
                         .HasColumnType("bit");
 
-                    b.Property<Guid>("IdAppointment")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("IdAppointment")
+                        .HasColumnType("int");
 
-                    b.Property<Guid>("IdProject")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("IdProject")
+                        .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -88,18 +90,19 @@ namespace apiLuby.Migrations
 
             modelBuilder.Entity("apiLuby.Models.Project", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
-                    b.Property<Guid?>("DeveloperId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int?>("DeveloperId")
+                        .HasColumnType("int");
 
                     b.Property<int>("EstimatedHours")
                         .HasColumnType("int");
 
-                    b.Property<Guid>("IdAppointment")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("IdAppointment")
+                        .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .IsRequired()

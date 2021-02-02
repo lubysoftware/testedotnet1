@@ -7,7 +7,7 @@ namespace apiLuby.Models
     public class Project
     {
         [Key]
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
         [Required(ErrorMessage = "O campo {0} é obrigatório.")]
         public String Name { get; set; }
@@ -16,6 +16,6 @@ namespace apiLuby.Models
 
         public ICollection<Appointment> Appointment { get; set; }
 
-        public Guid IdAppointment { get; set; }
+        public int IdAppointment { get; set; }
     }
 }

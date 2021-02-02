@@ -29,7 +29,7 @@ namespace apiLuby.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Project>> GetProject(Guid id)
+        public async Task<ActionResult<Project>> GetProject(int id)
         {
             var project = await projectContext.FindAsync(id);
             return Ok(project);
@@ -44,7 +44,7 @@ namespace apiLuby.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult<Project>> PutProject(Guid id, [FromBody]Project project)
+        public async Task<ActionResult<Project>> PutProject(int id, [FromBody]Project project)
         {
             if (project.Id != id)
             {
@@ -65,7 +65,7 @@ namespace apiLuby.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Project>> DeleteProject(Guid id)
+        public async Task<ActionResult<Project>> DeleteProject(int id)
         {
             var project = await projectContext.FindAsync(id);
 
@@ -76,7 +76,7 @@ namespace apiLuby.Controllers
 
             projectContext.Remove(project);
             await context.SaveChangesAsync();
-            return Ok();
+            return Ok(project);
         }
     }
 }

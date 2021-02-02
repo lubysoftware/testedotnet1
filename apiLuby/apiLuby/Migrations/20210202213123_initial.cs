@@ -11,13 +11,14 @@ namespace apiLuby.Migrations
                 name: "Developers",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     RegistrationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Active = table.Column<bool>(type: "bit", nullable: false),
-                    IdProject = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    IdAppointment = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    IdProject = table.Column<int>(type: "int", nullable: false),
+                    IdAppointment = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -28,11 +29,12 @@ namespace apiLuby.Migrations
                 name: "Projects",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     EstimatedHours = table.Column<int>(type: "int", nullable: false),
-                    IdAppointment = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    DeveloperId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                    IdAppointment = table.Column<int>(type: "int", nullable: false),
+                    DeveloperId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -49,13 +51,14 @@ namespace apiLuby.Migrations
                 name: "Appointments",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     StartedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     FinishedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    DeveloperId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
-                    IdDeveloper = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    ProjectId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
-                    IdProject = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    DeveloperId = table.Column<int>(type: "int", nullable: true),
+                    IdDeveloper = table.Column<int>(type: "int", nullable: false),
+                    ProjectId = table.Column<int>(type: "int", nullable: true),
+                    IdProject = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {

@@ -6,7 +6,7 @@ namespace apiLuby.Models
     public class Appointment
     {
         [Key]
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
         [Required(ErrorMessage = "O campo {0} é obrigatório.")]
         public DateTime StartedAt { get; set; }
@@ -15,10 +15,10 @@ namespace apiLuby.Models
 
         public Developer Developer { get; set; }
 
-        public Guid IdDeveloper { get; set; }
+        public int IdDeveloper { get; set; }
 
         public Project Project { get; set; }
 
-        public Guid IdProject { get; set; }
+        public int IdProject { get; set; }
     }
 }
