@@ -1,0 +1,4 @@
+C:\Users\victor.costa\Documents\docsVictor\testeAPI\obj\Debug\netcoreapp2.0\testeAPI.csprojAssemblyReference.cache
+C:\Users\victor.costa\Documents\docsVictor\testeAPI\obj\Debug\netcoreapp2.0\testeAPI.AssemblyInfoInputs.cache
+C:\Users\victor.costa\Documents\docsVictor\testeAPI\obj\Debug\netcoreapp2.0\testeAPI.AssemblyInfo.cs
+C:\Users\victor.costa\Documents\docsVictor\testeAPI\obj\Debug\netcoreapp2.0\testeAPI.csproj.CoreCompileInputs.cache
