@@ -31,14 +31,14 @@ namespace apiLuby.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Developer>> GetDeveloper(Guid id)
         {
-            var dev = await developerContext.FindAsync(id);
-            return Ok(dev);
+            var developer = await developerContext.FindAsync(id);
+            return Ok(developer);
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateDeveloper([FromBody] Developer d)
+        public async Task<IActionResult> CreateDeveloper([FromBody] Developer developer)
         {
-            await developerContext.AddAsync(d);
+            await developerContext.AddAsync(developer);
             await context.SaveChangesAsync();
             return Ok();
         }
