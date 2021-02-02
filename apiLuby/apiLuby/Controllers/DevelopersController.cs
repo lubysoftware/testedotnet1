@@ -4,6 +4,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using apiLuby.Context;
+using Microsoft.EntityFrameworkCore;
+using apiLuby.Models;
 
 namespace apiLuby.Controllers
 {
@@ -11,9 +14,29 @@ namespace apiLuby.Controllers
     [ApiController]
     public class DevelopersController : ControllerBase
     {
-        public string Get()
+        private readonly MSSQLContext context;
+
+        private DbSet<Developer> developerContext;
+
+        public DevelopersController(MSSQLContext context)
         {
-            return "Teste";
+            this.context = context;
+            this.developerContext = this.context.Set<Developer>();
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            var res = await developerContext.ToListAsync();
+            return Ok(res);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Create([FromBody] Developer d)
+        {
+            await developerContext.AddAsync(d);
+            await context.SaveChangesAsync();
+            return Ok();
         }
     }
 }

@@ -61,3 +61,8 @@ C:\Users\Fábio\Desktop\testedotnet1\apiLuby\apiLuby\bin\Debug\netcoreapp3.1\run
 C:\Users\Fábio\Desktop\testedotnet1\apiLuby\apiLuby\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\Fábio\Desktop\testedotnet1\apiLuby\apiLuby\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Fábio\Desktop\testedotnet1\apiLuby\apiLuby\obj\Debug\netcoreapp3.1\apiLuby.csproj.CopyComplete
+C:\Users\Fábio\Desktop\testedotnet1\apiLuby\apiLuby\obj\Debug\netcoreapp3.1\apiLuby.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Fábio\Desktop\testedotnet1\apiLuby\apiLuby\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\Fábio\Desktop\testedotnet1\apiLuby\apiLuby\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Fábio\Desktop\testedotnet1\apiLuby\apiLuby\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Fábio\Desktop\testedotnet1\apiLuby\apiLuby\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll

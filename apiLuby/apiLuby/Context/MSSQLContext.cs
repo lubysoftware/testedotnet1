@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace apiLuby.Repository
+namespace apiLuby.Context
 {
     public class MSSQLContext : DbContext
     {
