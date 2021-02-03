@@ -43,12 +43,20 @@ namespace LH001
             });
             services.AddMvc(option => option.EnableEndpointRouting = false);
             services.AddRazorPages();
-    //.AddNewtonsoftJson(options =>
-    //{
-    //    options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
-    //    options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
-    //})
-    //.AddSessionStateTempDataProvider();
+            services.AddDistributedMemoryCache();
+
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromSeconds(10);
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
+            });
+            //.AddNewtonsoftJson(options =>
+            //{
+            //    options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+            //    options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
+            //})
+            //.AddSessionStateTempDataProvider();
 
         }
 
@@ -60,6 +68,7 @@ namespace LH001
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseSession();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseRouting();

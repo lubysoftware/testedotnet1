@@ -1,0 +1,46 @@
+﻿@page
+@model LH001.Pages.Estatistica.DesenvolvedorModel
+@{
+    Layout = "_Layout";
+}
+<div style="width: 93%;padding-left: 7%;">
+    <div style="font-size: 30px; font-family: Tahoma;">
+        <h1>Estatisticas Desenvolvedor</h1>
+        <div style=" font-size: 15px;color: gray;">
+            <p>Mostra os cinco desenvolvedores com a maior media de trabalho nessa semana considerando que cada dia teria 12h.</p>
+        </div>
+    </div>
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Projetos Participados</th>
+                <th scope="col">Horas Totais</th>
+                <th scope="col">Dias Trabalhados</th>
+                <th scope="col">Media</th>
+            </tr>
+        </thead>
+        <tbody id="tbBusca">
+            @if (Model.modalResult.Count() == 0)
+            {
+            <tr>
+                <td></td>
+                <td></td>
+                <td>Nenhum resultado encontrado.</td>
+                <td></td>
+                <td></td>
+            </tr>
+            }
+            @foreach (var item in Model.modalResult)
+            {
+                <tr>
+                    <td>@item.Tb_Desenvolvedor.Nome</td>
+                    <td>@item.ProjetosEstatisticas</td>
+                    <td>@item.HorasTotais.ToString().Replace(",",":")</td>
+                    <td>@item.NumeroDiasTrabalhados</td>
+                    <td>@item.Media%</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LH001", "LH001\LH001.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LH001.Domain", "LH001.Domain\LH001.Domain.csproj", "{B1569BD7-8132-41B7-A6F0-C800EDCF0B4C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LH001.ServiceAPI", "LH001.ServiceAPI\LH001.ServiceAPI.csproj", "{94BE8F98-FC49-49F8-8BB0-655B96279DF7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LH001.ServiceAPI", "LH001.ServiceAPI\LH001.ServiceAPI.csproj", "{94BE8F98-FC49-49F8-8BB0-655B96279DF7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -250,3 +250,9 @@ C:\Users\c.vasconcelos\Documents\GitHub\testedotnet1\LH001\LH001\obj\Debug\netco
 C:\Users\c.vasconcelos\Documents\GitHub\testedotnet1\LH001\LH001\obj\Debug\netcoreapp3.1\Razor\Pages\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\c.vasconcelos\Documents\GitHub\testedotnet1\LH001\LH001\obj\Debug\netcoreapp3.1\LH001.csproj.CoreCompileInputs.cache
 C:\Users\c.vasconcelos\Documents\GitHub\testedotnet1\LH001\LH001\obj\Debug\netcoreapp3.1\LH001.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\c.vasconcelos\Documents\GitHub\testedotnet1\LH001\LH001\obj\Debug\netcoreapp3.1\Razor\Pages\Projeto\Adicionar.cshtml.g.cs
+C:\Users\c.vasconcelos\Documents\GitHub\testedotnet1\LH001\LH001\obj\Debug\netcoreapp3.1\Razor\Pages\Projeto\Index.cshtml.g.cs
+C:\Users\c.vasconcelos\Documents\GitHub\testedotnet1\LH001\LH001\obj\Debug\netcoreapp3.1\Razor\Pages\LancamentoHora\Index.cshtml.g.cs
+C:\Users\c.vasconcelos\Documents\GitHub\testedotnet1\LH001\LH001\obj\Debug\netcoreapp3.1\Razor\Pages\LancamentoHora\Adicionar.cshtml.g.cs
+C:\Users\c.vasconcelos\Documents\GitHub\testedotnet1\LH001\LH001\obj\Debug\netcoreapp3.1\Razor\Pages\Estatistica\Desenvolvedor.cshtml.g.cs
+C:\Users\c.vasconcelos\Documents\GitHub\testedotnet1\LH001\LH001\obj\Debug\netcoreapp3.1\Razor\Pages\Estatistica\Projeto.cshtml.g.cs

@@ -41,6 +41,9 @@ namespace LH001.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
+                    b.Property<bool>("InAtivo")
+                        .HasColumnType("bit");
+
                     b.Property<int>("Tb_DesenvolvedorId")
                         .HasColumnType("int");
 
@@ -88,6 +91,9 @@ namespace LH001.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .UseIdentityColumn();
+
+                    b.Property<bool>("InAtivo")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Nome")
                         .HasColumnType("nvarchar(max)");

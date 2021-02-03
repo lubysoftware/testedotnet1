@@ -5,7 +5,7 @@ using System.Text;
 
 namespace LH001.Domain.Entidades
 {
-    public class Tb_LancamentoHoras
+    public partial class Tb_LancamentoHoras
     {
         [Key]
         public int Id { get; set; }

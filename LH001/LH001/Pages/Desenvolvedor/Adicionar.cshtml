@@ -6,7 +6,7 @@
 <div style="width: 93%;padding-left: 7%;">
     <form method="post">
         <div class="row">
-
+            <input id="TipoTela" value="@Model.modal.TipoTela" type="hidden">
             <div class="col-3">
                 <label for="exampleInputEmail1" class="form-label">Id:</label>
                 <input type="number" id="Id" class="form-control" value="@Model.modal.Id" readonly aria-describedby="busca por id">
@@ -19,7 +19,14 @@
     </form>
     <div class="col-12">
         <p class="fa-pull-right">
-            <a class="btn btn-success" onclick="Adicionar();"><i class="fas fa-search"></i> Adicionar</a>
+            @if (Model.modal.TipoTela != "E")
+            {
+                <a class="btn btn-primary" onclick="Adicionar();"><i class="fas fa-save"></i> Adicionar</a>
+            }
+            else
+            {
+                <a class="btn btn-primary" onclick="Adicionar();"><i class="fas fa-save"></i> Alterar</a>
+            }
         </p>
     </div>
 </div>
@@ -28,8 +35,15 @@
     <script asp-append-version="true">
 
         function Adicionar() {
-            $.getJSON("?handler=Adicionar&nome=" + $("#Nome").val(), (data) => {
-
+            $.getJSON("?handler=Adicionar&nome=" + $("#Nome").val() + "&TipoTela=" + $("#TipoTela").val(), (data) => {
+                if (data.ok) {   
+                    window.location.href = "/Desenvolvedor/Index";
+                }
+                else
+                {
+                    $(".modal-body").text(data.msg);
+                    $("#BtnModal").click();              
+                }
             });
         }
     </script>

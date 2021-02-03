@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace LH001.Domain.Entidades
 {
-    public class Tb_Desenvolvedor
+    public partial class Tb_Desenvolvedor
     {
         [Key]
         public int Id { get; set; }

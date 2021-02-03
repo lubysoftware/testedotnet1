@@ -9,7 +9,7 @@
 
             <div class="col-3">
                 <label for="exampleInputEmail1" class="form-label">Id:</label>
-                <input type="number" id="IdBusca" class="form-control" value="@Model.modalBusca.Id" aria-describedby="busca por id">
+                <input type="number" onkeypress="return event.charCode >= 48 && event.charCode <= 57" id="IdBusca" class="form-control" value="@Model.modalBusca.Id" aria-describedby="busca por id">
             </div>
             <div class="col-8">
                 <label for="exampleInputEmail1" class="form-label">Nome:</label>
@@ -28,27 +28,43 @@
             <tr>
                 <th scope="col">Id</th>
                 <th scope="col">Nome</th>
+                <th></th>
+                <th></th>
             </tr>
         </thead>
         <tbody id="tbBusca">
+            @if (Model.modalResult.Count() == 0)
+            {
+                <tr>
+                    <th></th>
+                    <td></td>
+                    <td></td>
+                    <td>Nenhum resultado encontrado.</td>
+                </tr>
+            }
             @foreach (var item in Model.modalResult)
             {
                 <tr>
                     <th scope="row">@item.Id</th>
                     <td>@item.Nome</td>
+                    <td><a class="btn btn-secondary" href="/Desenvolvedor/Adicionar?Id=@item.Id"><i class="fa fa-wrench"></i></a></td>
+                    <td><a class="btn btn-secondary" onclick="Deletar(@item.Id)"><i class="fas fa-trash"></i></a></td>
                 </tr>
             }
         </tbody>
     </table>
     <div class="col-12">
         <p class="fa-pull-right">
-            <a class="btn btn-success" href="/Desenvolvedor/Adicionar"><i class="fas fa-plus"></i> Adicionar</a>
+            <a class="btn btn-success" href="/Desenvolvedor/Adicionar"><i class="fas fa-plus-circle"></i> Adicionar</a>
         </p>
     </div>
 </div>
 
 @section Scripts {
     <script asp-append-version="true">
+        $(document).ready(function () {
+            $("#IdBusca").mask("999");
+        });
 
         function Buscar() {
             $.getJSON("?handler=Buscar&id=" + $("#IdBusca").val() + "&nome=" + $("#NomeBusca").val(), (data) => {
@@ -59,49 +75,40 @@
                             '<tr>'
                             + '<td>' + value.id + '</td>'
                             + '<td>' + value.nome + '</td>'
-                            //+ '<td>' + '<input class="checkVinculo" data-val="true" type="checkbox" value="false" onclick="SelecionarVinculo(this,' + value.cdCbo + ',' + value.cdTipoVinculo + ')">' + '</td>'
+                            + '<td>' + '<a class="btn btn-secondary" href="/Desenvolvedor/Adicionar?Id=' + value.id + '"><i class="fa fa-wrench"></i></a>' + '</td>'
+                            + '<td>' + '<a class="btn btn-secondary" onclick="Deletar('+value.id+')"><i class="fas fa-trash"></i></a>'
                             + '</tr>'
                         );
                     });
-                    //$("#divVinculoBind").append('<input class="form-control" type="number" data-val="true" id="CdTipoVinculo" name="CdTipoVinculo" value="' + value.cdTipoVinculo + '">');
+                }
+                else {
+                    $("#tbBusca").append(
+                        '<tr>'
+                        + '<td></td>'
+                        + '<td></td>'
+                        + '<td></td>'
+                        + '<td>Nenhum resultado encontrado.</a>'
+                        + '</tr>'
+                    );
                 }
             });
         }
 
-        //$("#" + 'FormDesenvolvedor').submit(function (event) {
-        //    event.preventDefault(); //prevent default action
-        //    var post_url = $(this).attr("action"); //get form action url
-        //    var request_method = $(this).attr("method"); //get form GET/POST method
-        //    var form_data = $(this).serialize(); //Encode form elements for submission
-        //    console.log(post_url);
-        //    console.log(request_method);
-        //    console.log(form_data);
-        //    $.ajax({
-        //        url: post_url,
-        //        type: request_method,
-        //        data: form_data
-        //    }).done(function (data) { //
-        //        if (data.ok) {
-        //            document.location.reload(true);
+        function Deletar(id) {
+            $.getJSON("?handler=Deletar&id=" + id, (data) => {
+                if (data.ok) {
+                    $(".modal-body").text("Excluído com sucesso!");
+                    $("#BtnModal").click();
+                    Buscar();
+                }
+                else
+                {
+                    $(".modal-body").text(data.msg);
+                    $("#BtnModal").click();     
+                }
 
-        //        }
-        //        else {
-        //            if (data.mensagem != null) {
-        //                ExibirModal(data.mensagem, true, "Atenção!", function () {
-        //                    setTimeout(function () {
-        //                        if (data.ok) { }
-        //                        else {
-        //                            var firstInput = $(":input:not(input[type=button],input[type=submit],button):visible:first", form);
-        //                            firstInput.focus();
-
-        //                        }
-        //                    }, 400);
-        //                })
-
-        //            }
-
-        //        }
-        //    });
-        //});
+            });
+        }
+            
     </script>
 }

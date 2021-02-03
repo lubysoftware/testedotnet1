@@ -43,8 +43,18 @@ namespace LH001.Pages.Desenvolvedor
                 modalBusca.Nome = nome;
                 modalResult = await new ChamadaDesenvolvedor(_configuration["URLs:LH.Service"]).Buscar(id, nome);
             }
-            //return RedirectToPage("Index");
             return new JsonResult(new { ok = true, result = modalResult });
         }
+
+        public async Task<IActionResult> OnGetDeletar(int id)
+        {
+            var ok = await new ChamadaDesenvolvedor(_configuration["URLs:LH.Service"]).Deletar(id.ToString());
+            if (ok == "OK")
+                return new JsonResult(new { ok = true });
+            else
+                return new JsonResult(new { ok = false, msg = ok });
+        }
+
+
     }
 }

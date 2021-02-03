@@ -14,12 +14,6 @@ namespace LH001
     {
         public static void Main(string[] args)
         {
-    //        new WebHostBuilder()
-    //.UseKestrel()
-    //.UseContentRoot(Directory.GetCurrentDirectory())
-    //.UseStartup<Startup>()
-    //.Build()
-    //.Run();
             CreateHostBuilder(args).Build().Run();
         }
 

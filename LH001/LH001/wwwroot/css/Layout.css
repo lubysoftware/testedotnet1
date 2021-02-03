@@ -28,3 +28,9 @@
     font-size: 15px;
     font-family: Tahoma;
 }
+
+.campoReadOnly {
+    background-color: #eceeef !important; /*Simular campo inativo - Sugestão @GabrielRodrigues*/
+    pointer-events: none;
+    touch-action: none;
+}
