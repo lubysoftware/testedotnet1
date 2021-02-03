@@ -10,8 +10,8 @@ using TesteApi.Data;
 namespace testeAPI.Migrations
 {
     [DbContext(typeof(TesteApiContext))]
-    [Migration("20210202210023_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20210203144441_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -51,7 +51,9 @@ namespace testeAPI.Migrations
                         .HasColumnType("timestamp without time zone");
 
                     b.Property<int>("Id")
-                        .HasColumnType("integer");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
                     b.HasKey("ProjetoId", "DesenvolvedorId");
 

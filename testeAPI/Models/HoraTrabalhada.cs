@@ -10,6 +10,7 @@ namespace TesteApi.Models
 {
     public class HoraTrabalhada
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         public int Id { get; set; }
         public int DesenvolvedorId { get; set; }

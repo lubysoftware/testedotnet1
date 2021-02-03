@@ -49,7 +49,9 @@ namespace testeAPI.Migrations
                         .HasColumnType("timestamp without time zone");
 
                     b.Property<int>("Id")
-                        .HasColumnType("integer");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
                     b.HasKey("ProjetoId", "DesenvolvedorId");
 
