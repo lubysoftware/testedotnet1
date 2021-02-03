@@ -4,7 +4,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace testeAPI.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -40,12 +40,14 @@ namespace testeAPI.Migrations
                 {
                     DesenvolvedorId = table.Column<int>(nullable: false),
                     ProjetoId = table.Column<int>(nullable: false),
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     DtInicio = table.Column<DateTime>(nullable: false),
                     DtFim = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_HorasTrabalhadas", x => new { x.ProjetoId, x.DesenvolvedorId });
+                    table.PrimaryKey("PK_HorasTrabalhadas", x => x.Id);
                     table.ForeignKey(
                         name: "FK_HorasTrabalhadas_Desenvolvedores_DesenvolvedorId",
                         column: x => x.DesenvolvedorId,
