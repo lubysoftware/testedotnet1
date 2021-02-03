@@ -1,0 +1,114 @@
+﻿@page
+@model LH001.Pages.Desenvolvedor.IndexModel
+@{
+    Layout = "_Layout";
+}
+<div style="width: 93%;padding-left: 7%;">
+    <form method="post">
+        <div class="row">
+
+            <div class="col-3">
+                <label for="exampleInputEmail1" class="form-label">Id:</label>
+                <input type="number" onkeypress="return event.charCode >= 48 && event.charCode <= 57" id="IdBusca" class="form-control" value="@Model.modalBusca.Id" aria-describedby="busca por id">
+            </div>
+            <div class="col-8">
+                <label for="exampleInputEmail1" class="form-label">Nome:</label>
+                <input type="text" id="NomeBusca" class="form-control" value="@Model.modalBusca.Nome" aria-describedby="busca por nome">
+            </div>
+        </div>
+        <div class="col-12" style="padding-top: 30px;">
+            <p class="fa-pull-right">
+                <a href="@Url.Action("Index", "Desenvolvedor")" class="btn btn-secondary"> Limpar</a>
+                <a onclick="Buscar();" class="btn btn-primary"><i class="fas fa-search"></i> Pesquisar</a>
+            </p>
+        </div>
+    </form>
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nome</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody id="tbBusca">
+            @if (Model.modalResult.Count() == 0)
+            {
+                <tr>
+                    <th></th>
+                    <td></td>
+                    <td></td>
+                    <td>Nenhum resultado encontrado.</td>
+                </tr>
+            }
+            @foreach (var item in Model.modalResult)
+            {
+                <tr>
+                    <th scope="row">@item.Id</th>
+                    <td>@item.Nome</td>
+                    <td><a class="btn btn-secondary" href="/Desenvolvedor/Adicionar?Id=@item.Id"><i class="fa fa-wrench"></i></a></td>
+                    <td><a class="btn btn-secondary" onclick="Deletar(@item.Id)"><i class="fas fa-trash"></i></a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="col-12">
+        <p class="fa-pull-right">
+            <a class="btn btn-success" href="/Desenvolvedor/Adicionar"><i class="fas fa-plus-circle"></i> Adicionar</a>
+        </p>
+    </div>
+</div>
+
+@section Scripts {
+    <script asp-append-version="true">
+        $(document).ready(function () {
+            $("#IdBusca").mask("999");
+        });
+
+        function Buscar() {
+            $.getJSON("?handler=Buscar&id=" + $("#IdBusca").val() + "&nome=" + $("#NomeBusca").val(), (data) => {
+                $("#tbBusca").empty();
+                if (data.result.length != 0) {
+                    $.each(data.result, function (key, value) {
+                        $("#tbBusca").append(
+                            '<tr>'
+                            + '<td>' + value.id + '</td>'
+                            + '<td>' + value.nome + '</td>'
+                            + '<td>' + '<a class="btn btn-secondary" href="/Desenvolvedor/Adicionar?Id=' + value.id + '"><i class="fa fa-wrench"></i></a>' + '</td>'
+                            + '<td>' + '<a class="btn btn-secondary" onclick="Deletar('+value.id+')"><i class="fas fa-trash"></i></a>'
+                            + '</tr>'
+                        );
+                    });
+                }
+                else {
+                    $("#tbBusca").append(
+                        '<tr>'
+                        + '<td></td>'
+                        + '<td></td>'
+                        + '<td></td>'
+                        + '<td>Nenhum resultado encontrado.</a>'
+                        + '</tr>'
+                    );
+                }
+            });
+        }
+
+        function Deletar(id) {
+            $.getJSON("?handler=Deletar&id=" + id, (data) => {
+                if (data.ok) {
+                    $(".modal-body").text("Excluído com sucesso!");
+                    $("#BtnModal").click();
+                    Buscar();
+                }
+                else
+                {
+                    $(".modal-body").text(data.msg);
+                    $("#BtnModal").click();     
+                }
+
+            });
+        }
+            
+    </script>
+}

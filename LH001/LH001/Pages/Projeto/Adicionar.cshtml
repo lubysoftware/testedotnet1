@@ -1,0 +1,144 @@
+﻿@page
+@model LH001.Pages.Projeto.AdicionarModel
+@{
+    Layout = "_Layout";
+}
+<div style="width: 93%;padding-left: 7%;">
+    <form method="post">
+        <div class="row">
+            <input id="TipoTela" value="@Model.modal.TipoTela" type="hidden">
+            <input id="ListaDesenvolvedor" value="@Model.modal.ListaDesenvolvedor" type="hidden">
+            <div class="col-3">
+                <label class="form-label">Id:</label>
+                <input type="number" id="Id" class="form-control" value="@Model.modal.Id" readonly aria-describedby="busca por id">
+            </div>
+            <div class="col-8">
+                <label class="form-label">Nome:</label>
+                <input type="text" id="Nome" class="form-control" value="@Model.modal.Nome" aria-describedby="busca por nome">
+            </div>
+        </div>
+        <div class="row" style="padding-top: 30px;">
+            <label class="form-label">Desenvolvedores:</label>
+            <div class="input-group col-6">
+
+                <input class="form-control" list="datalistOptions" id="DataList" placeholder="Digite o nome...">
+                <datalist id="datalistOptions">
+                </datalist>
+                <button class="btn btn-outline-secondary" onclick="AdicionarDevs()" type="button">Adicionar</button>
+            </div>
+        </div>
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Nome</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="tbDevs">
+                <tr>
+                    <td>Nenhum Desenvolvidor Cadastrado!</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+    <div class="col-12" style="margin-top: 30px;">
+        <p class="fa-pull-right">
+            @if (Model.modal.TipoTela != "E")
+            {
+                <a class="btn btn-primary" onclick="Adicionar();"><i class="fas fa-save"></i> Adicionar</a>
+            }
+            else
+            {
+                <a class="btn btn-primary" onclick="Adicionar();"><i class="fas fa-save"></i> Alterar</a>
+            }
+        </p>
+    </div>
+</div>
+
+@section Scripts {
+    <script asp-append-version="true">
+
+        $(document).ready(function () {
+            var ListaDevsCadastrados = $("#ListaDesenvolvedor").val();
+            devs = ListaDevsCadastrados;
+            CriarTabelaDevs();
+        });
+
+        function Adicionar() {
+            $.getJSON("?handler=Adicionar&nome=" + $("#Nome").val() + "&TipoTela=" + $("#TipoTela").val() + "&Desenvolvedores=" + devs, (data) => {
+                if (data.ok) {
+                    window.location.href = "/Projeto/Index";
+                }
+                else {
+                    $(".modal-body").text(data.msg);
+                    $("#BtnModal").click();
+                }
+            });
+        }
+
+        var devs = "";
+        function AdicionarDevs() {
+            var nome = $("#DataList").val()
+            if (!devs.includes(nome))
+                devs = devs + "/" + nome;
+
+            $("#DataList").val("");
+
+            CriarTabelaDevs();
+        }
+
+        function DeletarDevs(key_del) {
+            var devsArray = devs.split("/");
+            var novos_devs = "";
+            $.each(devsArray, function (key, value) {
+                if (key != key_del && value != "") {
+                    novos_devs = novos_devs + "/" + value;
+                }
+            });
+
+            devs = novos_devs;
+            CriarTabelaDevs();
+        }
+
+        function CriarTabelaDevs() {
+            $("#tbDevs").empty();
+            var devsArray = devs.split("/");
+
+            if (devsArray.length == 1) {
+                $("#tbDevs").append(
+                    '<tr>'
+                    + '<td>Nenhum Desenvolvidor Cadastrado!</td>'
+                    + '<td></td>'
+                    + '</tr>'
+                );
+            }
+            else {
+                $.each(devsArray, function (key, value) {
+                    if (value != "") {
+                        $("#tbDevs").append(
+                            '<tr>'
+                            + '<td>' + value + '</td>'
+                            + '<td>' + '<a class="btn btn-secondary" onclick="DeletarDevs(' + key + ')"><i class="fas fa-trash"></i></a>' + '</td>'
+                            + '</tr>'
+                        );
+                    }
+                });
+            }
+        }
+
+        $(document).ready(function () {
+            $.getJSON("?handler=ListaDesenvolvedor", (data) => {
+                $("#datalistOptions").empty();
+                if (data.result.length != 0) {
+                    $.each(data.result, function (key, value) {
+                        $("#datalistOptions").append(
+                            '<option value="' + value.nome + '">'
+                        );
+                    });
+                }
+            });
+        });
+
+    </script>
+}

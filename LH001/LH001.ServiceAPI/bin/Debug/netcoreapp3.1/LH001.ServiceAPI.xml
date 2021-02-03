@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LH001.ServiceAPI</name>
+    </assembly>
+    <members>
+        <member name="M:LH001.ServiceAPI.Controllers.v1.DesenvolvedorController.ListarDesenvolvedores">
+            <summary>
+            Get todos os Desenvolvedores, sem nenhum parametro. Versão atual 1.0
+            </summary>
+            <returns>Retorna uma lista do tipo desenvolvedor</returns>
+        </member>
+        <member name="M:LH001.ServiceAPI.Controllers.v1.DesenvolvedorController.BuscarDesenvolvedores(System.String,System.String)">
+            <summary>
+            Get os Desenvolvedores por nome ou Id. Versão atual 1.0
+            </summary>
+            <param name="Id">Numero do Id para pesquisa. Deve ser = 0 se não for buscar por ele</param>
+            <param name="Nome">Nome do desenvolvedor, Parte ou inteiro</param>
+            <returns>Retorna uma lista do tipo desenvolvedor</returns>
+        </member>
+        <member name="M:LH001.ServiceAPI.Controllers.v1.DesenvolvedorController.Incluir(System.String)">
+            <summary>
+            Adiciona o um novo Desenvolvedor. Versão atual 1.0
+            </summary>
+            <param name="Nome">Nome do desenvolvedor, não deve ser um já cadastrado.</param>
+        </member>
+        <member name="M:LH001.ServiceAPI.Controllers.v1.DesenvolvedorController.Alterar(System.String,System.String)">
+            <summary>
+            Altera o um novo Desenvolvedor. Versão atual 1.0
+            </summary>
+            <param name="Id">Id do desenvolvedor  que deve ser alterado.</param>
+            <param name="Nome">Nome do desenvolvedor, não deve ser um já cadastrado.</param>
+        </member>
+        <member name="M:LH001.ServiceAPI.Controllers.v1.DesenvolvedorController.Excluir(System.String)">
+            <summary>
+            Deleta um Desenvolvedor, quando apagado ele será retirado dos projetos que fazem parte e as horas lançadas serão apagadas. Versão atual 1.0
+            </summary>
+            <param name="Id">Id do desenvolvedor para ser deletado.</param>
+        </member>
+        <member name="M:LH001.ServiceAPI.Controllers.v1.LancamentoHoraController.Listar">
+            <summary>
+            Get todos os lançamentos de horario, sem nenhum parametro. Versão atual 1.0
+            </summary>
+            <returns>Retorna uma lista do tipo LancamentoHora</returns>
+        </member>
+        <member name="M:LH001.ServiceAPI.Controllers.v1.LancamentoHoraController.Buscar(System.String,System.String)">
+            <summary>
+            Get os lançamentos de horario por nome do Desenvolvedor ou Id do projeto. Versão atual 1.0
+            </summary>
+            <param name="NomeDesenv">Nome do desenvolvedor, Parte ou inteiro</param>
+            <param name="IdProj">Id do Projeto. Deve ser = 0 se não for buscar por ele</param>
+            <returns>Retorna uma lista do tipo LancamentoHora</returns>
+        </member>
+        <member name="M:LH001.ServiceAPI.Controllers.v1.LancamentoHoraController.EstatisticaPorDesenvolvedor">
+            <summary>
+            Get os desenvolvedores com as horas de trabalho, dias trabalhados e sua media de desenpenho, de acordo com a semana atual. Versão atual 1.0
+            </summary>
+            <returns>Retorna uma lista do tipo Desenvolvedor_Projeto</returns>
+        </member>
+        <member name="M:LH001.ServiceAPI.Controllers.v1.LancamentoHoraController.EstatisticaPorProjeto">
+            <summary>
+            Get os projetos com as horas de trabalho, dias trabalhados e sua media de desenpenho, de acordo com a semana atual. Versão atual 1.0
+            </summary>
+            <returns>Retorna uma lista do tipo Desenvolvedor_Projeto</returns>
+        </member>
+        <member name="M:LH001.ServiceAPI.Controllers.v1.LancamentoHoraController.Incluir(System.String,System.String,System.String,System.String)">
+            <summary>
+            Adiciona o um novo LancamentoHora. Versão atual 1.0
+            </summary>
+            <param name="Desenv_Proj_Id">Id correspondente a tabela Desenvolvedor_Projeto</param>
+            <param name="DataInicio">Data de inicio do lançamento</param>
+            <param name="DataFim">Data do fim do lançamento</param>
+            <param name="Hora">Horas trabalhadas durante o periodo, deve ser digitado como esse exemplo: "00:00"</param>
+        </member>
+        <member name="M:LH001.ServiceAPI.Controllers.v1.LancamentoHoraController.Excluir(System.String)">
+            <summary>
+            Deleta um LancamentoHora. Versão atual 1.0
+            </summary>
+            <param name="Id">Id do LançamentoHora para ser deletado.</param>
+        </member>
+        <member name="M:LH001.ServiceAPI.Controllers.v1.ProjetoController.ListarProjetos">
+            <summary>
+            Get todos os Projetos, sem nenhum parametro. Versão atual 1.0
+            </summary>
+            <returns>Retorna uma lista do tipo projeto</returns>
+        </member>
+        <member name="M:LH001.ServiceAPI.Controllers.v1.ProjetoController.Buscar(System.String,System.String)">
+            <summary>
+            Get os Projetos por nome ou Id. Versão atual 1.0
+            </summary>
+            <param name="Id">Numero do Id para pesquisa. Deve ser = 0 se não for buscar por ele</param>
+            <param name="Nome">Nome do projeto, Parte ou inteiro</param>
+            <returns>Retorna uma lista do tipo projeto</returns>
+        </member>
+        <member name="M:LH001.ServiceAPI.Controllers.v1.ProjetoController.DesenvolvedoresPorProjetoId(System.String)">
+            <summary>
+            Get os desenvolvedores por id do projeto. Versão atual 1.0
+            </summary>
+            <param name="Id">Id do projeto para pesquisa. Nesse caso não pode ser nulo</param>
+            <returns>Retorna uma lista do tipo projeto</returns>
+        </member>
+        <member name="M:LH001.ServiceAPI.Controllers.v1.ProjetoController.Incluir(System.String,System.String)">
+            <summary>
+            Adiciona o um novo Projeto. Versão atual 1.0
+            </summary>
+            <param name="Nome">Nome do desenvolvedor, não deve ser um já cadastrado.</param>
+            <param name="Desenvolvedores">Nomes dos desenvolvedores, para ser cadastrado na tabela Tb_Desenvolvedor_Projeto, eles devem ser separados por "\" e devem existir no banco do Desenvolvedor.</param>
+        </member>
+        <member name="M:LH001.ServiceAPI.Controllers.v1.ProjetoController.Alterar(System.String,System.String,System.String)">
+            <summary>
+            Altera o um Projeto. Versão atual 1.0
+            </summary>
+            <param name="Id">Id do desenvolvedor  que deve ser alterado.</param>
+            <param name="Nome">Nome do desenvolvedor, não deve ser um já cadastrado.</param>
+            /// <param name="Desenvolvedores">Nomes dos desenvolvedores, para ser cadastrado na tabela Tb_Desenvolvedor_Projeto, eles devem ser separados por "\" e devem existir no banco do Desenvolvedor.</param>
+        </member>
+        <member name="M:LH001.ServiceAPI.Controllers.v1.ProjetoController.Excluir(System.String)">
+            <summary>
+            Deleta um Projeto, quando apagado ele será retirado inativado, dessa forma os registros já cadastrados dos lancamentos de hora não serão perdidos. Versão atual 1.0
+            </summary>
+            <param name="Id">Id do desenvolvedor para ser deletado.</param>
+        </member>
+    </members>
+</doc>
