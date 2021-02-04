@@ -83,13 +83,13 @@ namespace apiLuby.Controllers
         [HttpGet("/Ranking")]
         public ActionResult<Appointment> Ranking()
         {
-            return Ok(Teste(DateTime.Today, DateTime.Today.AddDays(7)));
+            return Ok(Teste(DateTime.Today, DateTime.Today.AddDays(-7)));
         }
 
         private object Teste(DateTime inicial, DateTime final)
         {
             var result = (from c in appointmentContext
-                         where c.FinishedAt >= inicial && c.FinishedAt <= new DateTime(final.Year, final.Month, final.Day, 23, 59, 59)
+                         where c.FinishedAt <= inicial && c.FinishedAt >= new DateTime(final.Year, final.Month, final.Day, 23, 59, 59)
                          select new { c.IdDeveloper, c.Developer.Name, c.FinishedAt, c.StartedAt })
                          .ToList()
                          .GroupBy(c => new { c.IdDeveloper, c.Name })
