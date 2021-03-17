@@ -44,6 +44,16 @@ namespace LTS.API
                 .AddCustomEntityFrameworkStores<LubyContext>()
                 .AddDefaultTokenProviders();
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy("Total",
+                    builder =>
+                        builder
+                            .AllowAnyOrigin()
+                            .AllowAnyMethod()
+                            .AllowAnyHeader());
+            });
+
 
             services.AddSetupAutoMapper();
 
