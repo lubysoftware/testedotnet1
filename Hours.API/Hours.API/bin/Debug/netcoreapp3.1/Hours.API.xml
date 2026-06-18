@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Hours.API</name>
+    </assembly>
+    <members>
+        <member name="M:Hours.API.Controllers.V1.HoursController.GetAll">
+            <summary>
+            Search all time records
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Hours.API.Controllers.V1.HoursController.Get(Hours.Application.DataContract.Request.Hours.HoursFilterRequest)">
+             <summary>
+            Search with parameters
+             </summary>
+             <param name="filters"></param>
+             <returns></returns>
+             
+        </member>
+        <member name="M:Hours.API.Controllers.V1.HoursController.GetRankingDevs">
+             <summary>
+            Search for the top 5 ranking of the developers who worked the most this week
+             </summary>
+             <returns></returns>
+        </member>
+        <member name="M:Hours.API.Controllers.V1.HoursController.GetById(System.Guid)">
+             <summary>
+            Fetch an object according to the given ID
+             </summary>
+             <param name="id"></param>
+             <returns></returns>
+        </member>
+        <member name="M:Hours.API.Controllers.V1.HoursController.Save(Hours.Application.DataContract.Request.Hours.HoursGeneralRequest)">
+             <summary>
+            Post save Hours
+             </summary>
+             <param name="data"></param>
+             <returns></returns>
+        </member>
+        <member name="M:Hours.API.Controllers.V1.HoursController.Update(Hours.Application.DataContract.Request.Hours.HoursRequest)">
+             <summary>
+            Post update Hours
+             </summary>
+             <param name="data"></param>
+             <returns></returns>
+        </member>
+        <member name="M:Hours.API.Controllers.V1.HoursController.Delete(System.Guid)">
+            <summary>
+            Delete Hours
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Login.API.Controllers.V1.LoginController.Login(Hours.Application.DataContract.Response.User.LoginResponse)">
+            <summary>
+            Login with Token
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:User.API.Controllers.V1.UserController.GetAll">
+            <summary>
+            Search all time records
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:User.API.Controllers.V1.UserController.Get(Hours.Application.DataContract.Request.User.UserFilterRequest)">
+             <summary>
+            Search with parameters
+             </summary>
+             <param name="filters"></param>
+             <returns></returns>
+        </member>
+        <member name="M:User.API.Controllers.V1.UserController.GetById(System.Guid)">
+             <summary>
+            Fetch an object according to the given ID
+             </summary>
+             <param name="id"></param>
+             <returns></returns>
+        </member>
+        <member name="M:User.API.Controllers.V1.UserController.Save(Hours.Application.DataContract.Request.User.UserGeneralRequest)">
+            <summary>
+            User registration
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:User.API.Controllers.V1.UserController.Update(Hours.Application.DataContract.Request.User.UserRequest)">
+             <summary>
+            Post update Hours
+             </summary>
+             <param name="data"></param>
+             <returns></returns>
+        </member>
+        <member name="M:User.API.Controllers.V1.UserController.Delete(System.Guid)">
+            <summary>
+            Delete User
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
